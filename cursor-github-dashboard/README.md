@@ -1,14 +1,14 @@
-# Cursor Hub
+# DZS Hub
 
-Interaktivní developer dashboard inspirovaný úvodní obrazovkou Cursoru a vizuálním jazykem GitHub Primer.
+Interaktivní portál pro programy, mobility a žádosti v brand identitě Domu zahraniční spolupráce.
 
 ## Funkce
 
 - responzivní dashboard pro desktop i mobil
-- tmavý a světlý GitHub motiv
+- světlý a tmavý motiv v oficiální paletě DZS
 - command palette přes `Cmd/Ctrl + K`
-- filtrování projektů
-- interaktivní dialogy pro otevření, klonování a SSH připojení
+- filtrování programů a příležitostí
+- interaktivní workflow pro žádosti, vyhledání programu a konzultace
 - přístupné ovládání klávesnicí a respektování `prefers-reduced-motion`
 
 ## Lokální spuštění

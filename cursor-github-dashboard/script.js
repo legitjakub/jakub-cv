@@ -10,32 +10,32 @@ const toast = document.querySelector('[data-toast]');
 
 const modalContent = {
   open: {
-    title: 'Otevřít projekt',
-    copy: 'Zadejte cestu k lokální složce, kterou chcete otevřít.',
-    label: 'Cesta ke složce',
-    placeholder: '~/Documents/GitHub/muj-projekt'
+    title: 'Nová žádost',
+    copy: 'Pojmenujte svůj záměr. V dalším kroku vyberete vhodný program.',
+    label: 'Název záměru',
+    placeholder: 'Např. studentská mobilita 2026'
   },
   clone: {
-    title: 'Klonovat repozitář',
-    copy: 'Vložte HTTPS nebo SSH adresu Git repozitáře.',
-    label: 'URL repozitáře',
-    placeholder: 'https://github.com/username/repository.git'
+    title: 'Najít program',
+    copy: 'Napište, čeho chcete v mezinárodním vzdělávání dosáhnout.',
+    label: 'Váš záměr',
+    placeholder: 'Např. studijní pobyt v zahraničí'
   },
   ssh: {
-    title: 'Připojit přes SSH',
-    copy: 'Zadejte vzdáleného hostitele a otevřete projekt přes zabezpečené spojení.',
-    label: 'SSH hostitel',
-    placeholder: 'user@example.com'
+    title: 'Domluvit konzultaci',
+    copy: 'Stručně popište téma. Spojíme vás se správným odborníkem DZS.',
+    label: 'Téma konzultace',
+    placeholder: 'Např. podmínky výzvy Erasmus+'
   }
 };
 
 function setTheme(theme) {
   root.dataset.theme = theme;
-  localStorage.setItem('cursor-hub-theme', theme);
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0d1117' : '#f6f8fa';
+  localStorage.setItem('dzs-hub-theme', theme);
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#000000' : '#F9F7F2';
 }
 
-setTheme(localStorage.getItem('cursor-hub-theme') || 'dark');
+setTheme(localStorage.getItem('dzs-hub-theme') || 'light');
 
 document.querySelector('[data-theme-toggle]').addEventListener('click', () => {
   setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');

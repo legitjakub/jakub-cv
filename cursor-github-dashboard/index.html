@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="cs" data-theme="dark">
+<html lang="cs" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Moderní interaktivní developer dashboard inspirovaný aplikací Cursor a design systémem GitHub." />
-    <meta name="theme-color" content="#0d1117" />
-    <title>Cursor Hub - Developer workspace</title>
+    <meta name="description" content="DZS Hub - přehled programů, mobilit, žádostí a příležitostí v mezinárodním vzdělávání." />
+    <meta name="theme-color" content="#F9F7F2" />
+    <title>DZS Hub - Mezinárodní vzdělávání přehledně</title>
+    <link rel="icon" href="assets/dzs-logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -17,16 +18,16 @@
         <button class="icon-button mobile-menu" type="button" aria-label="Otevřít navigaci" data-menu-toggle>
           <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1 2.75h14v1.5H1zm0 4.5h14v1.5H1zm0 4.5h14v1.5H1z" /></svg>
         </button>
-        <a class="product-mark" href="#" aria-label="Cursor Hub domů">
-          <span class="cube" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>Cursor <b>Hub</b></span>
+        <a class="product-mark" href="#" aria-label="DZS Hub domů">
+          <img src="assets/dzs-logo.png" alt="" />
+          <span>DZS <b>Hub</b></span>
         </a>
         <span class="branch-pill"><span class="status-dot"></span> online</span>
       </div>
 
       <button class="search-trigger" type="button" data-command-open>
         <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M6.5 1a5.5 5.5 0 1 0 3.475 9.764l3.63 3.63 1.06-1.06-3.63-3.63A5.5 5.5 0 0 0 6.5 1m-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0" /></svg>
-        <span>Hledat projekty, příkazy...</span>
+        <span>Hledat programy, výzvy, žádosti...</span>
         <kbd>⌘ K</kbd>
       </button>
 
@@ -43,63 +44,63 @@
       <aside class="sidebar" aria-label="Postranní navigace">
         <nav>
           <a class="active" href="#overview"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m8.36.75 6.25 4.56a.95.95 0 0 1 .39.77v7.97a.95.95 0 0 1-.95.95h-3.8v-5h-4.5v5h-3.8A.95.95 0 0 1 1 14.05V6.08a.95.95 0 0 1 .39-.77L7.64.75a.61.61 0 0 1 .72 0" /></svg><span>Přehled</span></a>
-          <a href="#projects"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1.75 1h5l1.5 2h6c.97 0 1.75.78 1.75 1.75v7.5A2.75 2.75 0 0 1 13.25 15H2.75A2.75 2.75 0 0 1 0 12.25v-9.5C0 1.78.78 1 1.75 1" /></svg><span>Projekty</span><b>15</b></a>
-          <a href="#activity"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m.75 3v4.69l3.03 1.75-.75 1.3-3.4-1.97A.75.75 0 0 1 7.25 8V3z" /></svg><span>Aktivita</span></a>
+          <a href="#projects"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1.75 1h5l1.5 2h6c.97 0 1.75.78 1.75 1.75v7.5A2.75 2.75 0 0 1 13.25 15H2.75A2.75 2.75 0 0 1 0 12.25v-9.5C0 1.78.78 1 1.75 1" /></svg><span>Programy</span><b>20+</b></a>
+          <a href="#activity"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m.75 3v4.69l3.03 1.75-.75 1.3-3.4-1.97A.75.75 0 0 1 7.25 8V3z" /></svg><span>Kalendář</span></a>
           <a href="#favorites"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m8 12.03-4.33 2.28.83-4.82L1 6.08l4.84-.7L8 1l2.16 4.38 4.84.7-3.5 3.41.83 4.82z" /></svg><span>Oblíbené</span></a>
         </nav>
         <div class="sidebar-section">
-          <p>Workspace</p>
-          <button type="button"><span class="repo-icon">⌘</span><span>Personal</span><i>12</i></button>
-          <button type="button"><span class="repo-icon violet">A</span><span>Appfleece</span><i>3</i></button>
+          <p>Moje agenda</p>
+          <button type="button"><span class="repo-icon">E+</span><span>Erasmus+</span><i>4</i></button>
+          <button type="button"><span class="repo-icon violet">E</span><span>Evropské programy</span><i>3</i></button>
         </div>
         <div class="sidebar-bottom">
           <a href="#settings"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M14.59 8.97a6 6 0 0 0 .04-.97 6 6 0 0 0-.04-.97l1.2-.94-1.5-2.6-1.41.57a6.4 6.4 0 0 0-1.68-.97L11 1.59h-3l-.21 1.5c-.6.23-1.16.55-1.67.97L4.7 3.49l-1.5 2.6 1.2.94a6 6 0 0 0-.03.97c0 .33 0 .65.04.97l-1.2.94 1.5 2.6 1.41-.57c.51.42 1.07.74 1.68.97L8 14.41h3l.21-1.5c.6-.23 1.16-.55 1.67-.97l1.42.57 1.5-2.6zM9.5 10.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5" /></svg><span>Nastavení</span></a>
-          <div class="plan-card"><span>FREE PLAN</span><strong>48 / 50</strong><div><i></i></div><p>Fast requests tento měsíc</p><button type="button">Upgrade plan <span>↗</span></button></div>
+          <div class="plan-card"><span>PROFIL ŽADATELE</span><strong>80 %</strong><div><i></i></div><p>Doplňte údaje organizace</p><button type="button">Dokončit profil <span>→</span></button></div>
         </div>
       </aside>
 
       <main id="content">
         <section class="welcome" id="overview">
           <div>
-            <p class="eyebrow"><span></span> Workspace je připravený</p>
+            <p class="eyebrow"><span></span> Vaše agenda je aktuální</p>
             <h1>Vítej zpátky, <em>Jakube.</em></h1>
-            <p class="intro">Všechny projekty, repozitáře a nástroje na jednom místě. Co dnes postavíme?</p>
+            <p class="intro">Programy, mobility a žádosti na jednom místě. Propojujeme Česko se světem vzdělávání.</p>
           </div>
-          <div class="week-card" aria-label="Aktivita za poslední týden"><span>POSLEDNÍCH 7 DNÍ</span><strong>24</strong><p>vývojových relací <b>+18 %</b></p><div class="sparkline" aria-hidden="true"><i style="height:34%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:74%"></i><i style="height:63%"></i><i style="height:100%"></i><i style="height:82%"></i></div></div>
+          <div class="week-card" aria-label="Aktivní žádosti"><span>AKTIVNÍ ŽÁDOSTI</span><strong>3</strong><p>nejbližší termín <b>za 12 dní</b></p><div class="sparkline" aria-hidden="true"><i style="height:34%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:74%"></i><i style="height:63%"></i><i style="height:100%"></i><i style="height:82%"></i></div></div>
         </section>
 
         <section class="quick-actions" aria-labelledby="quick-title">
-          <div class="section-header"><div><p class="section-label">RYCHLÝ START</p><h2 id="quick-title">Otevřít workspace</h2></div><span>⌘ N pro nový projekt</span></div>
+          <div class="section-header"><div><p class="section-label">RYCHLÝ START</p><h2 id="quick-title">Co potřebujete zařídit?</h2></div><span>Jednoduše. Přehledně. Na jednom místě.</span></div>
           <div class="action-grid">
-            <button class="action-card primary" type="button" data-modal="open"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1.75 2h4.5l1.5 2h6.5c.97 0 1.75.78 1.75 1.75v6.5A2.75 2.75 0 0 1 13.25 15H2.75A2.75 2.75 0 0 1 0 12.25v-8.5C0 2.78.78 2 1.75 2" /></svg></span><span><strong>Otevřít projekt</strong><small>Vyberte lokální složku</small></span><i>⌘ O</i></button>
-            <button class="action-card" type="button" data-modal="clone"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5.22 6.02a2.38 2.38 0 1 1-1.5 0V3.75a.75.75 0 0 1 1.5 0zm-.75 1.42a.88.88 0 1 0 0 1.75.88.88 0 0 0 0-1.75m7.78 1.25a2.38 2.38 0 1 1-1.5 0v-1.1a1.37 1.37 0 0 0-1.37-1.37H7.75a.75.75 0 0 1 0-1.5h1.63a2.87 2.87 0 0 1 2.87 2.87zm-.75 1.42a.88.88 0 1 0 0 1.75.88.88 0 0 0 0-1.75" /></svg></span><span><strong>Klonovat repozitář</strong><small>GitHub, GitLab nebo URL</small></span><i>⌘ ⇧ O</i></button>
-            <button class="action-card" type="button" data-modal="ssh"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1 2h14v11H1zm2.22 2.47L5.75 7 3.22 9.53l1.06 1.06L7.87 7 4.28 3.41zM8 10.5h4V9H8z" /></svg></span><span><strong>Připojit přes SSH</strong><small>Vzdálený vývoj</small></span><i>⌘ ⇧ S</i></button>
+            <button class="action-card primary" type="button" data-modal="open"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1.75 2h4.5l1.5 2h6.5c.97 0 1.75.78 1.75 1.75v6.5A2.75 2.75 0 0 1 13.25 15H2.75A2.75 2.75 0 0 1 0 12.25v-8.5C0 2.78.78 2 1.75 2" /></svg></span><span><strong>Nová žádost</strong><small>Založit a rozpracovat žádost</small></span><i>01</i></button>
+            <button class="action-card" type="button" data-modal="clone"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5.22 6.02a2.38 2.38 0 1 1-1.5 0V3.75a.75.75 0 0 1 1.5 0zm-.75 1.42a.88.88 0 1 0 0 1.75.88.88 0 0 0 0-1.75m7.78 1.25a2.38 2.38 0 1 1-1.5 0v-1.1a1.37 1.37 0 0 0-1.37-1.37H7.75a.75.75 0 0 1 0-1.5h1.63a2.87 2.87 0 0 1 2.87 2.87zm-.75 1.42a.88.88 0 1 0 0 1.75.88.88 0 0 0 0-1.75" /></svg></span><span><strong>Najít program</strong><small>Podle cíle, země nebo role</small></span><i>02</i></button>
+            <button class="action-card" type="button" data-modal="ssh"><span class="action-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1 2h14v11H1zm2.22 2.47L5.75 7 3.22 9.53l1.06 1.06L7.87 7 4.28 3.41zM8 10.5h4V9H8z" /></svg></span><span><strong>Domluvit konzultaci</strong><small>Proberte záměr s odborníkem</small></span><i>03</i></button>
           </div>
         </section>
 
         <section class="projects" id="projects" aria-labelledby="projects-title">
-          <div class="section-header projects-header"><div><p class="section-label">NEDÁVNÉ</p><h2 id="projects-title">Vaše projekty</h2></div><div class="filter"><button class="active" type="button" data-filter="all">Všechny</button><button type="button" data-filter="favorite">Oblíbené</button><button type="button" data-filter="shared">Sdílené</button></div></div>
-          <div class="project-table" role="table" aria-label="Seznam projektů">
-            <div class="table-head" role="row"><span>Projekt</span><span>Workspace</span><span>Aktualizováno</span><span></span></div>
-            <button class="project-row" type="button" role="row" data-kind="favorite"><span class="project-name"><i class="project-symbol green">CV</i><span><strong>jakub-cv</strong><small>Portfolio & osobní web</small></span></span><span class="workspace-tag"><i></i> Personal</span><time>před 12 min</time><span class="row-actions"><b title="Oblíbené">★</b><i>•••</i></span></button>
-            <button class="project-row" type="button" role="row" data-kind="shared"><span class="project-name"><i class="project-symbol blue">EC</i><span><strong>ecohaus-theme</strong><small>Shopify storefront</small></span></span><span class="workspace-tag violet"><i></i> Appfleece</span><time>včera</time><span class="row-actions"><b>☆</b><i>•••</i></span></button>
-            <button class="project-row" type="button" role="row" data-kind="favorite"><span class="project-name"><i class="project-symbol purple">BL</i><span><strong>bodylok-app</strong><small>Custom Shopify app</small></span></span><span class="workspace-tag violet"><i></i> Appfleece</span><time>před 3 dny</time><span class="row-actions"><b title="Oblíbené">★</b><i>•••</i></span></button>
-            <button class="project-row" type="button" role="row" data-kind="personal"><span class="project-name"><i class="project-symbol orange">CS</i><span><strong>cybersecurity-lab</strong><small>Security research notes</small></span></span><span class="workspace-tag"><i></i> Personal</span><time>12. 6. 2026</time><span class="row-actions"><b>☆</b><i>•••</i></span></button>
+          <div class="section-header projects-header"><div><p class="section-label">DOPORUČENO PRO VÁS</p><h2 id="projects-title">Programy a příležitosti</h2></div><div class="filter"><button class="active" type="button" data-filter="all">Všechny</button><button type="button" data-filter="favorite">Oblíbené</button><button type="button" data-filter="shared">Otevřené</button></div></div>
+          <div class="project-table" role="table" aria-label="Seznam programů">
+            <div class="table-head" role="row"><span>Program</span><span>Oblast</span><span>Termín</span><span></span></div>
+            <button class="project-row" type="button" role="row" data-kind="favorite"><span class="project-name"><i class="project-symbol green">E+</i><span><strong>Erasmus+ studijní pobyt</strong><small>Mobilita studentů a zaměstnanců</small></span></span><span class="workspace-tag"><i></i> Vysoké školy</span><time>30. 6. 2026</time><span class="row-actions"><b title="Oblíbené">★</b><i>•••</i></span></button>
+            <button class="project-row" type="button" role="row" data-kind="shared"><span class="project-name"><i class="project-symbol blue">ET</i><span><strong>eTwinning</strong><small>Mezinárodní spolupráce škol online</small></span></span><span class="workspace-tag violet"><i></i> Školní vzdělávání</span><time>průběžně</time><span class="row-actions"><b>☆</b><i>•••</i></span></button>
+            <button class="project-row" type="button" role="row" data-kind="favorite"><span class="project-name"><i class="project-symbol purple">ESC</i><span><strong>Evropský sbor solidarity</strong><small>Dobrovolnictví a solidární projekty</small></span></span><span class="workspace-tag violet"><i></i> Mládež</span><time>1. 10. 2026</time><span class="row-actions"><b title="Oblíbené">★</b><i>•••</i></span></button>
+            <button class="project-row" type="button" role="row" data-kind="personal"><span class="project-name"><i class="project-symbol orange">CP</i><span><strong>CEEPUS</strong><small>Akademická mobilita ve střední Evropě</small></span></span><span class="workspace-tag"><i></i> Vysoké školy</span><time>15. 6. 2026</time><span class="row-actions"><b>☆</b><i>•••</i></span></button>
           </div>
-          <button class="view-all" type="button">Zobrazit všech 15 projektů <span>→</span></button>
+          <button class="view-all" type="button">Prozkoumat všech 20+ programů <span>→</span></button>
         </section>
 
         <section class="bottom-grid" id="activity">
-          <article class="panel activity-panel"><div class="panel-title"><div><p class="section-label">AKTIVITA</p><h2>Poslední relace</h2></div><button type="button">Zobrazit vše</button></div><div class="activity-item"><span class="activity-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1m.75 3v3.69l2.53 1.46-.75 1.3-2.9-1.68A.75.75 0 0 1 7.25 8V4z" /></svg></span><p><strong>Upraven web jakub-cv</strong><span>8 souborů · 142 řádků</span></p><time>12 min</time></div><div class="activity-item"><span class="activity-icon merged">✓</span><p><strong>Sloučen pull request #24</strong><span>ecohaus-theme · main</span></p><time>včera</time></div><div class="activity-item"><span class="activity-icon commit">⑂</span><p><strong>3 nové commity</strong><span>bodylok-app · feature/checkout</span></p><time>3 dny</time></div></article>
-          <article class="panel tip-panel"><div class="tip-glow"></div><span class="spark">✦</span><p class="section-label">CURSOR TIP</p><h2>Pište rychleji<br />s Agent mode.</h2><p>Nechte Cursor analyzovat projekt, upravit více souborů a spustit příkazy za vás.</p><button type="button">Vyzkoušet Agent mode <span>→</span></button><small>⌘ I</small></article>
+          <article class="panel activity-panel"><div class="panel-title"><div><p class="section-label">AKTIVITA</p><h2>Vaše poslední kroky</h2></div><button type="button">Zobrazit vše</button></div><div class="activity-item"><span class="activity-icon"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1m.75 3v3.69l2.53 1.46-.75 1.3-2.9-1.68A.75.75 0 0 1 7.25 8V4z" /></svg></span><p><strong>Uložena žádost Erasmus+</strong><span>Projekt mobility · 80 % dokončeno</span></p><time>12 min</time></div><div class="activity-item"><span class="activity-icon merged">✓</span><p><strong>Potvrzena konzultace</strong><span>Online · čtvrtek 10:30</span></p><time>včera</time></div><div class="activity-item"><span class="activity-icon commit">↗</span><p><strong>Přidán program do oblíbených</strong><span>Evropský sbor solidarity</span></p><time>3 dny</time></div></article>
+          <article class="panel tip-panel"><div class="tip-glow"></div><span class="spark">✦</span><p class="section-label">DZS PRŮVODCE</p><h2>Najděte cestu<br />do světa.</h2><p>Odpovězte na několik otázek a doporučíme program přesně podle vašich potřeb.</p><button type="button">Spustit průvodce <span>→</span></button><small>3 min</small></article>
         </section>
       </main>
     </div>
 
     <div class="command-backdrop" data-command-backdrop hidden>
       <section class="command-palette" role="dialog" aria-modal="true" aria-label="Rychlé hledání">
-        <label><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M6.5 1a5.5 5.5 0 1 0 3.475 9.764l3.63 3.63 1.06-1.06-3.63-3.63A5.5 5.5 0 0 0 6.5 1m-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0" /></svg><input type="search" placeholder="Hledat projekty nebo spustit příkaz..." autocomplete="off" data-command-input /><kbd>ESC</kbd></label>
-        <div class="command-results"><p>RYCHLÉ AKCE</p><button type="button" data-modal="open"><span>▣</span><span><strong>Otevřít projekt</strong><small>Vybrat lokální složku</small></span><kbd>⌘ O</kbd></button><button type="button" data-modal="clone"><span>⑂</span><span><strong>Klonovat Git repozitář</strong><small>Vytvořit lokální kopii</small></span><kbd>⌘ ⇧ O</kbd></button><p>PROJEKTY</p><button type="button"><span>CV</span><span><strong>jakub-cv</strong><small>~/Documents/GitHub/jakub-cv</small></span></button><button type="button"><span>EC</span><span><strong>ecohaus-theme</strong><small>~/Documents/GitHub/ecohaus-theme</small></span></button></div>
+        <label><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M6.5 1a5.5 5.5 0 1 0 3.475 9.764l3.63 3.63 1.06-1.06-3.63-3.63A5.5 5.5 0 0 0 6.5 1m-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0" /></svg><input type="search" placeholder="Hledat program, výzvu nebo žádost..." autocomplete="off" data-command-input /><kbd>ESC</kbd></label>
+        <div class="command-results"><p>RYCHLÉ AKCE</p><button type="button" data-modal="open"><span>＋</span><span><strong>Založit novou žádost</strong><small>Začít nový projekt mobility</small></span><kbd>⌘ N</kbd></button><button type="button" data-modal="clone"><span>⌕</span><span><strong>Najít vhodný program</strong><small>Filtrovat dostupné příležitosti</small></span><kbd>⌘ F</kbd></button><p>PROGRAMY</p><button type="button"><span>E+</span><span><strong>Erasmus+</strong><small>Vzdělávání, odborná příprava a mládež</small></span></button><button type="button"><span>ET</span><span><strong>eTwinning</strong><small>Online spolupráce škol v Evropě</small></span></button></div>
         <footer><span><kbd>↑</kbd><kbd>↓</kbd> pro pohyb</span><span><kbd>↵</kbd> otevřít</span></footer>
       </section>
     </div>
@@ -107,11 +108,11 @@
     <div class="modal-backdrop" data-modal-backdrop hidden>
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <button class="modal-close" type="button" aria-label="Zavřít" data-modal-close>×</button>
-        <span class="modal-icon">⑂</span><p class="section-label">NOVÝ WORKSPACE</p><h2 id="modal-title">Klonovat repozitář</h2><p data-modal-copy>Vložte HTTPS nebo SSH adresu Git repozitáře.</p>
-        <form data-modal-form><label for="repo-url">URL repozitáře</label><input id="repo-url" name="repo" type="text" placeholder="https://github.com/username/repository.git" /><div class="modal-actions"><button type="button" data-modal-close>Zrušit</button><button class="confirm" type="submit">Pokračovat <span>→</span></button></div></form>
+        <span class="modal-icon">DZS</span><p class="section-label">DZS HUB</p><h2 id="modal-title">Najít program</h2><p data-modal-copy>Napište, čeho chcete v mezinárodním vzdělávání dosáhnout.</p>
+        <form data-modal-form><label for="repo-url">Váš záměr</label><input id="repo-url" name="repo" type="text" placeholder="Např. studijní pobyt v zahraničí" /><div class="modal-actions"><button type="button" data-modal-close>Zrušit</button><button class="confirm" type="submit">Pokračovat <span>→</span></button></div></form>
       </section>
     </div>
 
-    <div class="toast" role="status" aria-live="polite" data-toast><span>✓</span><p><strong>Projekt je připravený</strong><small>Workspace se právě otevírá.</small></p></div>
+    <div class="toast" role="status" aria-live="polite" data-toast><span>✓</span><p><strong>Hotovo</strong><small>Váš požadavek jsme uložili.</small></p></div>
   </body>
 </html>
