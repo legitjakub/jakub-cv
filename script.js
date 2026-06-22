@@ -52,4 +52,12 @@ tilt.addEventListener('pointermove', (event) => {
 });
 tilt.addEventListener('pointerleave', () => { tilt.style.transform = ''; });
 
+document.querySelectorAll('[data-spotlight]').forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
+  });
+});
+
 document.getElementById('year').textContent = new Date().getFullYear();
