@@ -115,7 +115,7 @@ footer { border-top:1px solid var(--line); min-height:110px; padding:0 var(--pad
 .path-footer { position:absolute; left:34px; right:34px; bottom:32px; display:flex; justify-content:space-between; padding-top:18px; border-top:1px solid var(--line); font:400 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; color:#666; }
 .path-footer strong { color:var(--path-color); font-weight:500; }
 .education .section-title em,.education .edu-year { color:var(--cyber); }
-.certs { position:relative; margin-top:78px; overflow:hidden; border:1px solid var(--line); background:linear-gradient(145deg,rgba(var(--cyber-rgb),.055),rgba(255,255,255,.012) 45%,transparent); color:inherit; }
+.certs { position:relative; display:block; grid-template-columns:none; gap:0; margin-top:78px; padding-top:0; overflow:hidden; border:1px solid var(--line); background:linear-gradient(145deg,rgba(var(--cyber-rgb),.055),rgba(255,255,255,.012) 45%,transparent); color:inherit; font:inherit; }
 .certs::before { content:""; position:absolute; width:360px; height:360px; right:-160px; top:-190px; border-radius:50%; background:radial-gradient(circle,rgba(var(--cyber-rgb),.11),transparent 70%); pointer-events:none; }
 .certs-head { position:relative; display:flex; align-items:flex-end; justify-content:space-between; gap:30px; padding:32px 34px 30px; border-bottom:1px solid var(--line); }
 .certs-kicker { display:block; margin-bottom:16px; color:var(--cyber); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.13em; }
@@ -212,7 +212,7 @@ footer { border-top:1px solid var(--line); min-height:110px; padding:0 var(--pad
   .collaboration-logo { justify-content:flex-start; min-height:auto; padding:0 0 22px; border-right:0; border-bottom:1px solid var(--line); }.collaboration-logo img { max-width:220px; }
   .collaboration-link { justify-self:start; }
   .nav-actions { gap:7px; }.lang-switch { padding:3px; }.lang-switch a,.lang-switch span { min-width:25px; height:24px; }.nav-cta { font-size:9px; }
-  .certs { margin-top:58px; }
+  .certs { gap:0; margin-top:58px; }
   .certs-head { align-items:flex-start; padding:26px 24px; }
   .certs-summary { flex:0 0 auto; padding-left:16px; }
   .certs-summary strong { font-size:34px; }
