@@ -79,6 +79,17 @@ document.querySelectorAll('[data-spotlight]').forEach((card) => {
 
 const getCarouselItems = (carousel) => Array.from(carousel.children).filter((child) => child instanceof HTMLElement);
 
+const getCarouselTargetLeft = (carousel, item) => {
+  const paddingLeft = Number.parseFloat(window.getComputedStyle(carousel).paddingLeft) || 0;
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+  return Math.min(Math.max(item.offsetLeft - paddingLeft, 0), maxScroll);
+};
+
+const isCarouselInView = (carousel) => {
+  const rect = carousel.getBoundingClientRect();
+  return rect.bottom > window.innerHeight * 0.18 && rect.top < window.innerHeight * 0.82;
+};
+
 const setActiveCarouselItem = (carousel) => {
   const items = getCarouselItems(carousel);
   if (!items.length) return;
@@ -119,10 +130,10 @@ const startMobileCarousels = () => {
     const nextSlide = () => {
       if (paused || document.hidden || reduceMotion.matches) return;
       if (!window.matchMedia('(max-width: 1050px)').matches || carousel.scrollWidth <= carousel.clientWidth + 8) return;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if (!isCarouselInView(carousel)) return;
       const currentIndex = items.findIndex((item) => item.classList.contains('auto-slide-active'));
       const nextIndex = currentIndex >= 0 && currentIndex < items.length - 1 ? currentIndex + 1 : 0;
-      const nextLeft = Math.min(items[nextIndex].offsetLeft, maxScroll);
+      const nextLeft = getCarouselTargetLeft(carousel, items[nextIndex]);
 
       carousel.scrollTo({ left: nextLeft, behavior: 'smooth' });
       items.forEach((item, index) => item.classList.toggle('auto-slide-active', index === nextIndex));
