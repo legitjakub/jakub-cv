@@ -21,6 +21,20 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 reveals.forEach((element) => observer.observe(element));
 
+const revealHashTarget = () => {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+
+  target.querySelectorAll('.reveal').forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.15) element.classList.add('visible');
+  });
+};
+
+window.addEventListener('load', revealHashTarget);
+window.addEventListener('hashchange', () => window.requestAnimationFrame(revealHashTarget));
+
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
