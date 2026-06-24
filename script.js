@@ -2,6 +2,9 @@ const nav = document.querySelector('.nav-wrap');
 const glow = document.querySelector('.cursor-glow');
 const reveals = document.querySelectorAll('.reveal');
 const counters = document.querySelectorAll('[data-count]');
+const carouselQuery = '.testimonial-grid, .path-cards, .edu-list, .certs-grid';
+const carouselContainers = document.querySelectorAll(carouselQuery);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 window.addEventListener('pointermove', (event) => {
@@ -59,5 +62,85 @@ document.querySelectorAll('[data-spotlight]').forEach((card) => {
     card.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
   });
 });
+
+const getCarouselItems = (carousel) => Array.from(carousel.children).filter((child) => child instanceof HTMLElement);
+
+const setActiveCarouselItem = (carousel) => {
+  const items = getCarouselItems(carousel);
+  if (!items.length) return;
+  const center = carousel.scrollLeft + carousel.clientWidth / 2;
+  let active = items[0];
+  let distance = Infinity;
+
+  items.forEach((item) => {
+    const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+    const nextDistance = Math.abs(center - itemCenter);
+    if (nextDistance < distance) {
+      distance = nextDistance;
+      active = item;
+    }
+  });
+
+  items.forEach((item) => item.classList.toggle('auto-slide-active', item === active));
+};
+
+const startMobileCarousels = () => {
+  if (reduceMotion.matches) return;
+  const canAutoplay = window.matchMedia('(max-width: 1050px)').matches;
+
+  carouselContainers.forEach((carousel) => {
+    const items = getCarouselItems(carousel);
+    const isScrollable = carousel.scrollWidth > carousel.clientWidth + 8;
+    const shouldRun = canAutoplay && isScrollable && items.length > 1;
+
+    carousel.classList.toggle('is-auto-carousel', shouldRun);
+    setActiveCarouselItem(carousel);
+
+    if (!shouldRun || carousel.dataset.carouselReady === 'true') return;
+
+    carousel.dataset.carouselReady = 'true';
+    let timer;
+    let paused = false;
+
+    const nextSlide = () => {
+      if (paused || document.hidden || reduceMotion.matches) return;
+      if (!window.matchMedia('(max-width: 1050px)').matches || carousel.scrollWidth <= carousel.clientWidth + 8) return;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      const currentIndex = items.findIndex((item) => item.classList.contains('auto-slide-active'));
+      const nextIndex = currentIndex >= 0 && currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+      const nextLeft = Math.min(items[nextIndex].offsetLeft, maxScroll);
+
+      carousel.scrollTo({ left: nextLeft, behavior: 'smooth' });
+      items.forEach((item, index) => item.classList.toggle('auto-slide-active', index === nextIndex));
+    };
+
+    const schedule = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(nextSlide, 2200);
+    };
+
+    const pauseBriefly = () => {
+      paused = true;
+      window.clearInterval(timer);
+      window.setTimeout(() => {
+        paused = false;
+        schedule();
+      }, 3800);
+    };
+
+    carousel.addEventListener('scroll', () => window.requestAnimationFrame(() => setActiveCarouselItem(carousel)), { passive: true });
+    carousel.addEventListener('pointerdown', pauseBriefly, { passive: true });
+    carousel.addEventListener('touchstart', pauseBriefly, { passive: true });
+    carousel.addEventListener('focusin', () => { paused = true; window.clearInterval(timer); });
+    carousel.addEventListener('focusout', () => { paused = false; schedule(); });
+    carousel.addEventListener('mouseenter', () => { paused = true; window.clearInterval(timer); });
+    carousel.addEventListener('mouseleave', () => { paused = false; schedule(); });
+
+    schedule();
+  });
+};
+
+startMobileCarousels();
+window.addEventListener('resize', startMobileCarousels, { passive: true });
 
 document.getElementById('year').textContent = new Date().getFullYear();
