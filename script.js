@@ -2,7 +2,7 @@ const nav = document.querySelector('.nav-wrap');
 const glow = document.querySelector('.cursor-glow');
 const reveals = document.querySelectorAll('.reveal');
 const counters = document.querySelectorAll('[data-count]');
-const carouselQuery = '.testimonial-grid, .path-cards, .edu-list, .certs-grid';
+const carouselQuery = '.testimonial-grid, .path-cards, .certs-grid';
 const carouselContainers = document.querySelectorAll(carouselQuery);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
