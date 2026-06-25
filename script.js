@@ -5,6 +5,10 @@ const counters = document.querySelectorAll('[data-count]');
 const carouselQuery = '.testimonial-grid, .path-cards, .certs-grid';
 const carouselContainers = document.querySelectorAll(carouselQuery);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const heroName = document.querySelector('.hero-title .title-main > span');
+const portraitWrap = document.querySelector('.portrait-wrap');
+const portraitImage = document.querySelector('.portrait-frame img');
+const contactSection = document.querySelector('.contact');
 
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 window.addEventListener('pointermove', (event) => {
@@ -52,6 +56,34 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.8 });
 counters.forEach((counter) => counterObserver.observe(counter));
 
+const scrambleHeroName = () => {
+  if (!heroName || reduceMotion.matches) return;
+  const finalText = heroName.textContent.trim();
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&<>/';
+  let frame = 0;
+  const totalFrames = 30;
+
+  const run = () => {
+    const progress = frame / totalFrames;
+    heroName.textContent = finalText
+      .split('')
+      .map((char, index) => {
+        if (char === ' ') return ' ';
+        if (index / finalText.length < progress) return finalText[index];
+        return chars[Math.floor(Math.random() * chars.length)];
+      })
+      .join('');
+
+    frame += 1;
+    if (frame <= totalFrames) requestAnimationFrame(run);
+    else heroName.textContent = finalText;
+  };
+
+  window.setTimeout(() => requestAnimationFrame(run), 620);
+};
+
+window.addEventListener('load', scrambleHeroName, { once: true });
+
 document.querySelectorAll('.magnetic').forEach((element) => {
   element.addEventListener('pointermove', (event) => {
     const rect = element.getBoundingClientRect();
@@ -68,6 +100,42 @@ tilt.addEventListener('pointermove', (event) => {
   tilt.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
 });
 tilt.addEventListener('pointerleave', () => { tilt.style.transform = ''; });
+
+const updatePortraitParallax = () => {
+  if (!portraitWrap || !portraitImage || reduceMotion.matches || window.matchMedia('(max-width: 760px)').matches) return;
+  const rect = portraitWrap.getBoundingClientRect();
+  const viewportCenter = window.innerHeight / 2;
+  const elementCenter = rect.top + rect.height / 2;
+  const shift = Math.max(Math.min((viewportCenter - elementCenter) * 0.045, 18), -18);
+  portraitImage.style.setProperty('--portrait-shift', `${shift}px`);
+};
+
+let portraitTicking = false;
+const requestPortraitParallax = () => {
+  if (portraitTicking) return;
+  portraitTicking = true;
+  requestAnimationFrame(() => {
+    updatePortraitParallax();
+    portraitTicking = false;
+  });
+};
+
+updatePortraitParallax();
+window.addEventListener('scroll', requestPortraitParallax, { passive: true });
+window.addEventListener('resize', requestPortraitParallax, { passive: true });
+
+if (contactSection) {
+  contactSection.addEventListener('pointermove', (event) => {
+    const rect = contactSection.getBoundingClientRect();
+    contactSection.classList.add('is-lit');
+    contactSection.style.setProperty('--contact-x', `${event.clientX - rect.left}px`);
+    contactSection.style.setProperty('--contact-y', `${event.clientY - rect.top}px`);
+  }, { passive: true });
+
+  contactSection.addEventListener('pointerleave', () => {
+    contactSection.classList.remove('is-lit');
+  });
+}
 
 document.querySelectorAll('[data-spotlight]').forEach((card) => {
   card.addEventListener('pointermove', (event) => {
