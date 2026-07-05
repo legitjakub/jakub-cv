@@ -368,6 +368,96 @@ if (contactLink && contactLink.firstChild && contactLink.firstChild.nodeType ===
   contactLink.replaceChild(wrap, contactLink.firstChild);
 }
 
+/* ── Scroll-driven effects: pins, mask reveal, parallax ─────────── */
+const clamp01 = (value) => Math.max(0, Math.min(1, value));
+const heroSection = document.querySelector('.hero');
+const journeyPin = document.querySelector('.journey-pin');
+const journeyStage = journeyPin ? journeyPin.querySelector('.journey-stage') : null;
+const journeyTrack = journeyPin ? journeyPin.querySelector('.timeline') : null;
+const contactPin = document.querySelector('.contact-pin');
+const contactStage = contactPin ? contactPin.querySelector('.contact-stage') : null;
+const watermarkSections = [document.querySelector('.experience'), document.querySelector('.project-reviews')].filter(Boolean);
+
+const setupJourneyPin = () => {
+  if (!journeyPin || !journeyStage || !journeyTrack) return;
+  const active = window.matchMedia('(min-width: 1051px)').matches && !reduceMotion.matches;
+  journeyPin.classList.toggle('journey-active', active);
+  if (!active) {
+    journeyPin.style.height = '';
+    journeyPin.style.removeProperty('--j-travel');
+    return;
+  }
+  const travel = Math.max(journeyTrack.scrollWidth - journeyStage.clientWidth, 0);
+  journeyPin.style.setProperty('--j-travel', `${travel}px`);
+  journeyPin.style.height = `calc(100vh + ${Math.round(travel * 1.1)}px)`;
+};
+
+const setupContactPin = () => {
+  if (!contactPin) return;
+  const active = window.matchMedia('(min-width: 761px)').matches && !reduceMotion.matches;
+  contactPin.classList.toggle('contact-pin-active', active);
+  if (!active) {
+    contactPin.style.height = '';
+    return;
+  }
+  contactPin.style.height = '240vh';
+};
+
+const updateScrollEffects = () => {
+  if (reduceMotion.matches) return;
+
+  if (heroSection && window.matchMedia('(min-width: 761px)').matches) {
+    heroSection.style.setProperty('--hx', clamp01(window.scrollY / (heroSection.offsetHeight * 0.85)).toFixed(3));
+  }
+
+  watermarkSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    const progress = clamp01((window.innerHeight - rect.top) / (window.innerHeight + rect.height));
+    section.style.setProperty('--wm', `${((progress - 0.5) * 140).toFixed(1)}px`);
+  });
+
+  if (journeyPin && journeyPin.classList.contains('journey-active')) {
+    const total = journeyPin.offsetHeight - window.innerHeight;
+    if (total > 0) {
+      journeyPin.style.setProperty('--jp', clamp01(-journeyPin.getBoundingClientRect().top / total).toFixed(4));
+    }
+  }
+
+  if (contactPin && contactStage && contactPin.classList.contains('contact-pin-active')) {
+    const total = contactPin.offsetHeight - window.innerHeight;
+    if (total > 0) {
+      const progress = clamp01(-contactPin.getBoundingClientRect().top / total);
+      contactPin.style.setProperty('--cp', progress.toFixed(4));
+      contactStage.dataset.phase = String(Math.min(3, Math.floor(progress * 4)));
+    }
+  }
+};
+
+let effectsTicking = false;
+const requestScrollEffects = () => {
+  if (effectsTicking) return;
+  effectsTicking = true;
+  requestAnimationFrame(() => {
+    updateScrollEffects();
+    effectsTicking = false;
+  });
+};
+
+setupJourneyPin();
+setupContactPin();
+updateScrollEffects();
+window.addEventListener('scroll', requestScrollEffects, { passive: true });
+window.addEventListener('resize', () => {
+  setupJourneyPin();
+  setupContactPin();
+  requestScrollEffects();
+}, { passive: true });
+window.addEventListener('load', () => {
+  setupJourneyPin();
+  requestScrollEffects();
+}, { once: true });
+
 /* ── Hero: interactive particle constellation ──────────────────── */
 const heroCanvas = document.querySelector('.hero-canvas');
 
