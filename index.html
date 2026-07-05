@@ -41,8 +41,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=anim1" />
-    <script src="script.js?v=anim1" defer></script>
+    <link rel="stylesheet" href="styles.css?v=anim2" />
+    <script src="script.js?v=anim2" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -89,6 +89,9 @@
   <body>
     <div class="noise" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="nav-wrap">
       <a class="brand" href="#top" aria-label="Jakub Hrnčíř, úvod">JH<span>.</span></a>
@@ -106,6 +109,7 @@
 
     <main id="top">
       <section class="hero section-pad">
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-copy">
           <div class="status reveal"><span></span> Otevřený novým příležitostem</div>
           <h1 class="hero-title" aria-label="Jakub Hrnčíř.">
@@ -405,6 +409,7 @@
       </section>
     </main>
 
+    <button class="to-top" type="button" aria-label="Zpět nahoru">↑</button>
     <footer><a href="#top">JH<span>.</span></a><p>© <span id="year"></span> Jakub Hrnčíř</p><a href="#top">Zpět nahoru ↑</a></footer>
   </body>
 </html>
