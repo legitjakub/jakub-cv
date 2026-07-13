@@ -1,25 +1,19 @@
 const nav = document.querySelector('.nav-wrap');
-const glow = document.querySelector('.cursor-glow');
 const reveals = document.querySelectorAll('.reveal');
-const counters = document.querySelectorAll('[data-count]');
-const carouselQuery = '.testimonial-grid, .path-cards, .certs-grid';
+const carouselQuery = '.testimonial-grid, .certs-grid';
 const carouselContainers = document.querySelectorAll(carouselQuery);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 const heroName = document.querySelector('.hero-title .title-main > span');
 const portraitWrap = document.querySelector('.portrait-wrap');
 const portraitImage = document.querySelector('.portrait-frame img');
 const contactSection = document.querySelector('.contact');
 
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-window.addEventListener('pointermove', (event) => {
-  glow.style.left = `${event.clientX}px`;
-  glow.style.top = `${event.clientY}px`;
-}, { passive: true });
-
 const observer = new IntersectionObserver((entries) => {
   const batch = entries.filter((entry) => entry.isIntersecting);
   batch.forEach((entry, index) => {
-    const delay = Math.min(index * 90, 450);
+    const delay = Math.min(index * 60, 180);
     if (delay > 0 && !reduceMotion.matches) {
       entry.target.style.transitionDelay = `${delay}ms`;
       window.setTimeout(() => { entry.target.style.transitionDelay = ''; }, 1000 + delay);
@@ -37,29 +31,15 @@ const revealHashTarget = () => {
 
   target.querySelectorAll('.reveal').forEach((element) => {
     const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 1.15) element.classList.add('visible');
+    if (rect.top < window.innerHeight * 1.15) {
+      element.style.transitionDelay = '0ms';
+      element.classList.add('visible');
+    }
   });
 };
 
 window.addEventListener('load', revealHashTarget);
 window.addEventListener('hashchange', () => window.requestAnimationFrame(revealHashTarget));
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const element = entry.target;
-    const target = Number(element.dataset.count);
-    const start = performance.now();
-    const tick = (now) => {
-      const progress = Math.min((now - start) / 900, 1);
-      element.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3)));
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    counterObserver.unobserve(element);
-  });
-}, { threshold: 0.8 });
-counters.forEach((counter) => counterObserver.observe(counter));
 
 const heroFinalText = heroName ? heroName.textContent.trim() : '';
 let scrambleRunning = false;
@@ -69,7 +49,7 @@ const scrambleHeroName = () => {
   scrambleRunning = true;
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&<>/';
   let frame = 0;
-  const totalFrames = 30;
+  const totalFrames = 14;
 
   const run = () => {
     const progress = frame / totalFrames;
@@ -93,25 +73,29 @@ const scrambleHeroName = () => {
   requestAnimationFrame(run);
 };
 
-window.addEventListener('load', () => window.setTimeout(scrambleHeroName, 620), { once: true });
+window.addEventListener('load', () => window.setTimeout(scrambleHeroName, 220), { once: true });
 if (heroName) heroName.closest('.hero-title').addEventListener('pointerenter', scrambleHeroName);
 
-document.querySelectorAll('.magnetic').forEach((element) => {
-  element.addEventListener('pointermove', (event) => {
-    const rect = element.getBoundingClientRect();
-    element.style.transform = `translate(${(event.clientX - rect.left - rect.width / 2) * 0.12}px, ${(event.clientY - rect.top - rect.height / 2) * 0.16}px)`;
+if (finePointer.matches && !reduceMotion.matches) {
+  document.querySelectorAll('.magnetic').forEach((element) => {
+    element.addEventListener('pointermove', (event) => {
+      const rect = element.getBoundingClientRect();
+      element.style.transform = `translate(${(event.clientX - rect.left - rect.width / 2) * 0.12}px, ${(event.clientY - rect.top - rect.height / 2) * 0.16}px)`;
+    });
+    element.addEventListener('pointerleave', () => { element.style.transform = ''; });
   });
-  element.addEventListener('pointerleave', () => { element.style.transform = ''; });
-});
+}
 
 const tilt = document.querySelector('[data-tilt]');
-tilt.addEventListener('pointermove', (event) => {
-  const rect = tilt.getBoundingClientRect();
-  const rx = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
-  const ry = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
-  tilt.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-});
-tilt.addEventListener('pointerleave', () => { tilt.style.transform = ''; });
+if (tilt && finePointer.matches && !reduceMotion.matches) {
+  tilt.addEventListener('pointermove', (event) => {
+    const rect = tilt.getBoundingClientRect();
+    const rx = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
+    const ry = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
+    tilt.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+  tilt.addEventListener('pointerleave', () => { tilt.style.transform = ''; });
+}
 
 const updatePortraitParallax = () => {
   if (!portraitWrap || !portraitImage || reduceMotion.matches || window.matchMedia('(max-width: 760px)').matches) return;
@@ -157,14 +141,19 @@ document.querySelectorAll('[data-spotlight]').forEach((card) => {
   });
 });
 
-document.querySelectorAll('.shopify-profile, .cyber-profile').forEach((section) => {
-  section.addEventListener('pointermove', (event) => {
-    if (reduceMotion.matches) return;
-    const rect = section.getBoundingClientRect();
-    section.style.setProperty('--fx-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-    section.style.setProperty('--fx-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
-  }, { passive: true });
-});
+if (finePointer.matches && !reduceMotion.matches) {
+  document.querySelectorAll('.shopify-profile, .cyber-profile').forEach((section) => {
+    let effectFrame;
+    section.addEventListener('pointermove', (event) => {
+      if (effectFrame) cancelAnimationFrame(effectFrame);
+      const rect = section.getBoundingClientRect();
+      effectFrame = requestAnimationFrame(() => {
+        section.style.setProperty('--fx-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+        section.style.setProperty('--fx-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+      });
+    }, { passive: true });
+  });
+}
 
 const getCarouselItems = (carousel) => Array.from(carousel.children).filter((child) => child instanceof HTMLElement);
 
@@ -230,7 +219,7 @@ const startMobileCarousels = () => {
 
     const schedule = () => {
       window.clearInterval(timer);
-      timer = window.setInterval(nextSlide, 2200);
+      timer = window.setInterval(nextSlide, 3200);
     };
 
     const pauseBriefly = () => {
@@ -325,8 +314,6 @@ if (ticker && !reduceMotion.matches) {
 /* ── Custom cursor: dot + trailing ring ────────────────────────── */
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-
 if (cursorDot && cursorRing && finePointer.matches && !reduceMotion.matches) {
   let targetX = -100;
   let targetY = -100;
