@@ -157,6 +157,15 @@ document.querySelectorAll('[data-spotlight]').forEach((card) => {
   });
 });
 
+document.querySelectorAll('.shopify-profile, .cyber-profile').forEach((section) => {
+  section.addEventListener('pointermove', (event) => {
+    if (reduceMotion.matches) return;
+    const rect = section.getBoundingClientRect();
+    section.style.setProperty('--fx-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    section.style.setProperty('--fx-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  }, { passive: true });
+});
+
 const getCarouselItems = (carousel) => Array.from(carousel.children).filter((child) => child instanceof HTMLElement);
 
 const getCarouselTargetLeft = (carousel, item) => {

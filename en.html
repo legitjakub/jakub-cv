@@ -41,8 +41,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=anim2" />
-    <script src="script.js?v=anim2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=split5" />
+    <script src="script.js?v=split5" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -96,10 +96,10 @@
     <header class="nav-wrap">
       <a class="brand" href="#top" aria-label="Jakub Hrnčíř, home">JH<span>.</span></a>
       <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#references">References</a>
-        <a href="#education">Education</a>
+        <a href="#about">Profile</a>
+        <a href="#shopify-profile">Shopify</a>
+        <a href="#cyber-profile">Cybersecurity</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="index.html" lang="cs">CZ</a><span aria-current="page">EN</span></div>
@@ -122,7 +122,8 @@
             </div>
             <p class="hero-summary">Two independent career paths: a future in cybersecurity and more than three years of hands-on experience developing Shopify solutions.</p>
             <div class="hero-actions">
-              <a class="button button-primary magnetic" href="#focus">Explore profile <span>↓</span></a>
+              <a class="button button-primary magnetic" href="#shopify-profile">Shopify profile <span>↓</span></a>
+              <a class="button button-ghost" href="#cyber-profile">Cybersecurity <span>↓</span></a>
               <a class="button button-ghost" href="assets/jakub-hrncir-cv.pdf" download>Download CV <span>↘</span></a>
             </div>
           </div>
@@ -152,39 +153,39 @@
         </div>
       </div>
 
-      <section id="about" class="about section-pad">
-        <div class="section-kicker reveal"><span>01</span> About me</div>
+      <section id="about" class="about profile-split section-pad">
+        <div class="section-kicker reveal"><span>01</span> Profile split</div>
         <div class="about-grid">
-          <h2 class="section-title reveal">Two independent<br /><em>career paths.</em></h2>
+          <h2 class="section-title reveal">Two directions.<br /><em>Two separate profiles.</em></h2>
           <div class="about-copy about-tracks reveal">
-            <article class="about-track cyber-track">
-              <span>Cybersecurity</span>
-              <p>I study security sciences, have completed NÚKIB certifications, and intend to build a long-term career in cybersecurity.</p>
-            </article>
             <article class="about-track commerce-track">
-              <span>Shopify & e-commerce</span>
-              <p>Since 2023, I have developed and managed Shopify projects, integrated applications, and built solutions for individual brands.</p>
+              <span>01 · Shopify career</span>
+              <h3>Shopify & e-commerce</h3>
+              <p>A hands-on profile built around Shopify projects, theme customization, app integrations, and practical delivery for e-commerce brands.</p>
+              <div class="split-stats"><strong>3+ years</strong><small>development practice</small><strong>9+ brands</strong><small>projects and collaborations</small></div>
+              <a href="#shopify-profile">Go to Shopify profile <span>↓</span></a>
+            </article>
+            <article class="about-track cyber-track">
+              <span>02 · Cybersecurity</span>
+              <h3>Cybersecurity</h3>
+              <p>A future professional direction backed by security sciences, a technical foundation, NÚKIB certifications, and interest in information security.</p>
+              <div class="split-stats"><strong>2</strong><small>NÚKIB certifications</small><strong>Ing.</strong><small>studies in progress</small></div>
+              <a href="#cyber-profile">Go to cybersecurity <span>↓</span></a>
             </article>
           </div>
         </div>
-        <div class="metrics">
-          <div class="metric metric-cyber reveal"><span class="metric-domain">Cybersecurity</span><strong><span data-count="2">0</span></strong><p>NÚKIB certifications</p></div>
-          <div class="metric metric-cyber reveal"><span class="metric-domain">Cybersecurity</span><strong>Ing.</strong><p>master's studies in progress</p></div>
-          <div class="metric metric-commerce reveal"><span class="metric-domain">Shopify</span><strong><span data-count="3">0</span>+</strong><p>years of experience</p></div>
-          <div class="metric metric-commerce reveal"><span class="metric-domain">Shopify</span><strong><span data-count="9">0</span>+</strong><p>brands & collaborations</p></div>
-        </div>
       </section>
 
-      <section id="experience" class="experience section-pad">
-        <div class="section-kicker reveal"><span>02</span> Professional journey</div>
+      <section id="shopify-profile" class="experience shopify-profile section-pad">
+        <div class="section-kicker reveal"><span>02</span> Shopify career</div>
         <div class="section-heading-row reveal">
-          <h2 class="section-title">Experience</h2>
-          <p>Hands-on experience in Shopify development, e-commerce, and digital marketing.</p>
+          <h2 class="section-title">Shopify profile</h2>
+          <p>A separate professional track focused on Shopify development, e-commerce projects, and practical delivery for brands.</p>
         </div>
-        <div class="journey-board reveal" aria-label="Professional journey summary">
-          <div><span>Start</span><strong>2019</strong><small>communication, scouting, people skills</small></div>
+        <div class="journey-board reveal" aria-label="Shopify profile summary">
+          <div><span>Specialization</span><strong>Shopify</strong><small>themes, Liquid, apps, and custom solutions</small></div>
           <div><span>Practice</span><strong>3+ years</strong><small>Shopify, Liquid, e-commerce development</small></div>
-          <div><span>Direction</span><strong>2026</strong><small>more ownership and technical growth</small></div>
+          <div><span>Proof</span><strong>References</strong><small>client feedback and agency project reviews</small></div>
         </div>
         <div class="timeline">
           <article class="job reveal" data-track="commerce" data-track-label="Shopify" data-spotlight>
@@ -205,20 +206,14 @@
             <div class="job-detail"><p>Social media and listing platform management, blog, video, and photography production, marketing strategy, and client communication in English and Spanish.</p><div class="tags"><span>Internship</span><span>Marketing</span><span>Content</span><span>Social Media</span><span>EN / ES</span></div></div>
             <time>2024 · Dénia, ES</time>
           </article>
-          <article class="job reveal" data-track="people" data-track-label="People" data-spotlight>
-            <div class="job-index">04</div>
-            <div class="job-main"><h3>Model Scout</h3><span>Pure Model Management</span></div>
-            <div class="job-detail"><p>Active scouting of new faces for one of the largest modeling agencies in the Czech Republic.</p><div class="tags"><span>Casting</span><span>Networking</span></div></div>
-            <time>01/2019 — 01/2021</time>
-          </article>
         </div>
       </section>
 
-      <section id="references" class="references section-pad">
-        <div class="section-kicker reveal"><span>03</span> References & collaborations</div>
+      <section id="references" class="references shopify-references section-pad">
+        <div class="section-kicker reveal"><span>03</span> Shopify references</div>
         <div class="section-heading-row reference-heading reveal">
-          <h2 class="section-title">Trust<br /><em>in practice.</em></h2>
-          <p>Verified LinkedIn recommendations from a client and a former team.</p>
+          <h2 class="section-title">Shopify work<br /><em>validated in practice.</em></h2>
+          <p>Recommendations and project reviews belong to the Shopify/e-commerce side of the profile.</p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
@@ -289,7 +284,7 @@
                 </div>
                 <span>Store build / redesign</span>
               </div>
-              <p>Great and smooth cooperation with the Appfleece team. Highly recommended.</p>
+              <p>Short client feedback for a store build or redesign project. The review confirms smooth cooperation, clear communication, and reliable delivery within the Appfleece team.</p>
               <div class="review-score-strip" aria-label="Surprise Drinks ratings">
                 <div><span>Quality of work</span><strong>5 / 5</strong></div>
                 <div><span>Communication</span><strong>5 / 5</strong></div>
@@ -302,6 +297,7 @@
                 </div>
                 <span>Project review</span>
               </div>
+              <p>A concise project review where the client rated both quality of work and communication at the highest level. It works as a quick proof point for consistent Shopify delivery.</p>
               <div class="review-score-strip" aria-label="Facederma.sk ratings">
                 <div><span>Quality of work</span><strong>5 / 5</strong></div>
                 <div><span>Communication</span><strong>5 / 5</strong></div>
@@ -334,36 +330,33 @@
         </div>
       </section>
 
-      <section id="focus" class="capabilities section-pad">
-        <div class="section-kicker reveal"><span>04</span> Professional focus</div>
+      <section id="cyber-profile" class="capabilities cyber-profile section-pad">
+        <div class="section-kicker reveal"><span>04</span> Cybersecurity</div>
         <div class="section-heading-row focus-heading reveal">
-          <h2 class="section-title">Two fields.<br /><em>Equal weight.</em></h2>
-          <p>Two independent career directions, each with its own foundation, experience, and objective.</p>
+          <h2 class="section-title">Cybersecurity.<br /><em>Future direction.</em></h2>
+          <p>A standalone part of the profile for the direction I want to grow into: security education, technical thinking, and risk awareness.</p>
         </div>
         <div class="path-cards">
           <article class="path-card path-cyber reveal" data-spotlight>
             <div class="path-card-glow" aria-hidden="true"></div>
             <div class="path-top"><span>Future direction</span><span>Studies & certifications</span></div>
             <h3>Cyber<br />security</h3>
-            <p>The field toward which I am directing my education and future professional growth. My foundation includes security sciences, technical studies, and NÚKIB certifications.</p>
-            <div class="path-tags"><span>Security sciences</span><span>NÚKIB</span><span>Information security</span><span>Phishing</span></div>
+            <p>I build on cybersecurity studies, a technical foundation in networks and web technologies, and a growing understanding of security roles, responsibilities, and risk.</p>
+            <div class="path-tags"><span>Cybersecurity</span><span>Networks</span><span>NÚKIB</span><span>Risk awareness</span></div>
             <div class="path-footer"><span>Currently</span><strong>Studies & development</strong></div>
           </article>
-          <article class="path-card path-commerce reveal" data-spotlight>
-            <div class="path-card-glow" aria-hidden="true"></div>
-            <div class="path-top"><span>3+ years of experience</span><span>Development & e-commerce</span></div>
-            <h3>Shopify<br />development</h3>
-            <p>A field backed by more than three years of hands-on experience. I develop themes, integrate applications, and build custom solutions for e-commerce brands.</p>
-            <div class="path-tags"><span>Shopify</span><span>Liquid</span><span>JavaScript</span><span>E-commerce</span></div>
-            <div class="path-footer"><span>Currently</span><strong>Development & delivery</strong></div>
-          </article>
+          <div class="security-focus reveal">
+            <article><span>01</span><strong>Studies</strong><p>Security management, legal context, and cybersecurity as the main educational track.</p></article>
+            <article><span>02</span><strong>Technical mindset</strong><p>Web and e-commerce experience helps me understand real systems, processes, and weak points.</p></article>
+            <article><span>03</span><strong>Security topics</strong><p>Phishing, online privacy, risk awareness, and security culture as areas for further growth.</p></article>
+          </div>
         </div>
       </section>
 
-      <section id="education" class="education section-pad">
-        <div class="section-kicker reveal"><span>05</span> Education</div>
+      <section id="education" class="education cyber-education section-pad">
+        <div class="section-kicker reveal"><span>05</span> Cyber education</div>
         <div class="education-layout">
-          <div class="edu-intro reveal"><h2 class="section-title">Education &<br /><em>professional growth.</em></h2><p>I complement my studies in technology and security sciences with professional courses and certifications.</p></div>
+          <div class="edu-intro reveal"><h2 class="section-title">Education &<br /><em>credentials.</em></h2><p>The main axis is security education and NÚKIB credentials. The language certificate is framed separately as an additional skill.</p></div>
           <div class="edu-list">
             <article class="edu-row reveal" data-step="01" data-edu-type="current"><span class="edu-year">in progress</span><div><h3>Ing. · Security Sciences, Cybersecurity</h3><p>Vysoká škola bezpečnostního managementu</p></div></article>
             <article class="edu-row reveal" data-step="02" data-edu-type="degree"><span class="edu-year">2025—2026</span><div><h3>Bc. · Security and Legal Studies</h3><p>Vysoká škola evropských a regionálních studií</p></div></article>
@@ -373,8 +366,8 @@
         </div>
         <div class="certs reveal">
           <header class="certs-head">
-            <div><span class="certs-kicker">Credentials</span><h3>Professional knowledge.<br /><em>Backed by credentials.</em></h3></div>
-            <div class="certs-summary"><strong>03</strong><span>professional<br />credentials</span></div>
+            <div><span class="certs-kicker">Credentials</span><h3>Cyber credentials.<br /><em>Additional skills.</em></h3></div>
+            <div class="certs-summary"><strong>02</strong><span>cyber credentials<br />+ language</span></div>
           </header>
           <div class="certs-grid">
             <article class="cert-card cert-cyber" data-index="01">
@@ -389,14 +382,14 @@
             </article>
             <article class="cert-card cert-language" data-index="03">
               <div class="cert-card-top"><span class="cert-index">03</span><div class="cert-mark"><img src="assets/tlcdenia-logo.png" alt="TLCdénia Languages" width="300" height="70" loading="lazy" decoding="async" /><span class="cert-check" aria-label="Completed">✓</span></div></div>
-              <div class="cert-card-body"><span>TLCdénia</span><h4>Spanish language · level A2.2</h4></div>
+              <div class="cert-card-body"><span>Additional language</span><h4>TLCdénia · Spanish language A2.2</h4></div>
               <footer><span>Issued</span><strong>03 / 2024</strong></footer>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="contact section-pad">
+      <section id="contact" class="contact section-pad">
         <div class="contact-orb" aria-hidden="true"></div>
         <div class="section-kicker reveal"><span>06</span> Contact</div>
         <p class="contact-small reveal">Have a project or an opportunity?</p>

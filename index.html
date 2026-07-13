@@ -41,8 +41,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=anim2" />
-    <script src="script.js?v=anim2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=split5" />
+    <script src="script.js?v=split5" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -96,10 +96,10 @@
     <header class="nav-wrap">
       <a class="brand" href="#top" aria-label="Jakub Hrnčíř, úvod">JH<span>.</span></a>
       <nav aria-label="Hlavní navigace">
-        <a href="#o-mne">O mně</a>
-        <a href="#zkusenosti">Zkušenosti</a>
-        <a href="#reference">Reference</a>
-        <a href="#vzdelani">Vzdělání</a>
+        <a href="#o-mne">Profil</a>
+        <a href="#shopify-profile">Shopify</a>
+        <a href="#cyber-profile">Kyberbezpečnost</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Volba jazyka"><span aria-current="page">CZ</span><a href="en.html" lang="en">EN</a></div>
@@ -122,7 +122,8 @@
             </div>
             <p class="hero-summary">Dvě samostatné profesní cesty: budoucnost v kybernetické bezpečnosti a více než tři roky praktické zkušenosti s vývojem Shopify řešení.</p>
             <div class="hero-actions">
-              <a class="button button-primary magnetic" href="#zamereni">Prozkoumat profil <span>↓</span></a>
+              <a class="button button-primary magnetic" href="#shopify-profile">Shopify profil <span>↓</span></a>
+              <a class="button button-ghost" href="#cyber-profile">Kyberbezpečnost <span>↓</span></a>
               <a class="button button-ghost" href="assets/jakub-hrncir-cv.pdf" download>Stáhnout CV <span>↘</span></a>
             </div>
           </div>
@@ -152,39 +153,39 @@
         </div>
       </div>
 
-      <section id="o-mne" class="about section-pad">
-        <div class="section-kicker reveal"><span>01</span> O mně</div>
+      <section id="o-mne" class="about profile-split section-pad">
+        <div class="section-kicker reveal"><span>01</span> Rozdělení profilu</div>
         <div class="about-grid">
-          <h2 class="section-title reveal">Dvě samostatné<br /><em>profesní cesty.</em></h2>
+          <h2 class="section-title reveal">Dva směry.<br /><em>Dva samostatné profily.</em></h2>
           <div class="about-copy about-tracks reveal">
-            <article class="about-track cyber-track">
-              <span>Kybernetická bezpečnost</span>
-              <p>Studuji bezpečnostní vědy, absolvoval jsem certifikace NÚKIB a v kybernetické bezpečnosti chci dlouhodobě působit.</p>
-            </article>
             <article class="about-track commerce-track">
-              <span>Shopify & e-commerce</span>
-              <p>Od roku 2023 vyvíjím a spravuji Shopify projekty, integruji aplikace a tvořím řešení pro konkrétní značky.</p>
+              <span>01 · Shopify kariéra</span>
+              <h3>Shopify & e-commerce</h3>
+              <p>Praktický profil postavený na vývoji Shopify projektů, úpravách šablon, integracích aplikací a práci pro e-commerce značky.</p>
+              <div class="split-stats"><strong>3+ roky</strong><small>praxe ve vývoji</small><strong>9+ značek</strong><small>projekty a spolupráce</small></div>
+              <a href="#shopify-profile">Přejít na Shopify profil <span>↓</span></a>
+            </article>
+            <article class="about-track cyber-track">
+              <span>02 · Kybernetická bezpečnost</span>
+              <h3>Kyberbezpečnost</h3>
+              <p>Budoucí profesní směr opřený o bezpečnostní vědy, technický základ, certifikace NÚKIB a zájem o informační bezpečnost.</p>
+              <div class="split-stats"><strong>2</strong><small>certifikace NÚKIB</small><strong>Ing.</strong><small>probíhající studium</small></div>
+              <a href="#cyber-profile">Přejít na kyberbezpečnost <span>↓</span></a>
             </article>
           </div>
         </div>
-        <div class="metrics">
-          <div class="metric metric-cyber reveal"><span class="metric-domain">Kyberbezpečnost</span><strong><span data-count="2">0</span></strong><p>certifikace NÚKIB</p></div>
-          <div class="metric metric-cyber reveal"><span class="metric-domain">Kyberbezpečnost</span><strong>Ing.</strong><p>probíhající studium</p></div>
-          <div class="metric metric-commerce reveal"><span class="metric-domain">Shopify</span><strong><span data-count="3">0</span>+</strong><p>roky praxe</p></div>
-          <div class="metric metric-commerce reveal"><span class="metric-domain">Shopify</span><strong><span data-count="9">0</span>+</strong><p>značek a spoluprací</p></div>
-        </div>
       </section>
 
-      <section id="zkusenosti" class="experience section-pad">
-        <div class="section-kicker reveal"><span>02</span> Profesní cesta</div>
+      <section id="shopify-profile" class="experience shopify-profile section-pad">
+        <div class="section-kicker reveal"><span>02</span> Shopify kariéra</div>
         <div class="section-heading-row reveal">
-          <h2 class="section-title">Zkušenosti</h2>
-          <p>Dosavadní praxe v Shopify vývoji, e-commerce a digitálním marketingu.</p>
+          <h2 class="section-title">Shopify profil</h2>
+          <p>Samostatný profesní směr zaměřený na Shopify vývoj, e-commerce projekty a praktické doručování řešení pro značky.</p>
         </div>
-        <div class="journey-board reveal" aria-label="Shrnutí profesní cesty">
-          <div><span>Start</span><strong>2019</strong><small>komunikace, scouting, práce s lidmi</small></div>
+        <div class="journey-board reveal" aria-label="Shrnutí Shopify profilu">
+          <div><span>Specializace</span><strong>Shopify</strong><small>šablony, Liquid, aplikace a řešení na míru</small></div>
           <div><span>Praxe</span><strong>3+ roky</strong><small>Shopify, Liquid, e-commerce vývoj</small></div>
-          <div><span>Směr</span><strong>2026</strong><small>samostatnější projekty a technický růst</small></div>
+          <div><span>Důkaz práce</span><strong>Reference</strong><small>klientská hodnocení a agenturní projekty</small></div>
         </div>
         <div class="timeline">
           <article class="job reveal" data-track="commerce" data-track-label="Shopify" data-spotlight>
@@ -205,20 +206,14 @@
             <div class="job-detail"><p>Správa sociálních sítí a online inzertních portálů, tvorba blogů, videí a fotografií, marketingová strategie a komunikace s klienty v angličtině a španělštině.</p><div class="tags"><span>Stáž</span><span>Marketing</span><span>Content</span><span>Social Media</span><span>EN / ES</span></div></div>
             <time>2024 · Dénia, ES</time>
           </article>
-          <article class="job reveal" data-track="people" data-track-label="People" data-spotlight>
-            <div class="job-index">04</div>
-            <div class="job-main"><h3>Model Scout</h3><span>Pure Model Management</span></div>
-            <div class="job-detail"><p>Aktivní vyhledávání nových tváří pro jednu z největších modelingových agentur v České republice.</p><div class="tags"><span>Casting</span><span>Networking</span></div></div>
-            <time>01/2019 — 01/2021</time>
-          </article>
         </div>
       </section>
 
-      <section id="reference" class="references section-pad">
-        <div class="section-kicker reveal"><span>03</span> Reference & spolupráce</div>
+      <section id="reference" class="references shopify-references section-pad">
+        <div class="section-kicker reveal"><span>03</span> Shopify reference</div>
         <div class="section-heading-row reference-heading reveal">
-          <h2 class="section-title">Důvěra<br /><em>v praxi.</em></h2>
-          <p>Ověřená doporučení z LinkedIn od klienta a bývalého týmu.</p>
+          <h2 class="section-title">Shopify práce<br /><em>ověřená praxí.</em></h2>
+          <p>Doporučení a projektová hodnocení patří k Shopify/e-commerce části profilu.</p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
@@ -289,7 +284,7 @@
                 </div>
                 <span>Tvorba e-shopu / redesign</span>
               </div>
-              <p>Skvělá a hladká spolupráce s týmem Appfleece. Vysoce doporučeno.</p>
+              <p>Krátká klientská zpětná vazba k projektu stavby nebo redesignu e-shopu. Hodnocení potvrzuje hladkou spolupráci, rychlou domluvu a spolehlivé doručení v rámci týmu Appfleece.</p>
               <div class="review-score-strip" aria-label="Hodnocení Surprise Drinks">
                 <div><span>Kvalita práce</span><strong>5 / 5</strong></div>
                 <div><span>Komunikace</span><strong>5 / 5</strong></div>
@@ -302,6 +297,7 @@
                 </div>
                 <span>Projektové hodnocení</span>
               </div>
+              <p>Stručné hodnocení e-shop projektu, kde klient ocenil kvalitu práce i komunikaci. V přehledu slouží jako rychlý důkaz konzistentního standardu práce na Shopify projektech.</p>
               <div class="review-score-strip" aria-label="Hodnocení Facederma.sk">
                 <div><span>Kvalita práce</span><strong>5 / 5</strong></div>
                 <div><span>Komunikace</span><strong>5 / 5</strong></div>
@@ -334,36 +330,33 @@
         </div>
       </section>
 
-      <section id="zamereni" class="capabilities section-pad">
-        <div class="section-kicker reveal"><span>04</span> Profesní zaměření</div>
+      <section id="cyber-profile" class="capabilities cyber-profile section-pad">
+        <div class="section-kicker reveal"><span>04</span> Kybernetická bezpečnost</div>
         <div class="section-heading-row focus-heading reveal">
-          <h2 class="section-title">Dvě oblasti.<br /><em>Stejná váha.</em></h2>
-          <p>Dva samostatné profesní směry, každý s vlastním zázemím, zkušenostmi a cílem.</p>
+          <h2 class="section-title">Kyberbezpečnost.<br /><em>Budoucí směr.</em></h2>
+          <p>Samostatná část profilu pro směr, do kterého chci růst: bezpečnostní vzdělání, technické myšlení a práce s rizikem.</p>
         </div>
         <div class="path-cards">
           <article class="path-card path-cyber reveal" data-spotlight>
             <div class="path-card-glow" aria-hidden="true"></div>
-            <div class="path-top"><span>Budoucí směr</span><span>Studium & certifikace</span></div>
+            <div class="path-top"><span>Kyber profil</span><span>Studium & certifikace</span></div>
             <h3>Kybernetická<br />bezpečnost</h3>
-            <p>Oblast, do které směřuji své vzdělání a další profesní růst. Stavím na bezpečnostních vědách, technickém základu a certifikacích NÚKIB.</p>
-            <div class="path-tags"><span>Bezpečnostní vědy</span><span>NÚKIB</span><span>Informační bezpečnost</span><span>Phishing</span></div>
+            <p>Opírám se o studium kybernetické bezpečnosti, technický základ v sítích a webových technologiích a postupně budovaný přehled v bezpečnostních rolích a povinnostech.</p>
+            <div class="path-tags"><span>Kybernetická bezpečnost</span><span>Sítě</span><span>NÚKIB</span><span>Risk awareness</span></div>
             <div class="path-footer"><span>Aktuálně</span><strong>Studium & rozvoj</strong></div>
           </article>
-          <article class="path-card path-commerce reveal" data-spotlight>
-            <div class="path-card-glow" aria-hidden="true"></div>
-            <div class="path-top"><span>3+ roky praxe</span><span>Vývoj & e-commerce</span></div>
-            <h3>Shopify<br />vývoj</h3>
-            <p>Oblast s více než třemi roky praktické zkušenosti. Vyvíjím šablony, integruji aplikace a tvořím řešení na míru pro e-commerce značky.</p>
-            <div class="path-tags"><span>Shopify</span><span>Liquid</span><span>JavaScript</span><span>E-commerce</span></div>
-            <div class="path-footer"><span>Aktuálně</span><strong>Vývoj & realizace</strong></div>
-          </article>
+          <div class="security-focus reveal">
+            <article><span>01</span><strong>Studium</strong><p>Bezpečnostní management, právní rámec a kybernetická bezpečnost jako hlavní vzdělávací osa.</p></article>
+            <article><span>02</span><strong>Praxe myšlení</strong><p>Technické zkušenosti z webu a e-commerce pomáhají chápat reálné systémy, procesy i slabá místa.</p></article>
+            <article><span>03</span><strong>Bezpečnostní témata</strong><p>Phishing, online soukromí, práce s rizikem a bezpečnostní povědomí jako oblasti dalšího rozvoje.</p></article>
+          </div>
         </div>
       </section>
 
-      <section id="vzdelani" class="education section-pad">
-        <div class="section-kicker reveal"><span>05</span> Vzdělání</div>
+      <section id="vzdelani" class="education cyber-education section-pad">
+        <div class="section-kicker reveal"><span>05</span> Kyber vzdělání</div>
         <div class="education-layout">
-          <div class="edu-intro reveal"><h2 class="section-title">Vzdělání &<br /><em>odborný rozvoj.</em></h2><p>Studium technologií a bezpečnostních věd doplňuji odbornými kurzy a certifikacemi.</p></div>
+          <div class="edu-intro reveal"><h2 class="section-title">Vzdělání &<br /><em>certifikace.</em></h2><p>Hlavní osu tvoří bezpečnostní vzdělání a NÚKIB certifikace. Jazykový certifikát uvádím odděleně jako doplňkovou znalost.</p></div>
           <div class="edu-list">
             <article class="edu-row reveal" data-step="01" data-edu-type="current"><span class="edu-year">probíhá</span><div><h3>Ing. · Bezpečnostní vědy, Kybernetická bezpečnost</h3><p>Vysoká škola bezpečnostního managementu</p></div></article>
             <article class="edu-row reveal" data-step="02" data-edu-type="degree"><span class="edu-year">2025—2026</span><div><h3>Bc. · Bezpečnostně právní studia</h3><p>Vysoká škola evropských a regionálních studií</p></div></article>
@@ -373,8 +366,8 @@
         </div>
         <div class="certs reveal">
           <header class="certs-head">
-            <div><span class="certs-kicker">Certifikace</span><h3>Odborné znalosti.<br /><em>Podložené certifikacemi.</em></h3></div>
-            <div class="certs-summary"><strong>03</strong><span>odborné<br />certifikáty</span></div>
+            <div><span class="certs-kicker">Certifikace</span><h3>Kyber certifikace.<br /><em>Doplňkové znalosti.</em></h3></div>
+            <div class="certs-summary"><strong>02</strong><span>kyber certifikace<br />+ jazyk</span></div>
           </header>
           <div class="certs-grid">
             <article class="cert-card cert-cyber" data-index="01">
@@ -389,14 +382,14 @@
             </article>
             <article class="cert-card cert-language" data-index="03">
               <div class="cert-card-top"><span class="cert-index">03</span><div class="cert-mark"><img src="assets/tlcdenia-logo.png" alt="TLCdénia Languages" width="300" height="70" loading="lazy" decoding="async" /><span class="cert-check" aria-label="Dokončeno">✓</span></div></div>
-              <div class="cert-card-body"><span>TLCdénia</span><h4>Španělský jazyk · úroveň A2.2</h4></div>
+              <div class="cert-card-body"><span>Doplňkový jazyk</span><h4>TLCdénia · španělský jazyk A2.2</h4></div>
               <footer><span>Vydáno</span><strong>03 / 2024</strong></footer>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="contact section-pad">
+      <section id="kontakt" class="contact section-pad">
         <div class="contact-orb" aria-hidden="true"></div>
         <div class="section-kicker reveal"><span>06</span> Kontakt</div>
         <p class="contact-small reveal">Máte projekt nebo příležitost?</p>
