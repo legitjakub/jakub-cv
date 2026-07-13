@@ -41,8 +41,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split6" />
-    <script src="script.js?v=split6" defer></script>
+    <link rel="stylesheet" href="styles.css?v=split8" />
+    <script src="script.js?v=split8" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -87,9 +87,6 @@
     </script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="nav-wrap">
@@ -102,13 +99,12 @@
       </nav>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Volba jazyka"><span aria-current="page">CZ</span><a href="en.html" lang="en">EN</a></div>
-        <a class="nav-cta magnetic" href="mailto:jakub.hrncir24@gmail.com">Napište mi <span>↗</span></a>
+        <a class="nav-cta" href="mailto:jakub.hrncir24@gmail.com">Napište mi <span>↗</span></a>
       </div>
     </header>
 
     <main id="top">
       <section class="hero section-pad">
-        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-copy">
           <div class="status reveal"><span></span> Otevřený novým příležitostem</div>
           <h1 class="hero-title" aria-label="Jakub Hrnčíř.">
@@ -121,14 +117,14 @@
             </div>
             <p class="hero-summary">Dvě samostatné profesní cesty: budoucnost v kybernetické bezpečnosti a více než tři roky praktické zkušenosti s vývojem Shopify řešení.</p>
             <div class="hero-actions">
-              <a class="button button-primary magnetic" href="#shopify-profile">Shopify profil <span>↓</span></a>
+              <a class="button button-primary" href="#shopify-profile">Shopify profil <span>↓</span></a>
               <a class="button button-ghost" href="#cyber-profile">Kyberbezpečnost <span>↓</span></a>
               <a class="button button-ghost" href="assets/jakub-hrncir-cv.pdf" download>Stáhnout CV <span>↘</span></a>
             </div>
           </div>
         </div>
 
-        <div class="portrait-wrap reveal" data-tilt>
+        <div class="portrait-wrap reveal">
           <div class="portrait-frame">
             <picture>
               <source srcset="assets/jakub-hrncir-portrait.webp" type="image/webp" />
@@ -187,19 +183,19 @@
           <div><span>Důkaz práce</span><strong>Reference</strong><small>klientská hodnocení a agenturní projekty</small></div>
         </div>
         <div class="timeline">
-          <article class="job reveal" data-track="commerce" data-track-label="Shopify" data-spotlight>
+          <article class="job reveal" data-track="commerce" data-track-label="Shopify">
             <div class="job-index">01</div>
             <div class="job-main"><h3>Shopify Web Developer</h3><span>Appfleece · Remote</span></div>
             <div class="job-detail"><p>Vývoj Shopify aplikací, profesionálních webů na míru a zakázkových šablon. Spolupráce se značkami Facederma, Givili, Jancarikshoes, Moonia, EcoHaus, Revitalash a Bodylok.</p><div class="tags"><span>Shopify</span><span>Liquid</span><span>JavaScript</span><span>HTML/CSS</span></div></div>
             <time>12/2024 — 06/2026</time>
           </article>
-          <article class="job reveal" data-track="commerce" data-track-label="E-commerce" data-spotlight>
+          <article class="job reveal" data-track="commerce" data-track-label="E-commerce">
             <div class="job-index">02</div>
             <div class="job-main"><h3>Junior Shopify Web Developer</h3><span>Shopify projekty · Online</span></div>
             <div class="job-detail"><p>Vývoj a správa Shopify projektů, tvorba a úprava šablon, integrace aplikací a optimalizace e-commerce řešení.</p><div class="tags"><span>Shopify</span><span>E-commerce</span><span>Liquid</span><span>Apps</span></div></div>
             <time>07/2023 — 11/2024</time>
           </article>
-          <article class="job reveal" data-track="growth" data-track-label="Marketing" data-spotlight>
+          <article class="job reveal" data-track="growth" data-track-label="Marketing">
             <div class="job-index">03</div>
             <div class="job-main"><h3>Stáž — Online Marketing & Content</h3><a href="https://dreamsunspain.com" target="_blank" rel="noreferrer">Dreamsunspain.com ↗</a></div>
             <div class="job-detail"><p>Správa sociálních sítí a online inzertních portálů, tvorba blogů, videí a fotografií, marketingová strategie a komunikace s klienty v angličtině a španělštině.</p><div class="tags"><span>Stáž</span><span>Marketing</span><span>Content</span><span>Social Media</span><span>EN / ES</span></div></div>
@@ -336,8 +332,7 @@
           <p>Samostatná část profilu pro směr, do kterého chci růst: bezpečnostní vzdělání, technické myšlení a práce s rizikem.</p>
         </div>
         <div class="path-cards">
-          <article class="path-card path-cyber reveal" data-spotlight>
-            <div class="path-card-glow" aria-hidden="true"></div>
+          <article class="path-card path-cyber reveal">
             <div class="path-top"><span>Kyber profil</span><span>Studium & certifikace</span></div>
             <h3>Kybernetická<br />bezpečnost</h3>
             <p>Opírám se o studium kybernetické bezpečnosti, technický základ v sítích a webových technologiích a postupně budovaný přehled v bezpečnostních rolích a povinnostech.</p>

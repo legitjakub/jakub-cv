@@ -41,8 +41,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split6" />
-    <script src="script.js?v=split6" defer></script>
+    <link rel="stylesheet" href="styles.css?v=split8" />
+    <script src="script.js?v=split8" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -87,9 +87,6 @@
     </script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="nav-wrap">
@@ -102,13 +99,12 @@
       </nav>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="index.html" lang="cs">CZ</a><span aria-current="page">EN</span></div>
-        <a class="nav-cta magnetic" href="mailto:jakub.hrncir24@gmail.com">Contact me <span>↗</span></a>
+        <a class="nav-cta" href="mailto:jakub.hrncir24@gmail.com">Contact me <span>↗</span></a>
       </div>
     </header>
 
     <main id="top">
       <section class="hero section-pad">
-        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-copy">
           <div class="status reveal"><span></span> Open to new opportunities</div>
           <h1 class="hero-title" aria-label="Jakub Hrnčíř.">
@@ -121,14 +117,14 @@
             </div>
             <p class="hero-summary">Two independent career paths: a future in cybersecurity and more than three years of hands-on experience developing Shopify solutions.</p>
             <div class="hero-actions">
-              <a class="button button-primary magnetic" href="#shopify-profile">Shopify profile <span>↓</span></a>
+              <a class="button button-primary" href="#shopify-profile">Shopify profile <span>↓</span></a>
               <a class="button button-ghost" href="#cyber-profile">Cybersecurity <span>↓</span></a>
               <a class="button button-ghost" href="assets/jakub-hrncir-cv.pdf" download>Download CV <span>↘</span></a>
             </div>
           </div>
         </div>
 
-        <div class="portrait-wrap reveal" data-tilt>
+        <div class="portrait-wrap reveal">
           <div class="portrait-frame">
             <picture>
               <source srcset="assets/jakub-hrncir-portrait.webp" type="image/webp" />
@@ -187,19 +183,19 @@
           <div><span>Proof</span><strong>References</strong><small>client feedback and agency project reviews</small></div>
         </div>
         <div class="timeline">
-          <article class="job reveal" data-track="commerce" data-track-label="Shopify" data-spotlight>
+          <article class="job reveal" data-track="commerce" data-track-label="Shopify">
             <div class="job-index">01</div>
             <div class="job-main"><h3>Shopify Web Developer</h3><span>Appfleece · Remote</span></div>
             <div class="job-detail"><p>Development of Shopify applications, professional custom websites, and bespoke themes. Projects for brands including Facederma, Givili, Jancarikshoes, Moonia, EcoHaus, Revitalash, and Bodylok.</p><div class="tags"><span>Shopify</span><span>Liquid</span><span>JavaScript</span><span>HTML/CSS</span></div></div>
             <time>12/2024 — 06/2026</time>
           </article>
-          <article class="job reveal" data-track="commerce" data-track-label="E-commerce" data-spotlight>
+          <article class="job reveal" data-track="commerce" data-track-label="E-commerce">
             <div class="job-index">02</div>
             <div class="job-main"><h3>Junior Shopify Web Developer</h3><span>Shopify projects · Online</span></div>
             <div class="job-detail"><p>Development and management of Shopify projects, theme creation and customization, application integrations, and e-commerce optimization.</p><div class="tags"><span>Shopify</span><span>E-commerce</span><span>Liquid</span><span>Apps</span></div></div>
             <time>07/2023 — 11/2024</time>
           </article>
-          <article class="job reveal" data-track="growth" data-track-label="Marketing" data-spotlight>
+          <article class="job reveal" data-track="growth" data-track-label="Marketing">
             <div class="job-index">03</div>
             <div class="job-main"><h3>Internship — Online Marketing & Content</h3><a href="https://dreamsunspain.com" target="_blank" rel="noreferrer">Dreamsunspain.com ↗</a></div>
             <div class="job-detail"><p>Social media and listing platform management, blog, video, and photography production, marketing strategy, and client communication in English and Spanish.</p><div class="tags"><span>Internship</span><span>Marketing</span><span>Content</span><span>Social Media</span><span>EN / ES</span></div></div>
@@ -336,8 +332,7 @@
           <p>A standalone part of the profile for the direction I want to grow into: security education, technical thinking, and risk awareness.</p>
         </div>
         <div class="path-cards">
-          <article class="path-card path-cyber reveal" data-spotlight>
-            <div class="path-card-glow" aria-hidden="true"></div>
+          <article class="path-card path-cyber reveal">
             <div class="path-top"><span>Future direction</span><span>Studies & certifications</span></div>
             <h3>Cyber<br />security</h3>
             <p>I build on cybersecurity studies, a technical foundation in networks and web technologies, and a growing understanding of security roles, responsibilities, and risk.</p>
