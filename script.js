@@ -3,6 +3,39 @@ const reveals = document.querySelectorAll('.reveal');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const heroName = document.querySelector('.hero-title .title-main > span');
 const toTop = document.querySelector('.to-top');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+if (finePointer.matches && !reduceMotion.matches) {
+  const pointerGlow = document.createElement('div');
+  pointerGlow.className = 'site-pointer-glow';
+  pointerGlow.setAttribute('aria-hidden', 'true');
+  document.body.append(pointerGlow);
+
+  let pointerFrame = 0;
+  let pointerX = -600;
+  let pointerY = -600;
+
+  window.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+
+    if (!pointerFrame) {
+      pointerFrame = requestAnimationFrame(() => {
+        pointerGlow.style.setProperty('--pointer-x', `${pointerX}px`);
+        pointerGlow.style.setProperty('--pointer-y', `${pointerY}px`);
+        pointerFrame = 0;
+      });
+    }
+
+    const target = event.target instanceof Element ? event.target : null;
+    const cyberContext = target?.closest('#cyber-profile,.cyber-profile,.cyber-track,.education,.certs');
+    const commerceContext = document.body.classList.contains('work-page') || target?.closest('#shopify-profile,.shopify-profile,.commerce-track,.references,.experience');
+    pointerGlow.dataset.tone = cyberContext ? 'cyber' : commerceContext ? 'commerce' : 'neutral';
+    pointerGlow.classList.add('is-visible');
+  }, { passive: true });
+
+  document.documentElement.addEventListener('pointerleave', () => pointerGlow.classList.remove('is-visible'));
+}
 
 const updateViewportState = () => {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
