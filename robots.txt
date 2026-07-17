@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://legitjakub.github.io/jakub-cv/sitemap.xml
+Sitemap: https://jhrncir.xyz/sitemap.xml
