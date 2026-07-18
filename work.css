@@ -487,6 +487,7 @@
   .work-hero-stage { gap:52px; }
   .work-hero h1 { margin:25px 0 24px; font-size:clamp(47px,14.4vw,68px); line-height:.92; }
   .work-hero h1>span { font-size:.79em; }
+  html[lang="en"] .work-hero h1>span { font-size:.72em; }
   .work-hero-copy>p { max-width:520px; font-size:14px; line-height:1.68; }
   .work-hero-actions { display:grid; grid-template-columns:1fr; gap:20px; margin-top:30px; }
   .work-hero-primary { width:100%; min-width:0; }
