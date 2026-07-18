@@ -388,22 +388,6 @@
 .work-reference>footer div strong { font-size:12px; }
 .work-reference>footer small { color:#696963; font:400 8px/1.4 "DM Mono"; text-transform:uppercase; }
 .work-reference>footer a,.work-reference>footer b { color:var(--commerce); font:500 14px "DM Mono"; font-style:normal; }
-.work-project-ratings { display:grid; grid-template-columns:.72fr 1fr 1fr; margin-top:38px; border-block:1px solid rgba(var(--commerce-rgb),.27); }
-.work-project-ratings>* { min-width:0; padding:24px 26px; border-right:1px solid rgba(255,255,255,.14); }
-.work-project-ratings>*:last-child { border-right:0; }
-.work-ratings-intro { display:flex; flex-direction:column; justify-content:center; }
-.work-ratings-intro span { color:var(--commerce); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
-.work-ratings-intro p { margin:12px 0 0; color:#797973; font-size:11px; line-height:1.6; }
-.work-project-ratings article { display:flex; flex-direction:column; justify-content:space-between; gap:18px; background:rgba(255,255,255,.012); }
-.work-project-ratings article>p { margin:0; color:#c2c1ba; font-size:12px; line-height:1.6; }
-.work-rating-brand { display:flex; justify-content:space-between; gap:18px; align-items:center; }
-.work-rating-brand img { display:block; width:auto; max-width:115px; max-height:24px; object-fit:contain; filter:grayscale(1) brightness(1.7); }
-.work-rating-facederma img { filter:grayscale(1) brightness(0) invert(1); }
-.work-rating-brand>span { color:#656560; font:500 8px "DM Mono"; text-transform:uppercase; }
-.work-rating-scores { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.work-rating-scores>span { display:flex; justify-content:space-between; gap:10px; padding-top:11px; border-top:1px solid rgba(255,255,255,.14); color:#797973; font:500 8px "DM Mono"; text-transform:uppercase; }
-.work-rating-scores strong { color:var(--commerce); }
-
 .work-contact { min-height:70vh; display:flex; flex-direction:column; justify-content:center; background:#0a0a0a; }
 .work-contact h2 { max-width:980px; margin:24px 0 40px; font-size:clamp(54px,8vw,126px); line-height:.9; letter-spacing:-.075em; }
 .work-contact a { display:flex; justify-content:space-between; align-items:center; padding:24px 0; border-block:1px solid rgba(255,255,255,.18); color:#aaa; font:500 11px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:color .25s,border-color .25s; }
@@ -431,8 +415,6 @@
   .work-references-head { grid-template-columns:1fr 1.5fr; }
   .work-references-head>p { grid-column:2; }
   .work-reference { padding:24px; }
-  .work-project-ratings { grid-template-columns:1fr 1fr; }
-  .work-ratings-intro { grid-column:1/-1; border-right:0; border-bottom:1px solid rgba(255,255,255,.14); }
 }
 
 @media (max-width:760px) {
@@ -510,11 +492,6 @@
   }
   .work-reference-grid::-webkit-scrollbar { display:none; }
   .work-reference { flex:0 0 min(87vw,350px); min-height:590px; padding:23px; border:1px solid rgba(255,255,255,.16); scroll-snap-align:start; }
-  .work-project-ratings { grid-template-columns:1fr; margin-top:34px; }
-  .work-project-ratings>* { border-right:0; border-bottom:1px solid rgba(255,255,255,.14); }
-  .work-project-ratings>*:last-child { border-bottom:0; }
-  .work-ratings-intro { grid-column:auto; }
-  .work-rating-scores { gap:14px; }
   .work-contact { min-height:60vh; }
 }
 

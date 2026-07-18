@@ -24,8 +24,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../blog.css?v=9" />
-    <script src="../blog.js?v=1" defer></script>
+    <link rel="stylesheet" href="../blog.css?v=12" />
+    <script src="../blog.js?v=3" defer></script>
     <script type="application/ld+json">
       {
         "@context":"https://schema.org",
@@ -68,12 +68,12 @@
     <header class="guide-header guide-shell">
       <a class="guide-brand" href="../cs.html" aria-label="Jakub Hrnčíř, hlavní profil">JH<span>.</span></a>
       <nav class="guide-nav" aria-label="Hlavní navigace">
-        <a href="../work-cs.html#shopify-development">Služby</a>
-        <a href="../work-cs.html#posedla">Projekty</a>
-        <a href="../work-cs.html#work-references">Reference</a>
+        <a href="/shopify-vyvoj/#reseni">Služby</a>
+        <a href="/shopify-vyvoj/#projekty">Projekty</a>
+        <a href="/shopify-vyvoj/#reference">Reference</a>
         <a href="./" aria-current="page">Průvodce</a>
       </nav>
-      <a class="guide-back guide-contact" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20projekt">Probrat projekt <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" /></svg></a>
+      <a class="guide-back guide-contact" href="/shopify-poptavka/?typ=konzultace&amp;zdroj=shopify-pruvodce">Probrat projekt <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" /></svg></a>
     </header>
 
     <main>
@@ -87,6 +87,15 @@
           <strong>Informace pro konkrétní rozhodnutí.</strong>
           <span>Vysvětluji možnosti, omezení a technické souvislosti bez univerzálních doporučení. Shopify totiž není správná volba pro každý projekt.</span>
         </aside>
+      </section>
+
+      <section class="guide-pathways guide-shell" aria-labelledby="pathways-title">
+        <header><span class="guide-label">Začněte podle situace</span><h2 id="pathways-title">Najděte správnou odpověď rychleji.</h2></header>
+        <div class="guide-pathway-list">
+          <a href="shopify-vs-shoptet-vs-woocommerce/"><span>01</span><div><strong>Teprve vybírám platformu</strong><small>Srovnání Shopify, Shoptetu a WooCommerce bez univerzálního vítěze.</small></div><b aria-hidden="true">→︎</b></a>
+          <a href="migrace-na-shopify/"><span>02</span><div><strong>Plánuji nový e-shop nebo migraci</strong><small>Data, URL, integrace, testování a bezpečné spuštění projektu.</small></div><b aria-hidden="true">→︎</b></a>
+          <a href="rychlost-shopify-eshopu/"><span>03</span><div><strong>Potřebuji zlepšit existující Shopify</strong><small>Výkon, SEO, šablona a technická správa podle skutečného problému.</small></div><b aria-hidden="true">→︎</b></a>
+        </div>
       </section>
 
       <div class="guide-filters guide-shell" aria-label="Témata průvodce">
@@ -103,62 +112,69 @@
         <a href="#sprava">Správa</a>
       </div>
 
-      <section class="guide-index guide-shell" aria-label="Články Shopify průvodce">
-        <a id="naklady" class="guide-row" href="cena-shopify-eshopu/">
+      <div class="guide-search guide-shell" role="search">
+        <label for="guide-search-input"><span>Najít v průvodci</span><strong>Co právě řešíte?</strong></label>
+        <div><input id="guide-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Např. migrace, rychlost, platby…" aria-controls="guide-index" /><button type="button" aria-label="Vymazat hledání" hidden>×</button></div>
+        <p aria-live="polite"><span data-guide-count>11 článků</span></p>
+      </div>
+
+      <section id="guide-index" class="guide-index guide-shell" aria-label="Články Shopify průvodce">
+        <a id="naklady" class="guide-row" data-search="cena rozpočet kolik stojí náklady odhad" href="cena-shopify-eshopu/">
           <span class="guide-number">01</span><div><span class="guide-topic">Náklady</span><h2>Kolik stojí Shopify e-shop v roce 2026?</h2></div>
           <p>Co tvoří cenu platformy, šablony, aplikací, vývoje, testování a následné technické podpory.</p><span class="guide-time">5 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="platforma" class="guide-row" href="shopify-vs-shoptet-vs-woocommerce/">
+        <a id="platforma" class="guide-row" data-search="výběr platformy systém řešení" href="shopify-vs-shoptet-vs-woocommerce/">
           <span class="guide-number">02</span><div><span class="guide-topic">Platforma</span><h2>Shopify vs. Shoptet vs. WooCommerce</h2></div>
           <p>Věcné srovnání pro český a slovenský e-shop podle provozu, rozvoje a mezinárodních ambicí.</p><span class="guide-time">5 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="vyvoj" class="guide-row" href="shopify-aplikace-a-integrace/">
+        <a id="vyvoj" class="guide-row" data-search="aplikace app integrace napojení vlastní funkce" href="shopify-aplikace-a-integrace/">
           <span class="guide-number">03</span><div><span class="guide-topic">Vývoj</span><h2>Shopify aplikace a integrace</h2></div>
           <p>Kdy stačí hotová aplikace, kdy upravit šablonu a kdy má smysl samostatné řešení nebo napojení.</p><span class="guide-time">5 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a class="guide-row" href="shopify-sablona-a-redesign/">
+        <a class="guide-row" data-search="šablona design redesign liquid ux vzhled" href="shopify-sablona-a-redesign/">
           <span class="guide-number">04</span><div><span class="guide-topic">Návrh &amp; vývoj</span><h2>Kdy Shopify šablona nestačí</h2></div>
           <p>Rozdíl mezi úpravou šablony, vlastními sekcemi a redesignem, který zůstane rychlý a udržitelný.</p><span class="guide-time">5 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="rust" class="guide-row" href="shopify-plus-b2b-d2c/">
+        <a id="rust" class="guide-row" data-search="b2b d2c plus velkoobchod firmy katalogy" href="shopify-plus-b2b-d2c/">
           <span class="guide-number">05</span><div><span class="guide-topic">Růst</span><h2>Shopify Plus, B2B a D2C v roce 2026</h2></div>
           <p>Firmy, katalogy, individuální ceny a rozhodnutí, zda pokročilejší plán odpovídá skutečným potřebám.</p><span class="guide-time">4 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="migrace" class="guide-row" href="migrace-na-shopify/">
+        <a id="migrace" class="guide-row" data-search="migrace přechod import spuštění změna platformy" href="migrace-na-shopify/">
           <span class="guide-number">06</span><div><span class="guide-topic">Migrace</span><h2>Migrace na Shopify bez zbytečných ztrát</h2></div>
           <p>Data, SEO, integrace, doména a kontrolované spuštění při přechodu z WooCommerce, Shoptetu nebo jiného řešení.</p><span class="guide-time">5 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="seo" class="guide-row" href="shopify-seo/">
+        <a id="seo" class="guide-row" data-search="seo google search console vyhledávání indexace" href="shopify-seo/">
           <span class="guide-number">07</span><div><span class="guide-topic">SEO</span><h2>Shopify SEO: co platforma řeší sama</h2></div>
           <p>Technické základy, struktura obchodu, produkty, kolekce, metadata, robots.txt a měření v Search Console.</p><span class="guide-time">7 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="expanze" class="guide-row" href="shopify-markets-expanze/">
+        <a id="expanze" class="guide-row" data-search="markets expanze zahraničí jazyk měna doména trhy" href="shopify-markets-expanze/">
           <span class="guide-number">08</span><div><span class="guide-topic">Expanze</span><h2>Shopify Markets pro české a slovenské e-shopy</h2></div>
           <p>Trhy, jazyky, domény, měny, lokální ceny, obsah a mezinárodní SEO před vstupem do nové země.</p><span class="guide-time">7 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="vykon" class="guide-row" href="rychlost-shopify-eshopu/">
+        <a id="vykon" class="guide-row" data-search="výkon rychlost zrychlit pagespeed lighthouse core web vitals" href="rychlost-shopify-eshopu/">
           <span class="guide-number">09</span><div><span class="guide-topic">Výkon</span><h2>Jak zrychlit Shopify e-shop bez honby za skóre</h2></div>
           <p>Core Web Vitals, reálná data, Lighthouse a dopad šablony, aplikací, JavaScriptu, médií a analytiky.</p><span class="guide-time">7 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="platby" class="guide-row" href="shopify-payments-cesko-slovensko/">
+        <a id="platby" class="guide-row" data-search="platby payment platební brána shopify payments checkout" href="shopify-payments-cesko-slovensko/">
           <span class="guide-number">10</span><div><span class="guide-topic">Platby</span><h2>Shopify platby v Česku a na Slovensku</h2></div>
           <p>Aktuální dostupnost, karty, zrychlené platby, externí poskytovatelé, poplatky a testování pokladny.</p><span class="guide-time">7 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
-        <a id="sprava" class="guide-row" href="sprava-a-podpora-shopify/">
+        <a id="sprava" class="guide-row" data-search="správa podpora oprava chyba servis údržba" href="sprava-a-podpora-shopify/">
           <span class="guide-number">11</span><div><span class="guide-topic">Správa</span><h2>Kdo vám opraví Shopify e-shop?</h2></div>
           <p>Rozdělení odpovědnosti mezi Shopify Support, autora šablony, aplikaci, samostatného vývojáře a agenturu.</p><span class="guide-time">6 min čtení</span><span class="guide-arrow" aria-hidden="true">→︎</span>
         </a>
+        <p class="guide-empty" hidden>Pro tento výraz jsem nic nenašel. Zkuste kratší nebo obecnější dotaz.</p>
       </section>
 
       <section class="guide-cta guide-shell">
         <div><h2>Řešíte vlastní Shopify projekt?</h2><p>Pošlete mi současný stav, cíl a hlavní požadavky. Navrhnu, co je potřeba ověřit a jak může spolupráce pokračovat.</p></div>
-        <a class="guide-button" href="mailto:jakub.hrncir24@gmail.com?subject=Konzultace%20Shopify%20projektu">Probrat projekt →︎</a>
+        <a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=konzultace&amp;zdroj=shopify-pruvodce">Probrat projekt →︎</a>
       </section>
     </main>
 
     <footer class="guide-footer guide-shell">
       <span>© 2026 Jakub Hrnčíř</span>
-      <nav aria-label="Navigace v zápatí"><a href="../cs.html">Hlavní profil</a><a href="../work-cs.html">Shopify projekty</a><a href="mailto:jakub.hrncir24@gmail.com">Kontakt</a></nav>
+      <nav aria-label="Navigace v zápatí"><a href="../cs.html">Hlavní profil</a><a href="/shopify-vyvoj/">Shopify projekty</a><a href="/shopify-poptavka/?zdroj=shopify-pruvodce">Kontakt</a></nav>
     </footer>
   </body>
 </html>
