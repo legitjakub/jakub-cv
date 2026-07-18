@@ -135,24 +135,6 @@
 .work-hero-proof span { max-width:120px; color:#797973; font:400 8px/1.45 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
 .work-hero-proof>a { display:flex; align-items:center; justify-content:flex-end; gap:18px; min-height:72px; padding-top:20px; color:var(--commerce); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
 .work-hero-proof>a span { color:inherit; font-size:15px; }
-.work-hero-orbit {
-  position:absolute;
-  top:15%;
-  right:8%;
-  z-index:0;
-  width:clamp(130px,14vw,210px);
-  aspect-ratio:1;
-  border:1px solid rgba(var(--commerce-rgb),.2);
-  border-radius:50%;
-  opacity:.72;
-  animation:work-orbit 13s linear infinite;
-}
-.work-hero-orbit::before,.work-hero-orbit::after { content:""; position:absolute; border-radius:50%; }
-.work-hero-orbit::before { inset:13%; border:1px dashed rgba(var(--commerce-rgb),.18); }
-.work-hero-orbit::after { top:-4px; left:50%; width:8px; height:8px; background:var(--commerce); box-shadow:0 0 24px rgba(var(--commerce-rgb),.7); }
-.work-hero-orbit span { position:absolute; inset:0; display:grid; place-items:center; color:rgba(var(--commerce-rgb),.42); font:500 8px "DM Mono"; letter-spacing:.18em; }
-.work-hero-orbit i { position:absolute; inset:0; display:grid; place-items:center; color:rgba(var(--commerce-rgb),.22); font:300 42px "Manrope"; font-style:normal; transform:rotate(-22deg); }
-@keyframes work-orbit { to { transform:rotate(360deg); } }
 @keyframes work-signal { 50% { opacity:.45; box-shadow:0 0 0 9px rgba(var(--commerce-rgb),.025); } }
 
 .work-brands {
@@ -480,7 +462,6 @@
   .work-hero-panel { max-width:760px; }
   .work-hero-proof { grid-template-columns:repeat(3,1fr); }
   .work-hero-proof>a { grid-column:1/-1; justify-content:flex-start; min-height:58px; border-top:1px solid rgba(255,255,255,.12); }
-  .work-hero-orbit { top:120px; right:7%; }
   .work-brands-head { grid-template-columns:1fr 1.5fr; }
   .work-brands-head p { grid-column:2; text-align:left; }
   .shopify-services { grid-template-columns:1fr; gap:54px; }
@@ -523,7 +504,6 @@
   .work-hero-proof strong { display:block; margin-bottom:10px; font-size:34px; }
   .work-hero-proof span { display:block; max-width:170px; }
   .work-hero-proof>a { min-height:54px; padding-top:16px; }
-  .work-hero-orbit { top:92px; right:-26px; width:115px; opacity:.52; }
   .work-brands-head { display:block; padding-top:25px; padding-bottom:23px; }
   .work-brands-head>strong { display:block; margin-top:13px; font-size:25px; }
   .work-brands-head p { max-width:400px; margin-top:9px; font-size:11px; text-align:left; }
@@ -592,7 +572,7 @@
 
 @media (prefers-reduced-motion:reduce) {
   .work-hero-panel a,.work-hero-primary,.reveal { transition:none!important; }
-  .work-hero-orbit,.work-hero-signal i { animation:none; }
+  .work-hero-signal i { animation:none; }
   .work-brand-track { animation:none; }
   .media-frame { transform:none!important; transition:none; }
 }
