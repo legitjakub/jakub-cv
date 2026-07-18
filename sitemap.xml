@@ -2,26 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
           <loc>https://jhrncir.xyz/</loc>
-          <lastmod>2026-07-17</lastmod>
+          <lastmod>2026-07-18</lastmod>
           <changefreq>monthly</changefreq>
           <priority>1.0</priority>
     </url>
     <url>
           <loc>https://jhrncir.xyz/cs</loc>
-          <lastmod>2026-07-17</lastmod>
+          <lastmod>2026-07-18</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.9</priority>
     </url>
     <url>
           <loc>https://jhrncir.xyz/work</loc>
-          <lastmod>2026-07-17</lastmod>
+          <lastmod>2026-07-18</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
     <url>
           <loc>https://jhrncir.xyz/work-cs</loc>
-          <lastmod>2026-07-17</lastmod>
+          <lastmod>2026-07-18</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/cena-shopify-eshopu/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-vs-shoptet-vs-woocommerce/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-aplikace-a-integrace/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-sablona-a-redesign/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-plus-b2b-d2c/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/</loc>
+          <lastmod>2026-07-18</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
     </url>
 </urlset>

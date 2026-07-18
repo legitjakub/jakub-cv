@@ -66,7 +66,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach((element) => revealObserver.observe(element));
 
-const revealHashTarget = () => {
+const revealHashTarget = (alignTarget = false) => {
   if (!window.location.hash) return;
   const target = document.querySelector(window.location.hash);
   if (!target) return;
@@ -76,9 +76,15 @@ const revealHashTarget = () => {
       element.classList.add('visible');
     }
   });
+
+  if (alignTarget) {
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    });
+  }
 };
 
-window.addEventListener('load', revealHashTarget, { once: true });
+window.addEventListener('load', () => revealHashTarget(true), { once: true });
 window.addEventListener('hashchange', () => requestAnimationFrame(revealHashTarget));
 
 const heroFinalText = heroName ? heroName.textContent.trim() : '';
