@@ -60,7 +60,7 @@
   font-style:normal;
   text-shadow:0 0 45px rgba(var(--commerce-rgb),.08);
 }
-.work-hero h1>span { display:inline-block; white-space:nowrap; }
+.work-hero h1>span { display:inline-block; white-space:nowrap; font-size:.78em; }
 .work-hero-copy>p { max-width:680px; margin:0; color:#a2a29b; font-size:clamp(15px,1.25vw,18px); line-height:1.72; }
 .work-hero-actions { display:flex; align-items:center; gap:30px; margin-top:36px; }
 .work-hero-actions a { font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
