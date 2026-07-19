@@ -1,5 +1,40 @@
 <!doctype html><html lang="cs"><head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Migrace na Shopify: data, SEO a bezpečné spuštění | Jakub Hrnčíř</title><meta name="description" content="Praktický seznam kroků migrace na Shopify z WooCommerce, Shoptetu nebo jiné platformy: produkty, zákazníci, objednávky, aplikace, URL, SEO, doména a testování." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+    <script defer src="/consent.js"></script>
+
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Migrace na Shopify: data, SEO a bezpečné spuštění</title><meta name="description" content="Praktický seznam kroků migrace na Shopify z WooCommerce, Shoptetu nebo jiné platformy: produkty, zákazníci, objednávky, aplikace, URL, SEO, doména a testování." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="article" /><meta property="og:title" content="Migrace na Shopify: data, SEO a bezpečné spuštění" /><meta property="og:description" content="Kontrolovaný postup přechodu na Shopify bez zbytečné ztráty dat a organické návštěvnosti." /><meta property="og:url" content="https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/" /><meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" /><meta property="article:published_time" content="2026-07-18" /><meta property="article:modified_time" content="2026-07-18" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Migrace na Shopify: data, SEO a bezpečné spuštění" /><meta name="twitter:description" content="Kontrolovaný přechod na Shopify bez zbytečné ztráty dat a organické návštěvnosti." /><meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../../blog.css?v=12" /><script src="../../blog.js?v=3" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/#article","headline":"Migrace na Shopify: data, SEO, integrace a bezpečné spuštění","description":"Seznam kroků migrace na Shopify z WooCommerce, Shoptetu nebo jiné platformy.","datePublished":"2026-07-18","dateModified":"2026-07-18","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"Migrace na Shopify","item":"https://jhrncir.xyz/shopify-pruvodce/migrace-na-shopify/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"}]}</script>

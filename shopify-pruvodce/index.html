@@ -1,9 +1,44 @@
 <!doctype html>
 <html lang="cs">
   <head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+    <script defer src="/consent.js"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shopify průvodce pro CZ/SK e-shopy | Jakub Hrnčíř</title>
+    <title>Shopify průvodce pro CZ/SK e-shopy</title>
     <meta name="description" content="Praktický Shopify průvodce pro české a slovenské e-shopy: cena, SEO, Markets, rychlost, platby, aplikace, šablony, B2B, správa a migrace." />
     <meta name="author" content="Jakub Hrnčíř" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
