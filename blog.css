@@ -131,6 +131,17 @@ button,input,textarea,select { font:inherit; }
   letter-spacing:.11em;
   text-transform:uppercase;
 }
+.guide-badge {
+  display:inline-block;
+  margin-left:8px;
+  padding:1px 6px;
+  background:rgba(var(--guide-green-rgb),.18);
+  color:var(--guide-green);
+  font-size:9px;
+  border-radius:3px;
+  letter-spacing:.06em;
+  vertical-align:middle;
+}
 .guide-hero h1 {
   max-width:980px;
   margin:28px 0 26px;

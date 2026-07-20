@@ -600,6 +600,12 @@ nav a.active { color:var(--paper); }
   letter-spacing:.08em;
   min-width:0;
 }
+.profile-split .about-track .track-actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
 .profile-split .about-track a {
   width:fit-content;
   max-width:100%;
