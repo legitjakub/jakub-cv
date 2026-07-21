@@ -1,0 +1,114 @@
+<!doctype html><html lang="cs"><head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+    <script defer src="/consent.js"></script>
+
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Agentic commerce: jak nakupují AI agenti a co to znamená pro e-shop</title><meta name="description" content="Co je agentic commerce, jak funguje Universal Commerce Protocol a Shopify Catalog a co musí e-shop udělat, aby ho AI nákupní agenti v ChatGPT, Copilotu nebo Gemini vůbec našli." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" /><meta property="og:title" content="Agentic commerce: jak nakupují AI agenti a co to znamená pro e-shop" /><meta property="og:description" content="Universal Commerce Protocol, Shopify Catalog a co musí e-shop udělat, aby ho AI agenti našli." /><meta property="og:url" content="https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/" /><meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" /><meta property="article:published_time" content="2026-07-22" /><meta property="article:modified_time" content="2026-07-22" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Agentic commerce: jak nakupují AI agenti a co to znamená pro e-shop" /><meta name="twitter:description" content="Universal Commerce Protocol, Shopify Catalog a co musí e-shop udělat, aby ho AI agenti našli." /><meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../../blog.css?v=12" /><script src="../../blog.js?v=3" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/#article","headline":"Agentic commerce: jak nakupují AI agenti a co to znamená pro e-shop","description":"Universal Commerce Protocol, Shopify Catalog a co musí e-shop udělat, aby ho AI agenti našli.","datePublished":"2026-07-22","dateModified":"2026-07-22","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"Agentic commerce","item":"https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/#faq","mainEntity":[{"@type":"Question","name":"Co je agentic commerce?","acceptedAnswer":{"@type":"Answer","text":"Nakupování, které místo návštěvy e-shopu zprostředkovává AI agent — prohlédne katalog, poskládá košík a případně dokončí nákup jménem zákazníka přímo v rozhraní jako ChatGPT, Copilot nebo Gemini."}},{"@type":"Question","name":"Je Universal Commerce Protocol dostupný jen pro Shopify Plus?","acceptedAnswer":{"@type":"Answer","text":"Ne. UCP i Shopify Catalog jsou dostupné napříč tarify a od Spring '26 Edition otevřené všem vývojářům bez nutnosti schvalování. Shopify Plus přidává hodnotu hlavně u větších katalogů, vyšších objemů a pokročilé podpory, ne u samotného přístupu k protokolu."}},{"@type":"Question","name":"Jak zapnu Agentic Storefronts?","acceptedAnswer":{"@type":"Answer","text":"Přímo v Shopify adminu přepínačem pro jednotlivé AI kanály (ChatGPT, Google AI Mode, Perplexity, Microsoft Copilot). Shopify pak sám řeší technickou stránku protokolu; podmínkou je mít kompletní a přesná produktová data v katalogu."}},{"@type":"Question","name":"Nahrazuje agentic commerce klasické SEO?","acceptedAnswer":{"@type":"Answer","text":"Nenahrazuje, spíš doplňuje. Struktura dat, popisy produktů a technické SEO základy zůstávají důležité i pro to, aby AI agenti obchod správně pochopili a doporučili."}}]}]}</script>
+</head><body><header class="guide-header guide-shell"><a class="guide-brand" href="../../cs.html" aria-label="Jakub Hrnčíř, hlavní profil">JH<span>.</span></a><nav class="guide-nav" aria-label="Hlavní navigace"><a href="/shopify-vyvoj/#reseni">Služby</a><a href="/shopify-vyvoj/#projekty">Projekty</a><a href="/shopify-vyvoj/#reference">Reference</a><a href="../" aria-current="page">Průvodce</a></nav><a class="guide-back" href="../"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg> Všechny články</a></header>
+<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/shopify-vyvoj/">Shopify projekty</a></span><span><a href="../">Shopify průvodce</a></span><span>Agentic commerce</span></nav><div class="article-hero-grid"><div><span class="article-category">AI · Agentic commerce · 2026</span><h1>Agentic commerce: jak nakupují AI agenti a co to znamená pro e-shop</h1><p class="article-deck">Čím dál víc nákupních rozhodnutí začíná rozhovorem s AI asistentem, ne návštěvou e-shopu. Agentic commerce popisuje, jak AI agenti prohlížejí katalogy, skládají košík a dokončují nákup jménem zákazníka. Jak to funguje a co pro to musí e-shop udělat?</p></div><aside class="article-meta"><span>Autor<strong>Jakub Hrnčíř</strong></span><span>Aktualizováno<strong>22. 7. 2026</strong></span><span>Doba čtení<strong>6 minut</strong></span></aside></div></header>
+<div class="article-layout guide-shell"><article class="article-body">
+  <p>Agentic commerce je nejčastěji skloňovaný pojem kolem Shopify Spring '26 Edition, ale netýká se jen jednoho vydání — popisuje širší posun v tom, jak lidé nakupují online. Místo aby zákazník otevřel e-shop, porovnal produkty a prošel checkoutem sám, může tento proces částečně nebo úplně převzít AI agent v ChatGPT, Copilotu, Gemini nebo podobném nástroji.</p>
+  <p>Podrobnosti ke konkrétnímu vydání, které agentic commerce na Shopify zavedlo, popisuje článek o <a href="../shopify-editions-spring-26/">Shopify Editions Spring '26</a>. Tady se zaměřuji na to, jak to celé funguje technicky a prakticky — a co to znamená pro e-shop, který v tom nechce zůstat pozadu.</p>
+
+  <h2 id="co-je-agentic-commerce">Co je agentic commerce</h2>
+  <p>V klasickém e-commerce je zákazník ten, kdo prochází katalog, rozhoduje se a nakupuje. V agentic commerce tuto roli částečně přebírá AI agent — na základě zadání typu „najdi mi běžecké boty do 3000 Kč, které dorazí do pátku" prohledá dostupné obchody, porovná nabídky a může rovnou navrhnout nebo dokončit nákup. Agent přitom pracuje se strukturovanými daty z obchodu, ne s tím, jak stránka vizuálně vypadá.</p>
+
+  <h2 id="ucp">Universal Commerce Protocol (UCP)</h2>
+  <p><strong>Universal Commerce Protocol</strong> je otevřený standard, který Shopify vyvinul společně s Googlem a který má za sebou podporu firem jako Amazon, Meta, Microsoft, Salesforce, Stripe, Etsy, Target nebo Visa. Řeší základní problém: bez společného standardu by si každá AI platforma (ChatGPT, Copilot, Gemini) vyžadovala vlastní integraci s košíkem a checkoutem každého obchodu zvlášť.</p>
+  <p>UCP definuje čtyři fáze komunikace mezi AI agentem a obchodem:</p>
+  <div class="decision-flow">
+    <div class="decision-step"><span>01</span><div><strong>Autentizace</strong><p>Agent se identifikuje profilem, obchod podle důvěryhodnosti přiděluje oprávnění a limity.</p></div></div>
+    <div class="decision-step"><span>02</span><div><strong>Katalog</strong><p>Agent prohledává produkty — buď napříč všemi Shopify obchody, nebo v katalogu konkrétního e-shopu.</p></div></div>
+    <div class="decision-step"><span>03</span><div><strong>Košík a checkout</strong><p>Agent sestaví košík, případně dokončí nákup — u důvěryhodných agentů rovnou platbou.</p></div></div>
+    <div class="decision-step"><span>04</span><div><strong>Sledování objednávky</strong><p>Stav doručení, reklamace a vrácení dostupné agentovi přes webhooky a API.</p></div></div>
+  </div>
+
+  <h2 id="jak-to-funguje">Shopify Catalog a Agentic Storefronts v praxi</h2>
+  <p>Pro majitele e-shopu je implementace jednodušší, než UCP samotný zní. Shopify za obchod řeší technickou stránku protokolu — stačí v adminu přes nástěnku <strong>Agentic Storefronts</strong> zapnout, ve kterých AI kanálech chce být obchod viditelný. Data o produktech se čerpají ze <strong>Shopify Catalog</strong>, strukturované databáze, kterou si AI agenti mohou prohledávat přímo — bez nutnosti stránku scrapovat, jak to dělaly starší nástroje.</p>
+
+  <h2 id="cisla">Reálná čísla z prvních měsíců</h2>
+  <p>Konkrétní dopad se zatím liší značku od značky, ale první data naznačují směr:</p>
+  <ul class="checklist">
+    <li>Zákazníci přicházející z AI kanálů podle Shopify konvertují přibližně o <strong>42 %</strong> lépe než běžní návštěvníci</li>
+    <li>Obchody napojené na AI agenty zaznamenaly během Cyber Week 2025 až <strong>7násobný</strong> růst tržeb z těchto kanálů</li>
+    <li>Vyhledávání přes strukturovaný Shopify Catalog konvertuje zhruba <strong>2×</strong> lépe než výsledky ze scrapovaných dat</li>
+    <li>Konkrétní značky jako Omnilux nebo Cozy Earth hlásí jednotky procent tržeb z AI kanálů už dnes, u některých i desítky procent meziročního růstu</li>
+  </ul>
+  <p>Čísla je potřeba brát s rezervou — jde o rané, Shopify vlastní případové studie, ne nezávislý výzkum. Ukazují ale, že objem není zanedbatelný a dál roste.</p>
+
+  <h2 id="co-delat">Co musíte udělat, aby vás AI agenti našli</h2>
+  <p>AI agenti se rozhodují na základě dat, ne dojmu ze vzhledu e-shopu. Prioritou by proto mělo být:</p>
+  <ul class="checklist">
+    <li><strong>Kompletní a přesná produktová data</strong> — názvy, popisy, varianty, obrázky a kategorie bez mezer a nekonzistencí</li>
+    <li><strong>Aktuální dostupnost</strong> — sklad, dodací lhůty a možnosti doručení musí odpovídat realitě, agent porovnává obchody právě podle spolehlivosti těchto údajů</li>
+    <li><strong>Jasné podmínky</strong> — vrácení zboží, doprava a platby strukturovaně dostupné přes API, ne jen v textu na podstránce</li>
+    <li><strong>Aktivní zapojení do Agentic Storefronts</strong> — samotná přítomnost na Shopify nestačí, viditelnost v AI kanálech je potřeba explicitně zapnout</li>
+  </ul>
+  <p>Tohle se úzce prolíná s konceptem, kterému se v poslední době říká <strong>Answer Engine Optimization (AEO)</strong> — obdoba SEO zaměřená na viditelnost v AI odpovědích a doporučeních, ne jen ve výsledcích klasického vyhledávání.</p>
+
+  <h2 id="rizika">Rizika a otevřené otázky</h2>
+  <p>Agentic commerce je pořád rané téma a stojí za to k němu přistupovat věcně, ne jako k automatické záruce vyšších tržeb:</p>
+  <ul class="checklist">
+    <li>Adopce mezi zákazníky se teprve rozjíždí — objem nákupů přes AI agenty je zatím u většiny obchodů jednotky procent</li>
+    <li>Otevřené zůstávají otázky ochrany dat a bezpečnosti při autorizaci plateb jménem zákazníka</li>
+    <li>Ne každý typ zboží nebo obchodního modelu se pro AI zprostředkovaný nákup hodí stejně dobře — u produktů, kde rozhoduje osobní vyzkoušení nebo poradenství, bude role agenta spíš doplňková</li>
+    <li>Kontrola nad prezentací značky je nižší, než když si zákazník prochází e-shop přímo — o výběru rozhoduje z velké části struktura dat, ne vizuální identita</li>
+  </ul>
+
+  <h2 id="plus-nebo-ne">Potřebujete kvůli tomu Shopify Plus?</h2>
+  <p>Ne nutně. UCP i Shopify Catalog jsou dostupné napříč tarify a od Spring '26 Edition je protokol otevřený všem vývojářům bez nutnosti schvalování. Shopify Plus dává smysl spíš u velkých katalogů, vyšších objemů dat a pokročilé podpory při implementaci — ne jako podmínka samotného přístupu k agentic commerce.</p>
+  <blockquote>Agentic commerce nezvýhodňuje velké značky, ale obchody s dobrými daty. Menší e-shop s čistým katalogem má reálnou šanci být vidět stejně jako enterprise konkurence.</blockquote>
+
+  <section class="article-faq" id="faq"><h2>Časté otázky</h2><div class="faq-list">
+    <details><summary>Co je agentic commerce?</summary><p>Nakupování, které místo návštěvy e-shopu zprostředkovává AI agent — prohlédne katalog, poskládá košík a případně dokončí nákup jménem zákazníka přímo v rozhraní jako ChatGPT, Copilot nebo Gemini.</p></details>
+    <details><summary>Je Universal Commerce Protocol dostupný jen pro Shopify Plus?</summary><p>Ne. UCP i Shopify Catalog jsou dostupné napříč tarify a od Spring '26 Edition otevřené všem vývojářům bez nutnosti schvalování. Shopify Plus přidává hodnotu hlavně u větších katalogů, vyšších objemů a pokročilé podpory, ne u samotného přístupu k protokolu.</p></details>
+    <details><summary>Jak zapnu Agentic Storefronts?</summary><p>Přímo v Shopify adminu přepínačem pro jednotlivé AI kanály (ChatGPT, Google AI Mode, Perplexity, Microsoft Copilot). Shopify pak sám řeší technickou stránku protokolu; podmínkou je mít kompletní a přesná produktová data v katalogu.</p></details>
+    <details><summary>Nahrazuje agentic commerce klasické SEO?</summary><p>Nenahrazuje, spíš doplňuje. Struktura dat, popisy produktů a technické SEO základy zůstávají důležité i pro to, aby AI agenti obchod správně pochopili a doporučili.</p></details>
+  </div></section>
+
+  <div class="article-callout"><span>Technické posouzení</span><h3>Chcete připravit e-shop na AI kanály?</h3><p>Pošlete mi odkaz na e-shop. Zkontroluji stav produktových dat, navrhnu, co upravit, a pomůžu s nastavením Agentic Storefronts i souvisejícími úpravami šablony.</p><a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=integrace&amp;zdroj=clanek-agentic-commerce">Probrat přípravu na AI kanály →︎</a></div>
+
+  <section class="article-sources"><h2>Zdroje a další čtení</h2><ul>
+    <li><a href="https://www.shopify.com/blog/how-agentic-commerce-works" target="_blank" rel="noreferrer">Shopify: How agentic commerce works</a></li>
+    <li><a href="https://shopify.dev/docs/agents" target="_blank" rel="noreferrer">Shopify.dev: Build commerce agents with UCP</a></li>
+    <li><a href="https://shopify.engineering/ucp" target="_blank" rel="noreferrer">Shopify Engineering: Building the Universal Commerce Protocol</a></li>
+    <li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — kompletní přehled vydání</a></li>
+    <li><a href="../shopify-seo/">Shopify SEO: co platforma řeší sama</a></li>
+  </ul></section>
+</article><aside class="article-toc"><span>Obsah článku</span><ol><li><a href="#co-je-agentic-commerce">Co to je</a></li><li><a href="#ucp">UCP protokol</a></li><li><a href="#jak-to-funguje">Jak to funguje</a></li><li><a href="#cisla">Reálná čísla</a></li><li><a href="#co-delat">Co udělat</a></li><li><a href="#rizika">Rizika</a></li><li><a href="#plus-nebo-ne">Plus, nebo ne</a></li></ol></aside></div>
+<section class="related guide-shell"><div class="related-head"><h2>Související články</h2><a href="../">Celý průvodce →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-editions-spring-26/"><span class="guide-topic">Novinky</span><h3>Editions Spring '26</h3><p>Celé vydání a co je nového.</p></a><a class="related-card" href="../shopify-plus-cesky-trh/"><span class="guide-topic">Enterprise</span><h3>Plus a český e-shop</h3><p>Výhody, cena, case studies.</p></a><a class="related-card" href="../shopify-seo/"><span class="guide-topic">SEO</span><h3>Shopify SEO</h3><p>Co platforma řeší sama.</p></a></div></section>
+</main><footer class="guide-footer guide-shell"><span>© 2026 Jakub Hrnčíř</span><nav><a href="/shopify-vyvoj/">Shopify projekty</a><a href="../">Průvodce</a><a href="mailto:jakub.hrncir24@gmail.com">Kontakt</a></nav></footer></body></html>

@@ -62,7 +62,7 @@
     </url>
     <url>
           <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-plus-b2b-d2c/</loc>
-          <lastmod>2026-07-18</lastmod>
+          <lastmod>2026-07-22</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
@@ -107,5 +107,17 @@
           <lastmod>2026-07-22</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-editions-spring-26/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
     </url>
 </urlset>
