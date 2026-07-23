@@ -126,26 +126,6 @@
       ]
     },
     {
-      key: 'integrations',
-      title: 'Počítáte s externími aplikacemi nebo systémy?',
-      hint: 'Například e-mailing, doprava, analytika nebo interní systém.',
-      options: [
-        ['none', 'Ne nebo zatím nevím'],
-        ['one', 'Jedna konkrétní integrace'],
-        ['multiple', 'Několik aplikací či systémů']
-      ]
-    },
-    {
-      key: 'markets',
-      title: 'Na jakých trzích e-shop působí?',
-      hint: 'Více trhů může ovlivnit strukturu, obsah i technické nastavení.',
-      options: [
-        ['local', 'Česko nebo Slovensko'],
-        ['eu', 'Více evropských trhů'],
-        ['global', 'Evropa i další světové trhy']
-      ]
-    },
-    {
       key: 'timing',
       title: 'Kdy chcete projekt začít řešit?',
       hint: 'Výsledek diagnostiky můžete rovnou přenést do poptávky.',

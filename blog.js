@@ -76,3 +76,60 @@ if (guideFinePointer.matches && !guideReducedMotion.matches) {
 
   document.documentElement.addEventListener('pointerleave', () => glow.classList.remove('is-visible'));
 }
+
+
+const setupGuideMobileNavigation = () => {
+  const header = document.querySelector('.guide-header');
+  const menu = header?.querySelector('.guide-nav');
+  if (!header || !menu || header.querySelector('.guide-menu-toggle')) return;
+
+  const brand = header.querySelector('.guide-brand');
+  if (brand) {
+    brand.href = '/shopify-vyvoj/';
+    brand.setAttribute('aria-label', 'Shopify vývoj, úvodní stránka');
+  }
+
+  if (!menu.querySelector('.guide-mobile-only')) {
+    const profile = document.createElement('a');
+    profile.className = 'guide-mobile-only';
+    profile.href = '/cs.html';
+    profile.textContent = 'Osobní profil';
+    menu.append(profile);
+  }
+
+  if (!menu.id) menu.id = 'guide-navigation';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'guide-menu-toggle';
+  toggle.setAttribute('aria-controls', menu.id);
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Otevřít navigaci');
+  toggle.innerHTML = '<span></span><span></span>';
+  const back = header.querySelector('.guide-back');
+  header.insertBefore(toggle, back || null);
+
+  const close = () => {
+    header.classList.remove('menu-open');
+    document.body.classList.remove('guide-menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Otevřít navigaci');
+  };
+  toggle.addEventListener('click', () => {
+    const open = !header.classList.contains('menu-open');
+    header.classList.toggle('menu-open', open);
+    document.body.classList.toggle('guide-menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Zavřít navigaci' : 'Otevřít navigaci');
+  });
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+      close();
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1050) close();
+  }, { passive:true });
+};
+setupGuideMobileNavigation();

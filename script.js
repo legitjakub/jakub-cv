@@ -184,3 +184,75 @@ if (contactLink && contactLink.firstChild?.nodeType === Node.TEXT_NODE) {
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+
+const setupMobileNavigation = () => {
+  const header = document.querySelector('.nav-wrap');
+  const menu = header?.querySelector(':scope > nav');
+  if (!header || !menu || header.querySelector('.mobile-nav-toggle')) return;
+  const isEnglish = document.documentElement.lang === 'en';
+  const openLabel = isEnglish ? 'Open navigation' : 'Otevřít navigaci';
+  const closeLabel = isEnglish ? 'Close navigation' : 'Zavřít navigaci';
+
+  if (document.body.classList.contains('shopify-conversion-page') || document.body.classList.contains('shopify-inquiry-page')) {
+    const brandLink = header.querySelector('.brand');
+    if (brandLink) {
+      brandLink.href = '/shopify-vyvoj/';
+      brandLink.setAttribute('aria-label', 'Shopify vývoj, úvodní stránka');
+    }
+
+    if (!menu.querySelector('.mobile-profile-link')) {
+      const profileLink = document.createElement('a');
+      profileLink.className = 'mobile-nav-only mobile-profile-link';
+      profileLink.href = '/cs.html';
+      profileLink.textContent = 'Osobní profil';
+
+      const englishLink = document.createElement('a');
+      englishLink.className = 'mobile-nav-only';
+      englishLink.href = '/work.html';
+      englishLink.lang = 'en';
+      englishLink.textContent = 'English portfolio';
+      menu.append(profileLink, englishLink);
+    }
+  }
+
+  if (!menu.id) menu.id = 'primary-navigation';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'mobile-nav-toggle';
+  toggle.setAttribute('aria-controls', menu.id);
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', openLabel);
+  toggle.innerHTML = '<span></span><span></span>';
+
+  const actions = header.querySelector('.nav-actions');
+  header.insertBefore(toggle, actions || null);
+
+  const closeMenu = () => {
+    header.classList.remove('mobile-menu-open');
+    document.body.classList.remove('mobile-nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', openLabel);
+  };
+
+  toggle.addEventListener('click', () => {
+    const open = !header.classList.contains('mobile-menu-open');
+    header.classList.toggle('mobile-menu-open', open);
+    document.body.classList.toggle('mobile-nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+  });
+
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('mobile-menu-open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) closeMenu();
+  }, { passive: true });
+};
+
+setupMobileNavigation();

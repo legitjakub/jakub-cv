@@ -345,3 +345,66 @@
   .solution-path-list article,.diagnostic-option,.case-action,.form-submit-row button { transition:none; }
   .diagnostic-meter b { transition:none; }
 }
+
+
+.commercial-faq {
+  display:grid;
+  grid-template-columns:minmax(300px,.7fr) minmax(0,1.3fr);
+  gap:clamp(50px,8vw,130px);
+  padding-top:clamp(90px,10vw,145px);
+  padding-bottom:clamp(90px,10vw,145px);
+  border-top:1px solid rgba(var(--commerce-rgb),.18);
+  background:#0a0d0b;
+}
+.commercial-faq-head h2,.conversion-close h2 { margin:26px 0 0; font-size:clamp(48px,6vw,92px); line-height:.9; letter-spacing:-.07em; }
+.commercial-faq-head h2 em,.conversion-close h2 em { color:var(--commerce); font-style:normal; }
+.commercial-faq-head p,.conversion-close p { max-width:590px; margin:26px 0 0; color:var(--conversion-muted); font-size:14px; line-height:1.75; }
+.commercial-faq-list { border-top:1px solid var(--conversion-line); }
+.commercial-faq-list details { border-bottom:1px solid var(--conversion-line); }
+.commercial-faq-list summary { position:relative; padding:23px 48px 23px 0; color:#e1e1db; font-size:17px; font-weight:700; line-height:1.45; list-style:none; cursor:pointer; }
+.commercial-faq-list summary::-webkit-details-marker { display:none; }
+.commercial-faq-list summary::after { content:"+"; position:absolute; top:50%; right:2px; display:grid; width:30px; height:30px; place-items:center; border:1px solid rgba(var(--commerce-rgb),.5); border-radius:50%; color:var(--commerce); font:400 18px/1 "DM Mono"; transform:translateY(-50%); transition:transform .25s ease,background .25s ease,color .25s ease; }
+.commercial-faq-list details[open] summary::after { background:var(--commerce); color:#091006; transform:translateY(-50%) rotate(45deg); }
+.commercial-faq-list p { max-width:720px; margin:0; padding:0 48px 24px 0; color:#999b94; font-size:13px; line-height:1.75; }
+.conversion-close {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(290px,.55fr);
+  gap:clamp(50px,8vw,130px);
+  align-items:end;
+  padding-top:clamp(90px,10vw,145px);
+  padding-bottom:clamp(90px,10vw,145px);
+  background:radial-gradient(circle at 82% 50%,rgba(var(--commerce-rgb),.1),transparent 28%),#080a09;
+}
+.conversion-close-actions { display:grid; gap:15px; }
+.conversion-close-actions>a { display:flex; min-height:54px; align-items:center; justify-content:space-between; padding:0 18px; border:1px solid rgba(255,255,255,.2); color:#d5d5ce; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
+.conversion-close-actions .conversion-close-primary { border-color:var(--commerce); background:var(--commerce); color:#091006; }
+.conversion-close-actions small { color:#71736c; font:400 8px/1.6 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
+.mobile-inquiry-bar { display:none; }
+@media (max-width:1100px) {
+  .commercial-faq,.conversion-close { grid-template-columns:1fr; gap:48px; }
+}
+@media (max-width:760px) {
+  .commercial-faq,.conversion-close { padding-top:82px; padding-bottom:82px; }
+  .commercial-faq-head h2,.conversion-close h2 { font-size:clamp(43px,13vw,64px); }
+  .commercial-faq-list summary { padding-block:20px; padding-right:44px; font-size:15px; }
+  .commercial-faq-list p { padding-right:38px; font-size:12.5px; }
+  .mobile-inquiry-bar {
+    position:fixed;
+    left:12px;
+    right:70px;
+    bottom:12px;
+    z-index:24;
+    display:flex;
+    min-height:48px;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    border:1px solid rgba(9,16,6,.45);
+    background:var(--commerce);
+    color:#091006;
+    box-shadow:0 16px 42px rgba(0,0,0,.42);
+    font:500 9px "DM Mono";
+    text-transform:uppercase;
+    letter-spacing:.07em;
+  }
+}
