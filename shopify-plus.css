@@ -3,6 +3,34 @@
 
 .plus-page .work-hero-copy h1 em { color:var(--commerce); font-style:normal; }
 
+/* ── Sub-page hero ───────────────────────────────────────────────
+   Deliberately quieter than the agency home page: no oversized COMMERCE
+   watermark, a tighter hero and a breadcrumb, so it reads as a section of
+   the site rather than a second front page. */
+.plus-page .plus-hero::after { content:none; }
+.plus-page .plus-hero { padding-top:118px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.08); }
+.plus-page .plus-hero .work-hero-copy h1 { font-size:clamp(38px,5.4vw,74px); }
+.plus-page .plus-hero .work-hero-copy > p { max-width:660px; }
+
+.plus-breadcrumb {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+  margin-bottom:26px;
+  color:#6f6f69;
+  font:500 9px "DM Mono";
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.plus-breadcrumb a { color:#9a9a93; border-bottom:1px solid rgba(255,255,255,.16); padding-bottom:2px; transition:color .2s,border-color .2s; }
+.plus-breadcrumb a:hover { color:var(--commerce); border-color:var(--commerce); }
+.plus-breadcrumb span[aria-current] { color:var(--commerce); }
+
+/* Brand strip sits directly under the hero on this page. */
+.plus-page .work-brands { border-top:0; }
+.plus-page .work-brands .work-brand-marquee { border-top:0; border-bottom:1px solid rgba(255,255,255,.1); }
+
 /* ── Verdict band: the honest yes/no answer, high on the page ─────── */
 .plus-verdict { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-top:0; }
 .plus-verdict article {

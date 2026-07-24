@@ -286,7 +286,14 @@
   /* Withdrawal must stay as easy as giving consent, so every footer gets a
      link back into the preferences panel. */
   function addFooterLink() {
-    var footer = document.querySelector("footer");
+    /* Must be the page footer, not the first <footer> in the document — cards
+       and articles use <footer> too, and the link was landing inside one. */
+    var footers = document.querySelectorAll("footer");
+    var footer = null;
+    for (var i = footers.length - 1; i >= 0; i--) {
+      if (!footers[i].closest("article, section, main")) { footer = footers[i]; break; }
+    }
+    if (!footer) footer = footers[footers.length - 1] || null;
     if (!footer || footer.querySelector(".jh-consent-manage")) return;
     var b = button("jh-consent-manage", t.manage, renderPrefs);
     var holder = el("div");
