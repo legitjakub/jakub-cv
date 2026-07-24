@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="/styles.css?v=split16" />
     <link rel="stylesheet" href="/work.css?v=12" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=3" />
-    <link rel="stylesheet" href="/shopify-plus.css?v=1" />
+    <link rel="stylesheet" href="/shopify-plus.css?v=2" />
     <script src="/script.js?v=split15" defer></script>
     <script src="/shopify-vyvoj.js?v=1" defer></script>
     <script type="application/ld+json">
@@ -132,6 +132,7 @@
     <header class="nav-wrap">
       <a class="brand" href="/index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a>
       <nav aria-label="Shopify Plus navigation">
+        <a href="/work.html">Shopify work</a>
         <a href="#fit">Who it fits</a>
         <a href="#differences">What Plus adds</a>
         <a href="#cost">Cost</a>
@@ -146,28 +147,36 @@
     </header>
 
     <main id="top" class="work-main">
-      <section class="work-hero section-pad conversion-hero plus-hero">
-        <nav class="plus-breadcrumb" aria-label="Breadcrumb">
-          <a href="/work.html">Shopify work</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Shopify Plus</span>
-        </nav>
-        <div class="work-hero-stage">
-          <div class="work-hero-copy reveal">
-            <span class="work-index">Shopify Plus · Czechia and Slovakia · 2026</span>
-            <h1><span>Shopify Plus.</span><br /><em>When it makes sense.</em></h1>
-            <p>Plus is Shopify's enterprise plan. A lot of what used to sell it now runs on lower plans — which makes it worth asking specifically what your store would actually use it for. This page also answers the cases where the answer is "you don't need it".</p>
-            <div class="work-hero-actions">
-              <a class="work-hero-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus%20assessment" data-track="hero_inquiry">Assess my case <span>↗︎</span></a>
-              <a class="work-hero-secondary" href="#fit" data-track="hero_criteria">When Plus pays off <span>↓︎</span></a>
-            </div>
+      <section class="plus-hero section-pad" aria-labelledby="hero-title">
+        <div class="plus-hero-main reveal">
+          <span class="plus-eyebrow">Shopify Plus · Czechia and Slovakia · 2026</span>
+          <h1 id="hero-title">Shopify Plus.<br /><em>When it makes sense<br />and when it doesn't.</em></h1>
+          <p>Shopify's enterprise plan. A lot of what used to sell it now runs on lower plans — so it is worth asking specifically what your store would actually use it for.</p>
+          <div class="plus-hero-actions">
+            <a class="plus-cta-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus%20assessment" data-track="hero_inquiry">Assess my case <span aria-hidden="true">↗︎</span></a>
+            <a class="plus-cta-ghost" href="#fit" data-track="hero_criteria">Decision criteria <span aria-hidden="true">↓︎</span></a>
           </div>
         </div>
-        <div class="work-hero-proof reveal" aria-label="Shopify Plus experience">
+
+        <aside class="plus-hero-card reveal" aria-label="Shopify Plus in numbers">
+          <div class="plus-card-price">
+            <span>Price published by Shopify</span>
+            <strong>€2,100<em>/month</em></strong>
+            <small>on a three-year term · €2,250 on one year</small>
+          </div>
+          <dl class="plus-card-facts">
+            <div><dt>Included</dt><dd>main store plus 9 more</dd></div>
+            <div><dt>Hard gate</dt><dd>custom app with Functions</dd></div>
+            <div><dt>API limit</dt><dd>1,000 points/s (elsewhere 100–200)</dd></div>
+          </dl>
+          <a class="plus-card-link" href="#cost" data-track="hero_pricing">Cost breakdown <span aria-hidden="true">↓︎</span></a>
+        </aside>
+
+        <div class="plus-hero-proof reveal" aria-label="Shopify Plus experience">
           <div><strong>2</strong><span>Plus projects: Posedla and Facederma</span></div>
           <div><strong>4</strong><span>regional stores under one contract</span></div>
           <div><strong>1:1</strong><span>you deal directly with the developer</span></div>
-          <a href="#references" data-track="hero_references">See references <span>↘︎</span></a>
+          <a href="#references" data-track="hero_references">See references <span aria-hidden="true">↘︎</span></a>
         </div>
       </section>
 
@@ -359,14 +368,39 @@
         </div>
       </section>
 
-      <section class="conversion-close section-pad reveal" aria-labelledby="close-title">
-        <span class="work-index">Next step</span>
-        <h2 id="close-title">Not sure whether<br /><em>you need Plus?</em></h2>
-        <p>Tell me what the store runs today and what it needs to do. I will also tell you when I think you do not need Plus — and what makes sense instead.</p>
-        <div class="conversion-close-actions">
-          <a class="conversion-close-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus" data-track="close_inquiry">Describe your situation <span>↗︎</span></a>
-          <a href="/work.html" data-track="close_work">See Shopify work <span>→</span></a>
+      <section class="plus-close section-pad" aria-labelledby="close-title">
+        <div class="plus-close-lead reveal">
+          <span class="plus-eyebrow">Next step</span>
+          <h2 id="close-title">Not sure whether<br /><em>you need Plus?</em></h2>
+          <p>Tell me what the store runs today and what it needs to do. I will also tell you when I think you do not need Plus — and what makes sense instead.</p>
         </div>
+
+        <div class="plus-close-paths reveal">
+          <a class="plus-path plus-path-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus%20assessment" data-track="close_inquiry">
+            <span class="plus-path-tag">Project assessment</span>
+            <strong>Describe your situation</strong>
+            <small>Platform, what you are solving, and your timeline.</small>
+            <b aria-hidden="true">↗︎</b>
+          </a>
+          <a class="plus-path" href="/shopify-guide/" data-track="close_guide">
+            <span class="plus-path-tag">Still reading</span>
+            <strong>Shopify guide</strong>
+            <small>Development, tooling and platform updates explained.</small>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="plus-path" href="/work.html" data-track="close_work">
+            <span class="plus-path-tag">See the work</span>
+            <strong>Shopify projects</strong>
+            <small>Case studies and verified client references.</small>
+            <b aria-hidden="true">→</b>
+          </a>
+        </div>
+
+        <ol class="plus-close-expect reveal" aria-label="What happens next">
+          <li><span>01</span> I review the store and what you describe</li>
+          <li><span>02</span> I add the questions still missing</li>
+          <li><span>03</span> I tell you whether Plus is needed, and what next</li>
+        </ol>
       </section>
     </main>
 

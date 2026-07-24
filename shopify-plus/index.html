@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="/styles.css?v=split16" />
     <link rel="stylesheet" href="/work.css?v=12" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=3" />
-    <link rel="stylesheet" href="/shopify-plus.css?v=1" />
+    <link rel="stylesheet" href="/shopify-plus.css?v=2" />
     <script src="/script.js?v=split15" defer></script>
     <script src="/shopify-vyvoj.js?v=1" defer></script>
     <script type="application/ld+json">
@@ -132,6 +132,7 @@
     <header class="nav-wrap">
       <a class="brand" href="/cs.html" aria-label="Jakub Hrnčíř, hlavní profil">JH<span>.</span></a>
       <nav aria-label="Navigace Shopify Plus">
+        <a href="/shopify-vyvoj/">Shopify vývoj</a>
         <a href="#komu">Komu se vyplatí</a>
         <a href="#rozdily">Co Plus přidává</a>
         <a href="#cena">Cena</a>
@@ -146,28 +147,36 @@
     </header>
 
     <main id="top" class="work-main">
-      <section class="work-hero section-pad conversion-hero plus-hero">
-        <nav class="plus-breadcrumb" aria-label="Drobečková navigace">
-          <a href="/shopify-vyvoj/">Shopify vývoj</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Shopify Plus</span>
-        </nav>
-        <div class="work-hero-stage">
-          <div class="work-hero-copy reveal">
-            <span class="work-index">Shopify Plus · Česko a Slovensko · 2026</span>
-            <h1><span>Shopify Plus.</span><br /><em>Kdy dává smysl.</em></h1>
-            <p>Plus je enterprise tarif Shopify. Řadu věcí, kterými se dřív prodával, dnes zvládnou i nižší tarify — a proto má smysl ptát se konkrétně, co z něj váš e-shop reálně využije. Tahle stránka odpovídá i tam, kde je odpověď „nepotřebujete ho".</p>
-            <div class="work-hero-actions">
-              <a class="work-hero-primary" href="/shopify-poptavka/?typ=integrace&amp;zdroj=plus-hero" data-track="hero_inquiry">Posoudit můj případ <span>↗︎</span></a>
-              <a class="work-hero-secondary" href="#komu" data-track="hero_criteria">Kdy se Plus vyplatí <span>↓︎</span></a>
-            </div>
+      <section class="plus-hero section-pad" aria-labelledby="hero-title">
+        <div class="plus-hero-main reveal">
+          <span class="plus-eyebrow">Shopify Plus · Česko a Slovensko · 2026</span>
+          <h1 id="hero-title">Shopify Plus.<br /><em>Kdy dává smysl<br />a kdy ne.</em></h1>
+          <p>Enterprise tarif Shopify. Řadu věcí, kterými se dřív prodával, dnes zvládnou i nižší tarify — proto má smysl ptát se konkrétně, co z něj váš e-shop reálně využije.</p>
+          <div class="plus-hero-actions">
+            <a class="plus-cta-primary" href="/shopify-poptavka/?typ=integrace&amp;zdroj=plus-hero" data-track="hero_inquiry">Posoudit můj případ <span aria-hidden="true">↗︎</span></a>
+            <a class="plus-cta-ghost" href="#komu" data-track="hero_criteria">Rozhodovací kritéria <span aria-hidden="true">↓︎</span></a>
           </div>
         </div>
-        <div class="work-hero-proof reveal" aria-label="Zkušenost s Shopify Plus">
+
+        <aside class="plus-hero-card reveal" aria-label="Shopify Plus v číslech">
+          <div class="plus-card-price">
+            <span>Cena podle Shopify</span>
+            <strong>2 100 €<em>/měsíc</em></strong>
+            <small>při tříleté smlouvě · 2 250 € při roční</small>
+          </div>
+          <dl class="plus-card-facts">
+            <div><dt>V ceně</dt><dd>hlavní obchod a 9 dalších</dd></div>
+            <div><dt>Tvrdá hranice</dt><dd>vlastní aplikace s Functions</dd></div>
+            <div><dt>API limit</dt><dd>1 000 bodů/s (jinde 100–200)</dd></div>
+          </dl>
+          <a class="plus-card-link" href="#cena" data-track="hero_pricing">Rozpad nákladů <span aria-hidden="true">↓︎</span></a>
+        </aside>
+
+        <div class="plus-hero-proof reveal" aria-label="Zkušenost s Shopify Plus">
           <div><strong>2</strong><span>Plus projekty: Posedla a Facederma</span></div>
           <div><strong>4</strong><span>regionální obchody pod jednou smlouvou</span></div>
           <div><strong>1:1</strong><span>jednáte přímo s vývojářem</span></div>
-          <a href="#reference" data-track="hero_references">Prohlédnout reference <span>↘︎</span></a>
+          <a href="#reference" data-track="hero_references">Prohlédnout reference <span aria-hidden="true">↘︎</span></a>
         </div>
       </section>
 
@@ -359,14 +368,39 @@
         </div>
       </section>
 
-      <section class="conversion-close section-pad reveal" aria-labelledby="close-title">
-        <span class="work-index">Další krok</span>
-        <h2 id="close-title">Nevíte, jestli Plus<br /><em>potřebujete?</em></h2>
-        <p>Napište mi, co e-shop dnes provozuje a co má umět. Řeknu vám i to, když Plus podle mě nepotřebujete — a co dává smysl místo něj.</p>
-        <div class="conversion-close-actions">
-          <a class="conversion-close-primary" href="/shopify-poptavka/?typ=integrace&amp;zdroj=plus-zaver" data-track="close_inquiry">Popsat situaci e-shopu <span>↗︎</span></a>
-          <a href="/shopify-pruvodce/shopify-plus-cesky-trh/" data-track="close_article">Přečíst podrobný článek <span>→</span></a>
+      <section class="plus-close section-pad" aria-labelledby="close-title">
+        <div class="plus-close-lead reveal">
+          <span class="plus-eyebrow">Další krok</span>
+          <h2 id="close-title">Nevíte, jestli Plus<br /><em>potřebujete?</em></h2>
+          <p>Napište mi, co e-shop dnes provozuje a co má umět. Řeknu vám i to, když Plus podle mě nepotřebujete — a co dává smysl místo něj.</p>
         </div>
+
+        <div class="plus-close-paths reveal">
+          <a class="plus-path plus-path-primary" href="/shopify-poptavka/?typ=integrace&amp;zdroj=plus-zaver" data-track="close_inquiry">
+            <span class="plus-path-tag">Posouzení projektu</span>
+            <strong>Popsat situaci e-shopu</strong>
+            <small>Krátký formulář: platforma, co řešíte, jaký máte termín.</small>
+            <b aria-hidden="true">↗︎</b>
+          </a>
+          <a class="plus-path" href="/shopify-pruvodce/shopify-plus-cesky-trh/" data-track="close_article">
+            <span class="plus-path-tag">Ještě si čtu</span>
+            <strong>Podrobný článek o Plus v ČR</strong>
+            <small>Specifika trhu, platby, dopravci a zkušenosti z projektů.</small>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="plus-path" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus" data-track="close_email">
+            <span class="plus-path-tag">Raději přímo</span>
+            <strong>Napsat e-mail</strong>
+            <small>jakub.hrncir24@gmail.com</small>
+            <b aria-hidden="true">↗︎</b>
+          </a>
+        </div>
+
+        <ol class="plus-close-expect reveal" aria-label="Co bude následovat">
+          <li><span>01</span> Projdu e-shop a to, co popíšete</li>
+          <li><span>02</span> Doplním otázky, které chybí k rozhodnutí</li>
+          <li><span>03</span> Řeknu, jestli Plus potřebujete — a co dál</li>
+        </ol>
       </section>
     </main>
 

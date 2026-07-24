@@ -1,31 +1,107 @@
 /* Shopify Plus landing page — builds on styles.css + work.css + shopify-vyvoj.css.
    Only the pieces that page needs and the shared sheets do not already cover. */
 
-.plus-page .work-hero-copy h1 em { color:var(--commerce); font-style:normal; }
-
 /* ── Sub-page hero ───────────────────────────────────────────────
-   Deliberately quieter than the agency home page: no oversized COMMERCE
-   watermark, a tighter hero and a breadcrumb, so it reads as a section of
-   the site rather than a second front page. */
-.plus-page .plus-hero::after { content:none; }
-.plus-page .plus-hero { padding-top:118px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.08); }
-.plus-page .plus-hero .work-hero-copy h1 { font-size:clamp(38px,5.4vw,74px); }
-.plus-page .plus-hero .work-hero-copy > p { max-width:660px; }
+   Its own layout rather than a reuse of the agency home hero: copy on the
+   left, a fact card on the right, proof row across the bottom. Answers the
+   two questions people arrive with (what does it cost, what is Plus-only)
+   before they scroll, and reads clearly as a sub-page. */
+.plus-hero {
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  grid-template-areas:"main card" "proof proof";
+  gap:clamp(34px,5vw,72px) clamp(34px,5vw,80px);
+  align-items:start;
+  padding-top:132px;
+  padding-bottom:0;
+}
+.plus-hero-main { grid-area:main; }
+.plus-hero-card { grid-area:card; }
+.plus-hero-proof { grid-area:proof; }
 
-.plus-breadcrumb {
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:9px;
-  margin-bottom:26px;
-  color:#6f6f69;
+.plus-eyebrow {
+  display:block;
+  margin-bottom:22px;
+  color:var(--commerce);
   font:500 9px "DM Mono";
   text-transform:uppercase;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
 }
-.plus-breadcrumb a { color:#9a9a93; border-bottom:1px solid rgba(255,255,255,.16); padding-bottom:2px; transition:color .2s,border-color .2s; }
-.plus-breadcrumb a:hover { color:var(--commerce); border-color:var(--commerce); }
-.plus-breadcrumb span[aria-current] { color:var(--commerce); }
+.plus-hero-main h1 {
+  margin:0 0 26px;
+  font-size:clamp(37px,5vw,68px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  font-weight:650;
+}
+.plus-hero-main h1 em { display:block; color:var(--commerce); font-style:normal; }
+.plus-hero-main > p { max-width:520px; margin:0 0 34px; color:#a2a29b; font-size:15px; line-height:1.72; }
+
+.plus-hero-actions { display:flex; flex-wrap:wrap; gap:11px; }
+.plus-cta-primary,.plus-cta-ghost {
+  display:inline-flex;
+  align-items:center;
+  gap:22px;
+  min-height:52px;
+  padding:0 20px;
+  font:500 9px "DM Mono";
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  transition:background .25s,border-color .25s,color .25s;
+}
+.plus-cta-primary { border:1px solid var(--commerce); background:var(--commerce); color:#091006; }
+.plus-cta-primary:hover { background:#c9ff5c; border-color:#c9ff5c; }
+.plus-cta-ghost { border:1px solid rgba(255,255,255,.22); color:#d3d3cc; }
+.plus-cta-ghost:hover { border-color:var(--commerce); color:var(--commerce); }
+
+/* Fact card — the visual anchor that sets this hero apart. */
+.plus-hero-card {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(var(--commerce-rgb),.24);
+  background:
+    radial-gradient(circle at 88% 6%,rgba(var(--commerce-rgb),.14),transparent 46%),
+    linear-gradient(170deg,rgba(255,255,255,.045),rgba(255,255,255,.01));
+}
+.plus-hero-card::before { content:""; position:absolute; inset:0 0 auto; height:2px; background:linear-gradient(90deg,var(--commerce),transparent 72%); }
+.plus-card-price { padding:28px 26px 22px; border-bottom:1px solid rgba(255,255,255,.1); }
+.plus-card-price > span { display:block; margin-bottom:14px; color:#84847d; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.11em; }
+.plus-card-price strong { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px; color:var(--commerce); font-size:clamp(36px,4.2vw,52px); line-height:.86; letter-spacing:-.06em; }
+.plus-card-price strong em { font-size:.32em; font-style:normal; letter-spacing:.01em; opacity:.7; }
+.plus-card-price small { display:block; margin-top:13px; color:#7e7e78; font:400 10px/1.5 "DM Mono"; }
+.plus-card-facts { display:grid; margin:0; padding:0; }
+.plus-card-facts > div { display:grid; grid-template-columns:minmax(88px,.42fr) 1fr; gap:16px; padding:14px 26px; border-bottom:1px solid rgba(255,255,255,.07); }
+.plus-card-facts dt { color:#7c7c76; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
+.plus-card-facts dd { margin:0; color:#d6d5cf; font-size:13px; line-height:1.45; }
+.plus-card-link {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:52px;
+  padding:0 26px;
+  color:var(--commerce);
+  font:500 9px "DM Mono";
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  transition:background .25s;
+}
+.plus-card-link:hover { background:rgba(var(--commerce-rgb),.07); }
+
+/* Proof row spans the full width under both columns. */
+.plus-hero-proof {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr)) auto;
+  align-items:end;
+  gap:0 30px;
+  margin-top:clamp(20px,4vw,44px);
+  border-top:1px solid rgba(255,255,255,.11);
+}
+.plus-hero-proof > div { display:grid; grid-template-columns:auto 1fr; gap:13px; align-items:baseline; padding:22px 26px 26px 0; }
+.plus-hero-proof > div + div { padding-left:26px; border-left:1px solid rgba(255,255,255,.11); }
+.plus-hero-proof strong { color:#efeee8; font-size:clamp(27px,2.8vw,42px); line-height:.82; letter-spacing:-.07em; }
+.plus-hero-proof span { max-width:130px; color:#7b7b74; font:400 8px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
+.plus-hero-proof > a { display:flex; align-items:center; justify-content:flex-end; gap:16px; min-height:70px; padding:20px 0 26px 26px; border-left:1px solid rgba(255,255,255,.11); color:var(--commerce); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.plus-hero-proof > a span { max-width:none; color:inherit; font-size:14px; letter-spacing:0; }
 
 /* Brand strip sits directly under the hero on this page. */
 .plus-page .work-brands { border-top:0; }
@@ -130,19 +206,71 @@
 .plus-faq details[open] summary::after { transform:rotate(45deg); }
 .plus-faq details>p { margin:0 0 22px; max-width:760px; color:#9d9d96; font-size:14px; line-height:1.72; }
 
+/* ── Closing section: three explicit next steps, not one CTA ─────── */
+.plus-close {
+  padding-top:clamp(84px,9vw,132px);
+  padding-bottom:clamp(84px,9vw,132px);
+  background:radial-gradient(circle at 78% 12%,rgba(var(--commerce-rgb),.09),transparent 34%),#080a09;
+}
+.plus-close-lead { max-width:620px; }
+.plus-close-lead h2 { margin:0 0 20px; font-size:clamp(31px,4vw,54px); line-height:1; letter-spacing:-.055em; font-weight:650; }
+.plus-close-lead h2 em { color:var(--commerce); font-style:normal; }
+.plus-close-lead p { margin:0; color:#9d9d96; font-size:14.5px; line-height:1.72; }
+
+.plus-close-paths { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:clamp(36px,4.5vw,58px); }
+.plus-path {
+  position:relative;
+  display:grid;
+  align-content:start;
+  gap:11px;
+  min-height:186px;
+  padding:24px 22px 56px;
+  border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.008));
+  transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1),background .3s;
+}
+.plus-path:hover { transform:translateY(-4px); border-color:rgba(var(--commerce-rgb),.42); background:linear-gradient(180deg,rgba(var(--commerce-rgb),.06),rgba(255,255,255,.012)); }
+.plus-path-tag { color:#7e7e77; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.11em; }
+.plus-path strong { color:#e8e7e1; font-size:18px; line-height:1.18; letter-spacing:-.035em; }
+.plus-path small { color:#8d8d86; font-size:12.5px; line-height:1.55; }
+.plus-path > b { position:absolute; left:22px; bottom:22px; color:var(--commerce); font:400 16px "DM Mono"; transition:transform .3s cubic-bezier(.2,.8,.2,1); }
+.plus-path:hover > b { transform:translate(3px,-3px); }
+.plus-path-primary { border-color:rgba(var(--commerce-rgb),.5); background:linear-gradient(180deg,rgba(var(--commerce-rgb),.1),rgba(255,255,255,.014)); }
+.plus-path-primary .plus-path-tag { color:var(--commerce); }
+
+.plus-close-expect { display:flex; flex-wrap:wrap; gap:10px 34px; margin:clamp(30px,3.5vw,44px) 0 0; padding:22px 0 0; border-top:1px solid rgba(255,255,255,.1); list-style:none; }
+.plus-close-expect li { display:flex; align-items:baseline; gap:11px; color:#8b8b84; font:400 11px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
+.plus-close-expect span { color:var(--commerce); font-weight:500; }
+
 @media (max-width:1050px) {
+  .plus-hero { grid-template-columns:1fr; grid-template-areas:"main" "card" "proof"; padding-top:112px; }
+  .plus-hero-card { max-width:460px; }
   .plus-verdict { grid-template-columns:1fr; }
   .plus-cost { grid-template-columns:1fr; gap:34px; }
   .plus-timeline { grid-template-columns:1fr 1fr; }
   .plus-timeline article:nth-child(2) { border-right:0; }
   .plus-timeline article:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.08); }
+  .plus-close-paths { grid-template-columns:1fr 1fr; }
+  .plus-close-paths .plus-path:last-child { grid-column:1 / -1; min-height:0; padding-bottom:52px; }
 }
 
 @media (max-width:760px) {
+  .plus-hero { padding-top:96px; }
+  .plus-hero-card { max-width:none; }
+  .plus-hero-actions { display:grid; grid-template-columns:1fr; }
+  .plus-cta-primary,.plus-cta-ghost { justify-content:space-between; }
+  .plus-hero-proof { grid-template-columns:1fr 1fr; }
+  .plus-hero-proof > div { padding:18px 16px 20px 0; }
+  .plus-hero-proof > div:nth-child(3) { padding-left:0; border-left:0; border-top:1px solid rgba(255,255,255,.11); }
+  .plus-hero-proof > a { grid-column:1 / -1; justify-content:space-between; min-height:56px; padding:16px 0 0; border-left:0; border-top:1px solid rgba(255,255,255,.11); }
   .plus-verdict article { padding:24px 20px 26px; }
   .plus-timeline { grid-template-columns:1fr; }
   .plus-timeline article { border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
   .plus-timeline article:last-child { border-bottom:0; }
   .plus-cost-figures div { padding:18px 18px; }
   .plus-faq summary { font-size:14.5px; min-height:58px; }
+  .plus-close-paths { grid-template-columns:1fr; }
+  .plus-close-paths .plus-path,.plus-close-paths .plus-path:last-child { min-height:0; padding:22px 20px 52px; }
+  .plus-close-expect { gap:12px; }
+  .plus-close-expect li { flex:0 0 100%; }
 }
