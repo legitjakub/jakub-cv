@@ -64,10 +64,8 @@ button,input,textarea,select { font:inherit; }
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
 }
-.guide-brand { display:flex; align-items:center; gap:13px; }
-.guide-brand-mark { font-size:31px; font-weight:800; letter-spacing:-.07em; }
-.guide-brand-mark span { color:var(--guide-green); }
-.guide-brand small { padding-left:13px; border-left:1px solid var(--guide-line); color:#969991; font:500 7px/1.35 "DM Mono"; letter-spacing:.11em; text-transform:uppercase; }
+.guide-brand { font-size:31px; font-weight:800; letter-spacing:-.07em; }
+.guide-brand span { color:var(--guide-green); }
 .guide-nav { display:flex; justify-content:center; align-items:center; gap:28px; }
 .guide-nav a,.guide-back {
   position:relative;
@@ -492,10 +490,8 @@ button,input,textarea,select { font:inherit; }
 
 @media (max-width:370px) {
   .guide-header { min-height:70px; }
-  .guide-brand small { max-width:54px; font-size:5.8px; }
-  .guide-contact { display:none; }
-  .guide-back:not(.guide-contact) { width:40px; padding:0; justify-content:center; font-size:0; }
-  .guide-back:not(.guide-contact) svg { width:18px; }
+  .guide-brand { font-size:28px; }
+  .guide-back { padding-inline:9px; letter-spacing:.05em; }
   .guide-hero h1 { font-size:40px; }
   .guide-row { grid-template-columns:34px 1fr 20px; gap:12px; }
   .guide-number { font-size:17px; }
@@ -519,23 +515,18 @@ button,input,textarea,select { font:inherit; }
 @media (max-width:1050px) {
   body.guide-menu-open { overflow:hidden; }
   .guide-menu-toggle {
-    position:relative;
-    display:flex;
-    width:48px;
+    display:grid;
+    width:40px;
     height:40px;
-    flex-direction:column;
-    align-items:flex-end;
-    justify-content:center;
+    place-content:center;
     gap:6px;
     justify-self:end;
-    border:0;
-    background:transparent;
+    border:1px solid rgba(255,255,255,.2);
+    background:#0b0d0c;
     color:var(--guide-text);
     cursor:pointer;
   }
-  .guide-menu-toggle::before { content:"MENU"; position:absolute; right:0; bottom:1px; color:#71746d; font:500 6px "DM Mono"; letter-spacing:.12em; }
-  .guide-menu-toggle span { display:block; width:24px; height:1px; background:currentColor; transform-origin:center; transition:transform .25s ease,width .25s ease; }
-  .guide-menu-toggle span:last-child { width:16px; }
+  .guide-menu-toggle span { display:block; width:17px; height:1px; background:currentColor; transition:transform .25s ease; }
   .guide-header.menu-open .guide-menu-toggle span:first-child { transform:translateY(3.5px) rotate(45deg); }
   .guide-header.menu-open .guide-menu-toggle span:last-child { transform:translateY(-3.5px) rotate(-45deg); }
   .guide-header.menu-open .guide-nav {
@@ -559,10 +550,6 @@ button,input,textarea,select { font:inherit; }
   .guide-menu-toggle:focus-visible { outline:2px solid var(--guide-green); outline-offset:3px; }
 }
 @media (max-width:720px) {
-  .guide-header { grid-template-columns:minmax(0,1fr) auto auto; gap:10px; }
-  .guide-menu-toggle { width:46px; height:38px; }
-  .guide-brand { min-width:0; gap:9px; }
-  .guide-brand-mark { font-size:25px; }
-  .guide-brand small { max-width:60px; padding-left:9px; font-size:6.3px; letter-spacing:.08em; }
-  .guide-back { max-width:122px; line-height:1.25; }
+  .guide-header { grid-template-columns:auto 1fr auto; }
+  .guide-menu-toggle { width:38px; height:38px; }
 }
