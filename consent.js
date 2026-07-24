@@ -111,20 +111,20 @@
 
   var CSS =
     '.jh-consent,.jh-consent *{box-sizing:border-box}' +
-    '.jh-consent{position:fixed;z-index:2147483000;right:max(16px,env(safe-area-inset-right));' +
-    'bottom:max(16px,env(safe-area-inset-bottom));width:min(370px,calc(100vw - 32px));' +
+    '.jh-consent{position:fixed;z-index:2147483000;left:max(16px,env(safe-area-inset-left));' +
+    'bottom:max(16px,env(safe-area-inset-bottom));width:min(420px,calc(100vw - 32px));' +
     'background:#0d100e;color:#efeee8;border:1px solid rgba(255,255,255,.16);' +
     'font-family:"Manrope",system-ui,sans-serif;box-shadow:0 24px 60px rgba(0,0,0,.55);' +
     'opacity:0;transform:translateY(12px);transition:opacity .28s ease,transform .28s ease}' +
     '.jh-consent[data-open="1"]{opacity:1;transform:translateY(0)}' +
     '@media (prefers-reduced-motion:reduce){.jh-consent{transition:none}}' +
-    '.jh-consent-in{padding:18px}' +
-    '.jh-consent h2{margin:0 0 8px;font-size:8px;font-weight:700;letter-spacing:.22em;' +
+    '.jh-consent-in{padding:22px}' +
+    '.jh-consent h2{margin:0 0 10px;font-size:9px;font-weight:700;letter-spacing:.22em;' +
     'text-transform:uppercase;color:#a8ff3e}' +
-    '.jh-consent p{margin:0 0 14px;font-size:12px;line-height:1.55;color:#b9bbb3}' +
+    '.jh-consent p{margin:0 0 18px;font-size:13.5px;line-height:1.62;color:#b9bbb3}' +
     '.jh-consent-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
-    '.jh-consent button{min-height:40px;padding:10px 12px;border:1px solid transparent;' +
-    'font:inherit;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;' +
+    '.jh-consent button{min-height:44px;padding:12px 14px;border:1px solid transparent;' +
+    'font:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;' +
     'cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}' +
     '.jh-consent button:focus-visible{outline:2px solid #a8ff3e;outline-offset:2px}' +
     /* Accept and reject must carry equal visual weight: same size, same fill,
@@ -155,7 +155,7 @@
     '.jh-consent-manage{background:none;border:0;padding:0;font:inherit;color:inherit;' +
     'cursor:pointer;text-decoration:underline;text-underline-offset:3px}' +
     '@media (max-width:520px){.jh-consent{left:12px;right:12px;width:auto}' +
-    '.jh-consent-in{padding:16px}.jh-consent p{font-size:11.5px}.jh-consent-row{grid-template-columns:1fr 1fr}}';
+    '.jh-consent-in{padding:19px}.jh-consent-row{grid-template-columns:1fr}}';
 
   function injectCSS() {
     var s = document.createElement("style");

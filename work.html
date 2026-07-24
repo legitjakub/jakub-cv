@@ -34,7 +34,7 @@
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
-    <script defer src="/consent.js?v=2"></script>
+    <script defer src="/consent.js"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,10 +62,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split17" />
-    <link rel="stylesheet" href="work.css?v=13" />
-    <script src="script.js?v=split16" defer></script>
-    <script src="work.js?v=2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=split16" />
+    <link rel="stylesheet" href="work.css?v=12" />
+    <script src="script.js?v=split15" defer></script>
+    <script src="work.js?v=1" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -106,16 +106,16 @@
   <body class="work-page">
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <header class="nav-wrap">
-      <a class="brand commerce-brand" href="index.html" aria-label="Jakub Hrnčíř, main profile"><span class="brand-monogram">JH<span>.</span></span><small>Shopify development</small></a>
+      <a class="brand" href="index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a>
       <nav aria-label="Work navigation">
-        <a href="#shopify-development">Services</a>
-        <a href="#posedla" data-nav-targets="posedla molecules">Work</a>
+        <a href="#shopify-development">Shopify development</a>
+        <a href="shopify-pruvodce/" lang="cs">Shopify guide · CZ</a>
+        <a href="#posedla" data-nav-targets="posedla molecules">Case studies</a>
         <a href="#work-references">References</a>
-        <a href="shopify-pruvodce/" lang="cs">Blog &amp; guide · CZ</a>
       </nav>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="/shopify-vyvoj/" lang="cs">CZ</a><span aria-current="page">EN</span></div>
-        <a class="nav-cta" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Start a project <span>↗︎</span></a>
+        <a class="nav-cta" href="index.html">Back to profile <span>↗︎</span></a>
       </div>
     </header>
 
@@ -124,8 +124,8 @@
         <div class="work-hero-stage">
           <div class="work-hero-copy reveal">
             <span class="work-index">Independent Shopify development · CZ / Europe</span>
-            <h1><span>Shopify stores.</span><br /><em>Built around your business.</em></h1>
-            <p>I design and develop Shopify stores for brands that need a stronger customer experience, tailored Liquid work and reliable integrations.</p>
+            <h1><span>Shopify development.</span><br /><em>Built to fit.</em></h1>
+            <p>I design and develop Shopify stores for brands that need a strong mobile experience, tailored Liquid work and reliable integrations.</p>
             <div class="work-hero-actions">
               <a class="work-hero-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Start a project <span>↗︎</span></a>
               <a class="work-hero-secondary" href="#posedla">Explore selected projects <span>↓︎</span></a>
@@ -133,15 +133,17 @@
           </div>
         </div>
         <div class="work-hero-proof reveal" aria-label="Project experience">
-          <p><strong>50+</strong><span>brand projects and e-commerce collaborations</span></p>
-          <ul><li>3+ years in Shopify development</li><li>Direct and agency delivery</li></ul>
-          <a href="#posedla">View selected work <span>↘︎</span></a>
+          <div><strong>50+</strong><span>brands &amp; collaborations</span></div>
+          <div><strong>3+</strong><span>years in Shopify development</span></div>
+          <div><strong>2</strong><span>ways to work · direct or with a team</span></div>
+          <a href="#brand-experience">See the experience <span>↘︎</span></a>
         </div>
       </section>
 
       <section id="brand-experience" class="work-brands" aria-label="Selected brands and project experience">
         <div class="work-brands-head section-pad">
-          <span>Selected project experience</span>
+          <span>Beyond the case studies</span>
+          <strong>Project experience across <em>50+ brands.</em></strong>
           <p>Shopify and e-commerce work delivered independently and as part of an agency team.</p>
         </div>
         <div class="work-brand-marquee">
@@ -172,16 +174,16 @@
         </div>
       </section>
 
-      <section id="shopify-development" class="shopify-services section-pad">
+      <section id="shopify-development" class="shopify-services section-pad" data-active-label="DEVELOPMENT">
         <div class="shopify-services-intro reveal">
           <span class="work-index">Shopify development · Prague / Remote</span>
-          <h2>What your Shopify store<br /><em>needs next.</em></h2>
+          <h2>Shopify development<br /><em>for specific needs.</em></h2>
           <p>I work with brands and agency teams on new stores, redesigns, theme customization and functionality that standard solutions do not cover.</p>
         </div>
         <div class="shopify-service-list reveal">
-          <article tabindex="0"><span>01</span><h3>Store builds &amp; redesigns</h3><p>New Shopify stores and redesigns with clear customer journeys, responsive interfaces and manageable content.</p></article>
-          <article tabindex="0"><span>02</span><h3>Liquid themes &amp; front-end</h3><p>Custom sections, theme development, JavaScript interactions, HTML/CSS implementation, and mobile UX improvements.</p></article>
-          <article tabindex="0"><span>03</span><h3>Integrations &amp; Shopify Plus</h3><p>App integrations, custom e-commerce features, Shopify Plus and B2B project work, including collaboration with agency teams.</p></article>
+          <article data-service-label="BUILD"><span>01</span><h3>Store builds &amp; redesigns</h3><p>New Shopify stores and redesigns with clear customer journeys, responsive interfaces and manageable content.</p></article>
+          <article data-service-label="LIQUID"><span>02</span><h3>Liquid themes &amp; front-end</h3><p>Custom sections, theme development, JavaScript interactions, HTML/CSS implementation, and mobile UX improvements.</p></article>
+          <article data-service-label="SHOPIFY PLUS"><span>03</span><h3>Integrations &amp; Shopify Plus</h3><p>App integrations, custom e-commerce features, Shopify Plus and B2B project work, including collaboration with agency teams.</p></article>
         </div>
         <div class="shopify-service-cta reveal">
           <p><strong>Looking for a Shopify developer or a delivery partner for an agency project?</strong><span>I am available for selected freelance and team collaborations.</span></p>

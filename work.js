@@ -5,6 +5,22 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 
+  const services = document.querySelector('.shopify-services');
+  if (services) {
+    const serviceRows = services.querySelectorAll('[data-service-label]');
+    const resetLabel = () => { services.dataset.activeLabel = 'DEVELOPMENT'; };
+
+    serviceRows.forEach((row) => {
+      const showLabel = () => { services.dataset.activeLabel = row.dataset.serviceLabel; };
+      row.addEventListener('pointerenter', showLabel);
+      row.addEventListener('focusin', showLabel);
+      row.addEventListener('pointerleave', resetLabel);
+      row.addEventListener('focusout', (event) => {
+        if (!row.contains(event.relatedTarget)) resetLabel();
+      });
+    });
+  }
+
   if (finePointer.matches && !reduceMotion.matches) {
     document.querySelectorAll('.media-frame').forEach((frame) => {
       let animationFrame = 0;
