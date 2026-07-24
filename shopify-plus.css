@@ -1,0 +1,120 @@
+/* Shopify Plus landing page — builds on styles.css + work.css + shopify-vyvoj.css.
+   Only the pieces that page needs and the shared sheets do not already cover. */
+
+.plus-page .work-hero-copy h1 em { color:var(--commerce); font-style:normal; }
+
+/* ── Verdict band: the honest yes/no answer, high on the page ─────── */
+.plus-verdict { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-top:0; }
+.plus-verdict article {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:30px 28px 32px;
+  border:1px solid rgba(255,255,255,.11);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+}
+.plus-verdict article::before { content:""; position:absolute; inset:0 0 auto; height:2px; }
+.plus-verdict .verdict-yes::before { background:var(--commerce); }
+.plus-verdict .verdict-no::before { background:#6c6c66; }
+.plus-verdict h3 { margin:0; font-size:clamp(21px,2.1vw,28px); line-height:1.08; letter-spacing:-.045em; }
+.plus-verdict .verdict-yes h3 { color:var(--commerce); }
+.plus-verdict .verdict-no h3 { color:#b9b9b2; }
+.plus-verdict ul { display:grid; gap:11px; margin:0; padding:0; list-style:none; }
+/* Bullet is absolutely positioned rather than a grid column: inline <strong>
+   inside the item would otherwise become its own grid cell and break the text. */
+.plus-verdict li { position:relative; padding-left:19px; color:#adaca6; font-size:13.5px; line-height:1.6; }
+.plus-verdict li::before { content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.45; }
+.plus-verdict .verdict-yes li::before { background:var(--commerce); opacity:1; }
+.plus-verdict li strong { color:#dedcd6; font-weight:600; }
+
+/* ── Comparison table ────────────────────────────────────────────── */
+.plus-table-wrap { overflow-x:auto; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.014); }
+.plus-table { width:100%; min-width:620px; border-collapse:collapse; font-size:13px; }
+.plus-table th,.plus-table td { padding:15px 18px; text-align:left; vertical-align:top; border-bottom:1px solid rgba(255,255,255,.075); }
+.plus-table thead th {
+  position:sticky; top:0;
+  background:#0d100e;
+  color:#8d8d86;
+  font:500 9px "DM Mono";
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  white-space:nowrap;
+}
+.plus-table tbody th { color:#e2e1db; font-weight:600; font-size:13.5px; white-space:nowrap; }
+.plus-table td { color:#9d9d96; line-height:1.55; }
+.plus-table .col-plus { color:var(--commerce); }
+.plus-table tbody tr:last-child th,.plus-table tbody tr:last-child td { border-bottom:0; }
+.plus-table tbody tr:hover td,.plus-table tbody tr:hover th { background:rgba(255,255,255,.022); }
+
+/* ── Cost block ──────────────────────────────────────────────────── */
+.plus-cost { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:52px; align-items:start; }
+.plus-cost-figures { display:grid; gap:12px; }
+.plus-cost-figures div {
+  display:grid;
+  gap:7px;
+  padding:22px 24px;
+  border:1px solid rgba(var(--commerce-rgb),.22);
+  background:linear-gradient(145deg,rgba(var(--commerce-rgb),.06),rgba(255,255,255,.012));
+}
+.plus-cost-figures strong { color:var(--commerce); font-size:clamp(27px,3vw,38px); line-height:.9; letter-spacing:-.055em; }
+.plus-cost-figures span { color:#84847d; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
+.plus-cost-notes { display:grid; gap:18px; }
+.plus-cost-notes p { margin:0; color:#9e9e97; font-size:14px; line-height:1.72; }
+.plus-cost-notes strong { color:#dcdbd5; }
+.plus-caveat {
+  padding:18px 20px;
+  border-left:2px solid var(--commerce);
+  background:rgba(var(--commerce-rgb),.045);
+  color:#bdbcb5;
+  font-size:13.5px;
+  line-height:1.65;
+}
+
+/* ── Migration timeline ──────────────────────────────────────────── */
+.plus-timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid rgba(255,255,255,.1); }
+.plus-timeline article { position:relative; padding:26px 24px 30px; border-right:1px solid rgba(255,255,255,.08); }
+.plus-timeline article:last-child { border-right:0; }
+.plus-timeline article::before { content:""; position:absolute; left:0; top:0; width:100%; height:2px; background:linear-gradient(90deg,var(--commerce),transparent); opacity:.4; }
+.plus-timeline span { color:var(--commerce); font:500 9px "DM Mono"; letter-spacing:.12em; }
+.plus-timeline strong { display:block; margin:16px 0 10px; color:#e4e3dd; font-size:16px; letter-spacing:-.03em; }
+.plus-timeline p { margin:0; color:#94948d; font-size:12.5px; line-height:1.6; }
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+.plus-faq { display:grid; gap:0; border-top:1px solid rgba(255,255,255,.1); }
+.plus-faq details { border-bottom:1px solid rgba(255,255,255,.1); }
+.plus-faq summary {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:66px;
+  padding:14px 0;
+  color:#e3e2dc;
+  font-size:15.5px;
+  font-weight:600;
+  letter-spacing:-.025em;
+  cursor:pointer;
+  list-style:none;
+}
+.plus-faq summary::-webkit-details-marker { display:none; }
+.plus-faq summary::after { content:"+"; flex:0 0 auto; color:var(--commerce); font:400 20px "DM Mono"; transition:transform .25s ease; }
+.plus-faq details[open] summary::after { transform:rotate(45deg); }
+.plus-faq details>p { margin:0 0 22px; max-width:760px; color:#9d9d96; font-size:14px; line-height:1.72; }
+
+@media (max-width:1050px) {
+  .plus-verdict { grid-template-columns:1fr; }
+  .plus-cost { grid-template-columns:1fr; gap:34px; }
+  .plus-timeline { grid-template-columns:1fr 1fr; }
+  .plus-timeline article:nth-child(2) { border-right:0; }
+  .plus-timeline article:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.08); }
+}
+
+@media (max-width:760px) {
+  .plus-verdict article { padding:24px 20px 26px; }
+  .plus-timeline { grid-template-columns:1fr; }
+  .plus-timeline article { border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
+  .plus-timeline article:last-child { border-bottom:0; }
+  .plus-cost-figures div { padding:18px 18px; }
+  .plus-faq summary { font-size:14.5px; min-height:58px; }
+}
