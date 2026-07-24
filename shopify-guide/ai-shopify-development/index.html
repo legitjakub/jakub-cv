@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+    <script defer src="/consent.js"></script>
+
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>AI in Shopify development: what the AI Toolkit changed</title><meta name="description" content="Shopify's AI Toolkit connects Claude Code, Cursor and VS Code to Shopify APIs. What it changes for store development, and where a human is still required." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" /><link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><link rel="alternate" hreflang="en" href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" /><link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" /><meta property="og:locale" content="en_US" /><meta property="og:locale:alternate" content="cs_CZ" /><meta property="og:title" content="AI in Shopify development: what the AI Toolkit changed" /><meta property="og:description" content="What Shopify's AI Toolkit changes for store development, and where a human is still required." /><meta property="og:url" content="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" /><meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" /><meta property="article:published_time" content="2026-07-22" /><meta property="article:modified_time" content="2026-07-22" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="AI in Shopify development: what the AI Toolkit changed" /><meta name="twitter:description" content="What Shopify's AI Toolkit changes for store development, and where a human is still required." /><meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../../blog.css?v=12" /><script src="../../blog.js?v=3" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/#article","headline":"AI in Shopify development: what the AI Toolkit changed","description":"Shopify's AI Toolkit connects Claude Code, Cursor and VS Code to Shopify APIs. What it changes for store development, and where a human is still required.","datePublished":"2026-07-22","dateModified":"2026-07-22","inLanguage":"en","mainEntityOfPage":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify work","item":"https://jhrncir.xyz/work"},{"@type":"ListItem","position":2,"name":"Shopify guide","item":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/"},{"@type":"ListItem","position":3,"name":"AI in Shopify development","item":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify developer"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/#faq","mainEntity":[{"@type":"Question","name":"What is the Shopify AI Toolkit?","acceptedAnswer":{"@type":"Answer","text":"An open-source MCP server that Shopify released on 9 April 2026. It connects AI development tools such as Claude Code, Cursor, VS Code and GitHub Copilot to Shopify documentation, GraphQL API schemas, and — through the Shopify CLI — to real store operations."}},{"@type":"Question","name":"Can AI build an entire Shopify store on its own?","acceptedAnswer":{"@type":"Answer","text":"No. AI significantly speeds up writing code, working with documentation and validating queries against the schema, but decisions about architecture, data model, performance and operational impact remain with a human. Without review you risk code that works in a demo and breaks on real data."}},{"@type":"Question","name":"Is the AI Toolkit free?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is a free open-source tool. No API key is required for documentation and schema access, and it needs Node.js version 18 or higher. Operations against a specific store then run through the Shopify CLI using your own permissions."}},{"@type":"Question","name":"Does AI-assisted development make a Shopify project cheaper?","acceptedAnswer":{"@type":"Answer","text":"Partly. Routine work is faster, so the same budget covers more functionality. The difficulty of a project is however driven mostly by the quality of the brief, the data and the integrations — and that is exactly where AI saves little time, because a human who understands the store's operations has to make the call."}}]}]}</script>
+</head><body><header class="guide-header guide-shell"><a class="guide-brand" href="../../index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a><nav class="guide-nav" aria-label="Main navigation"><a href="/work.html#shopify-development">Services</a><a href="/work.html#posedla">Case studies</a><a href="/work.html#work-references">References</a><a href="/shopify-pruvodce/" lang="cs">Guide · CZ</a></nav><a class="guide-back" href="/work.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg> Shopify work</a></header>
+<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/work.html">Shopify work</a></span><span>Shopify guide</span><span>AI in Shopify development</span></nav><div class="article-hero-grid"><div><span class="article-category">Development · AI tooling · 2026</span><h1>AI in Shopify development: what the AI Toolkit changed</h1><p class="article-deck">In April 2026 Shopify released the AI Toolkit — an open-source MCP server that connects AI development tools directly to Shopify APIs and documentation. What does it actually change for building a store, and where does AI still fall short?</p></div><aside class="article-meta"><span>Author<strong>Jakub Hrnčíř</strong></span><span>Updated<strong>22 July 2026</strong></span><span>Reading time<strong>6 minutes</strong></span></aside></div></header>
+<div class="article-layout guide-shell"><article class="article-body">
+  <p>Building Shopify stores has changed noticeably over the past year. Not because AI writes entire stores on its own — but because the routine part of the work, which used to take hours, now takes minutes. For a store owner that means something concrete: the same budget buys more, but a new risk appears that is worth asking about.</p>
+  <p>The clearest milestone is the <strong>Shopify AI Toolkit</strong>, which Shopify open-sourced on 9 April 2026. Here is what it contains and what follows from it for real projects.</p>
+
+  <figure class="article-visual">
+    <div class="visual-toolbar"><span>What the AI Toolkit connects</span><small>From editor to live store</small></div>
+    <div class="visual-stage"><div class="visual-flow" style="--visual-columns:4">
+      <div class="visual-node"><span>01</span><strong>AI tool</strong><small>Claude Code, Cursor, VS Code</small></div>
+      <div class="visual-node"><span>02</span><strong>MCP server</strong><small>Shopify AI Toolkit</small></div>
+      <div class="visual-node"><span>03</span><strong>Docs and schema</strong><small>GraphQL API, query validation</small></div>
+      <div class="visual-node"><span>04</span><strong>Store</strong><small>Operations via Shopify CLI</small></div>
+    </div></div>
+    <figcaption class="visual-caption"><span>Open source since 9 Apr 2026</span>The tool is free; no API key is needed for documentation and schemas.</figcaption>
+  </figure>
+
+  <h2 id="what-it-is">What the Shopify AI Toolkit is</h2>
+  <p>The AI Toolkit is an <strong>MCP server</strong> — a standardised interface through which an AI tool gains access to external data and functions. Specifically, it connects an AI development environment to three things: official Shopify documentation, GraphQL API schemas, and, via the Shopify CLI, real operations against a given store.</p>
+  <p>Supported environments include <strong>Claude Code, Cursor, VS Code and GitHub Copilot</strong>. Installation differs per tool — in Claude Code, for example, you add the marketplace and install the plugin. The technical requirement is Node.js version 18 or higher.</p>
+
+  <h2 id="what-changes">What changes in practice</h2>
+  <p>The difference is not that AI can suddenly do something previously impossible. The difference is accuracy and speed. Previously AI generated Shopify code from what it had learned across the public internet — frequently outdated. With the AI Toolkit it reads current documentation and validates queries against the actual API schema.</p>
+  <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Area</th><th>Before</th><th>With the AI Toolkit</th></tr></thead><tbody>
+    <tr><td>Working with the API</td><td>Manual lookups in documentation</td><td>AI reads current documentation directly</td></tr>
+    <tr><td>GraphQL queries</td><td>Trial and error against the API</td><td>Validated against the schema before running</td></tr>
+    <tr><td>Outdated code</td><td>Common — the model did not know recent changes</td><td>Lower risk, though not eliminated</td></tr>
+    <tr><td>Routine edits</td><td>Hours of boilerplate</td><td>Minutes, followed by review</td></tr>
+  </tbody></table></div>
+
+  <h2 id="where-ai-falls-short">Where AI still falls short</h2>
+  <p>This matters more to a store owner than any feature list. AI handles well-scoped tasks with a clear brief. It does not handle decisions that require knowing the context of the business:</p>
+  <ul class="checklist">
+    <li><strong>Architecture and data model</strong> — whether a feature belongs in the theme, an app, or a Shopify Function is a question of long-term maintainability, not of what can be written fastest</li>
+    <li><strong>Performance impact</strong> — code that works across ten products can collapse across ten thousand; AI will not judge that difference from a single prompt</li>
+    <li><strong>Operational consequences</strong> — what happens to inventory, invoicing or the order process is known only by someone familiar with how the store runs</li>
+    <li><strong>Accountability for the outcome</strong> — AI does not carry responsibility for a checkout that breaks during peak traffic; the supplier always does</li>
+  </ul>
+  <blockquote>AI accelerates writing code, not deciding what should be written. The quality of a Shopify project still hinges on the brief, the data and knowledge of day-to-day operations — precisely where AI saves little time.</blockquote>
+
+  <h2 id="what-to-ask">What to ask a supplier</h2>
+  <p>If someone offers you Shopify development and mentions AI, three questions are worth asking:</p>
+  <ul class="checklist">
+    <li><strong>Who reviews the code?</strong> Generated code needs review just as hand-written code does — arguably more, because its mistakes look convincing</li>
+    <li><strong>How is testing handled?</strong> Faster development must not mean skipping verification against real data and scenarios</li>
+    <li><strong>Who will understand this in a year?</strong> Code that not even the supplier understands is a problem regardless of who wrote it</li>
+  </ul>
+  <p>The Czech version of this article is available at <a href="/shopify-pruvodce/ai-vyvoj-shopify/" lang="cs">AI ve vývoji Shopify e-shopů</a>, along with the full Czech guide.</p>
+
+  <section class="article-faq" id="faq"><h2>Frequently asked questions</h2><div class="faq-list">
+    <details><summary>What is the Shopify AI Toolkit?</summary><p>An open-source MCP server that Shopify released on 9 April 2026. It connects AI development tools such as Claude Code, Cursor, VS Code and GitHub Copilot to Shopify documentation, GraphQL API schemas, and — through the Shopify CLI — to real store operations.</p></details>
+    <details><summary>Can AI build an entire Shopify store on its own?</summary><p>No. AI significantly speeds up writing code, working with documentation and validating queries against the schema, but decisions about architecture, data model, performance and operational impact remain with a human. Without review you risk code that works in a demo and breaks on real data.</p></details>
+    <details><summary>Is the AI Toolkit free?</summary><p>Yes, it is a free open-source tool. No API key is required for documentation and schema access, and it needs Node.js version 18 or higher. Operations against a specific store then run through the Shopify CLI using your own permissions.</p></details>
+    <details><summary>Does AI-assisted development make a Shopify project cheaper?</summary><p>Partly. Routine work is faster, so the same budget covers more functionality. The difficulty of a project is however driven mostly by the quality of the brief, the data and the integrations — and that is exactly where AI saves little time, because a human who understands the store's operations has to make the call.</p></details>
+  </div></section>
+
+  <div class="article-callout"><span>Custom development</span><h3>Need a custom Shopify feature or change?</h3><p>Send me a description of what the store needs to do. I will propose a solution that makes sense both operationally and technically — and tell you what is unnecessary.</p><a class="guide-button" data-track="guide_inquiry" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20development">Discuss a Shopify project →︎</a></div>
+
+  <section class="article-sources"><h2>Sources and further reading</h2><ul>
+    <li><a href="https://shopify.dev/" target="_blank" rel="noreferrer">Shopify.dev — official developer documentation</a></li>
+    <li><a href="https://github.com/Shopify/shopify-ai-toolkit" target="_blank" rel="noreferrer">Shopify AI Toolkit on GitHub</a></li>
+    <li><a href="../shopify-functions-migration/">Shopify Scripts have ended: moving to Functions</a></li>
+    <li><a href="/shopify-pruvodce/" lang="cs">Full Shopify guide (Czech)</a></li>
+  </ul></section>
+</article><aside class="article-toc"><span>Contents</span><ol><li><a href="#what-it-is">What it is</a></li><li><a href="#what-changes">What changes</a></li><li><a href="#where-ai-falls-short">Where AI falls short</a></li><li><a href="#what-to-ask">What to ask</a></li></ol></aside></div>
+<section class="related guide-shell"><div class="related-head"><h2>Related articles</h2><a href="/work.html">Shopify work →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-functions-migration/"><span class="guide-topic">Development</span><h3>Scripts and Functions</h3><p>What ended and how to replace it.</p></a><a class="related-card" href="/shopify-pruvodce/shopify-agentic-commerce/" lang="cs"><span class="guide-topic">AI · CZ</span><h3>Agentic commerce</h3><p>How AI agents shop, in Czech.</p></a><a class="related-card" href="/shopify-pruvodce/shopify-plus-cesky-trh/" lang="cs"><span class="guide-topic">Enterprise · CZ</span><h3>Shopify Plus</h3><p>Benefits and pricing, in Czech.</p></a></div></section>
+</main><footer class="guide-footer guide-shell"><span>© 2026 Jakub Hrnčíř</span><nav><a href="/work.html">Shopify work</a><a href="/shopify-pruvodce/" lang="cs">Guide · CZ</a><a href="mailto:jakub.hrncir24@gmail.com">Contact</a></nav></footer></body></html>

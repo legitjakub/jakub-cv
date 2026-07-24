@@ -120,4 +120,28 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-guide/ai-shopify-development/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
+    <url>
+          <loc>https://jhrncir.xyz/shopify-guide/shopify-functions-migration/</loc>
+          <lastmod>2026-07-22</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
 </urlset>
