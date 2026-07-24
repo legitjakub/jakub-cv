@@ -1542,7 +1542,7 @@ main > section:not(.hero) {
     overflow-y:auto;
     border-top:1px solid rgba(255,255,255,.12);
     border-bottom:1px solid rgba(255,255,255,.18);
-    background:rgba(9,11,10,.985);
+    background:#0a0c0b;
     box-shadow:0 24px 70px rgba(0,0,0,.42);
   }
   .nav-wrap.mobile-menu-open nav a {
@@ -1559,6 +1559,33 @@ main > section:not(.hero) {
   .shopify-conversion-page .nav-wrap,.shopify-inquiry-page .nav-wrap { gap:9px; }
   .shopify-conversion-page .nav-actions,.shopify-inquiry-page .nav-actions { margin-left:auto; }
   .shopify-inquiry-page .nav-cta { max-width:116px; line-height:1.25; }
+
+  /* ── Mobile header layout ──────────────────────────────────────
+     nav is display:none here, so space-between was spreading the
+     remaining three children and parking the burger mid-bar. Pin the
+     order instead: brand left, actions and burger together on the right. */
+  .nav-wrap { gap:10px; }
+  .brand { order:1; margin-right:auto; }
+  .nav-actions { order:2; gap:8px; }
+  .mobile-nav-toggle { order:3; }
+
+  /* Trade the header CTA for the one already inside the menu — the bar
+     cannot hold logo + language + CTA + burger at 375px without crowding. */
+  body:not(.work-page) .nav-wrap .nav-actions .nav-cta { display:none; }
+
+  .nav-wrap.mobile-menu-open nav a:last-child { border-bottom:0; }
+
+  /* Dim the page behind the open menu so the panel reads as a layer. Anchored
+     to body so it is not trapped inside the fixed header's stacking context. */
+  body.mobile-nav-open::after {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:14;
+    background:rgba(6,7,7,.72);
+    backdrop-filter:blur(2px);
+    pointer-events:none;
+  }
 }
 
 @media (min-width:761px) and (max-width:1050px) {
@@ -1593,7 +1620,7 @@ main > section:not(.hero) {
     overflow-y:auto;
     border-top:1px solid rgba(255,255,255,.12);
     border-bottom:1px solid rgba(255,255,255,.18);
-    background:rgba(9,11,10,.985);
+    background:#0a0c0b;
     box-shadow:0 24px 70px rgba(0,0,0,.42);
   }
   .work-page .nav-wrap.mobile-menu-open nav a {

@@ -397,9 +397,13 @@ button,input,textarea,select { font:inherit; }
 .related-card p { margin:0; color:var(--guide-muted); font-size:12px; line-height:1.6; }
 
 @media (max-width:1050px) {
-  .guide-header { gap:20px; }
+  /* nav is hidden here, so the 3-column grid was leaving the burger stranded
+     at the end of the middle column. Flex keeps brand left, actions right. */
+  .guide-header { display:flex; align-items:center; gap:10px; }
   .guide-nav { display:none; }
-  .guide-back { justify-self:end; }
+  .guide-brand { margin-right:auto; }
+  .guide-back { order:2; justify-self:auto; }
+  .guide-menu-toggle { order:3; flex:0 0 auto; }
   .guide-hero { grid-template-columns:1fr; min-height:auto; padding-block:90px 64px; }
   .guide-hero-note { max-width:560px; }
   .guide-pathway-list { grid-template-columns:1fr; }
@@ -534,20 +538,37 @@ button,input,textarea,select { font:inherit; }
     top:100%;
     left:0;
     right:0;
+    z-index:2;
     display:flex;
     max-height:calc(100svh - 76px);
     flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
     gap:0;
     padding:18px var(--guide-pad) 26px;
     overflow-y:auto;
     border-top:1px solid var(--guide-line);
     border-bottom:1px solid var(--guide-line);
-    background:rgba(9,11,10,.985);
+    background:#0a0c0b;
     box-shadow:0 24px 70px rgba(0,0,0,.42);
   }
   .guide-header.menu-open .guide-nav a { display:flex; min-height:52px; align-items:center; border-bottom:1px solid var(--guide-line); color:var(--guide-text); }
+  .guide-header.menu-open .guide-nav a:last-child { border-bottom:0; }
   .guide-mobile-only { display:flex!important; }
   .guide-menu-toggle:focus-visible { outline:2px solid var(--guide-green); outline-offset:3px; }
+
+  /* Dim the article behind the open menu. This hangs off body rather than the
+     header: the header's own backdrop-filter creates a stacking context, so a
+     pseudo-element there gets trapped behind its background. */
+  body.guide-menu-open::after {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:19;
+    background:rgba(6,7,7,.72);
+    backdrop-filter:blur(2px);
+    pointer-events:none;
+  }
 }
 @media (max-width:720px) {
   .guide-header { grid-template-columns:auto 1fr auto; }
