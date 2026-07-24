@@ -197,22 +197,27 @@ const setupMobileNavigation = () => {
   if (document.body.classList.contains('shopify-conversion-page') || document.body.classList.contains('shopify-inquiry-page')) {
     const brandLink = header.querySelector('.brand');
     if (brandLink) {
-      brandLink.href = '/shopify-vyvoj/';
-      brandLink.setAttribute('aria-label', 'Shopify vývoj, úvodní stránka');
+      brandLink.href = isEnglish ? '/work.html' : '/shopify-vyvoj/';
+      brandLink.setAttribute('aria-label', isEnglish ? 'Shopify work, home' : 'Shopify vývoj, úvodní stránka');
     }
 
     if (!menu.querySelector('.mobile-profile-link')) {
       const profileLink = document.createElement('a');
       profileLink.className = 'mobile-nav-only mobile-profile-link';
-      profileLink.href = '/cs.html';
-      profileLink.textContent = 'Osobní profil';
+      profileLink.href = isEnglish ? '/index.html' : '/cs.html';
+      profileLink.textContent = isEnglish ? 'Personal profile' : 'Osobní profil';
+      menu.append(profileLink);
 
-      const englishLink = document.createElement('a');
-      englishLink.className = 'mobile-nav-only';
-      englishLink.href = '/work.html';
-      englishLink.lang = 'en';
-      englishLink.textContent = 'English portfolio';
-      menu.append(profileLink, englishLink);
+      /* Only offer the other language here if the page has not already put a
+         more specific counterpart link in the menu (e.g. the Plus pages do). */
+      if (!menu.querySelector(`a[lang="${isEnglish ? 'cs' : 'en'}"]`)) {
+        const otherLangLink = document.createElement('a');
+        otherLangLink.className = 'mobile-nav-only';
+        otherLangLink.href = isEnglish ? '/shopify-vyvoj/' : '/work.html';
+        otherLangLink.lang = isEnglish ? 'cs' : 'en';
+        otherLangLink.textContent = isEnglish ? 'Česká verze' : 'English portfolio';
+        menu.append(otherLangLink);
+      }
     }
   }
 
