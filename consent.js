@@ -11,7 +11,7 @@
   var COPY = {
     cs: {
       title: "Cookies",
-      body: "Nezbytné cookies potřebuje web k provozu. Analytické mi ukazují, které stránky dávají smysl. Bez souhlasu se nespustí nic navíc.",
+      body: "Nezbytné cookies zajišťují chod webu. Analytické mi ukazují, které stránky návštěvníkům skutečně pomáhají. Bez vašeho souhlasu se nespustí nic dalšího.",
       accept: "Přijmout vše",
       reject: "Odmítnout vše",
       settings: "Nastavit",
@@ -23,7 +23,7 @@
         necessary: {
           name: "Nezbytné",
           always: "Vždy aktivní",
-          desc: "Zajišťují základní chod webu a pamatují si tvoji volbu cookies. Bez nich web nefunguje."
+          desc: "Zajišťují základní chod webu a pamatují si vaši volbu cookies. Bez nich web nefunguje."
         },
         analytics: {
           name: "Analytické",
@@ -31,7 +31,7 @@
         },
         marketing: {
           name: "Marketingové",
-          desc: "Měření reklamy a remarketing. Aktuálně je nepoužívám; zůstávají vypnuté, dokud je nezapneš."
+          desc: "Měření reklamy a remarketing. Aktuálně je nepoužívám; zůstávají vypnuté, dokud je nezapnete."
         }
       }
     },
