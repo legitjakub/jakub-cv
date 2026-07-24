@@ -18,6 +18,42 @@
     }));
   });
 
+  const journey = document.querySelector('.conversion-journey');
+  if (journey) {
+    const journeyLinks = Array.from(journey.querySelectorAll('[data-journey-target]'));
+    const journeySections = journeyLinks
+      .map((link) => ({ link, section: document.getElementById(link.dataset.journeyTarget) }))
+      .filter((item) => item.section);
+
+    const activateJourney = (activeLink) => {
+      journeyLinks.forEach((link) => {
+        const active = link === activeLink;
+        link.classList.toggle('is-active', active);
+        if (active) {
+          link.setAttribute('aria-current', 'location');
+          if (journey.scrollWidth > journey.clientWidth) {
+            const left = link.offsetLeft - (journey.clientWidth - link.offsetWidth) / 2;
+            journey.scrollTo({ left, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+          }
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    if (journeySections.length) activateJourney(journeySections[0].link);
+    if ('IntersectionObserver' in window) {
+      const journeyObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        const match = visible && journeySections.find((item) => item.section === visible.target);
+        if (match) activateJourney(match.link);
+      }, { rootMargin: '-24% 0px -62% 0px', threshold: [0, .08, .2] });
+      journeySections.forEach((item) => journeyObserver.observe(item.section));
+    }
+  }
+
   if (finePointer.matches && !reduceMotion.matches) {
     let pointerFrame = 0;
     document.addEventListener('pointermove', (event) => {

@@ -225,8 +225,7 @@ const setupMobileNavigation = () => {
   toggle.setAttribute('aria-label', openLabel);
   toggle.innerHTML = '<span></span><span></span>';
 
-  const actions = header.querySelector('.nav-actions');
-  header.insertBefore(toggle, actions || null);
+  header.append(toggle);
 
   const closeMenu = () => {
     header.classList.remove('mobile-menu-open');

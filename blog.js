@@ -105,8 +105,7 @@ const setupGuideMobileNavigation = () => {
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', 'Otevřít navigaci');
   toggle.innerHTML = '<span></span><span></span>';
-  const back = header.querySelector('.guide-back');
-  header.insertBefore(toggle, back || null);
+  header.append(toggle);
 
   const close = () => {
     header.classList.remove('menu-open');

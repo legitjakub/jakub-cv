@@ -12,6 +12,41 @@
 .conversion-hero .work-hero-copy>p { max-width:750px; }
 .conversion-hero .work-hero-primary { min-width:258px; }
 
+.conversion-journey {
+  position:sticky;
+  top:88px;
+  z-index:13;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:0;
+  padding-inline:var(--pad);
+  border-block:1px solid rgba(255,255,255,.12);
+  background:rgba(9,11,10,.9);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.conversion-journey a {
+  position:relative;
+  display:flex;
+  min-width:0;
+  min-height:48px;
+  align-items:center;
+  gap:10px;
+  padding:0 14px;
+  border-right:1px solid rgba(255,255,255,.1);
+  color:#777a73;
+  font:500 8px "DM Mono";
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:color .25s ease,background-color .25s ease;
+}
+.conversion-journey a:first-child { border-left:1px solid rgba(255,255,255,.1); }
+.conversion-journey a::after { content:""; position:absolute; right:100%; bottom:-1px; left:0; height:2px; background:var(--commerce); transition:right .35s cubic-bezier(.2,.8,.2,1); }
+.conversion-journey a span { color:#555850; font-size:7px; transition:color .25s ease; }
+.conversion-journey a:hover,.conversion-journey a.is-active { color:#efeee8; background:rgba(var(--commerce-rgb),.035); }
+.conversion-journey a.is-active::after { right:0; }
+.conversion-journey a.is-active span { color:var(--commerce); }
+
 .solution-paths {
   padding-top:clamp(90px,10vw,150px);
   padding-bottom:clamp(90px,10vw,150px);
@@ -55,6 +90,10 @@
   transition:padding-left .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease;
 }
 .solution-path-list article:hover { padding-left:10px; border-color:rgba(var(--commerce-rgb),.52); background:rgba(var(--commerce-rgb),.018); }
+.solution-path-list:has(article:hover) article:not(:hover) { opacity:.52; }
+.solution-path-list article { position:relative; opacity:1; }
+.solution-path-list article::before { content:""; position:absolute; top:0; bottom:0; left:-1px; width:2px; background:var(--commerce); transform:scaleY(0); transform-origin:center; transition:transform .35s cubic-bezier(.2,.8,.2,1); }
+.solution-path-list article:hover::before,.solution-path-list article:focus-within::before { transform:scaleY(1); }
 .solution-path-list article>span { color:var(--commerce); font:500 10px "DM Mono"; letter-spacing:.08em; }
 .solution-path-list h3 { margin:0; font-size:clamp(25px,2.5vw,39px); line-height:1.05; letter-spacing:-.055em; }
 .solution-path-list p { margin:0; color:#8b8d86; font-size:13px; line-height:1.7; }
@@ -280,6 +319,10 @@
 }
 
 @media (max-width:760px) {
+  .conversion-journey { top:68px; display:flex; padding-inline:var(--pad); overflow-x:auto; scrollbar-width:none; }
+  .conversion-journey::-webkit-scrollbar { display:none; }
+  .conversion-journey a { flex:0 0 auto; min-height:42px; padding-inline:13px; }
+  .conversion-journey a:first-child { border-left:0; }
   .shopify-conversion-page .nav-actions .lang-switch { display:none; }
   .shopify-conversion-page .conversion-nav-cta { padding:9px 10px; font-size:8px; }
   .conversion-hero .work-hero-primary { min-width:0; }
@@ -342,7 +385,7 @@
 }
 
 @media (prefers-reduced-motion:reduce) {
-  .solution-path-list article,.diagnostic-option,.case-action,.form-submit-row button { transition:none; }
+  .solution-path-list article,.solution-path-list article::before,.conversion-journey a::after,.diagnostic-option,.case-action,.form-submit-row button { transition:none; }
   .diagnostic-meter b { transition:none; }
 }
 
