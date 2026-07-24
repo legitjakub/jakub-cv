@@ -1564,6 +1564,10 @@ main > section:not(.hero) {
   .mobile-nav-only { display:flex!important; }
   .mobile-nav-toggle:focus-visible { outline:2px solid var(--acid); outline-offset:3px; }
   .shopify-conversion-page .nav-wrap,.shopify-inquiry-page .nav-wrap { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:10px; }
+  .work-page .nav-wrap { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:8px; }
+  .work-page .nav-actions { margin-left:0; }
+  .work-page .nav-actions .lang-switch { display:none; }
+  .work-page .nav-cta { padding:9px 10px; font-size:8px; white-space:nowrap; }
   .shopify-conversion-page .nav-actions,.shopify-inquiry-page .nav-actions { margin-left:0; }
   .shopify-inquiry-page .nav-cta { max-width:112px; line-height:1.25; }
   .commerce-brand { min-width:0; gap:9px; }
