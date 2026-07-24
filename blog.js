@@ -83,17 +83,19 @@ const setupGuideMobileNavigation = () => {
   const menu = header?.querySelector('.guide-nav');
   if (!header || !menu || header.querySelector('.guide-menu-toggle')) return;
 
+  const isEnglishPage = document.documentElement.lang === 'en';
+
   const brand = header.querySelector('.guide-brand');
   if (brand) {
-    brand.href = '/shopify-vyvoj/';
-    brand.setAttribute('aria-label', 'Shopify vývoj, úvodní stránka');
+    brand.href = isEnglishPage ? '/work.html' : '/shopify-vyvoj/';
+    brand.setAttribute('aria-label', isEnglishPage ? 'Shopify work, home' : 'Shopify vývoj, úvodní stránka');
   }
 
   if (!menu.querySelector('.guide-mobile-only')) {
     const profile = document.createElement('a');
     profile.className = 'guide-mobile-only';
-    profile.href = '/cs.html';
-    profile.textContent = 'Osobní profil';
+    profile.href = isEnglishPage ? '/index.html' : '/cs.html';
+    profile.textContent = isEnglishPage ? 'Personal profile' : 'Osobní profil';
     menu.append(profile);
   }
 
