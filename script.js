@@ -219,6 +219,13 @@ const setupMobileNavigation = () => {
         menu.append(otherLangLink);
       }
     }
+  } else if (document.body.classList.contains('work-page') && isEnglish && !menu.querySelector('.mobile-language-link')) {
+    const languageLink = document.createElement('a');
+    languageLink.className = 'mobile-nav-only mobile-language-link';
+    languageLink.href = '/shopify-vyvoj/';
+    languageLink.lang = 'cs';
+    languageLink.textContent = 'Česká verze';
+    menu.append(languageLink);
   }
 
   if (!menu.id) menu.id = 'primary-navigation';
@@ -256,7 +263,7 @@ const setupMobileNavigation = () => {
     }
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) closeMenu();
+    if (window.innerWidth > 1050) closeMenu();
   }, { passive: true });
 };
 

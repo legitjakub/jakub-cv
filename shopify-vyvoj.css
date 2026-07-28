@@ -379,7 +379,6 @@
 .conversion-close-actions>a { display:flex; min-height:54px; align-items:center; justify-content:space-between; padding:0 18px; border:1px solid rgba(255,255,255,.2); color:#d5d5ce; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
 .conversion-close-actions .conversion-close-primary { border-color:var(--commerce); background:var(--commerce); color:#091006; }
 .conversion-close-actions small { color:#71736c; font:400 8px/1.6 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
-.mobile-inquiry-bar { display:none; }
 @media (max-width:1100px) {
   .commercial-faq,.conversion-close { grid-template-columns:1fr; gap:48px; }
 }
@@ -388,23 +387,4 @@
   .commercial-faq-head h2,.conversion-close h2 { font-size:clamp(43px,13vw,64px); }
   .commercial-faq-list summary { padding-block:20px; padding-right:44px; font-size:15px; }
   .commercial-faq-list p { padding-right:38px; font-size:12.5px; }
-  .mobile-inquiry-bar {
-    position:fixed;
-    left:12px;
-    right:70px;
-    bottom:12px;
-    z-index:24;
-    display:flex;
-    min-height:48px;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 16px;
-    border:1px solid rgba(9,16,6,.45);
-    background:var(--commerce);
-    color:#091006;
-    box-shadow:0 16px 42px rgba(0,0,0,.42);
-    font:500 9px "DM Mono";
-    text-transform:uppercase;
-    letter-spacing:.07em;
-  }
 }

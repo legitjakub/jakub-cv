@@ -1568,6 +1568,7 @@ main > section:not(.hero) {
   .brand { order:1; margin-right:auto; }
   .nav-actions { order:2; gap:8px; }
   .mobile-nav-toggle { order:3; }
+  .work-page:not(.shopify-conversion-page):not(.shopify-inquiry-page) .nav-actions .lang-switch { display:none; }
 
   /* Trade the header CTA for the one already inside the menu — the bar
      cannot hold logo + language + CTA + burger at 375px without crowding. */
