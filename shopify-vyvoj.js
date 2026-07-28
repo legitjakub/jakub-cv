@@ -179,7 +179,7 @@
       text: 'Nemusíte mít hotové technické zadání. Stačí popsat současný stav, obchodní cíl a to, co dnes zákazníky nebo tým nejvíc omezuje.',
       type: 'konzultace',
       links: [
-        ['/shopify-pruvodce/', 'Projít Shopify průvodce'],
+        ['/shopify-pruvodce/', 'Přejít na Shopify blog'],
         ['/shopify-pruvodce/shopify-vs-shoptet-vs-woocommerce/', 'Porovnání platforem']
       ]
     }
