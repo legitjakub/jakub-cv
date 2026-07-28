@@ -1,6 +1,8 @@
-<!doctype html><html lang="cs"><head>
-    <!-- Google tag (gtag.js) + Consent Mode v2 -->
-    <script>
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
@@ -31,77 +33,68 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
-    <script defer src="/consent.js?v=2"></script>
-
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>AI ve vývoji Shopify e-shopů: co změnil AI Toolkit</title><meta name="description" content="Shopify AI Toolkit propojuje Claude Code, Cursor a VS Code se Shopify API. Co to mění pro vývoj e-shopu, kde AI pomáhá a kde je pořád potřeba člověk." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><link rel="alternate" hreflang="en" href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" /><link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
-  <meta property="og:type" content="article" /><meta property="og:locale" content="cs_CZ" /><meta property="og:locale:alternate" content="en_US" /><meta property="og:title" content="AI ve vývoji Shopify e-shopů: co změnil AI Toolkit" /><meta property="og:description" content="Co Shopify AI Toolkit mění pro vývoj e-shopu a kde je pořád potřeba člověk." /><meta property="og:url" content="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" /><meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" /><meta property="article:published_time" content="2026-07-22" /><meta property="article:modified_time" content="2026-07-22" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="AI ve vývoji Shopify e-shopů: co změnil AI Toolkit" /><meta name="twitter:description" content="Co Shopify AI Toolkit mění pro vývoj e-shopu a kde je pořád potřeba člověk." /><meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../../blog.css?v=14" /><script src="../../blog.js?v=4" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/#article","headline":"AI ve vývoji Shopify e-shopů: co změnil AI Toolkit","description":"Shopify AI Toolkit propojuje Claude Code, Cursor a VS Code se Shopify API. Co to mění pro vývoj e-shopu a kde je pořád potřeba člověk.","datePublished":"2026-07-22","dateModified":"2026-07-22","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"AI ve vývoji Shopify e-shopů","item":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/#faq","mainEntity":[{"@type":"Question","name":"Co je Shopify AI Toolkit?","acceptedAnswer":{"@type":"Answer","text":"Otevřený MCP server, který Shopify uvolnil jako open source 9. dubna 2026. Propojuje AI vývojářské nástroje jako Claude Code, Cursor, VS Code nebo GitHub Copilot se Shopify dokumentací, GraphQL schématy a přes Shopify CLI i s reálnými operacemi v obchodě."}},{"@type":"Question","name":"Postaví mi AI celý Shopify e-shop sama?","acceptedAnswer":{"@type":"Answer","text":"Ne. AI výrazně zrychluje psaní kódu, práci s dokumentací a ověřování dotazů proti schématu, ale rozhodnutí o architektuře, datovém modelu, výkonu a dopadech na provoz zůstávají na člověku. Bez kontroly hrozí kód, který sice funguje v ukázce, ale rozbije se na reálných datech."}},{"@type":"Question","name":"Je AI Toolkit zdarma?","acceptedAnswer":{"@type":"Answer","text":"Ano, jde o bezplatný open-source nástroj. Pro přístup k dokumentaci a schématům není potřeba API klíč, vyžaduje se Node.js verze 18 nebo vyšší. Operace nad konkrétním obchodem pak probíhají přes Shopify CLI s vaším oprávněním."}},{"@type":"Question","name":"Znamená AI ve vývoji nižší cenu za Shopify projekt?","acceptedAnswer":{"@type":"Answer","text":"Částečně. Rutinní práce jsou rychlejší, takže stejný rozpočet pokryje víc funkcí. Náročnost projektu ale určuje hlavně kvalita zadání, dat a integrací — a právě tam AI nešetří čas, protože rozhodnutí musí udělat člověk, který zná provoz obchodu."}}]}]}</script>
-</head><body><header class="guide-header guide-shell"><a class="guide-brand" href="../../cs.html" aria-label="Jakub Hrnčíř, hlavní profil">JH<span>.</span></a><nav class="guide-nav" aria-label="Hlavní navigace"><a href="/shopify-vyvoj/#reseni">Služby</a><a href="/shopify-vyvoj/#projekty">Projekty</a><a href="/shopify-vyvoj/#reference">Reference</a><a href="../" aria-current="page">Průvodce</a></nav><a class="guide-back" href="../"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg> Všechny články</a></header>
-<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/shopify-vyvoj/">Shopify projekty</a></span><span><a href="../">Shopify průvodce</a></span><span>AI ve vývoji Shopify</span></nav><div class="article-hero-grid"><div><span class="article-category">Vývoj · AI nástroje · 2026</span><h1>AI ve vývoji Shopify e-shopů: co změnil AI Toolkit</h1><p class="article-deck">Shopify v dubnu 2026 uvolnil AI Toolkit — otevřený MCP server, který propojuje AI vývojářské nástroje přímo se Shopify API a dokumentací. Co to reálně mění pro vývoj e-shopu a kde AI pořád nestačí?</p></div><aside class="article-meta"><span>Autor<strong>Jakub Hrnčíř</strong></span><span>Aktualizováno<strong>22. 7. 2026</strong></span><span>Doba čtení<strong>6 minut</strong></span></aside></div></header>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+<script defer="" src="/consent.js?v=2"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>AI ve vývoji Shopify e-shopů: co změnil AI Toolkit</title><meta content="Shopify AI Toolkit propojuje Claude Code, Cursor a VS Code se Shopify API. Co to mění pro vývoj e-shopu, kde AI pomáhá a kde je pořád potřeba člověk." name="description"/><meta content="Jakub Hrnčíř" name="author"/><meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/><meta content="#090b0a" name="theme-color"/><link href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" hreflang="x-default" rel="alternate"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="article" property="og:type"/><meta content="cs_CZ" property="og:locale"/><meta content="en_US" property="og:locale:alternate"/><meta content="AI ve vývoji Shopify e-shopů: co změnil AI Toolkit" property="og:title"/><meta content="Co Shopify AI Toolkit mění pro vývoj e-shopu a kde je pořád potřeba člověk." property="og:description"/><meta content="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" property="og:url"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/><meta content="2026-07-22" property="article:published_time"/><meta content="2026-07-28" property="article:modified_time"/><meta content="summary_large_image" name="twitter:card"/><meta content="AI ve vývoji Shopify e-shopů: co změnil AI Toolkit" name="twitter:title"/><meta content="Co Shopify AI Toolkit mění pro vývoj e-shopu a kde je pořád potřeba člověk." name="twitter:description"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../../blog.css?v=14" rel="stylesheet"/><script defer="" src="../../blog.js?v=5"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/#article","headline":"AI ve vývoji Shopify e-shopů: co změnil AI Toolkit","description":"Shopify AI Toolkit propojuje Claude Code, Cursor a VS Code se Shopify API. Co to mění pro vývoj e-shopu, kde AI pomáhá a kde je pořád potřeba člověk.","datePublished":"2026-07-22","dateModified":"2026-07-28","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"AI ve vývoji Shopify e-shopů","item":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/#faq","mainEntity":[{"@type":"Question","name":"Co je Shopify AI Toolkit?","acceptedAnswer":{"@type":"Answer","text":"Open-source sada pluginů, dovedností a vývojářských nástrojů, která propojuje podporované AI asistenty s dokumentací Shopify, schématy GraphQL, kontrolou kódu a přes Shopify CLI také s operacemi v obchodě."}},{"@type":"Question","name":"Postaví mi AI celý Shopify e-shop sama?","acceptedAnswer":{"@type":"Answer","text":"Ne. AI výrazně zrychluje psaní kódu, práci s dokumentací a ověřování dotazů proti schématu, ale rozhodnutí o architektuře, datovém modelu, výkonu a dopadech na provoz zůstávají na člověku. Bez kontroly hrozí kód, který sice funguje v ukázce, ale rozbije se na reálných datech."}},{"@type":"Question","name":"Je AI Toolkit zdarma?","acceptedAnswer":{"@type":"Answer","text":"Ano, jde o bezplatný open-source nástroj. Pro přístup k dokumentaci a schématům není potřeba API klíč, vyžaduje se Node.js verze 18 nebo vyšší. Operace nad konkrétním obchodem pak probíhají přes Shopify CLI s vaším oprávněním."}},{"@type":"Question","name":"Znamená AI ve vývoji nižší cenu za Shopify projekt?","acceptedAnswer":{"@type":"Answer","text":"Může zkrátit čas u části rutinních úkolů, ale automaticky neurčuje nižší cenu. Rozsah projektu stále závisí na zadání, datech, integracích, testování a odpovědnosti za nasazení."}}]}]}</script>
+<meta content="Shopify průvodce" property="og:site_name"/></head><body><header class="guide-header guide-shell"><a aria-label="Jakub Hrnčíř, hlavní profil" class="guide-brand" href="../../cs.html">JH<span>.</span></a><nav aria-label="Hlavní navigace" class="guide-nav"><a href="/shopify-vyvoj/#reseni">Služby</a><a href="/shopify-vyvoj/#projekty">Projekty</a><a href="/shopify-vyvoj/#reference">Reference</a><a aria-current="page" href="../">Průvodce</a><a class="guide-language-link" href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" lang="en">EN</a></nav><a class="guide-back" href="../"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> Všechny články</a></header>
+<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/shopify-vyvoj/">Shopify projekty</a></span><span><a href="../">Shopify průvodce</a></span><span>AI ve vývoji Shopify</span></nav><div class="article-hero-grid"><div><span class="article-category">Vývoj · AI nástroje · 2026</span><h1>AI ve vývoji Shopify e-shopů: co změnil AI Toolkit</h1><p class="article-deck">Shopify AI Toolkit propojuje podporované AI nástroje s dokumentací, API schématy a vývojářskými postupy Shopify. Co dokáže urychlit a kde je stále nutná zkušená technická kontrola?</p></div><aside class="article-meta"><span>Autor<strong>Jakub Hrnčíř</strong></span><span>Aktualizováno<strong>28. 7. 2026</strong></span><span>Doba čtení<strong>6 minut</strong></span></aside></div></header>
 <div class="article-layout guide-shell"><article class="article-body">
-  <p>Vývoj Shopify e-shopů se během posledního roku znatelně proměnil. Nejde o to, že by AI psala celé e-shopy sama — ale rutinní část práce, která dřív zabírala hodiny, dnes trvá minuty. Pro majitele e-shopu to znamená konkrétní věc: za stejný rozpočet lze udělat víc, ale zároveň vzniká nové riziko, na které je potřeba se ptát.</p>
-  <p>Nejvýraznějším milníkem je <strong>Shopify AI Toolkit</strong>, který Shopify uvolnil jako open source 9. dubna 2026. Podívejme se, co obsahuje a co z toho plyne pro reálné projekty.</p>
-
-  <figure class="article-visual">
-    <div class="visual-toolbar"><span>Co AI Toolkit propojuje</span><small>Od editoru k reálnému obchodu</small></div>
-    <div class="visual-stage"><div class="visual-flow" style="--visual-columns:4">
-      <div class="visual-node"><span>01</span><strong>AI nástroj</strong><small>Claude Code, Cursor, VS Code</small></div>
-      <div class="visual-node"><span>02</span><strong>MCP server</strong><small>Shopify AI Toolkit</small></div>
-      <div class="visual-node"><span>03</span><strong>Dokumentace a schéma</strong><small>GraphQL API, validace dotazů</small></div>
-      <div class="visual-node"><span>04</span><strong>Obchod</strong><small>Operace přes Shopify CLI</small></div>
-    </div></div>
-    <figcaption class="visual-caption"><span>Open source od 9. 4. 2026</span>Nástroj je zdarma; pro dokumentaci a schémata není potřeba API klíč.</figcaption>
-  </figure>
-
-  <h2 id="co-je-toolkit">Co je Shopify AI Toolkit</h2>
-  <p>AI Toolkit je <strong>MCP server</strong> — tedy standardizované rozhraní, přes které AI nástroj získá přístup k externím datům a funkcím. Konkrétně propojuje AI vývojářské prostředí se třemi věcmi: oficiální Shopify dokumentací, GraphQL schématy API a přes Shopify CLI i s reálnými operacemi nad konkrétním obchodem.</p>
-  <p>Podporovaná prostředí zahrnují <strong>Claude Code, Cursor, VS Code a GitHub Copilot</strong>. Instalace se liší podle nástroje — v Claude Code jde například o přidání marketplace a instalaci pluginu. Technickým požadavkem je Node.js verze 18 nebo vyšší.</p>
-
-  <h2 id="co-to-meni">Co to mění v praxi</h2>
-  <p>Rozdíl není v tom, že by AI uměla něco, co dřív nešlo. Rozdíl je v přesnosti a rychlosti. Dřív AI generovala Shopify kód z toho, co se naučila z veřejného internetu — často zastaralého. S AI Toolkitem čte aktuální dokumentaci a ověřuje dotazy proti skutečnému schématu API.</p>
-  <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Oblast</th><th>Dřív</th><th>S AI Toolkitem</th></tr></thead><tbody>
-    <tr><td>Práce s API</td><td>Ruční dohledávání v dokumentaci</td><td>AI čte aktuální dokumentaci přímo</td></tr>
-    <tr><td>GraphQL dotazy</td><td>Metoda pokus–omyl proti API</td><td>Ověření proti schématu před spuštěním</td></tr>
-    <tr><td>Zastaralý kód</td><td>Časté — model neznal novinky</td><td>Menší riziko, ale nezaniká úplně</td></tr>
-    <tr><td>Rutinní úpravy</td><td>Hodiny psaní boilerplate kódu</td><td>Minuty s následnou kontrolou</td></tr>
-  </tbody></table></div>
-
-  <h2 id="kde-ai-nestaci">Kde AI pořád nestačí</h2>
-  <p>Tohle je pro majitele e-shopu důležitější než seznam funkcí. AI zvládá dobře ohraničené úkoly s jasným zadáním. Nezvládá ale rozhodnutí, která vyžadují znalost kontextu obchodu:</p>
-  <ul class="checklist">
-    <li><strong>Architektura a datový model</strong> — jestli má být funkce v šabloně, aplikaci, nebo Shopify Function, rozhoduje dlouhodobá udržitelnost, ne to, co jde napsat nejrychleji</li>
-    <li><strong>Dopad na výkon</strong> — kód, který funguje na deseti produktech, se může zhroutit na deseti tisících; AI tenhle rozdíl z jednoho promptu neodhadne</li>
-    <li><strong>Provozní souvislosti</strong> — co se stane se skladem, fakturací nebo objednávkovým procesem, ví jen člověk, který zná provoz obchodu</li>
-    <li><strong>Odpovědnost za výsledek</strong> — AI nenese odpovědnost za to, že se rozbije checkout ve špičce; tu má vždycky dodavatel</li>
-  </ul>
-  <blockquote>AI zrychluje psaní kódu, ne rozhodování o tom, co se má napsat. Kvalita Shopify projektu se pořád láme na zadání, datech a znalosti provozu — a to jsou přesně místa, kde AI nešetří čas.</blockquote>
-
-  <h2 id="na-co-se-ptat">Na co se ptát dodavatele</h2>
-  <p>Pokud vám někdo nabízí Shopify vývoj a zmiňuje AI, dávají smysl tři otázky:</p>
-  <ul class="checklist">
-    <li><strong>Kdo kód kontroluje?</strong> Vygenerovaný kód potřebuje revizi stejně jako ručně psaný — u AI možná víc, protože chyby vypadají důvěryhodně</li>
-    <li><strong>Jak se řeší testování?</strong> Rychlejší vývoj nesmí znamenat, že se přeskočí ověření na reálných datech a scénářích</li>
-    <li><strong>Kdo tomu bude rozumět za rok?</strong> Kód, kterému nerozumí ani dodavatel, je problém bez ohledu na to, kdo ho napsal</li>
-  </ul>
-  <p>Souvislost s dalšími novinkami popisuje článek o <a href="../shopify-editions-spring-26/">Shopify Editions Spring '26</a>; pohled ze strany zákazníků a AI asistentů pak <a href="../shopify-agentic-commerce/">agentic commerce</a>.</p>
-
-  <section class="article-faq" id="faq"><h2>Časté otázky</h2><div class="faq-list">
-    <details><summary>Co je Shopify AI Toolkit?</summary><p>Otevřený MCP server, který Shopify uvolnil jako open source 9. dubna 2026. Propojuje AI vývojářské nástroje jako Claude Code, Cursor, VS Code nebo GitHub Copilot se Shopify dokumentací, GraphQL schématy a přes Shopify CLI i s reálnými operacemi v obchodě.</p></details>
-    <details><summary>Postaví mi AI celý Shopify e-shop sama?</summary><p>Ne. AI výrazně zrychluje psaní kódu, práci s dokumentací a ověřování dotazů proti schématu, ale rozhodnutí o architektuře, datovém modelu, výkonu a dopadech na provoz zůstávají na člověku. Bez kontroly hrozí kód, který sice funguje v ukázce, ale rozbije se na reálných datech.</p></details>
-    <details><summary>Je AI Toolkit zdarma?</summary><p>Ano, jde o bezplatný open-source nástroj. Pro přístup k dokumentaci a schématům není potřeba API klíč, vyžaduje se Node.js verze 18 nebo vyšší. Operace nad konkrétním obchodem pak probíhají přes Shopify CLI s vaším oprávněním.</p></details>
-    <details><summary>Znamená AI ve vývoji nižší cenu za Shopify projekt?</summary><p>Částečně. Rutinní práce jsou rychlejší, takže stejný rozpočet pokryje víc funkcí. Náročnost projektu ale určuje hlavně kvalita zadání, dat a integrací — a právě tam AI nešetří čas, protože rozhodnutí musí udělat člověk, který zná provoz obchodu.</p></details>
-  </div></section>
-
-  <div class="article-callout"><span>Vývoj na míru</span><h3>Potřebujete Shopify úpravu nebo funkci na míru?</h3><p>Pošlete mi popis toho, co má e-shop umět. Navrhnu řešení, které dává smysl provozně i technicky — a řeknu, co je zbytečné.</p><a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=liquid&amp;zdroj=clanek-ai-vyvoj">Probrat vývoj e-shopu →︎</a></div>
-
-  <section class="article-sources"><h2>Zdroje a další čtení</h2><ul>
-    <li><a href="https://shopify.dev/" target="_blank" rel="noreferrer">Shopify.dev — oficiální vývojářská dokumentace</a></li>
-    <li><a href="https://github.com/Shopify/shopify-ai-toolkit" target="_blank" rel="noreferrer">Shopify AI Toolkit na GitHubu</a></li>
-    <li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — přehled novinek</a></li>
-    <li><a href="../shopify-aplikace-a-integrace/">Shopify aplikace a integrace: jak vybrat řešení</a></li>
-  </ul></section>
+<p>AI nástroje mohou urychlit vyhledávání v dokumentaci, kontrolu API schémat a část rutinní vývojářské práce. Neodstraňují ale potřebu kvalitního zadání, kontroly kódu, testování ani rozhodnutí o architektuře.</p>
+<p><strong>Shopify AI Toolkit</strong> je otevřená sada pluginů, dovedností a vývojářských nástrojů. Podívejme se, co obsahuje a co z toho plyne pro reálné projekty.</p>
+<figure class="article-visual">
+<div class="visual-toolbar"><span>Co AI Toolkit propojuje</span><small>Od editoru k reálnému obchodu</small></div>
+<div class="visual-stage"><div class="visual-flow" style="--visual-columns:4">
+<div class="visual-node"><span>01</span><strong>AI nástroj</strong><small>Claude Code, Cursor, VS Code</small></div>
+<div class="visual-node"><span>02</span><strong>MCP server</strong><small>Shopify AI Toolkit</small></div>
+<div class="visual-node"><span>03</span><strong>Dokumentace a schéma</strong><small>GraphQL API, validace dotazů</small></div>
+<div class="visual-node"><span>04</span><strong>Obchod</strong><small>Operace přes Shopify CLI</small></div>
+</div></div>
+<figcaption class="visual-caption"><span>Open-source nástroje</span>Dokumentace, schémata a kontrola kódu přímo ve vývojářském prostředí.</figcaption>
+</figure>
+<h2 id="co-je-toolkit">Co je Shopify AI Toolkit</h2>
+<p>AI Toolkit je open-source sada nástrojů pro podporované AI asistenty. Zahrnuje práci s oficiální dokumentací Shopify, schématy GraphQL API, kontrolou kódu a přes Shopify CLI také s operacemi nad konkrétním obchodem.</p>
+<p>Podporovaná prostředí zahrnují <strong>Claude Code, Cursor, VS Code a GitHub Copilot</strong>. Instalace se liší podle nástroje — v Claude Code jde například o přidání marketplace a instalaci pluginu. Technickým požadavkem je Node.js verze 18 nebo vyšší.</p>
+<h2 id="co-to-meni">Co to mění v praxi</h2>
+<p>Rozdíl není v tom, že by AI uměla něco, co dřív nešlo. Rozdíl je v přesnosti a rychlosti. Dřív AI generovala Shopify kód z toho, co se naučila z veřejného internetu — často zastaralého. S AI Toolkitem čte aktuální dokumentaci a ověřuje dotazy proti skutečnému schématu API.</p>
+<div class="article-table-wrap"><table class="article-table"><thead><tr><th>Oblast</th><th>Dřív</th><th>S AI Toolkitem</th></tr></thead><tbody>
+<tr><td>Práce s API</td><td>Ruční dohledávání v dokumentaci</td><td>AI čte aktuální dokumentaci přímo</td></tr>
+<tr><td>GraphQL dotazy</td><td>Metoda pokus–omyl proti API</td><td>Ověření proti schématu před spuštěním</td></tr>
+<tr><td>Zastaralý kód</td><td>Časté — model neznal novinky</td><td>Menší riziko, ale nezaniká úplně</td></tr>
+<tr><td>Rutinní úpravy</td><td>Hodiny psaní boilerplate kódu</td><td>Minuty s následnou kontrolou</td></tr>
+</tbody></table></div>
+<h2 id="kde-ai-nestaci">Kde AI pořád nestačí</h2>
+<p>Tohle je pro majitele e-shopu důležitější než seznam funkcí. AI zvládá dobře ohraničené úkoly s jasným zadáním. Nezvládá ale rozhodnutí, která vyžadují znalost kontextu obchodu:</p>
+<ul class="checklist">
+<li><strong>Architektura a datový model</strong> — jestli má být funkce v šabloně, aplikaci, nebo Shopify Function, rozhoduje dlouhodobá udržitelnost, ne to, co jde napsat nejrychleji</li>
+<li><strong>Dopad na výkon</strong> — kód, který funguje na deseti produktech, se může zhroutit na deseti tisících; AI tenhle rozdíl z jednoho promptu neodhadne</li>
+<li><strong>Provozní souvislosti</strong> — co se stane se skladem, fakturací nebo objednávkovým procesem, ví jen člověk, který zná provoz obchodu</li>
+<li><strong>Odpovědnost za výsledek</strong> — AI nenese odpovědnost, když během špičky přestane fungovat pokladna; tu stále nese dodavatel</li>
+</ul>
+<blockquote>AI zrychluje psaní kódu, ne rozhodování o tom, co se má napsat. Kvalita Shopify projektu se pořád láme na zadání, datech a znalosti provozu — a to jsou přesně místa, kde AI nešetří čas.</blockquote>
+<h2 id="na-co-se-ptat">Na co se ptát dodavatele</h2>
+<p>Pokud vám někdo nabízí Shopify vývoj a zmiňuje AI, dávají smysl tři otázky:</p>
+<ul class="checklist">
+<li><strong>Kdo kód kontroluje?</strong> Vygenerovaný kód potřebuje revizi stejně jako ručně psaný — u AI možná víc, protože chyby vypadají důvěryhodně</li>
+<li><strong>Jak se řeší testování?</strong> Rychlejší vývoj nesmí znamenat, že se přeskočí ověření na reálných datech a scénářích</li>
+<li><strong>Kdo tomu bude rozumět za rok?</strong> Kód, kterému nerozumí ani dodavatel, je problém bez ohledu na to, kdo ho napsal</li>
+</ul>
+<p>Souvislost s dalšími novinkami popisuje článek o <a href="../shopify-editions-spring-26/">Shopify Editions Spring '26</a>; pohled ze strany zákazníků a AI asistentů pak <a href="../shopify-agentic-commerce/">agentic commerce</a>.</p>
+<section class="article-faq" id="faq"><h2>Časté otázky</h2><div class="faq-list">
+<details><summary>Co je Shopify AI Toolkit?</summary><p>Open-source sada pluginů, dovedností a vývojářských nástrojů, která propojuje podporované AI asistenty s dokumentací Shopify, schématy GraphQL, kontrolou kódu a přes Shopify CLI také s operacemi v obchodě.</p></details>
+<details><summary>Postaví mi AI celý Shopify e-shop sama?</summary><p>Ne. AI výrazně zrychluje psaní kódu, práci s dokumentací a ověřování dotazů proti schématu, ale rozhodnutí o architektuře, datovém modelu, výkonu a dopadech na provoz zůstávají na člověku. Bez kontroly hrozí kód, který sice funguje v ukázce, ale rozbije se na reálných datech.</p></details>
+<details><summary>Je AI Toolkit zdarma?</summary><p>Ano, jde o bezplatný open-source nástroj. Pro přístup k dokumentaci a schématům není potřeba API klíč, vyžaduje se Node.js verze 18 nebo vyšší. Operace nad konkrétním obchodem pak probíhají přes Shopify CLI s vaším oprávněním.</p></details>
+<details><summary>Znamená AI ve vývoji nižší cenu za Shopify projekt?</summary><p>Může zkrátit čas u části rutinních úkolů, ale automaticky neurčuje nižší cenu. Rozsah projektu stále závisí na zadání, datech, integracích, testování a odpovědnosti za nasazení.</p></details>
+</div></section>
+<div class="article-callout"><span>Vývoj na míru</span><h3>Potřebujete Shopify úpravu nebo funkci na míru?</h3><p>Pošlete mi popis toho, co má e-shop umět. Navrhnu řešení, které dává smysl provozně i technicky — a řeknu, co je zbytečné.</p><a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=liquid&amp;zdroj=clanek-ai-vyvoj">Probrat vývoj e-shopu →︎</a></div>
+<section class="article-sources"><h2>Zdroje a další čtení</h2><ul>
+<li><a href="https://shopify.dev/" rel="noreferrer" target="_blank">Shopify.dev — oficiální vývojářská dokumentace</a></li>
+<li><a href="https://github.com/Shopify/shopify-ai-toolkit" rel="noreferrer" target="_blank">Shopify AI Toolkit na GitHubu</a></li>
+<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — přehled novinek</a></li>
+<li><a href="../shopify-aplikace-a-integrace/">Shopify aplikace a integrace: jak vybrat řešení</a></li>
+</ul></section>
 </article><aside class="article-toc"><span>Obsah článku</span><ol><li><a href="#co-je-toolkit">Co je AI Toolkit</a></li><li><a href="#co-to-meni">Co to mění</a></li><li><a href="#kde-ai-nestaci">Kde AI nestačí</a></li><li><a href="#na-co-se-ptat">Na co se ptát</a></li></ol></aside></div>
 <section class="related guide-shell"><div class="related-head"><h2>Související články</h2><a href="../">Celý průvodce →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-editions-spring-26/"><span class="guide-topic">Novinky</span><h3>Editions Spring '26</h3><p>Celé vydání a co je nového.</p></a><a class="related-card" href="../shopify-functions-migrace/"><span class="guide-topic">Vývoj</span><h3>Scripts a Functions</h3><p>Konec Scripts a přechod na Functions.</p></a><a class="related-card" href="../shopify-aplikace-a-integrace/"><span class="guide-topic">Integrace</span><h3>Aplikace a napojení</h3><p>Datové toky a vlastní řešení.</p></a></div></section>
 </main><footer class="guide-footer guide-shell"><span>© 2026 Jakub Hrnčíř</span><nav><a href="/shopify-vyvoj/">Shopify projekty</a><a href="../">Průvodce</a><a href="mailto:jakub.hrncir24@gmail.com">Kontakt</a></nav></footer></body></html>

@@ -1,6 +1,8 @@
-<!doctype html><html lang="cs"><head>
-    <!-- Google tag (gtag.js) + Consent Mode v2 -->
-    <script>
+<!DOCTYPE html>
+
+<html lang="cs"><head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
@@ -31,82 +33,73 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
-    <script defer src="/consent.js?v=2"></script>
-
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Shopify Scripts skončily: přechod na Functions</title><meta name="description" content="Shopify Scripts přestaly fungovat 30. června 2026. Co to rozbilo, jak funguje náhrada v Shopify Functions a na co si dát pozor u tarifů a vlastních aplikací." /><meta name="author" content="Jakub Hrnčíř" /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" /><meta name="theme-color" content="#090b0a" /><link rel="canonical" href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" /><link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" /><link rel="alternate" hreflang="en" href="https://jhrncir.xyz/shopify-guide/shopify-functions-migration/" /><link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" /><link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
-  <meta property="og:type" content="article" /><meta property="og:locale" content="cs_CZ" /><meta property="og:locale:alternate" content="en_US" /><meta property="og:title" content="Shopify Scripts skončily: přechod na Functions" /><meta property="og:description" content="Co konec Scripts rozbil a jak funguje náhrada v Shopify Functions." /><meta property="og:url" content="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" /><meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" /><meta property="article:published_time" content="2026-07-22" /><meta property="article:modified_time" content="2026-07-22" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Shopify Scripts skončily: přechod na Functions" /><meta name="twitter:description" content="Co konec Scripts rozbil a jak funguje náhrada v Shopify Functions." /><meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../../blog.css?v=14" /><script src="../../blog.js?v=4" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/#article","headline":"Shopify Scripts skončily: přechod na Functions","description":"Shopify Scripts přestaly fungovat 30. června 2026. Co to rozbilo, jak funguje náhrada v Shopify Functions a na co si dát pozor u tarifů.","datePublished":"2026-07-22","dateModified":"2026-07-22","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"Shopify Scripts a Functions","item":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/#faq","mainEntity":[{"@type":"Question","name":"Kdy přesně Shopify Scripts přestaly fungovat?","acceptedAnswer":{"@type":"Answer","text":"Od 15. dubna 2026 už nešlo Scripts upravovat ani publikovat a 30. června 2026 se přestaly vykonávat úplně. Publikované Scripts byly k tomuto datu deaktivované, takže jejich logika v obchodě přestala platit."}},{"@type":"Question","name":"Jak zjistím, co u nás Scripts řešily?","acceptedAnswer":{"@type":"Answer","text":"Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts, včetně odkazů na odpovídající dokumentaci Shopify Functions nebo aplikace, kterými lze funkčnost obnovit."}},{"@type":"Question","name":"Potřebuji pro Shopify Functions tarif Plus?","acceptedAnswer":{"@type":"Answer","text":"Záleží na formě nasazení. Funkce dodané veřejnou aplikací z App Store fungují na jakémkoli tarifu. Vlastní aplikace obsahující Shopify Functions ale vyžadují tarif Shopify Plus a některé konkrétní možnosti Functions jsou dostupné pouze na Plus."}},{"@type":"Question","name":"V jakém jazyce se Shopify Functions píší?","acceptedAnswer":{"@type":"Answer","text":"Použít lze jakýkoli jazyk, který se kompiluje do WebAssembly. Shopify přímo podporuje a poskytuje šablony pro Rust, který označuje za nejvýkonnější volbu, a pro JavaScript."}},{"@type":"Question","name":"Co když Scripts nahradím jen aplikací z App Store?","acceptedAnswer":{"@type":"Answer","text":"U běžných scénářů, jako jsou množstevní slevy nebo dárek k nákupu, to bývá nejrychlejší cesta. Ověřit je ale potřeba, jak aplikace zvládá vaše konkrétní pravidla, jak se chová při kombinaci slev a jaký má dopad na výkon pokladny."}}]}]}</script>
-</head><body><header class="guide-header guide-shell"><a class="guide-brand" href="../../cs.html" aria-label="Jakub Hrnčíř, hlavní profil">JH<span>.</span></a><nav class="guide-nav" aria-label="Hlavní navigace"><a href="/shopify-vyvoj/#reseni">Služby</a><a href="/shopify-vyvoj/#projekty">Projekty</a><a href="/shopify-vyvoj/#reference">Reference</a><a href="../" aria-current="page">Průvodce</a></nav><a class="guide-back" href="../"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" /></svg> Všechny články</a></header>
-<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/shopify-vyvoj/">Shopify projekty</a></span><span><a href="../">Shopify průvodce</a></span><span>Shopify Scripts a Functions</span></nav><div class="article-hero-grid"><div><span class="article-category">Vývoj · checkout · 2026</span><h1>Shopify Scripts skončily: přechod na Functions</h1><p class="article-deck">Shopify Scripts se 30. června 2026 přestaly vykonávat. Pokud e-shop řešil vlastní slevy, dopravu nebo B2B ceny právě přes ně, tato logika prostě zmizela. Co ji nahradí a co je u toho potřeba vědět?</p></div><aside class="article-meta"><span>Autor<strong>Jakub Hrnčíř</strong></span><span>Aktualizováno<strong>22. 7. 2026</strong></span><span>Doba čtení<strong>6 minut</strong></span></aside></div></header>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+<script defer="" src="/consent.js?v=2"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Shopify Scripts skončily: přechod na Functions</title><meta content="Shopify Scripts přestaly fungovat 30. června 2026. Co to rozbilo, jak funguje náhrada v Shopify Functions a na co si dát pozor u tarifů a vlastních aplikací." name="description"/><meta content="Jakub Hrnčíř" name="author"/><meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/><meta content="#090b0a" name="theme-color"/><link href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/shopify-functions-migration/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" hreflang="x-default" rel="alternate"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="article" property="og:type"/><meta content="cs_CZ" property="og:locale"/><meta content="en_US" property="og:locale:alternate"/><meta content="Shopify Scripts skončily: přechod na Functions" property="og:title"/><meta content="Co konec Scripts rozbil a jak funguje náhrada v Shopify Functions." property="og:description"/><meta content="https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/" property="og:url"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/><meta content="2026-07-22" property="article:published_time"/><meta content="2026-07-28" property="article:modified_time"/><meta content="summary_large_image" name="twitter:card"/><meta content="Shopify Scripts skončily: přechod na Functions" name="twitter:title"/><meta content="Co konec Scripts rozbil a jak funguje náhrada v Shopify Functions." name="twitter:description"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../../blog.css?v=14" rel="stylesheet"/><script defer="" src="../../blog.js?v=5"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/#article","headline":"Shopify Scripts skončily: přechod na Functions","description":"Shopify Scripts přestaly fungovat 30. června 2026. Co to rozbilo, jak funguje náhrada v Shopify Functions a na co si dát pozor u tarifů a vlastních aplikací.","datePublished":"2026-07-22","dateModified":"2026-07-28","inLanguage":"cs","mainEntityOfPage":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify projekty","item":"https://jhrncir.xyz/shopify-vyvoj/"},{"@type":"ListItem","position":2,"name":"Shopify průvodce","item":"https://jhrncir.xyz/shopify-pruvodce/"},{"@type":"ListItem","position":3,"name":"Shopify Scripts a Functions","item":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify vývojář"},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-pruvodce/shopify-functions-migrace/#faq","mainEntity":[{"@type":"Question","name":"Kdy přesně Shopify Scripts přestaly fungovat?","acceptedAnswer":{"@type":"Answer","text":"Shopify Scripts byly 30. června 2026 odstraněné a přestaly fungovat. Jejich dříve publikovaná logika se od tohoto data v obchodě nevykonává."}},{"@type":"Question","name":"Jak zjistím, co u nás Scripts řešily?","acceptedAnswer":{"@type":"Answer","text":"Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts, včetně odkazů na odpovídající dokumentaci Shopify Functions nebo aplikace, kterými lze funkčnost obnovit."}},{"@type":"Question","name":"Potřebuji pro Shopify Functions tarif Plus?","acceptedAnswer":{"@type":"Answer","text":"Záleží na formě nasazení. Funkce dodané veřejnou aplikací z App Store fungují na jakémkoli tarifu. Vlastní aplikace obsahující Shopify Functions ale vyžadují tarif Shopify Plus a některé konkrétní možnosti Functions jsou dostupné pouze na Plus."}},{"@type":"Question","name":"V jakém jazyce se Shopify Functions píší?","acceptedAnswer":{"@type":"Answer","text":"Použít lze jakýkoli jazyk, který se kompiluje do WebAssembly. Shopify přímo podporuje a poskytuje šablony pro Rust, který označuje za nejvýkonnější volbu, a pro JavaScript."}},{"@type":"Question","name":"Co když Scripts nahradím jen aplikací z App Store?","acceptedAnswer":{"@type":"Answer","text":"U běžných scénářů, jako jsou množstevní slevy nebo dárek k nákupu, to bývá nejrychlejší cesta. Ověřit je ale potřeba, jak aplikace zvládá vaše konkrétní pravidla, jak se chová při kombinaci slev a jaký má dopad na výkon pokladny."}}]}]}</script>
+<meta content="Shopify průvodce" property="og:site_name"/></head><body><header class="guide-header guide-shell"><a aria-label="Jakub Hrnčíř, hlavní profil" class="guide-brand" href="../../cs.html">JH<span>.</span></a><nav aria-label="Hlavní navigace" class="guide-nav"><a href="/shopify-vyvoj/#reseni">Služby</a><a href="/shopify-vyvoj/#projekty">Projekty</a><a href="/shopify-vyvoj/#reference">Reference</a><a aria-current="page" href="../">Průvodce</a><a class="guide-language-link" href="https://jhrncir.xyz/shopify-guide/shopify-functions-migration/" lang="en">EN</a></nav><a class="guide-back" href="../"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> Všechny články</a></header>
+<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/shopify-vyvoj/">Shopify projekty</a></span><span><a href="../">Shopify průvodce</a></span><span>Shopify Scripts a Functions</span></nav><div class="article-hero-grid"><div><span class="article-category">Vývoj · pokladna · 2026</span><h1>Shopify Scripts skončily: přechod na Functions</h1><p class="article-deck">Shopify Scripts se 30. června 2026 přestaly vykonávat. Pokud e-shop řešil vlastní slevy, dopravu nebo B2B ceny právě přes ně, tato logika prostě zmizela. Co ji nahradí a co je u toho potřeba vědět?</p></div><aside class="article-meta"><span>Autor<strong>Jakub Hrnčíř</strong></span><span>Aktualizováno<strong>28. 7. 2026</strong></span><span>Doba čtení<strong>6 minut</strong></span></aside></div></header>
 <div class="article-layout guide-shell"><article class="article-body">
-  <p>Tohle není článek o novinkách, ale o něčem, co už proběhlo a co se v části e-shopů zatím nevyřešilo. <strong>Shopify Scripts byly 30. června 2026 vypnuté.</strong> Od 15. dubna 2026 už je nešlo upravovat ani publikovat a od konce června se přestaly vykonávat úplně.</p>
-  <p>Pokud obchod používal Scripts, jejich logika k tomu datu prostě přestala platit. To se v praxi projeví nenápadně — pokladna funguje dál, ale sleva se nepočítá, dárek se nepřidá nebo velkoobchodní zákazník vidí běžnou cenu.</p>
-
-  <figure class="article-visual">
-    <div class="visual-toolbar"><span>Co Scripts typicky řešily</span><small>Čtyři oblasti, které bez náhrady přestaly fungovat</small></div>
-    <div class="visual-stage"><div class="visual-flow" style="--visual-columns:4">
-      <div class="visual-node"><span>01</span><strong>Slevová logika</strong><small>Množstevní slevy, 1+1, kombinace</small></div>
-      <div class="visual-node"><span>02</span><strong>Ceny dopravy</strong><small>Podle košíku nebo zákazníka</small></div>
-      <div class="visual-node"><span>03</span><strong>Úpravy košíku</strong><small>Dárek k nákupu, balíčky</small></div>
-      <div class="visual-node"><span>04</span><strong>B2B ceny</strong><small>Přepisy pro velkoobchod</small></div>
-    </div></div>
-    <figcaption class="visual-caption"><span>Vypnuto 30. 6. 2026</span>Náhradou jsou Shopify Functions, případně aplikace z App Store.</figcaption>
-  </figure>
-
-  <h2 id="jak-zjistit">Jak zjistit, co se rozbilo</h2>
-  <p>Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts. U každé položky nabízí odkaz na odpovídající dokumentaci Shopify Functions nebo na aplikaci, která umí stejnou věc. To je nejrychlejší výchozí bod — ještě před tím, než začnete cokoli programovat.</p>
-  <p>Vedle reportu se vyplatí projít objednávky z posledních týdnů a ověřit, jestli u nich sedí slevy, doprava a ceny u firemních zákazníků. Chybějící sleva se v datech pozná snadněji než v rozhraní.</p>
-
-  <h2 id="co-jsou-functions">Co jsou Shopify Functions</h2>
-  <p>Shopify Functions umožňují zasahovat do vnitřní logiky Shopify — podobně jako Scripts, ale v novějším a stabilnějším modelu. Zásadní rozdíl je v tom, že Functions se nasazují jako součást aplikace, ne jako izolovaný skript v administraci.</p>
-  <p>Napsat je lze v <strong>jakémkoli jazyce, který se kompiluje do WebAssembly</strong>. Shopify přímo podporuje a nabízí šablony pro <strong>Rust</strong>, který označuje za nejvýkonnější volbu, a pro <strong>JavaScript</strong>.</p>
-  <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Typ funkce</th><th>K čemu slouží</th></tr></thead><tbody>
-    <tr><td>Discount</td><td>Vlastní typy slev a slevová pravidla</td></tr>
-    <tr><td>Payment</td><td>Skrytí nebo úprava platebních možností v pokladně</td></tr>
-    <tr><td>Delivery options</td><td>Úprava nabízených možností doručení</td></tr>
-    <tr><td>Validation</td><td>Serverová validace — zablokování pokladny za daných podmínek</td></tr>
-    <tr><td>Bundle</td><td>Seskupování produktů do balíčků</td></tr>
-    <tr><td>Location rule</td><td>Směrování objednávek na konkrétní lokace</td></tr>
-    <tr><td>Fulfillment constraints</td><td>Omezení způsobu vyskladnění</td></tr>
-    <tr><td>Local pickup</td><td>Možnosti a poplatky za osobní odběr</td></tr>
-  </tbody></table></div>
-
-  <h2 id="tarify">Pozor na tarify: kdy je potřeba Plus</h2>
-  <p>Tady je nuance, která se v diskusích často přehlíží a přitom rozhoduje o rozpočtu:</p>
-  <ul class="checklist">
-    <li><strong>Veřejná aplikace z App Store</strong> obsahující Functions funguje na <strong>jakémkoli tarifu</strong></li>
-    <li><strong>Vlastní (custom) aplikace</strong> s Functions vyžaduje <strong>tarif Shopify Plus</strong></li>
-    <li>Některé konkrétní možnosti Functions jsou dostupné pouze na Plus</li>
-  </ul>
-  <p>Prakticky to znamená, že e-shop na tarifu Grow nebo Advanced, který dřív měl vlastní slevovou logiku ve Scripts, ji nemůže jednoduše přepsat do vlastní aplikace — musí buď použít vhodnou aplikaci z App Store, upravit obchodní pravidla tak, aby je pokryly nativní slevy, nebo zvážit přechod na Plus. Kdy se Plus vyplatí, rozebírá <a href="../shopify-plus-cesky-trh/">článek o Shopify Plus a českém e-shopu</a>.</p>
-
-  <h2 id="jak-postupovat">Jak postupovat</h2>
-  <div class="decision-flow">
-    <div class="decision-step"><span>01</span><div><strong>Zjistit rozsah</strong><p>Report v administraci plus kontrola posledních objednávek — co přesně přestalo platit.</p></div></div>
-    <div class="decision-step"><span>02</span><div><strong>Rozhodnout o cestě</strong><p>Nativní slevy, aplikace z App Store, nebo vlastní Function — podle tarifu a složitosti pravidel.</p></div></div>
-    <div class="decision-step"><span>03</span><div><strong>Nasadit a otestovat</strong><p>Ověřit na reálných kombinacích košíku, zákaznických skupin a platebních metod.</p></div></div>
-    <div class="decision-step"><span>04</span><div><strong>Zkontrolovat data</strong><p>Porovnat objednávky před a po nasazení, aby se potvrdilo, že pravidla počítají správně.</p></div></div>
-  </div>
-  <blockquote>Nejrizikovější varianta je nedělat nic. Chybějící sleva nebo špatná cena pro velkoobchod se projeví v penězích, ne v chybové hlášce — a může běžet týdny, než si toho někdo všimne.</blockquote>
-
-  <section class="article-faq" id="faq"><h2>Časté otázky</h2><div class="faq-list">
-    <details><summary>Kdy přesně Shopify Scripts přestaly fungovat?</summary><p>Od 15. dubna 2026 už nešlo Scripts upravovat ani publikovat a 30. června 2026 se přestaly vykonávat úplně. Publikované Scripts byly k tomuto datu deaktivované, takže jejich logika v obchodě přestala platit.</p></details>
-    <details><summary>Jak zjistím, co u nás Scripts řešily?</summary><p>Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts, včetně odkazů na odpovídající dokumentaci Shopify Functions nebo aplikace, kterými lze funkčnost obnovit.</p></details>
-    <details><summary>Potřebuji pro Shopify Functions tarif Plus?</summary><p>Záleží na formě nasazení. Funkce dodané veřejnou aplikací z App Store fungují na jakémkoli tarifu. Vlastní aplikace obsahující Shopify Functions ale vyžadují tarif Shopify Plus a některé konkrétní možnosti Functions jsou dostupné pouze na Plus.</p></details>
-    <details><summary>V jakém jazyce se Shopify Functions píší?</summary><p>Použít lze jakýkoli jazyk, který se kompiluje do WebAssembly. Shopify přímo podporuje a poskytuje šablony pro Rust, který označuje za nejvýkonnější volbu, a pro JavaScript.</p></details>
-    <details><summary>Co když Scripts nahradím jen aplikací z App Store?</summary><p>U běžných scénářů, jako jsou množstevní slevy nebo dárek k nákupu, to bývá nejrychlejší cesta. Ověřit je ale potřeba, jak aplikace zvládá vaše konkrétní pravidla, jak se chová při kombinaci slev a jaký má dopad na výkon pokladny.</p></details>
-  </div></section>
-
-  <div class="article-callout"><span>Kontrola checkoutu</span><h3>Nevíte, jestli se vás konec Scripts dotkl?</h3><p>Pošlete mi odkaz na e-shop a popis slevových nebo dopravních pravidel, která máte mít aktivní. Zkontroluji, co chybí, a navrhnu nejjednodušší cestu k obnovení.</p><a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=integrace&amp;zdroj=clanek-functions">Zkontrolovat můj checkout →︎</a></div>
-
-  <section class="article-sources"><h2>Zdroje a další čtení</h2><ul>
-    <li><a href="https://help.shopify.com/en/manual/checkout-settings/script-editor/transitioning-to-functions" target="_blank" rel="noreferrer">Shopify Help Center: přechod ze Scripts na Functions</a></li>
-    <li><a href="https://shopify.dev/docs/apps/build/functions" target="_blank" rel="noreferrer">Shopify.dev: Shopify Functions</a></li>
-    <li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — přehled novinek</a></li>
-    <li><a href="../shopify-plus-cesky-trh/">Shopify Plus a český e-shop: výhody a cena</a></li>
-  </ul></section>
+<p>Tohle není článek o novinkách, ale o něčem, co už proběhlo a co se v části e-shopů zatím nevyřešilo. <strong>Shopify Scripts byly 30. června 2026 vypnuté.</strong> Od tohoto data se přestaly vykonávat úplně.</p>
+<p>Pokud obchod používal Scripts, jejich logika k tomu datu prostě přestala platit. To se v praxi projeví nenápadně — pokladna funguje dál, ale sleva se nepočítá, dárek se nepřidá nebo velkoobchodní zákazník vidí běžnou cenu.</p>
+<figure class="article-visual">
+<div class="visual-toolbar"><span>Co Scripts typicky řešily</span><small>Čtyři oblasti, které bez náhrady přestaly fungovat</small></div>
+<div class="visual-stage"><div class="visual-flow" style="--visual-columns:4">
+<div class="visual-node"><span>01</span><strong>Slevová logika</strong><small>Množstevní slevy, 1+1, kombinace</small></div>
+<div class="visual-node"><span>02</span><strong>Ceny dopravy</strong><small>Podle košíku nebo zákazníka</small></div>
+<div class="visual-node"><span>03</span><strong>Úpravy košíku</strong><small>Dárek k nákupu, balíčky</small></div>
+<div class="visual-node"><span>04</span><strong>B2B ceny</strong><small>Přepisy pro velkoobchod</small></div>
+</div></div>
+<figcaption class="visual-caption"><span>Vypnuto 30. 6. 2026</span>Náhradou jsou Shopify Functions, případně aplikace z App Store.</figcaption>
+</figure>
+<h2 id="jak-zjistit">Jak zjistit, co se rozbilo</h2>
+<p>Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts. U každé položky nabízí odkaz na odpovídající dokumentaci Shopify Functions nebo na aplikaci, která umí stejnou věc. To je nejrychlejší výchozí bod — ještě před tím, než začnete cokoli programovat.</p>
+<p>Vedle reportu se vyplatí projít objednávky z posledních týdnů a ověřit, jestli u nich sedí slevy, doprava a ceny u firemních zákazníků. Chybějící sleva se v datech pozná snadněji než v rozhraní.</p>
+<h2 id="co-jsou-functions">Co jsou Shopify Functions</h2>
+<p>Shopify Functions umožňují zasahovat do vnitřní logiky Shopify — podobně jako Scripts, ale v novějším a stabilnějším modelu. Zásadní rozdíl je v tom, že Functions se nasazují jako součást aplikace, ne jako izolovaný skript v administraci.</p>
+<p>Napsat je lze v <strong>jakémkoli jazyce, který se kompiluje do WebAssembly</strong>. Shopify přímo podporuje a nabízí šablony pro <strong>Rust</strong>, který označuje za nejvýkonnější volbu, a pro <strong>JavaScript</strong>.</p>
+<div class="article-table-wrap"><table class="article-table"><thead><tr><th>Typ funkce</th><th>K čemu slouží</th></tr></thead><tbody>
+<tr><td>Discount</td><td>Vlastní typy slev a slevová pravidla</td></tr>
+<tr><td>Payment</td><td>Skrytí nebo úprava platebních možností v pokladně</td></tr>
+<tr><td>Delivery options</td><td>Úprava nabízených možností doručení</td></tr>
+<tr><td>Validation</td><td>Serverová validace — zablokování pokladny za daných podmínek</td></tr>
+<tr><td>Bundle</td><td>Seskupování produktů do balíčků</td></tr>
+<tr><td>Location rule</td><td>Směrování objednávek na konkrétní lokace</td></tr>
+<tr><td>Fulfillment constraints</td><td>Omezení způsobu vyskladnění</td></tr>
+<tr><td>Local pickup</td><td>Možnosti a poplatky za osobní odběr</td></tr>
+</tbody></table></div>
+<h2 id="tarify">Pozor na tarify: kdy je potřeba Plus</h2>
+<p>Tady je nuance, která se v diskusích často přehlíží a přitom rozhoduje o rozpočtu:</p>
+<ul class="checklist">
+<li><strong>Veřejná aplikace z App Store</strong> obsahující Functions funguje na <strong>jakémkoli tarifu</strong></li>
+<li><strong>Vlastní aplikace</strong> s Functions vyžaduje <strong>tarif Shopify Plus</strong></li>
+<li>Některé konkrétní možnosti Functions jsou dostupné pouze na Plus</li>
+</ul>
+<p>Prakticky to znamená, že e-shop na tarifu Grow nebo Advanced, který dřív měl vlastní slevovou logiku ve Scripts, ji nemůže jednoduše přepsat do vlastní aplikace — musí buď použít vhodnou aplikaci z App Store, upravit obchodní pravidla tak, aby je pokryly nativní slevy, nebo zvážit přechod na Plus. Kdy se Plus vyplatí, rozebírá <a href="../shopify-plus-cesky-trh/">článek o Shopify Plus a českém e-shopu</a>.</p>
+<h2 id="jak-postupovat">Jak postupovat</h2>
+<div class="decision-flow">
+<div class="decision-step"><span>01</span><div><strong>Zjistit rozsah</strong><p>Report v administraci plus kontrola posledních objednávek — co přesně přestalo platit.</p></div></div>
+<div class="decision-step"><span>02</span><div><strong>Rozhodnout o cestě</strong><p>Nativní slevy, aplikace z App Store, nebo vlastní Function — podle tarifu a složitosti pravidel.</p></div></div>
+<div class="decision-step"><span>03</span><div><strong>Nasadit a otestovat</strong><p>Ověřit na reálných kombinacích košíku, zákaznických skupin a platebních metod.</p></div></div>
+<div class="decision-step"><span>04</span><div><strong>Zkontrolovat data</strong><p>Porovnat objednávky před a po nasazení, aby se potvrdilo, že pravidla počítají správně.</p></div></div>
+</div>
+<blockquote>Nejrizikovější varianta je nedělat nic. Chybějící sleva nebo špatná cena pro velkoobchod se projeví v penězích, ne v chybové hlášce — a může běžet týdny, než si toho někdo všimne.</blockquote>
+<section class="article-faq" id="faq"><h2>Časté otázky</h2><div class="faq-list">
+<details><summary>Kdy přesně Shopify Scripts přestaly fungovat?</summary><p>Shopify Scripts byly 30. června 2026 odstraněné a přestaly fungovat. Jejich dříve publikovaná logika se od tohoto data v obchodě nevykonává.</p></details>
+<details><summary>Jak zjistím, co u nás Scripts řešily?</summary><p>Shopify připravil v administraci report s přehledem úprav, které byly v obchodě aktivní před vypnutím Scripts, včetně odkazů na odpovídající dokumentaci Shopify Functions nebo aplikace, kterými lze funkčnost obnovit.</p></details>
+<details><summary>Potřebuji pro Shopify Functions tarif Plus?</summary><p>Záleží na formě nasazení. Funkce dodané veřejnou aplikací z App Store fungují na jakémkoli tarifu. Vlastní aplikace obsahující Shopify Functions ale vyžadují tarif Shopify Plus a některé konkrétní možnosti Functions jsou dostupné pouze na Plus.</p></details>
+<details><summary>V jakém jazyce se Shopify Functions píší?</summary><p>Použít lze jakýkoli jazyk, který se kompiluje do WebAssembly. Shopify přímo podporuje a poskytuje šablony pro Rust, který označuje za nejvýkonnější volbu, a pro JavaScript.</p></details>
+<details><summary>Co když Scripts nahradím jen aplikací z App Store?</summary><p>U běžných scénářů, jako jsou množstevní slevy nebo dárek k nákupu, to bývá nejrychlejší cesta. Ověřit je ale potřeba, jak aplikace zvládá vaše konkrétní pravidla, jak se chová při kombinaci slev a jaký má dopad na výkon pokladny.</p></details>
+</div></section>
+<div class="article-callout"><span>Kontrola pokladny</span><h3>Nevíte, jestli se vás konec Scripts dotkl?</h3><p>Pošlete mi odkaz na e-shop a popis slevových nebo dopravních pravidel, která máte mít aktivní. Zkontroluji, co chybí, a navrhnu nejjednodušší cestu k obnovení.</p><a class="guide-button" data-track="guide_inquiry" href="/shopify-poptavka/?typ=integrace&amp;zdroj=clanek-functions">Zkontrolovat pokladnu →︎</a></div>
+<section class="article-sources"><h2>Zdroje a další čtení</h2><ul>
+<li><a href="https://help.shopify.com/en/manual/checkout-settings/script-editor/transitioning-to-functions" rel="noreferrer" target="_blank">Shopify Help Center: přechod ze Scripts na Functions</a></li>
+<li><a href="https://shopify.dev/docs/apps/build/functions" rel="noreferrer" target="_blank">Shopify.dev: Shopify Functions</a></li>
+<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — přehled novinek</a></li>
+<li><a href="../shopify-plus-cesky-trh/">Shopify Plus a český e-shop: výhody a cena</a></li>
+</ul></section>
 </article><aside class="article-toc"><span>Obsah článku</span><ol><li><a href="#jak-zjistit">Co se rozbilo</a></li><li><a href="#co-jsou-functions">Co jsou Functions</a></li><li><a href="#tarify">Kdy je potřeba Plus</a></li><li><a href="#jak-postupovat">Jak postupovat</a></li></ol></aside></div>
-<section class="related guide-shell"><div class="related-head"><h2>Související články</h2><a href="../">Celý průvodce →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-editions-spring-26/"><span class="guide-topic">Novinky</span><h3>Editions Spring '26</h3><p>Celé vydání a co je nového.</p></a><a class="related-card" href="../ai-vyvoj-shopify/"><span class="guide-topic">Vývoj</span><h3>AI ve vývoji Shopify</h3><p>AI Toolkit a co mění pro projekty.</p></a><a class="related-card" href="../shopify-plus-cesky-trh/"><span class="guide-topic">Enterprise</span><h3>Plus a český e-shop</h3><p>Výhody, cena, case studies.</p></a></div></section>
+<section class="related guide-shell"><div class="related-head"><h2>Související články</h2><a href="../">Celý průvodce →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-editions-spring-26/"><span class="guide-topic">Novinky</span><h3>Editions Spring '26</h3><p>Celé vydání a co je nového.</p></a><a class="related-card" href="../ai-vyvoj-shopify/"><span class="guide-topic">Vývoj</span><h3>AI ve vývoji Shopify</h3><p>AI Toolkit a co mění pro projekty.</p></a><a class="related-card" href="../shopify-plus-cesky-trh/"><span class="guide-topic">Pro velké e-shopy</span><h3>Plus a český e-shop</h3><p>Výhody, cena a případové studie.</p></a></div></section>
 </main><footer class="guide-footer guide-shell"><span>© 2026 Jakub Hrnčíř</span><nav><a href="/shopify-vyvoj/">Shopify projekty</a><a href="../">Průvodce</a><a href="mailto:jakub.hrncir24@gmail.com">Kontakt</a></nav></footer></body></html>

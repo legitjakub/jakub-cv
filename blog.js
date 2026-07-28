@@ -84,6 +84,8 @@ const setupGuideMobileNavigation = () => {
   if (!header || !menu || header.querySelector('.guide-menu-toggle')) return;
 
   const isEnglishPage = document.documentElement.lang === 'en';
+  const openMenuLabel = isEnglishPage ? 'Open navigation' : 'Otevřít navigaci';
+  const closeMenuLabel = isEnglishPage ? 'Close navigation' : 'Zavřít navigaci';
 
   const brand = header.querySelector('.guide-brand');
   if (brand) {
@@ -105,7 +107,7 @@ const setupGuideMobileNavigation = () => {
   toggle.className = 'guide-menu-toggle';
   toggle.setAttribute('aria-controls', menu.id);
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'Otevřít navigaci');
+  toggle.setAttribute('aria-label', openMenuLabel);
   toggle.innerHTML = '<span></span><span></span>';
   const back = header.querySelector('.guide-back');
   header.insertBefore(toggle, back || null);
@@ -114,14 +116,14 @@ const setupGuideMobileNavigation = () => {
     header.classList.remove('menu-open');
     document.body.classList.remove('guide-menu-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Otevřít navigaci');
+    toggle.setAttribute('aria-label', openMenuLabel);
   };
   toggle.addEventListener('click', () => {
     const open = !header.classList.contains('menu-open');
     header.classList.toggle('menu-open', open);
     document.body.classList.toggle('guide-menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Zavřít navigaci' : 'Otevřít navigaci');
+    toggle.setAttribute('aria-label', open ? closeMenuLabel : openMenuLabel);
   });
   menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
   document.addEventListener('keydown', (event) => {

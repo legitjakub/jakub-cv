@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) + Consent Mode v2 -->
-    <script>
+<head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
@@ -33,119 +33,165 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
-    <script defer src="/consent.js?v=2"></script>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shopify guide: development, Plus and platform updates</title>
-    <meta name="description" content="Practical Shopify articles for store owners and teams: AI tooling, the end of Shopify Scripts, Shopify Plus, and what changed on the platform in 2026." />
-    <meta name="author" content="Jakub Hrnčíř" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-    <meta name="theme-color" content="#090b0a" />
-    <link rel="canonical" href="https://jhrncir.xyz/shopify-guide/" />
-    <link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/shopify-pruvodce/" />
-    <link rel="alternate" hreflang="en" href="https://jhrncir.xyz/shopify-guide/" />
-    <link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/shopify-pruvodce/" />
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="cs_CZ" />
-    <meta property="og:title" content="Shopify guide: development, Plus and platform updates" />
-    <meta property="og:description" content="Practical Shopify articles for store owners and teams, in English and Czech." />
-    <meta property="og:url" content="https://jhrncir.xyz/shopify-guide/" />
-    <meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shopify guide: development, Plus and platform updates" />
-    <meta name="twitter:description" content="Practical Shopify articles for store owners and teams, in English and Czech." />
-    <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../blog.css?v=14" />
-    <script src="../blog.js?v=4" defer></script>
-    <script type="application/ld+json">
-      {
-        "@context":"https://schema.org",
-        "@graph":[
-          {
-            "@type":"Blog",
-            "@id":"https://jhrncir.xyz/shopify-guide/#blog",
-            "url":"https://jhrncir.xyz/shopify-guide/",
-            "name":"Shopify guide",
-            "description":"Practical Shopify articles on development, tooling, Shopify Plus and platform updates.",
-            "inLanguage":"en",
-            "author":{"@id":"https://jhrncir.xyz/#person"},
-            "blogPost":[
-              {"@id":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/#article"},
-              {"@id":"https://jhrncir.xyz/shopify-guide/shopify-functions-migration/#article"}
-            ]
-          },
-          {
-            "@type":"Person",
-            "@id":"https://jhrncir.xyz/#person",
-            "name":"Jakub Hrnčíř",
-            "url":"https://jhrncir.xyz/",
-            "jobTitle":"Shopify developer",
-            "sameAs":["https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"]
-          }
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <header class="guide-header guide-shell">
-      <a class="guide-brand" href="../index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a>
-      <nav class="guide-nav" aria-label="Main navigation">
-        <a href="/work.html#shopify-development">Services</a>
-        <a href="/work.html#posedla">Case studies</a>
-        <a href="/shopify-plus/en/">Shopify Plus</a>
-        <a href="./" aria-current="page">Guide</a>
-      </nav>
-      <a class="guide-back guide-contact" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Discuss a project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" /></svg></a>
-    </header>
-
-    <main>
-      <section class="guide-hero guide-shell">
-        <div class="guide-hero-copy">
-          <span class="guide-label">Shopify guide</span>
-          <h1>Shopify development, Plus and platform updates</h1>
-          <p>Practical articles for store owners, ecommerce managers and teams who need to understand what a change on the platform actually means for their store.</p>
-        </div>
-        <aside class="guide-hero-note">
-          <strong>Written for decisions, not for reach.</strong>
-          <span>Every figure here traces back to what Shopify publishes. Where Shopify publishes nothing, the article says so rather than repeating numbers that circulate online.</span>
-        </aside>
-      </section>
-
-      <section id="guide-index" class="guide-index guide-shell" aria-label="Shopify guide articles">
-        <a id="ai-development" class="guide-row" data-search="ai toolkit mcp claude cursor copilot development code" href="ai-shopify-development/">
-          <span class="guide-number">01</span><div><span class="guide-topic">Development</span><h2>AI in Shopify development</h2></div>
-          <p>What the AI Toolkit changed, which editors it connects, and where a human is still required.</p><span class="guide-time">6 min read</span><span class="guide-arrow" aria-hidden="true">→︎</span>
-        </a>
-        <a id="functions" class="guide-row" data-search="scripts functions checkout discounts shipping b2b migration wasm rust" href="shopify-functions-migration/">
-          <span class="guide-number">02</span><div><span class="guide-topic">Checkout</span><h2>Shopify Scripts have ended: moving to Functions</h2></div>
-          <p>Scripts stopped executing on 30 June 2026. What broke, how to replace it, and when Plus is required.</p><span class="guide-time">6 min read</span><span class="guide-arrow" aria-hidden="true">→︎</span>
-        </a>
-        <p class="guide-empty" hidden>Nothing matched that term. Try something shorter or more general.</p>
-      </section>
-
-      <section class="guide-cta guide-shell">
-        <div><h2>Looking for more?</h2><p>The full guide runs to sixteen articles — pricing, SEO, performance, payments, Markets, migration, B2B and platform news. Those are in Czech; these two are available in both languages.</p></div>
-        <a class="guide-button" href="/shopify-pruvodce/" lang="cs">Open the Czech guide →︎</a>
-      </section>
-
-      <section class="guide-cta guide-shell">
-        <div><h2>Working on a Shopify project?</h2><p>Send me the current state, the goal and the main requirements. I will tell you what needs checking and how the work could run.</p></div>
-        <a class="guide-button" data-track="guide_inquiry" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Discuss a project →︎</a>
-      </section>
-    </main>
-
-    <footer class="guide-footer guide-shell">
-      <span>© 2026 Jakub Hrnčíř</span>
-      <nav aria-label="Footer navigation"><a href="../index.html">Main profile</a><a href="/work.html">Shopify work</a><a href="/shopify-plus/en/">Shopify Plus</a><a href="/shopify-pruvodce/" lang="cs">Česky</a></nav>
-    </footer>
-  </body>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
+<script defer="" src="/consent.js?v=2"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Shopify Guide: Development, SEO, Plus and Store Growth</title>
+<meta content="Practical Shopify articles for merchants: development, SEO, speed, migration, Markets, payments, B2B, Shopify Plus and platform updates." name="description"/>
+<meta content="Jakub Hrnčíř" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
+<meta content="#090b0a" name="theme-color"/>
+<link href="https://jhrncir.xyz/shopify-guide/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/" hreflang="x-default" rel="alternate"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="website" property="og:type"/>
+<meta content="Shopify Guide for Online Stores" property="og:title"/>
+<meta content="Practical Shopify articles for merchants: development, SEO, speed, migration, Markets, payments, B2B, Shopify Plus and platform updates." property="og:description"/>
+<meta content="https://jhrncir.xyz/shopify-guide/" property="og:url"/>
+<meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shopify Guide for Online Stores" name="twitter:title"/>
+<meta content="Practical Shopify articles for merchants: development, SEO, speed, migration, Markets, payments, B2B, Shopify Plus and platform updates." name="twitter:description"/>
+<meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../blog.css?v=14" rel="stylesheet"/>
+<script defer="" src="../blog.js?v=5"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Blog","@id":"https://jhrncir.xyz/shopify-guide/#blog","url":"https://jhrncir.xyz/shopify-guide/","name":"Shopify Guide for Online Stores","description":"Practical articles about Shopify development, SEO, performance, international expansion, payments, B2B and platform updates.","inLanguage":"en","author":{"@id":"https://jhrncir.xyz/#person"},"blogPost":[{"@id":"https://jhrncir.xyz/shopify-guide/shopify-store-cost/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-vs-shoptet-vs-woocommerce/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-apps-integrations/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-theme-redesign/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-plus-b2b-d2c/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/migrate-to-shopify/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-seo/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-markets-expansion/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-store-speed/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-payments-czechia-slovakia/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-support-developer-agency/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-plus-czech-market/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-editions-spring-26/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-agentic-commerce/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/ai-shopify-development/#article"},{"@id":"https://jhrncir.xyz/shopify-guide/shopify-functions-migration/#article"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","jobTitle":"Shopify Developer","sameAs":["https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"]}]}</script>
+<meta content="Shopify Guide" property="og:site_name"/></head>
+<body>
+<header class="guide-header guide-shell">
+<a aria-label="Jakub Hrnčíř, main profile" class="guide-brand" href="../en.html">JH<span>.</span></a>
+<nav aria-label="Main navigation" class="guide-nav">
+<a href="/work.html#shopify-development">Services</a>
+<a href="/work.html#posedla">Projects</a>
+<a href="/work.html#work-references">References</a>
+<a aria-current="page" href="./">Guide</a>
+<a class="guide-language-link" href="https://jhrncir.xyz/shopify-pruvodce/" lang="cs">CZ</a></nav>
+<a class="guide-back guide-contact" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Discuss the project <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11"></path></svg></a>
+</header>
+<main>
+<section class="guide-hero guide-shell">
+<div class="guide-hero-copy">
+<span class="guide-label">Shopify guide</span>
+<h1>Shopify guides for Czech and Slovak online stores</h1>
+<p>Practical articles for brand owners, online store managers, and teams choosing a platform, planning development, or wanting to get more out of Shopify.</p>
+</div>
+<aside class="guide-hero-note">
+<strong>Information for a specific decision.</strong>
+<span>I explain the possibilities, limitations and technical connections without universal recommendations. Shopify is not the right choice for every project.</span>
+</aside>
+</section>
+<section aria-labelledby="pathways-title" class="guide-pathways guide-shell">
+<header><span class="guide-label">Start according to the situation</span><h2 id="pathways-title">Find the right answer faster.</h2></header>
+<div class="guide-pathway-list">
+<a href="shopify-vs-shoptet-vs-woocommerce/"><span>01</span><div><strong>I'm just choosing a platform</strong><small>Comparison of Shopify, Shoptet and WooCommerce with no universal winner.</small></div><b aria-hidden="true">→︎</b></a>
+<a href="migrate-to-shopify/"><span>02</span><div><strong>I am planning a new store or a migration</strong><small>Data, URLs, integrations, testing and a controlled launch.</small></div><b aria-hidden="true">→︎</b></a>
+<a href="shopify-store-speed/"><span>03</span><div><strong>I need to improve an existing Shopify store</strong><small>Performance, SEO, theme work and technical maintenance based on the actual problem.</small></div><b aria-hidden="true">→︎</b></a>
+</div>
+</section>
+<div aria-label="Guide topics" class="guide-filters guide-shell">
+<span>Topics</span>
+<a href="#naklady">Costs</a>
+<a href="#platforma">Platform</a>
+<a href="#vyvoj">Development</a>
+<a href="#navrh">Redesign</a>
+<a href="#rust">Growth</a>
+<a href="#migrace">Migration</a>
+<a href="#seo">SEO</a>
+<a href="#expanze">Expansion</a>
+<a href="#vykon">Performance</a>
+<a href="#platby">Payments</a>
+<a href="#sprava">Maintenance</a>
+<a href="#shopify-plus">Enterprise</a>
+<a href="#editions-spring-26">News</a>
+<a href="#agentic-commerce">AI</a>
+<a href="#ai-vyvoj">AI development</a>
+<a href="#functions">Checkout</a>
+</div>
+<div class="guide-search guide-shell" role="search">
+<label for="guide-search-input"><span>Find in the guide</span><strong>What are you dealing with right now?</strong></label>
+<div><input aria-controls="guide-index" autocomplete="off" id="guide-search-input" inputmode="search" placeholder="Např. migrace, rychlost, platby…" type="search"/><button aria-label="Clear search" hidden="" type="button">x</button></div>
+<p aria-live="polite"><span data-guide-count="">16 articles</span></p>
+</div>
+<section aria-label="Shopify guide articles" class="guide-index guide-shell" id="guide-index">
+<a class="guide-row" data-search="cost budget price estimate Shopify store" href="shopify-store-cost/" id="naklady">
+<span class="guide-number">01</span><div><span class="guide-topic">Costs</span><h2>How Much Does a Shopify Store Cost in 2026?</h2></div>
+<p>What determines the cost of the platform, theme, apps, development, testing and ongoing support.</p><span class="guide-time">5 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="platform comparison Shopify Shoptet WooCommerce CZ SK" href="shopify-vs-shoptet-vs-woocommerce/" id="platforma">
+<span class="guide-number">02</span><div><span class="guide-topic">Platform</span><h2>Shopify vs Shoptet vs WooCommerce for CZ/SK Stores</h2></div>
+<p>A practical comparison for Czech and Slovak stores based on operations, customisation and international plans.</p><span class="guide-time">5 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="apps integrations custom functionality development" href="shopify-apps-integrations/" id="vyvoj">
+<span class="guide-number">03</span><div><span class="guide-topic">Development</span><h2>Shopify Apps and Integrations</h2></div>
+<p>When a ready-made app is enough, when to modify a theme and when a custom integration makes sense.</p><span class="guide-time">5 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="theme design redesign Liquid UX storefront" href="shopify-theme-redesign/" id="navrh">
+<span class="guide-number">04</span><div><span class="guide-topic">Design &amp; development</span><h2>Shopify Theme vs Custom Redesign</h2></div>
+<p>The difference between theme changes, custom sections and a redesign that remains fast and maintainable.</p><span class="guide-time">5 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="B2B D2C Shopify Plus wholesale companies catalogues" href="shopify-plus-b2b-d2c/" id="rust">
+<span class="guide-number">05</span><div><span class="guide-topic">Growth</span><h2>Shopify Plus, B2B and D2C in 2026</h2></div>
+<p>Companies, catalogs, individual pricing and deciding whether a more advanced plan fits your real needs.</p><span class="guide-time">4 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="migration import launch platform change redirects" href="migrate-to-shopify/" id="migrace">
+<span class="guide-number">06</span><div><span class="guide-topic">Migration</span><h2>Migrating to Shopify Without Avoidable Losses</h2></div>
+<p>Data, SEO, integration, domain and controlled launch when switching from WooCommerce, Shoptet or another solution.</p><span class="guide-time">5 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="SEO Google Search Console search indexing" href="shopify-seo/" id="seo">
+<span class="guide-number">07</span><div><span class="guide-topic">SEO</span><h2>Shopify SEO: What the Platform Handles</h2></div>
+<p>Technical basics, store structure, products, collections, metadata, robots.txt and measurement in Search Console.</p><span class="guide-time">7 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="Shopify Markets expansion language currency domain international" href="shopify-markets-expansion/" id="expanze">
+<span class="guide-number">08</span><div><span class="guide-topic">Expansion</span><h2>Shopify Markets for Czech and Slovak Stores</h2></div>
+<p>Markets, languages, domains, currencies, local prices, content and international SEO before entering a new country.</p><span class="guide-time">7 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="performance speed PageSpeed Lighthouse Core Web Vitals" href="shopify-store-speed/" id="vykon">
+<span class="guide-number">09</span><div><span class="guide-topic">Performance</span><h2>How to Improve Shopify Store Speed</h2></div>
+<p>Core Web Vitals, Real Data, Lighthouse and Impact of Themes, Apps, JavaScript, Media and Analytics.</p><span class="guide-time">7 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="payments gateway Shopify Payments checkout Czechia Slovakia" href="shopify-payments-czechia-slovakia/" id="platby">
+<span class="guide-number">10</span><div><span class="guide-topic">Payments</span><h2>Shopify Payments in Czechia and Slovakia</h2></div>
+<p>Current availability, cards, accelerated payments, third-party providers, fees and checkout testing.</p><span class="guide-time">7 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="maintenance support repair error developer agency" href="shopify-support-developer-agency/" id="sprava">
+<span class="guide-number">11</span><div><span class="guide-topic">Maintenance</span><h2>Shopify Support vs Developer vs Agency</h2></div>
+<p>How responsibility is divided between Shopify Support, a theme or app vendor, an independent developer and an agency.</p><span class="guide-time">6 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="Shopify Plus Czechia Czech market features cost B2B checkout Posedla" href="shopify-plus-czech-market/" id="shopify-plus">
+<span class="guide-number">12</span><div><span class="guide-topic">Enterprise</span><h2>Shopify Plus for Czech Stores in 2026</h2></div>
+<p>Current pricing, B2B features, expansion stores, Czech market requirements and experience from the Posedla project.</p><span class="guide-time">8 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="Editions Spring 26 updates agentic commerce Sidekick B2B POS release" href="shopify-editions-spring-26/" id="editions-spring-26">
+<span class="guide-number">13</span><div><span class="guide-topic">News <strong class="guide-badge">New</strong></span><h2>Shopify Editions Spring '26: Key Updates</h2></div>
+<p>Agentic commerce, Sidekick, wider B2B access, POS v11 and other updates from the 17 June 2026 release.</p><span class="guide-time">6 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="agentic commerce AI agents shopping UCP ChatGPT Copilot Gemini AEO" href="shopify-agentic-commerce/" id="agentic-commerce">
+<span class="guide-number">14</span><div><span class="guide-topic">AI <strong class="guide-badge">New</strong></span><h2>Agentic Commerce and AI Shopping Agents</h2></div>
+<p>How Universal Commerce Protocol and Shopify Catalog work, and what a store needs for discovery by AI agents.</p><span class="guide-time">6 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="AI development toolkit MCP Claude Cursor Copilot code" href="ai-shopify-development/" id="ai-vyvoj">
+<span class="guide-number">15</span><div><span class="guide-topic">Development <strong class="guide-badge">New</strong></span><h2>AI in Shopify Development</h2></div>
+<p>What Shopify AI Toolkit can speed up and where experienced review, testing and architectural decisions still matter.</p><span class="guide-time">6 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<a class="guide-row" data-search="Scripts Functions checkout discounts shipping B2B migration WebAssembly Rust" href="shopify-functions-migration/" id="functions">
+<span class="guide-number">16</span><div><span class="guide-topic">Checkout <strong class="guide-badge">New</strong></span><h2>Shopify Scripts Have Ended: Moving to Functions</h2></div>
+<p>What stopped working after 30 June 2026, how to audit the old logic and when Shopify Functions require Plus.</p><span class="guide-time">6 min reading</span><span aria-hidden="true" class="guide-arrow">→︎</span>
+</a>
+<p class="guide-empty" hidden="">I didn't find anything for this expression. Try a shorter or more general query.</p>
+</section>
+<section class="guide-cta guide-shell">
+<div><h2>Are you tackling your own Shopify project?</h2><p>Send me the current status, goal and main requirements. I will suggest what needs to be verified and how the cooperation can continue.</p></div>
+<a class="guide-button" data-track="guide_inquiry" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Discuss the project →︎</a>
+</section>
+</main>
+<footer class="guide-footer guide-shell">
+<span>© 2026 Jakub Hrnčíř</span>
+<nav aria-label="Footer navigation"><a href="../en.html">Main profile</a><a href="/work.html">Shopify projects</a><a href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Contact</a></nav>
+</footer>
+</body>
 </html>
