@@ -388,3 +388,39 @@
   .commercial-faq-list summary { padding-block:20px; padding-right:44px; font-size:15px; }
   .commercial-faq-list p { padding-right:38px; font-size:12.5px; }
 }
+
+/* A shorter, more purposeful commercial journey. */
+@media (min-width:761px) {
+  .solution-paths,
+  .project-diagnostic,
+  .project-inquiry,
+  .commercial-faq,
+  .conversion-close {
+    padding-top:clamp(82px,7.5vw,112px);
+    padding-bottom:clamp(82px,7.5vw,112px);
+  }
+  .collaboration-flow {
+    padding-top:clamp(88px,8vw,120px);
+    padding-bottom:clamp(88px,8vw,120px);
+  }
+  .solution-paths-head { margin-bottom:48px; }
+  .solution-path-list article { min-height:126px; padding:22px 0; }
+  .projects-intro { padding-top:clamp(78px,7vw,108px); padding-bottom:50px; }
+  .conversion-case { padding-top:clamp(68px,7vw,98px); padding-bottom:clamp(68px,7vw,98px); }
+  .collaboration-steps { margin-top:68px; }
+  .flow-action { margin-top:54px; }
+  .conversion-references .work-reference { min-height:590px; }
+  .diagnostic-stage { min-height:440px; }
+}
+
+@media (max-width:760px) {
+  .solution-paths,
+  .project-diagnostic,
+  .project-inquiry,
+  .commercial-faq,
+  .conversion-close,
+  .collaboration-flow { padding-top:70px; padding-bottom:70px; }
+  .projects-intro { padding-top:70px; }
+  .conversion-case { padding-top:54px; padding-bottom:62px; }
+  .diagnostic-stage { min-height:390px; }
+}

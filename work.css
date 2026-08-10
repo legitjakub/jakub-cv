@@ -1,6 +1,6 @@
 .work-page { background:#090b0c; color:#efeee8; }
 .work-main { overflow:hidden; }
-.work-main > section { content-visibility:auto; contain-intrinsic-size:auto 900px; }
+.work-main > section { content-visibility:visible; contain:none; }
 .work-main > .work-hero { content-visibility:visible; contain:none; }
 
 .work-hero {

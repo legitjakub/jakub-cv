@@ -193,6 +193,8 @@ const setupMobileNavigation = () => {
   const isEnglish = document.documentElement.lang === 'en';
   const openLabel = isEnglish ? 'Open navigation' : 'Otevřít navigaci';
   const closeLabel = isEnglish ? 'Close navigation' : 'Zavřít navigaci';
+  const closedText = 'Menu';
+  const openText = isEnglish ? 'Close' : 'Zavřít';
 
   if (document.body.classList.contains('shopify-conversion-page') || document.body.classList.contains('shopify-inquiry-page')) {
     const brandLink = header.querySelector('.brand');
@@ -208,25 +210,31 @@ const setupMobileNavigation = () => {
       profileLink.textContent = isEnglish ? 'Personal profile' : 'Osobní profil';
       menu.append(profileLink);
 
-      /* Only offer the other language here if the page has not already put a
-         more specific counterpart link in the menu (e.g. the Plus pages do). */
-      if (!menu.querySelector(`a[lang="${isEnglish ? 'cs' : 'en'}"]`)) {
-        const otherLangLink = document.createElement('a');
-        otherLangLink.className = 'mobile-nav-only';
-        otherLangLink.href = isEnglish ? '/shopify-vyvoj/' : '/work.html';
-        otherLangLink.lang = isEnglish ? 'cs' : 'en';
-        otherLangLink.textContent = isEnglish ? 'Česká verze' : 'English portfolio';
-        menu.append(otherLangLink);
-      }
     }
-  } else if (document.body.classList.contains('work-page') && isEnglish && !menu.querySelector('.mobile-language-link')) {
-    const languageLink = document.createElement('a');
-    languageLink.className = 'mobile-nav-only mobile-language-link';
-    languageLink.href = '/shopify-vyvoj/';
-    languageLink.lang = 'cs';
-    languageLink.textContent = 'Česká verze';
-    menu.append(languageLink);
   }
+
+  menu.dataset.mobileLabel = isEnglish ? 'Navigation' : 'Navigace';
+
+  const mobileFooter = document.createElement('div');
+  mobileFooter.className = 'mobile-nav-footer mobile-nav-only';
+
+  const languageSwitch = header.querySelector('.lang-switch');
+  if (languageSwitch) {
+    const languageGroup = document.createElement('div');
+    languageGroup.className = 'mobile-nav-language';
+    languageGroup.setAttribute('aria-label', isEnglish ? 'Language selection' : 'Volba jazyka');
+    languageGroup.append(languageSwitch.cloneNode(true));
+    mobileFooter.append(languageGroup);
+  }
+
+  const primaryAction = header.querySelector('.nav-cta');
+  if (primaryAction) {
+    const actionClone = primaryAction.cloneNode(true);
+    actionClone.classList.add('mobile-menu-cta');
+    mobileFooter.append(actionClone);
+  }
+
+  if (mobileFooter.childElementCount) menu.append(mobileFooter);
 
   if (!menu.id) menu.id = 'primary-navigation';
   const toggle = document.createElement('button');
@@ -235,16 +243,18 @@ const setupMobileNavigation = () => {
   toggle.setAttribute('aria-controls', menu.id);
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', openLabel);
-  toggle.innerHTML = '<span></span><span></span>';
+  toggle.innerHTML = '<span class="mobile-nav-toggle-label">Menu</span><i aria-hidden="true"><b></b><b></b></i>';
 
   const actions = header.querySelector('.nav-actions');
   header.insertBefore(toggle, actions || null);
+  const toggleText = toggle.querySelector('.mobile-nav-toggle-label');
 
   const closeMenu = () => {
     header.classList.remove('mobile-menu-open');
     document.body.classList.remove('mobile-nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', openLabel);
+    if (toggleText) toggleText.textContent = closedText;
   };
 
   toggle.addEventListener('click', () => {
@@ -253,6 +263,7 @@ const setupMobileNavigation = () => {
     document.body.classList.toggle('mobile-nav-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+    if (toggleText) toggleText.textContent = open ? openText : closedText;
   });
 
   menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
