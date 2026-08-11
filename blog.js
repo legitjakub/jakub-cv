@@ -81,7 +81,7 @@ if (guideFinePointer.matches && !guideReducedMotion.matches) {
 const setupGuideMobileNavigation = () => {
   const header = document.querySelector('.guide-header');
   const menu = header?.querySelector('.guide-nav');
-  if (!header || !menu || header.querySelector('.guide-menu-toggle')) return;
+  if (!header || !menu) return;
 
   const isEnglishPage = document.documentElement.lang === 'en';
   const openMenuLabel = isEnglishPage ? 'Open navigation' : 'Otevřít navigaci';
@@ -105,7 +105,7 @@ const setupGuideMobileNavigation = () => {
 
   menu.dataset.mobileLabel = isEnglishPage ? 'Navigation' : 'Navigace';
 
-  const mobileFooter = document.createElement('div');
+  const mobileFooter = menu.querySelector('.guide-mobile-footer') || document.createElement('div');
   mobileFooter.className = 'guide-mobile-footer guide-mobile-only';
 
   const language = menu.querySelector('.guide-language-link');
@@ -122,17 +122,13 @@ const setupGuideMobileNavigation = () => {
     mobileFooter.append(backClone);
   }
 
-  if (mobileFooter.childElementCount) menu.append(mobileFooter);
+  if (mobileFooter.childElementCount && !mobileFooter.isConnected) menu.append(mobileFooter);
 
   if (!menu.id) menu.id = 'guide-navigation';
-  const toggle = document.createElement('button');
-  toggle.type = 'button';
-  toggle.className = 'guide-menu-toggle';
+  const toggle = header.querySelector('.guide-menu-toggle');
+  if (!toggle) return;
   toggle.setAttribute('aria-controls', menu.id);
-  toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', openMenuLabel);
-  toggle.innerHTML = '<span class="guide-menu-label">Menu</span><i aria-hidden="true"><b></b><b></b></i>';
-  header.insertBefore(toggle, back || null);
   const toggleText = toggle.querySelector('.guide-menu-label');
 
   const close = () => {
@@ -162,3 +158,39 @@ const setupGuideMobileNavigation = () => {
   }, { passive:true });
 };
 setupGuideMobileNavigation();
+
+document.querySelectorAll('.article-table').forEach((table) => {
+  const labels = [...table.querySelectorAll('thead th')].map((cell) => cell.textContent.trim());
+  table.querySelectorAll('tbody tr').forEach((row) => {
+    [...row.cells].forEach((cell,index) => cell.dataset.label = labels[index] || '');
+  });
+  table.classList.add('is-mobile-ready');
+});
+
+document.querySelectorAll('.article-toc').forEach((toc,index) => {
+  const list = toc.querySelector('ol');
+  if (!list) return;
+  const isEnglishPage = document.documentElement.lang === 'en';
+  const toggle = document.createElement('button');
+  const listId = `article-toc-list-${index + 1}`;
+  list.id = listId;
+  toggle.type = 'button';
+  toggle.className = 'article-toc-toggle';
+  toggle.setAttribute('aria-controls',listId);
+  toggle.setAttribute('aria-expanded','false');
+  toggle.innerHTML = `<span>${isEnglishPage ? 'Show sections' : 'Zobrazit kapitoly'}</span><i aria-hidden="true"></i>`;
+  toc.insertBefore(toggle,list);
+  const label = toggle.querySelector('span');
+  const close = () => {
+    toc.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    label.textContent = isEnglishPage ? 'Show sections' : 'Zobrazit kapitoly';
+  };
+  toggle.addEventListener('click',() => {
+    const open = !toc.classList.contains('is-open');
+    toc.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    label.textContent = open ? (isEnglishPage ? 'Hide sections' : 'Skrýt kapitoly') : (isEnglishPage ? 'Show sections' : 'Zobrazit kapitoly');
+  });
+  list.querySelectorAll('a').forEach((link) => link.addEventListener('click',close));
+});

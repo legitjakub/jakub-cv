@@ -285,7 +285,7 @@
   .conversion-hero .work-hero-primary { min-width:0; }
   .conversion-hero .work-hero h1>span,
   .conversion-hero h1>span { max-width:100%; white-space:normal; }
-  .solution-paths,.project-diagnostic,.project-inquiry { padding-top:82px; padding-bottom:82px; }
+  .solution-paths,.project-diagnostic,.project-inquiry { padding-top:64px; padding-bottom:64px; }
   .solution-paths-head { margin-bottom:38px; }
   .solution-paths-head h2,.projects-intro h2,.collaboration-flow h2,.diagnostic-intro h2,.inquiry-copy h2 { font-size:clamp(43px,13vw,64px); }
   .solution-paths-head>p,.projects-intro>p,.collaboration-flow header>p,.diagnostic-intro>p,.inquiry-copy>p { font-size:12.5px; }
@@ -294,10 +294,10 @@
   .solution-path-list article>p,.solution-path-list article>div { grid-column:2; }
   .solution-path-list article>div { display:flex; gap:15px; margin-top:5px; }
   .solution-path-list a { font-size:8px; }
-  .projects-intro { display:block; padding-top:82px; padding-bottom:40px; }
+  .projects-intro { display:block; padding-top:64px; padding-bottom:34px; }
   .projects-intro h2 { margin-top:24px; }
   .projects-intro>p { margin-top:22px; }
-  .conversion-case { display:flex; flex-direction:column; gap:42px; padding-top:62px; padding-bottom:72px; }
+  .conversion-case { display:flex; flex-direction:column; gap:36px; padding-top:54px; padding-bottom:64px; }
   .conversion-case-media { order:2; display:flex; gap:12px; width:calc(100% + var(--pad)); margin-right:calc(var(--pad) * -1); padding-right:var(--pad); overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; }
   .conversion-case-media::-webkit-scrollbar { display:none; }
   .conversion-case .media-frame,.conversion-case .conversion-case-secondary { flex:0 0 min(88vw,440px); width:auto; justify-self:auto; scroll-snap-align:start; }
@@ -308,7 +308,7 @@
   .case-logo-title-molecules img { width:min(245px,78vw); }
   .conversion-case-copy dl>div { grid-template-columns:1fr; gap:8px; padding:17px 0; }
   .conversion-case-copy blockquote { font-size:16px; }
-  .collaboration-flow { padding-top:82px; padding-bottom:82px; }
+  .collaboration-flow { padding-top:64px; padding-bottom:64px; }
   .collaboration-steps { grid-template-columns:1fr; gap:0; margin-top:55px; padding-left:45px; }
   .collaboration-steps::before { left:5px; right:auto; top:8px; bottom:10px; width:1px; height:auto; background:linear-gradient(180deg,var(--commerce),rgba(var(--commerce-rgb),.25)); }
   .collaboration-steps li { min-height:150px; padding:0 0 38px; }
@@ -316,7 +316,7 @@
   .collaboration-steps li>span { position:static; display:block; margin-bottom:14px; font-size:20px; }
   .collaboration-steps h3 { font-size:25px; }
   .flow-action { gap:30px; line-height:1.5; }
-  .conversion-references .work-reference { min-height:590px; }
+  .conversion-references .work-reference { min-height:0; height:auto; }
   .diagnostic-stage { min-height:420px; padding:24px 18px; }
   .diagnostic-fallback h3,.diagnostic-live h3 { font-size:31px; }
   .diagnostic-option { grid-template-columns:22px 1fr auto; padding:13px; }

@@ -7,6 +7,8 @@
 
   var STORE = "jh-consent";
   var VERSION = 1;
+  var ANALYTICS_ID = "G-Z1XDQ184HR";
+  var analyticsLoading = false;
 
   var COPY = {
     cs: {
@@ -65,6 +67,16 @@
 
   var t = COPY[(document.documentElement.lang || "cs").slice(0, 2).toLowerCase()] || COPY.cs;
 
+  function loadAnalytics() {
+    if (analyticsLoading || document.querySelector("script[data-jh-analytics]")) return;
+    analyticsLoading = true;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ANALYTICS_ID);
+    script.setAttribute("data-jh-analytics", "");
+    document.head.appendChild(script);
+  }
+
   function gtag() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(arguments);
@@ -104,7 +116,10 @@
     gtag("consent", "update", signals(payload));
     /* GA4 only starts a session once storage is allowed, so send the pageview
        that the initial config call could not record. */
-    if (payload.analytics) gtag("event", "page_view");
+    if (payload.analytics) {
+      loadAnalytics();
+      gtag("event", "page_view");
+    }
   }
 
   /* ---------- styles ---------- */
@@ -303,9 +318,11 @@
   }
 
   function init() {
+    var saved = read();
     injectCSS();
     addFooterLink();
-    if (!read()) renderBanner();
+    if (saved && saved.analytics) loadAnalytics();
+    if (!saved) renderBanner();
   }
 
   window.jhConsent = { open: renderPrefs };

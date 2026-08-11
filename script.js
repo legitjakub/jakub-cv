@@ -37,8 +37,11 @@ if (finePointer.matches && !reduceMotion.matches) {
   document.documentElement.addEventListener('pointerleave', () => pointerGlow.classList.remove('is-visible'));
 }
 
+let maxScroll = 0;
+const measureViewport = () => {
+  maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+};
 const updateViewportState = () => {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
 
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -54,6 +57,16 @@ window.addEventListener('scroll', () => {
     scrollFrame = null;
   });
 }, { passive: true });
+window.addEventListener('resize', () => {
+  measureViewport();
+  updateViewportState();
+}, { passive: true });
+window.addEventListener('load', () => {
+  measureViewport();
+  updateViewportState();
+}, { once: true });
+if ('ResizeObserver' in window) new ResizeObserver(measureViewport).observe(document.documentElement);
+measureViewport();
 updateViewportState();
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -65,6 +78,14 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
 
 reveals.forEach((element) => revealObserver.observe(element));
+
+const movingStrips = document.querySelectorAll('.ticker,.logo-marquee');
+if ('IntersectionObserver' in window) {
+  const stripObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => entry.target.classList.toggle('is-marquee-active', entry.isIntersecting && !reduceMotion.matches));
+  }, { rootMargin: '120px 0px' });
+  movingStrips.forEach((strip) => stripObserver.observe(strip));
+}
 
 const revealHashTarget = (alignTarget = false) => {
   if (!window.location.hash) return;
@@ -91,7 +112,7 @@ const heroFinalText = heroName ? heroName.textContent.trim() : '';
 let scrambleRunning = false;
 
 const scrambleHeroName = () => {
-  if (!heroName || reduceMotion.matches || scrambleRunning) return;
+  if (!heroName || !finePointer.matches || reduceMotion.matches || scrambleRunning) return;
   scrambleRunning = true;
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&<>/';
   let frame = 0;
@@ -189,56 +210,15 @@ if (year) year.textContent = new Date().getFullYear();
 const setupMobileNavigation = () => {
   const header = document.querySelector('.nav-wrap');
   const menu = header?.querySelector(':scope > nav');
-  if (!header || !menu || header.querySelector('.mobile-nav-toggle')) return;
+  if (!header || !menu) return;
   const isEnglish = document.documentElement.lang === 'en';
   const openLabel = isEnglish ? 'Open navigation' : 'Otevřít navigaci';
   const closeLabel = isEnglish ? 'Close navigation' : 'Zavřít navigaci';
 
-  if (document.body.classList.contains('shopify-conversion-page') || document.body.classList.contains('shopify-inquiry-page')) {
-    const brandLink = header.querySelector('.brand');
-    if (brandLink) {
-      brandLink.href = isEnglish ? '/work.html' : '/shopify-vyvoj/';
-      brandLink.setAttribute('aria-label', isEnglish ? 'Shopify work, home' : 'Shopify vývoj, úvodní stránka');
-    }
-
-    if (!menu.querySelector('.mobile-profile-link')) {
-      const profileLink = document.createElement('a');
-      profileLink.className = 'mobile-nav-only mobile-profile-link';
-      profileLink.href = isEnglish ? '/index.html' : '/cs.html';
-      profileLink.textContent = isEnglish ? 'Personal profile' : 'Osobní profil';
-      menu.append(profileLink);
-
-      /* Only offer the other language here if the page has not already put a
-         more specific counterpart link in the menu (e.g. the Plus pages do). */
-      if (!menu.querySelector(`a[lang="${isEnglish ? 'cs' : 'en'}"]`)) {
-        const otherLangLink = document.createElement('a');
-        otherLangLink.className = 'mobile-nav-only';
-        otherLangLink.href = isEnglish ? '/shopify-vyvoj/' : '/work.html';
-        otherLangLink.lang = isEnglish ? 'cs' : 'en';
-        otherLangLink.textContent = isEnglish ? 'Česká verze' : 'English portfolio';
-        menu.append(otherLangLink);
-      }
-    }
-  } else if (document.body.classList.contains('work-page') && isEnglish && !menu.querySelector('.mobile-language-link')) {
-    const languageLink = document.createElement('a');
-    languageLink.className = 'mobile-nav-only mobile-language-link';
-    languageLink.href = '/shopify-vyvoj/';
-    languageLink.lang = 'cs';
-    languageLink.textContent = 'Česká verze';
-    menu.append(languageLink);
-  }
-
   if (!menu.id) menu.id = 'primary-navigation';
-  const toggle = document.createElement('button');
-  toggle.type = 'button';
-  toggle.className = 'mobile-nav-toggle';
+  const toggle = header.querySelector('.mobile-nav-toggle');
+  if (!toggle) return;
   toggle.setAttribute('aria-controls', menu.id);
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', openLabel);
-  toggle.innerHTML = '<span></span><span></span>';
-
-  const actions = header.querySelector('.nav-actions');
-  header.insertBefore(toggle, actions || null);
 
   const closeMenu = () => {
     header.classList.remove('mobile-menu-open');

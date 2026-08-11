@@ -33,7 +33,6 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
     <script defer src="/consent.js?v=2"></script>
 
     <meta charset="UTF-8" />
@@ -59,12 +58,11 @@
     <meta name="twitter:title" content="Shopify stores built for ambitious brands" />
     <meta name="twitter:description" content="Real Shopify projects, redesigns, Liquid development, integrations, and verified client recommendations." />
     <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split19" />
-    <link rel="stylesheet" href="work.css?v=13" />
-    <script src="script.js?v=split17" defer></script>
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="core.css?v=1" />
+    <link rel="stylesheet" href="work.css?v=18" />
+    <script src="core.js?v=2" defer></script>
+    <script src="media.js?v=1" defer></script>
     <script src="work.js?v=1" defer></script>
     <script type="application/ld+json">
       {
@@ -102,12 +100,12 @@
         ]
       }
     </script>
-  </head>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
   <body class="work-page">
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <header class="nav-wrap">
       <a class="brand" href="index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a>
-      <nav aria-label="Work navigation">
+      <nav id="primary-navigation" aria-label="Work navigation">
         <a href="#shopify-development">Shopify development</a>
         <a href="/shopify-plus/en/">Shopify Plus</a>
         <a href="/shopify-guide/">Blog</a>
@@ -117,6 +115,7 @@
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="/shopify-vyvoj/" lang="cs">CZ</a><span aria-current="page">EN</span></div>
         <a class="nav-cta" href="index.html">Back to profile <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
       </div>
     </header>
 
@@ -200,16 +199,16 @@
           <div class="case-tags"><span>Shopify</span><span>E-commerce</span><span>Front-end</span></div>
         </header>
         <div class="video-duo reveal">
-          <figure class="media-frame media-frame-wide">
-            <video muted loop autoplay playsinline controls preload="metadata" aria-label="Posedla — new store preview">
-              <source src="assets/work/posedla-showreel.mp4" type="video/mp4" />
-            </video>
+          <figure class="media-frame media-frame-wide" data-media-player data-video-poster="posedla">
+            <video muted loop playsinline preload="none" data-video-src="assets/work/posedla-showreel.mp4" aria-label="Posedla — new store preview"></video>
+            <button class="media-play" type="button" aria-label="Play Posedla store preview"><span aria-hidden="true"></span><small>Play preview</small></button>
+            <noscript><a class="media-nojs" href="assets/work/posedla-showreel.mp4">Open video preview</a></noscript>
             <figcaption><span>01</span> New store · showreel</figcaption>
           </figure>
-          <figure class="media-frame">
-            <video muted loop autoplay playsinline controls preload="metadata" aria-label="Posedla Academy — interface preview">
-              <source src="assets/work/posedla-academy.mp4" type="video/mp4" />
-            </video>
+          <figure class="media-frame" data-media-player data-video-poster="posedla">
+            <video muted loop playsinline preload="none" data-video-src="assets/work/posedla-academy.mp4" aria-label="Posedla Academy — interface preview"></video>
+            <button class="media-play" type="button" aria-label="Play Posedla Academy preview"><span aria-hidden="true"></span><small>Play preview</small></button>
+            <noscript><a class="media-nojs" href="assets/work/posedla-academy.mp4">Open video preview</a></noscript>
             <figcaption><span>02</span> Academy · interface</figcaption>
           </figure>
         </div>
@@ -224,16 +223,16 @@
           <div class="case-tags"><span>Shopify</span><span>Product page</span><span>Mobile UX</span></div>
         </header>
         <div class="video-duo video-duo-reverse reveal">
-          <figure class="media-frame">
-            <video muted loop autoplay playsinline controls preload="metadata" aria-label="Molecules of Life — mobile preview">
-              <source src="assets/work/molecules-mobile.mp4" type="video/mp4" />
-            </video>
+          <figure class="media-frame" data-media-player data-video-poster="molecules">
+            <video muted loop playsinline preload="none" data-video-src="assets/work/molecules-mobile.mp4" aria-label="Molecules of Life — mobile preview"></video>
+            <button class="media-play" type="button" aria-label="Play Molecules of Life mobile preview"><span aria-hidden="true"></span><small>Play preview</small></button>
+            <noscript><a class="media-nojs" href="assets/work/molecules-mobile.mp4">Open video preview</a></noscript>
             <figcaption><span>01</span> Mobile interface</figcaption>
           </figure>
-          <figure class="media-frame media-frame-wide">
-            <video muted loop autoplay playsinline controls preload="metadata" aria-label="Molecules of Life — product page">
-              <source src="assets/work/molecules-product.mp4" type="video/mp4" />
-            </video>
+          <figure class="media-frame media-frame-wide" data-media-player data-video-poster="molecules">
+            <video muted loop playsinline preload="none" data-video-src="assets/work/molecules-product.mp4" aria-label="Molecules of Life — product page"></video>
+            <button class="media-play" type="button" aria-label="Play Molecules of Life product page preview"><span aria-hidden="true"></span><small>Play preview</small></button>
+            <noscript><a class="media-nojs" href="assets/work/molecules-product.mp4">Open video preview</a></noscript>
             <figcaption><span>02</span> Product detail</figcaption>
           </figure>
         </div>

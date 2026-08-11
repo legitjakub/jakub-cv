@@ -33,7 +33,6 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
     <script defer src="/consent.js?v=2"></script>
 
     <meta charset="UTF-8" />
@@ -61,14 +60,13 @@
     <meta name="twitter:title" content="Shopify Plus: when it pays off and what it costs" />
     <meta name="twitter:description" content="When Shopify Plus makes sense and when it does not. Published pricing, migration and references." />
     <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=split19" />
-    <link rel="stylesheet" href="/work.css?v=13" />
-    <link rel="stylesheet" href="/shopify-vyvoj.css?v=6" />
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="/core.css?v=1" />
+    <link rel="stylesheet" href="/work.css?v=18" />
+    <link rel="stylesheet" href="/shopify-vyvoj.css?v=7" />
     <link rel="stylesheet" href="/shopify-plus.css?v=2" />
-    <script src="/script.js?v=split17" defer></script>
+    <script src="/core.js?v=2" defer></script>
+    <script src="/media.js?v=1" defer></script>
     <script src="/shopify-vyvoj.js?v=1" defer></script>
     <script type="application/ld+json">
       {
@@ -126,12 +124,12 @@
         ]
       }
     </script>
-  </head>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
   <body class="work-page shopify-conversion-page plus-page">
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <header class="nav-wrap">
       <a class="brand" href="/index.html" aria-label="Jakub Hrnčíř, main profile">JH<span>.</span></a>
-      <nav aria-label="Shopify Plus navigation">
+      <nav id="primary-navigation" aria-label="Shopify Plus navigation">
         <a href="/work.html">Shopify work</a>
         <a href="#fit">Who it fits</a>
         <a href="#differences">What Plus adds</a>
@@ -143,6 +141,7 @@
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="/shopify-plus/" lang="cs">CZ</a><span aria-current="page">EN</span></div>
         <a class="nav-cta conversion-nav-cta" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20Plus" data-track="nav_inquiry">Discuss Plus <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
       </div>
     </header>
 

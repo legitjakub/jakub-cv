@@ -1,0 +1,30 @@
+@media (max-width:1050px) {
+  .mobile-nav-toggle,.guide-menu-toggle { display:none!important; }
+  .nav-wrap,.guide-header {
+    position:relative!important;
+    display:flex!important;
+    height:auto!important;
+    min-height:68px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .nav-wrap>nav,.work-page .nav-wrap>nav,.guide-header .guide-nav {
+    position:static!important;
+    display:flex!important;
+    width:100%!important;
+    height:auto!important;
+    flex:1 0 100%;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    gap:10px 20px;
+    padding:14px 0 18px!important;
+    border-top:1px solid rgba(255,255,255,.12)!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .guide-header .guide-nav::before,.guide-mobile-only { display:none!important; }
+  .guide-header>.guide-back { display:none!important; }
+  .work-hero,.inquiry-page-hero { padding-top:72px!important; }
+}
+.media-nojs { position:absolute; inset:10px 10px 42px; z-index:3; display:grid; place-items:center; color:#b7ff3c; font:500 10px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }

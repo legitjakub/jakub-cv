@@ -33,7 +33,6 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1XDQ184HR"></script>
     <script defer src="/consent.js?v=2"></script>
 
     <meta charset="UTF-8" />
@@ -72,12 +71,10 @@
     <meta name="twitter:description" content="A portfolio focused on cybersecurity, Shopify development, and e-commerce." />
     <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
     <meta name="twitter:image:alt" content="Jakub Hrnčíř — Cybersecurity, Shopify and e-commerce" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="assets/jakub-hrncir-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split23" />
-    <script src="script.js?v=split16" defer></script>
+    <link rel="preload" href="assets/jakub-hrncir-portrait-768.webp" as="image" type="image/webp" imagesrcset="assets/jakub-hrncir-portrait-480.webp 480w, assets/jakub-hrncir-portrait-768.webp 768w, assets/jakub-hrncir-portrait.webp 1100w" imagesizes="(max-width:760px) 72vw, (max-width:1050px) 35vw, 40vw" fetchpriority="high" />
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="styles.css?v=split25" />
+    <script src="script.js?v=split19" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -120,13 +117,13 @@
         ]
       }
     </script>
-  </head>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
   <body>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="nav-wrap">
       <a class="brand" href="#top" aria-label="Jakub Hrnčíř, home">JH<span>.</span></a>
-      <nav aria-label="Main navigation">
+      <nav id="primary-navigation" aria-label="Main navigation">
         <a href="#about">Profile</a>
         <a href="#shopify-profile">Shopify</a>
         <a href="work.html">Projects &amp; work</a>
@@ -136,6 +133,7 @@
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language selection"><a href="cs.html" lang="cs">CZ</a><span aria-current="page">EN</span></div>
         <a class="nav-cta" href="mailto:jakub.hrncir24@gmail.com">Contact me <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
       </div>
     </header>
 
@@ -163,7 +161,7 @@
         <div class="portrait-wrap reveal">
           <div class="portrait-frame">
             <picture>
-              <source srcset="assets/jakub-hrncir-portrait.webp" type="image/webp" />
+              <source srcset="assets/jakub-hrncir-portrait-480.webp 480w, assets/jakub-hrncir-portrait-768.webp 768w, assets/jakub-hrncir-portrait.webp 1100w" sizes="(max-width:760px) 72vw, (max-width:1050px) 35vw, 40vw" type="image/webp" />
               <img src="assets/jakub-hrncir-portrait.png" alt="Portrait of Jakub Hrnčíř" width="1254" height="1254" fetchpriority="high" decoding="async" />
             </picture>
             <div class="portrait-shade"></div>
