@@ -16,6 +16,7 @@ document.querySelectorAll('[data-track]').forEach((element) => {
 
 const guideSearch = document.querySelector('#guide-search-input');
 if (guideSearch) {
+  const isEnglishGuide = document.documentElement.lang === 'en';
   const guideRows = [...document.querySelectorAll('.guide-row')];
   const guideCount = document.querySelector('[data-guide-count]');
   const guideEmpty = document.querySelector('.guide-empty');
@@ -38,7 +39,9 @@ if (guideSearch) {
 
     guideClear.hidden = !guideSearch.value;
     guideEmpty.hidden = visible !== 0;
-    guideCount.textContent = `${visible} ${visible === 1 ? 'článek' : visible > 1 && visible < 5 ? 'články' : 'článků'}`;
+    guideCount.textContent = isEnglishGuide
+      ? `${visible} ${visible === 1 ? 'article' : 'articles'}`
+      : `${visible} ${visible === 1 ? 'článek' : visible > 1 && visible < 5 ? 'články' : 'článků'}`;
   };
 
   guideSearch.addEventListener('input', filterGuideRows);
