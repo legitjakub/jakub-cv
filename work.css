@@ -559,3 +559,14 @@
   .work-brand-track { animation:none; }
   .media-frame { transform:none!important; transition:none; }
 }
+
+@media (min-width:1800px) {
+  .work-hero {
+    min-height:min(100svh,1040px);
+    justify-content:center;
+    padding-top:150px;
+  }
+  .work-hero h1 { max-width:980px; font-size:clamp(78px,4.8vw,108px); }
+  .work-hero-copy>p { max-width:720px; font-size:17px; }
+  .work-hero-proof { margin-top:64px; }
+}
