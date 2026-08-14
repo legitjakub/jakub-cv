@@ -278,6 +278,10 @@ button,input,textarea,select { font:inherit; }
 .article-body ul,.article-body ol { margin:22px 0; padding-left:23px; }
 .article-body li+li { margin-top:9px; }
 .article-body blockquote { margin:42px 0; padding:8px 0 8px 27px; border-left:2px solid var(--guide-green); color:#d9dad4; font-size:20px; line-height:1.6; }
+.quick-answer { margin:30px 0 40px; padding:20px 24px; border-left:2px solid var(--guide-green); background:linear-gradient(90deg,rgba(var(--guide-green-rgb),.09),rgba(var(--guide-green-rgb),.015)); }
+.quick-answer>span { display:block; margin-bottom:8px; color:var(--guide-green); font:500 9px "DM Mono"; letter-spacing:.1em; text-transform:uppercase; }
+.quick-answer p { margin:0; color:#d9dad4; font-size:17px; line-height:1.7; }
+.article-body a.source-link { font-size:.92em; white-space:nowrap; }
 .article-body hr { margin:62px 0; border:0; border-top:1px solid var(--guide-line); }
 
 .article-visual { margin:48px 0 58px; border:1px solid rgba(var(--guide-green-rgb),.3); background:linear-gradient(145deg,rgba(var(--guide-green-rgb),.035),rgba(255,255,255,.008)); }
@@ -517,6 +521,8 @@ button,input,textarea,select { font:inherit; }
   .guide-row h2 { font-size:22px; }
   .article-hero h1 { font-size:35px; }
   .article-body blockquote { padding-left:20px; font-size:18px; }
+  .quick-answer { padding:18px 19px; }
+  .quick-answer p { font-size:15px; line-height:1.65; }
 }
 
 @media (prefers-reduced-motion:reduce) {
