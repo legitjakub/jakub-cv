@@ -74,8 +74,12 @@
     const isEnglish = document.documentElement.lang === 'en';
     const openLabel = isEnglish ? 'Open navigation' : 'Otevřít navigaci';
     const closeLabel = isEnglish ? 'Close navigation' : 'Zavřít navigaci';
+    const closedText = 'Menu';
+    const openText = isEnglish ? 'Close' : 'Zavřít';
     if (!menu.id) menu.id = 'primary-navigation';
+    menu.dataset.mobileLabel = isEnglish ? 'Navigation' : 'Navigace';
     toggle.setAttribute('aria-controls', menu.id);
+    toggle.dataset.menuLabel = closedText;
 
     if (!menu.querySelector('.mobile-profile-link')) {
       const profile = document.createElement('a');
@@ -93,11 +97,19 @@
       menu.append(language);
     }
 
+    if (!menu.querySelector('.mobile-nav-footer')) {
+      const footer = document.createElement('div');
+      footer.className = 'mobile-nav-footer mobile-nav-only';
+      menu.querySelectorAll(':scope > a.mobile-nav-only').forEach((link) => footer.append(link));
+      if (footer.childElementCount) menu.append(footer);
+    }
+
     const close = () => {
       header.classList.remove('mobile-menu-open');
       document.body.classList.remove('mobile-nav-open');
       toggle.setAttribute('aria-expanded','false');
       toggle.setAttribute('aria-label',openLabel);
+      toggle.dataset.menuLabel = closedText;
     };
     toggle.addEventListener('click', () => {
       const open = !header.classList.contains('mobile-menu-open');
@@ -105,6 +117,7 @@
       document.body.classList.toggle('mobile-nav-open',open);
       toggle.setAttribute('aria-expanded',String(open));
       toggle.setAttribute('aria-label',open ? closeLabel : openLabel);
+      toggle.dataset.menuLabel = open ? openText : closedText;
     });
     menu.querySelectorAll('a').forEach((link) => link.addEventListener('click',close));
     document.addEventListener('keydown', (event) => {

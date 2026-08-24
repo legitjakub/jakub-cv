@@ -214,17 +214,22 @@ const setupMobileNavigation = () => {
   const isEnglish = document.documentElement.lang === 'en';
   const openLabel = isEnglish ? 'Open navigation' : 'Otevřít navigaci';
   const closeLabel = isEnglish ? 'Close navigation' : 'Zavřít navigaci';
+  const closedText = 'Menu';
+  const openText = isEnglish ? 'Close' : 'Zavřít';
 
   if (!menu.id) menu.id = 'primary-navigation';
+  menu.dataset.mobileLabel = isEnglish ? 'Navigation' : 'Navigace';
   const toggle = header.querySelector('.mobile-nav-toggle');
   if (!toggle) return;
   toggle.setAttribute('aria-controls', menu.id);
+  toggle.dataset.menuLabel = closedText;
 
   const closeMenu = () => {
     header.classList.remove('mobile-menu-open');
     document.body.classList.remove('mobile-nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', openLabel);
+    toggle.dataset.menuLabel = closedText;
   };
 
   toggle.addEventListener('click', () => {
@@ -233,6 +238,7 @@ const setupMobileNavigation = () => {
     document.body.classList.toggle('mobile-nav-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+    toggle.dataset.menuLabel = open ? openText : closedText;
   });
 
   menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
