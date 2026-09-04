@@ -275,6 +275,32 @@
     radial-gradient(circle at 90% 5%,rgba(var(--case-rgb),.13),transparent 30%),
     #0c0f0d;
 }
+/* Facederma stays on a dark canvas but takes the brand's champagne accent, so
+   two dark case studies in a row still read as two separate projects. */
+.case-facederma {
+  --case-accent:#d7b57c;
+  --case-rgb:215,181,124;
+  background:
+    radial-gradient(circle at var(--work-x,80%) var(--work-y,20%),rgba(var(--case-rgb),.1),transparent 28%),
+    #100e0b;
+}
+.facederma-brand img { width:min(330px,100%); max-height:58px; filter:brightness(0) invert(1); }
+.case-facederma .media-frame { border-color:rgba(var(--case-rgb),.2); }
+.case-facederma .media-frame:hover { border-color:rgba(var(--case-rgb),.46); box-shadow:0 30px 80px rgba(0,0,0,.34); }
+.video-duo.video-trio { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.video-duo.video-trio>.media-frame-wide { grid-column:1/-1; }
+.case-scope {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+  background:rgba(255,255,255,.12);
+}
+.case-scope li { display:flex; flex-direction:column; gap:8px; padding:19px 20px 21px; background:#100e0b; color:#94948e; font-size:13px; line-height:1.66; }
+.case-scope b { color:var(--case-accent); font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.08em; }
+
 .case-molecules {
   --case-accent:#111;
   --case-rgb:20,20,20;
@@ -410,6 +436,7 @@
   .case-brand,.case-head>p,.case-tags { grid-column:2; }
   .case-head>p { grid-row:auto; }
   .video-duo,.video-duo-reverse { grid-template-columns:1fr 1fr; }
+  .case-scope { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .work-references-head { grid-template-columns:1fr 1.5fr; }
   .work-references-head>p { grid-column:2; }
   .work-reference { padding:24px; }
@@ -475,6 +502,8 @@
   .video-duo::-webkit-scrollbar { display:none; }
   .media-frame { flex:0 0 min(84vw,360px); scroll-snap-align:start; padding:7px; transform:none!important; }
   .media-frame video { min-height:0; max-height:64vh; aspect-ratio:16/9; }
+  .case-scope { grid-template-columns:1fr; gap:0; margin-top:14px; background:transparent; }
+  .case-scope li { padding:16px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
   .case-quote { margin-top:44px; padding-left:20px; font-size:23px; }
   .work-references { padding-top:64px; padding-bottom:64px; background-size:44px 100%,auto,auto; }
   .work-references-head { display:block; margin-bottom:40px; }

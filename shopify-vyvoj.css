@@ -90,7 +90,19 @@
     #0c0f0d;
 }
 .case-molecules-new { background:#efeee8; color:#10110e; }
+/* Facederma keeps the dark canvas but swaps the green accent for the brand's
+   champagne, so two dark cases in a row still read as two different projects. */
+.case-facederma-new {
+  --case-gold:#d7b57c;
+  background:
+    radial-gradient(circle at var(--work-x,78%) var(--work-y,22%),rgba(215,181,124,.09),transparent 30%),
+    #100e0b;
+}
 .conversion-case-media { position:relative; display:grid; grid-template-columns:minmax(0,1fr); gap:20px; align-items:start; }
+/* Three previews: one wide on top, two half-width below. */
+.conversion-case-media-trio { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.conversion-case-media-trio>.media-frame:first-child { grid-column:1/-1; }
+.conversion-case .conversion-case-media-trio>.conversion-case-secondary { width:100%; justify-self:stretch; }
 .conversion-case .media-frame { min-width:0; width:100%; }
 .conversion-case .media-frame video { display:block; width:100%; height:auto; min-height:0; aspect-ratio:16/9; object-fit:contain; }
 .conversion-case .conversion-case-secondary { width:84%; justify-self:end; }
@@ -118,6 +130,22 @@
 .case-action:hover { background:#efeee8; transform:translateY(-2px); }
 .case-molecules-new .case-action { background:#12130f; color:#efeee8; }
 .case-molecules-new .case-action:hover { background:#385d05; }
+
+.case-facederma-new .case-order,
+.case-facederma-new .conversion-case-copy dt,
+.case-facederma-new .media-frame figcaption span { color:var(--case-gold); }
+.case-facederma-new .media-frame { border-color:rgba(215,181,124,.2); }
+.case-facederma-new .media-frame:hover { border-color:rgba(215,181,124,.45); }
+.case-logo-title-facederma img { width:clamp(230px,25vw,300px); max-height:56px; filter:brightness(0) invert(1); }
+.case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:30px 0 0; padding:0; list-style:none; background:rgba(255,255,255,.12); }
+.case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:#100e0b; color:#a6a69f; font-size:12.5px; line-height:1.62; }
+.case-scope b { color:#efeee8; font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
+.case-facederma-new .case-action { background:var(--case-gold); color:#171208; }
+.case-facederma-new .case-action:hover { background:#efeee8; }
+/* Inline links inside intro paragraphs need to look clickable — the base rule
+   makes anchors inherit their colour. */
+.work-references-head>p a { color:var(--commerce); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; }
+.work-references-head>p a:hover { color:#efeee8; }
 
 .collaboration-flow {
   padding-top:clamp(95px,11vw,160px);
@@ -273,6 +301,7 @@
   .conversion-case-copy { position:static; }
   .conversion-case-copy dl { max-width:860px; }
   .conversion-case-copy blockquote { max-width:860px; }
+  .case-scope { max-width:860px; }
   .project-diagnostic,.project-inquiry { grid-template-columns:1fr; gap:50px; }
   .diagnostic-intro>p,.inquiry-copy>p { max-width:680px; }
   .inquiry-page-hero { grid-template-columns:1fr; gap:54px; }
@@ -303,6 +332,8 @@
   .conversion-case .media-frame,.conversion-case .conversion-case-secondary { flex:0 0 min(88vw,440px); width:auto; justify-self:auto; scroll-snap-align:start; }
   .conversion-case .media-frame video,.conversion-case .conversion-case-secondary video { width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; }
   .conversion-case-copy { order:1; }
+  .case-scope { grid-template-columns:1fr; gap:0; margin-top:24px; background:transparent; }
+  .case-scope li { padding:15px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
   .conversion-case-copy .case-logo-title { margin:28px 0 34px; }
   .case-logo-title img { width:min(270px,86vw); }
   .case-logo-title-molecules img { width:min(245px,78vw); }
