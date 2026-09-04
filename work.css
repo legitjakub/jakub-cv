@@ -270,6 +270,7 @@
 .case-posedla {
   --case-accent:var(--commerce);
   --case-rgb:var(--commerce-rgb);
+  --case-canvas:#0c0f0d;
   background:
     radial-gradient(circle at var(--work-x,15%) var(--work-y,45%),rgba(var(--case-rgb),.08),transparent 24%),
     radial-gradient(circle at 90% 5%,rgba(var(--case-rgb),.13),transparent 30%),
@@ -280,6 +281,7 @@
 .case-facederma {
   --case-accent:#d7b57c;
   --case-rgb:215,181,124;
+  --case-canvas:#100e0b;
   background:
     radial-gradient(circle at var(--work-x,80%) var(--work-y,20%),rgba(var(--case-rgb),.1),transparent 28%),
     #100e0b;
@@ -287,8 +289,10 @@
 .facederma-brand img { width:min(330px,100%); max-height:58px; filter:brightness(0) invert(1); }
 .case-facederma .media-frame { border-color:rgba(var(--case-rgb),.2); }
 .case-facederma .media-frame:hover { border-color:rgba(var(--case-rgb),.46); box-shadow:0 30px 80px rgba(0,0,0,.34); }
-.video-duo.video-trio { grid-template-columns:repeat(2,minmax(0,1fr)); }
-.video-duo.video-trio>.media-frame-wide { grid-column:1/-1; }
+/* Three previews across the full-width case: equal thirds, so none of them
+   turns into a billboard next to the other two. */
+.video-duo.video-trio { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.case-scope-label { margin:44px 0 0; color:var(--case-accent); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
 .case-scope {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -298,12 +302,32 @@
   list-style:none;
   background:rgba(255,255,255,.12);
 }
-.case-scope li { display:flex; flex-direction:column; gap:8px; padding:19px 20px 21px; background:#100e0b; color:#94948e; font-size:13px; line-height:1.66; }
+.case-scope li { display:flex; flex-direction:column; gap:8px; padding:19px 20px 21px; background:var(--case-canvas,#0c0f0d); color:#94948e; font-size:13px; line-height:1.66; }
 .case-scope b { color:var(--case-accent); font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.08em; }
+.case-molecules .case-scope { background:rgba(0,0,0,.16); }
+.case-molecules .case-scope li { color:#5d5d58; }
+
+/* Surprise Drinks: a blue-shifted dark canvas and the brand's yellow, so the
+   playful licensing work sits beside the two commerce cases without shouting. */
+.case-surprise {
+  --case-accent:#ffc60a;
+  --case-rgb:255,198,10;
+  --case-canvas:#0b0d12;
+  background:
+    radial-gradient(circle at var(--work-x,18%) var(--work-y,28%),rgba(41,169,225,.11),transparent 30%),
+    radial-gradient(circle at 88% 8%,rgba(var(--case-rgb),.09),transparent 28%),
+    #0b0d12;
+}
+/* The wordmark is red on yellow with a black keyline — it carries the brand
+   better in full colour than as another monochrome logo. */
+.surprise-brand img { width:min(238px,100%); max-height:84px; }
+.case-surprise .media-frame { border-color:rgba(var(--case-rgb),.2); }
+.case-surprise .media-frame:hover { border-color:rgba(var(--case-rgb),.46); box-shadow:0 30px 80px rgba(0,0,0,.34); }
 
 .case-molecules {
   --case-accent:#111;
   --case-rgb:20,20,20;
+  --case-canvas:#efeee8;
   background:
     radial-gradient(circle at var(--work-x,85%) var(--work-y,40%),rgba(0,0,0,.055),transparent 24%),
     #efeee8;
@@ -504,6 +528,7 @@
   .media-frame video { min-height:0; max-height:64vh; aspect-ratio:16/9; }
   .case-scope { grid-template-columns:1fr; gap:0; margin-top:14px; background:transparent; }
   .case-scope li { padding:16px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
+  .case-molecules .case-scope li { border-color:rgba(0,0,0,.16); }
   .case-quote { margin-top:44px; padding-left:20px; font-size:23px; }
   .work-references { padding-top:64px; padding-bottom:64px; background-size:44px 100%,auto,auto; }
   .work-references-head { display:block; margin-bottom:40px; }

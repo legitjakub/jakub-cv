@@ -98,10 +98,19 @@
     radial-gradient(circle at var(--work-x,78%) var(--work-y,22%),rgba(215,181,124,.09),transparent 30%),
     #100e0b;
 }
+/* Surprise Drinks: a blue-shifted dark canvas and the brand's yellow, so the
+   playful licensing work sits beside the commerce cases without shouting. */
+.case-surprise-new {
+  --case-gold:#ffc60a;
+  background:
+    radial-gradient(circle at var(--work-x,20%) var(--work-y,26%),rgba(41,169,225,.12),transparent 32%),
+    #0b0d12;
+}
 .conversion-case-media { position:relative; display:grid; grid-template-columns:minmax(0,1fr); gap:20px; align-items:start; }
-/* Three previews: one wide on top, two half-width below. */
+/* Three previews: a lead frame on top, two half-width below. The lead is held
+   back from the full column width so it stays a lead, not a billboard. */
 .conversion-case-media-trio { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-.conversion-case-media-trio>.media-frame:first-child { grid-column:1/-1; }
+.conversion-case-media-trio>.media-frame:first-child { grid-column:1/-1; width:80%; justify-self:start; }
 .conversion-case .conversion-case-media-trio>.conversion-case-secondary { width:100%; justify-self:stretch; }
 .conversion-case .media-frame { min-width:0; width:100%; }
 .conversion-case .media-frame video { display:block; width:100%; height:auto; min-height:0; aspect-ratio:16/9; object-fit:contain; }
@@ -137,11 +146,33 @@
 .case-facederma-new .media-frame { border-color:rgba(215,181,124,.2); }
 .case-facederma-new .media-frame:hover { border-color:rgba(215,181,124,.45); }
 .case-logo-title-facederma img { width:clamp(230px,25vw,300px); max-height:56px; filter:brightness(0) invert(1); }
-.case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:30px 0 0; padding:0; list-style:none; background:rgba(255,255,255,.12); }
-.case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:#100e0b; color:#a6a69f; font-size:12.5px; line-height:1.62; }
+.case-scope-label { margin:30px 0 12px; color:var(--case-gold,var(--commerce)); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.case-molecules-new .case-scope-label { color:#385d05; }
+/* The 1px gaps are the container showing through, so each cell has to repaint
+   its own section's canvas colour. */
+.case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:0; padding:0; list-style:none; background:rgba(255,255,255,.12); }
+.case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:var(--case-canvas,#0c0f0d); color:#a6a69f; font-size:12.5px; line-height:1.62; }
 .case-scope b { color:#efeee8; font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
+.case-posedla-new { --case-canvas:#0c0f0d; }
+.case-facederma-new { --case-canvas:#100e0b; }
+.case-surprise-new { --case-canvas:#0b0d12; }
+.case-molecules-new { --case-canvas:#efeee8; }
+.case-molecules-new .case-scope { background:rgba(0,0,0,.16); }
+.case-molecules-new .case-scope li { color:#55564f; }
+.case-molecules-new .case-scope b { color:#10110e; }
 .case-facederma-new .case-action { background:var(--case-gold); color:#171208; }
 .case-facederma-new .case-action:hover { background:#efeee8; }
+.case-surprise-new .case-order,
+.case-surprise-new .conversion-case-copy dt,
+.case-surprise-new .media-frame figcaption span { color:var(--case-gold); }
+.case-surprise-new .media-frame { border-color:rgba(255,198,10,.2); }
+.case-surprise-new .media-frame:hover { border-color:rgba(255,198,10,.45); }
+/* The wordmark is red on yellow with a black keyline — it carries the brand
+   better in full colour than as another monochrome logo. */
+.case-logo-title-surprise img { width:clamp(170px,18vw,215px); max-height:76px; }
+.case-surprise-new .case-action { background:var(--case-gold); color:#1a1405; }
+.case-surprise-new .case-action:hover { background:#efeee8; }
+
 /* Inline links inside intro paragraphs need to look clickable — the base rule
    makes anchors inherit their colour. */
 .work-references-head>p a { color:var(--commerce); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; }
@@ -334,6 +365,7 @@
   .conversion-case-copy { order:1; }
   .case-scope { grid-template-columns:1fr; gap:0; margin-top:24px; background:transparent; }
   .case-scope li { padding:15px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
+  .case-molecules-new .case-scope li { border-color:rgba(0,0,0,.16); }
   .conversion-case-copy .case-logo-title { margin:28px 0 34px; }
   .case-logo-title img { width:min(270px,86vw); }
   .case-logo-title-molecules img { width:min(245px,78vw); }
