@@ -28,6 +28,31 @@
     }, { passive:true });
   });
 
+  /* Nine preview clips on one page. With `autoplay` the browser fetched every
+     one of them up front — ~14 MB before a single scroll. The sources stay in
+     the markup so the clips still work without JS (they get native controls);
+     playback, and therefore the download, only starts once one is in view. */
+  const previews = document.querySelectorAll('.media-frame video');
+  if (previews.length && 'IntersectionObserver' in window) {
+    const inView = new Set();
+    const start = (video) => video.play().catch(() => {});
+    const playObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) { inView.add(video); start(video); }
+        else { inView.delete(video); if (!video.paused) video.pause(); }
+      });
+    }, { rootMargin:'150px 0px', threshold:0.2 });
+    previews.forEach((video) => playObserver.observe(video));
+    /* A backgrounded tab refuses play() outright, and the rejection is the end
+       of it — so retry whatever is still on screen once the tab comes back. */
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) inView.forEach(start);
+    });
+  } else {
+    previews.forEach((video) => { video.preload = 'metadata'; });
+  }
+
   const marquees = document.querySelectorAll('.work-brand-marquee,.logo-marquee,.ticker');
   if ('IntersectionObserver' in window) {
     const marqueeObserver = new IntersectionObserver((entries) => {
