@@ -94,17 +94,10 @@ const setupGuideMobileNavigation = () => {
 
   const brand = header.querySelector('.guide-brand');
   if (brand) {
-    brand.href = isEnglishPage ? '/work.html' : '/shopify-vyvoj/';
+    brand.href = isEnglishPage ? '/en/' : '/';
     brand.setAttribute('aria-label', isEnglishPage ? 'Shopify work, home' : 'Shopify vývoj, úvodní stránka');
   }
 
-  if (!menu.querySelector('.guide-mobile-only')) {
-    const profile = document.createElement('a');
-    profile.className = 'guide-mobile-only';
-    profile.href = isEnglishPage ? '/index.html' : '/cs.html';
-    profile.textContent = isEnglishPage ? 'Personal profile' : 'Osobní profil';
-    menu.append(profile);
-  }
 
   menu.dataset.mobileLabel = isEnglishPage ? 'Navigation' : 'Navigace';
 

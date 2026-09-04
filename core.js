@@ -81,17 +81,10 @@
     toggle.setAttribute('aria-controls', menu.id);
     toggle.dataset.menuLabel = closedText;
 
-    if (!menu.querySelector('.mobile-profile-link')) {
-      const profile = document.createElement('a');
-      profile.className = 'mobile-nav-only mobile-profile-link';
-      profile.href = isEnglish ? '/index.html' : '/cs.html';
-      profile.textContent = isEnglish ? 'Personal profile' : 'Osobní profil';
-      menu.append(profile);
-    }
     if (!menu.querySelector(`a[lang="${isEnglish ? 'cs' : 'en'}"]`)) {
       const language = document.createElement('a');
       language.className = 'mobile-nav-only';
-      language.href = isEnglish ? '/shopify-vyvoj/' : '/work.html';
+      language.href = isEnglish ? '/' : '/en/';
       language.lang = isEnglish ? 'cs' : 'en';
       language.textContent = isEnglish ? 'Česká verze' : 'English version';
       menu.append(language);

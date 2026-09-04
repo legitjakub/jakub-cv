@@ -7,22 +7,10 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://jhrncir.xyz/cs</loc>
-        <lastmod>2026-07-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://jhrncir.xyz/work</loc>
+        <loc>https://jhrncir.xyz/en/</loc>
         <lastmod>2026-07-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://jhrncir.xyz/shopify-vyvoj/</loc>
-        <lastmod>2026-07-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://jhrncir.xyz/shopify-poptavka/</loc>
