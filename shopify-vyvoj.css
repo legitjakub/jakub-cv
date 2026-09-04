@@ -76,6 +76,10 @@
 }
 .projects-intro h2 { margin:0; }
 
+/* Each case carries its own palette as tokens; every rule below reads those,
+   so a case is four values rather than a block of overrides. The canvases stay
+   inside the site's near-black family but pull far enough apart in hue and
+   value that you can feel the section change while scrolling. */
 .conversion-case {
   display:grid;
   grid-template-columns:minmax(0,1.17fr) minmax(370px,.83fr);
@@ -83,28 +87,26 @@
   align-items:start;
   padding-top:clamp(72px,8vw,118px);
   padding-bottom:clamp(72px,8vw,118px);
-}
-.case-posedla-new {
+  --case-accent:var(--commerce);
+  --case-rgb:var(--commerce-rgb);
+  --case-canvas:#0a0e0c;
+  --case-line:rgba(255,255,255,.15);
+  --case-body:#a6a69f;
+  --case-strong:#efeee8;
+  --case-glow:.1;
+  border-top:1px solid rgba(var(--case-rgb),.3);
   background:
-    radial-gradient(circle at var(--work-x,18%) var(--work-y,35%),rgba(var(--commerce-rgb),.08),transparent 26%),
-    #0c0f0d;
+    radial-gradient(circle at var(--case-glow-x,20%) var(--case-glow-y,28%),rgba(var(--case-rgb),var(--case-glow)),transparent 30%),
+    var(--case-canvas);
 }
-.case-molecules-new { background:#efeee8; color:#10110e; }
-/* Facederma keeps the dark canvas but swaps the green accent for the brand's
-   champagne, so two dark cases in a row still read as two different projects. */
-.case-facederma-new {
-  --case-gold:#d7b57c;
-  background:
-    radial-gradient(circle at var(--work-x,78%) var(--work-y,22%),rgba(215,181,124,.09),transparent 30%),
-    #100e0b;
-}
-/* Surprise Drinks: a blue-shifted dark canvas and the brand's yellow, so the
-   playful licensing work sits beside the commerce cases without shouting. */
-.case-surprise-new {
-  --case-gold:#ffc60a;
-  background:
-    radial-gradient(circle at var(--work-x,20%) var(--work-y,26%),rgba(41,169,225,.12),transparent 32%),
-    #0b0d12;
+.case-posedla-new   { --case-glow-x:18%; --case-glow-y:35%; }
+.case-facederma-new { --case-accent:#d7b57c; --case-rgb:215,181,124; --case-canvas:#16110b; --case-glow-x:78%; --case-glow-y:22%; }
+.case-surprise-new  { --case-accent:#ffc60a; --case-rgb:255,198,10;  --case-canvas:#0a0f18; --case-glow:.07; }
+.case-molecules-new {
+  --case-accent:#385d05; --case-rgb:56,93,5; --case-canvas:#efeee8;
+  --case-line:rgba(0,0,0,.16); --case-body:#55564f; --case-strong:#10110e; --case-glow:.05;
+  --case-glow-x:85%; --case-glow-y:40%;
+  color:#10110e;
 }
 .conversion-case-media { position:relative; display:grid; grid-template-columns:minmax(0,1fr); gap:20px; align-items:start; }
 /* Three previews: a lead frame on top, two half-width below. The lead is held
@@ -112,66 +114,39 @@
 .conversion-case-media-trio { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
 .conversion-case-media-trio>.media-frame:first-child { grid-column:1/-1; width:80%; justify-self:start; }
 .conversion-case .conversion-case-media-trio>.conversion-case-secondary { width:100%; justify-self:stretch; }
-.conversion-case .media-frame { min-width:0; width:100%; }
+.conversion-case .media-frame { min-width:0; width:100%; border-color:rgba(var(--case-rgb),.2); }
+.conversion-case .media-frame:hover { border-color:rgba(var(--case-rgb),.45); }
 .conversion-case .media-frame video { display:block; width:100%; height:auto; min-height:0; aspect-ratio:16/9; object-fit:contain; }
 .conversion-case .conversion-case-secondary { width:84%; justify-self:end; }
-.case-molecules-new .media-frame { border-color:rgba(0,0,0,.16); box-shadow:0 24px 70px rgba(0,0,0,.12); }
-.case-molecules-new .media-frame figcaption { color:#aaa; }
-.case-molecules-new .media-frame figcaption span { color:#fff; }
+.case-molecules-new .media-frame { box-shadow:0 24px 70px rgba(0,0,0,.12); }
+.conversion-case .media-frame figcaption span { color:var(--case-accent); }
 .conversion-case-copy { position:sticky; top:110px; }
-.case-order { color:var(--commerce); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.1em; }
-.case-molecules-new .case-order { color:#385d05; }
+.case-order { color:var(--case-accent); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.1em; }
 .conversion-case-copy .case-logo-title { margin:34px 0 42px; line-height:1; }
 .case-logo-title img { display:block; width:clamp(240px,27vw,320px); max-width:100%; height:auto; max-height:68px; object-fit:contain; object-position:left center; }
 .case-logo-title-molecules img { width:clamp(220px,24vw,285px); max-height:88px; filter:brightness(0); }
 .case-logo-title span { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-.conversion-case-copy dl { margin:0; border-top:1px solid rgba(255,255,255,.15); }
-.case-molecules-new .conversion-case-copy dl { border-color:rgba(0,0,0,.16); }
-.conversion-case-copy dl>div { display:grid; grid-template-columns:120px 1fr; gap:24px; padding:21px 0; border-bottom:1px solid rgba(255,255,255,.15); }
-.case-molecules-new .conversion-case-copy dl>div { border-color:rgba(0,0,0,.16); }
-.conversion-case-copy dt { color:var(--commerce); font:500 8px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
-.case-molecules-new .conversion-case-copy dt { color:#385d05; }
-.conversion-case-copy dd { margin:0; color:#a6a69f; font-size:13px; line-height:1.68; }
-.case-molecules-new .conversion-case-copy dd { color:#55564f; }
-.conversion-case-copy blockquote { margin:30px 0 0; padding:0 0 0 22px; border-left:2px solid var(--commerce); color:#d8d7d0; font-size:17px; line-height:1.55; letter-spacing:-.025em; }
+.conversion-case-copy dl { margin:0; border-top:1px solid var(--case-line); }
+.conversion-case-copy dl>div { display:grid; grid-template-columns:120px 1fr; gap:24px; padding:21px 0; border-bottom:1px solid var(--case-line); }
+.conversion-case-copy dt { color:var(--case-accent); font:500 8px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.conversion-case-copy dd { margin:0; color:var(--case-body); font-size:13px; line-height:1.68; }
+.conversion-case-copy blockquote { margin:30px 0 0; padding:0 0 0 22px; border-left:2px solid var(--case-accent); color:#d8d7d0; font-size:17px; line-height:1.55; letter-spacing:-.025em; }
 .conversion-case-copy blockquote cite { display:block; margin-top:17px; color:#73736d; font:500 8px "DM Mono"; font-style:normal; text-transform:uppercase; letter-spacing:.07em; }
-.case-action { display:flex; align-items:center; justify-content:space-between; margin-top:34px; padding:19px 20px; background:var(--commerce); color:#091006; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:background-color .25s ease,transform .25s ease; }
-.case-action:hover { background:#efeee8; transform:translateY(-2px); }
+.case-action { display:flex; align-items:center; justify-content:space-between; margin-top:34px; padding:19px 20px; background:var(--case-accent); color:#0c0f06; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:background-color .25s ease,transform .25s ease; }
+.case-action:hover { background:var(--case-strong); transform:translateY(-2px); }
 .case-molecules-new .case-action { background:#12130f; color:#efeee8; }
-.case-molecules-new .case-action:hover { background:#385d05; }
-
-.case-facederma-new .case-order,
-.case-facederma-new .conversion-case-copy dt,
-.case-facederma-new .media-frame figcaption span { color:var(--case-gold); }
-.case-facederma-new .media-frame { border-color:rgba(215,181,124,.2); }
-.case-facederma-new .media-frame:hover { border-color:rgba(215,181,124,.45); }
+.case-molecules-new .case-action:hover { background:var(--case-accent); color:#efeee8; }
 .case-logo-title-facederma img { width:clamp(230px,25vw,300px); max-height:56px; filter:brightness(0) invert(1); }
-.case-scope-label { margin:30px 0 12px; color:var(--case-gold,var(--commerce)); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
-.case-molecules-new .case-scope-label { color:#385d05; }
+.case-scope-label { margin:30px 0 12px; color:var(--case-accent); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
 /* The 1px gaps are the container showing through, so each cell has to repaint
    its own section's canvas colour. */
-.case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:0; padding:0; list-style:none; background:rgba(255,255,255,.12); }
-.case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:var(--case-canvas,#0c0f0d); color:#a6a69f; font-size:12.5px; line-height:1.62; }
-.case-scope b { color:#efeee8; font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
-.case-posedla-new { --case-canvas:#0c0f0d; }
-.case-facederma-new { --case-canvas:#100e0b; }
-.case-surprise-new { --case-canvas:#0b0d12; }
-.case-molecules-new { --case-canvas:#efeee8; }
-.case-molecules-new .case-scope { background:rgba(0,0,0,.16); }
-.case-molecules-new .case-scope li { color:#55564f; }
-.case-molecules-new .case-scope b { color:#10110e; }
-.case-facederma-new .case-action { background:var(--case-gold); color:#171208; }
-.case-facederma-new .case-action:hover { background:#efeee8; }
-.case-surprise-new .case-order,
-.case-surprise-new .conversion-case-copy dt,
-.case-surprise-new .media-frame figcaption span { color:var(--case-gold); }
-.case-surprise-new .media-frame { border-color:rgba(255,198,10,.2); }
-.case-surprise-new .media-frame:hover { border-color:rgba(255,198,10,.45); }
+.case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:0; padding:0; list-style:none; background:var(--case-line); }
+.case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:var(--case-canvas); color:var(--case-body); font-size:12.5px; line-height:1.62; }
+.case-scope b { color:var(--case-strong); font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
 /* The wordmark is red on yellow with a black keyline — it carries the brand
    better in full colour than as another monochrome logo. */
 .case-logo-title-surprise img { width:clamp(170px,18vw,215px); max-height:76px; }
-.case-surprise-new .case-action { background:var(--case-gold); color:#1a1405; }
-.case-surprise-new .case-action:hover { background:#efeee8; }
+
 
 /* Inline links inside intro paragraphs need to look clickable — the base rule
    makes anchors inherit their colour. */
@@ -364,8 +339,7 @@
   .conversion-case .media-frame video,.conversion-case .conversion-case-secondary video { width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; }
   .conversion-case-copy { order:1; }
   .case-scope { grid-template-columns:1fr; gap:0; margin-top:24px; background:transparent; }
-  .case-scope li { padding:15px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
-  .case-molecules-new .case-scope li { border-color:rgba(0,0,0,.16); }
+  .case-scope li { padding:15px 0; border-bottom:1px solid var(--case-line); background:transparent; }
   .conversion-case-copy .case-logo-title { margin:28px 0 34px; }
   .case-logo-title img { width:min(270px,86vw); }
   .case-logo-title-molecules img { width:min(245px,78vw); }

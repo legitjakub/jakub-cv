@@ -268,26 +268,39 @@
 .work-guide-list b { color:var(--commerce); font-size:22px; font-weight:400; transition:transform .25s ease; }
 .work-guide-list>a:hover b { transform:translateX(5px); }
 
-.case-study { padding-top:120px; padding-bottom:120px; }
-.case-posedla {
+/* Names the run of case studies — the English page went straight from the
+   services list into the first one with nothing introducing it. */
+.projects-intro {
+  display:grid;
+  grid-template-columns:minmax(180px,.42fr) minmax(420px,1fr) minmax(260px,.58fr);
+  gap:42px;
+  align-items:end;
+  padding-top:clamp(88px,10vw,145px);
+  padding-bottom:62px;
+  background:#080a09;
+}
+.projects-intro h2 { margin:0; font-size:clamp(48px,6vw,92px); line-height:.9; letter-spacing:-.07em; }
+.projects-intro h2 em { color:var(--commerce); font-style:normal; }
+.projects-intro>p { max-width:560px; margin:0; color:#8d8f88; font-size:14px; line-height:1.75; }
+
+/* Each case carries its own palette as tokens. The canvases stay inside the
+   site's near-black family but pull far enough apart in hue and value that you
+   can feel the section change while scrolling; the hairline at the top of each
+   one repeats its accent. */
+.case-study {
+  padding-top:120px;
+  padding-bottom:120px;
   --case-accent:var(--commerce);
   --case-rgb:var(--commerce-rgb);
-  --case-canvas:#0c0f0d;
+  --case-canvas:#0a0e0c;
+  --case-glow:.1;
+  border-top:1px solid rgba(var(--case-rgb),.3);
   background:
-    radial-gradient(circle at var(--work-x,15%) var(--work-y,45%),rgba(var(--case-rgb),.08),transparent 24%),
-    radial-gradient(circle at 90% 5%,rgba(var(--case-rgb),.13),transparent 30%),
-    #0c0f0d;
+    radial-gradient(circle at var(--case-glow-x,18%) var(--case-glow-y,32%),rgba(var(--case-rgb),var(--case-glow)),transparent 28%),
+    var(--case-canvas);
 }
-/* Facederma stays on a dark canvas but takes the brand's champagne accent, so
-   two dark case studies in a row still read as two separate projects. */
-.case-facederma {
-  --case-accent:#d7b57c;
-  --case-rgb:215,181,124;
-  --case-canvas:#100e0b;
-  background:
-    radial-gradient(circle at var(--work-x,80%) var(--work-y,20%),rgba(var(--case-rgb),.1),transparent 28%),
-    #100e0b;
-}
+.case-posedla { --case-glow-x:15%; --case-glow-y:45%; }
+.case-facederma { --case-accent:#d7b57c; --case-rgb:215,181,124; --case-canvas:#16110b; --case-glow-x:80%; --case-glow-y:20%; }
 .facederma-brand img { width:min(330px,100%); max-height:58px; filter:brightness(0) invert(1); }
 .case-facederma .media-frame { border-color:rgba(var(--case-rgb),.2); }
 .case-facederma .media-frame:hover { border-color:rgba(var(--case-rgb),.46); box-shadow:0 30px 80px rgba(0,0,0,.34); }
@@ -309,17 +322,7 @@
 .case-molecules .case-scope { background:rgba(0,0,0,.16); }
 .case-molecules .case-scope li { color:#5d5d58; }
 
-/* Surprise Drinks: a blue-shifted dark canvas and the brand's yellow, so the
-   playful licensing work sits beside the two commerce cases without shouting. */
-.case-surprise {
-  --case-accent:#ffc60a;
-  --case-rgb:255,198,10;
-  --case-canvas:#0b0d12;
-  background:
-    radial-gradient(circle at var(--work-x,18%) var(--work-y,28%),rgba(41,169,225,.11),transparent 30%),
-    radial-gradient(circle at 88% 8%,rgba(var(--case-rgb),.09),transparent 28%),
-    #0b0d12;
-}
+.case-surprise { --case-accent:#ffc60a; --case-rgb:255,198,10; --case-canvas:#0a0f18; --case-glow:.07; --case-glow-x:20%; --case-glow-y:26%; }
 /* The wordmark is red on yellow with a black keyline — it carries the brand
    better in full colour than as another monochrome logo. */
 .surprise-brand img { width:min(238px,100%); max-height:84px; }
@@ -327,12 +330,12 @@
 .case-surprise .media-frame:hover { border-color:rgba(var(--case-rgb),.46); box-shadow:0 30px 80px rgba(0,0,0,.34); }
 
 .case-molecules {
-  --case-accent:#111;
-  --case-rgb:20,20,20;
+  --case-accent:#385d05;
+  --case-rgb:56,93,5;
   --case-canvas:#efeee8;
-  background:
-    radial-gradient(circle at var(--work-x,85%) var(--work-y,40%),rgba(0,0,0,.055),transparent 24%),
-    #efeee8;
+  --case-glow:.05;
+  --case-glow-x:85%;
+  --case-glow-y:40%;
   color:#111;
 }
 .case-head {
@@ -344,7 +347,7 @@
   padding-bottom:42px;
   border-bottom:1px solid rgba(255,255,255,.14);
 }
-.case-molecules .case-head { border-color:rgba(0,0,0,.16); }
+.case-molecules .case-head { border-color:rgba(0,0,0,.18); }
 .case-number { grid-row:1/4; color:var(--case-accent); padding-top:9px; transition:text-shadow .35s ease,transform .35s ease; }
 .case-study.is-current .case-number { transform:translateX(5px); text-shadow:0 0 22px rgba(var(--case-rgb),.5); }
 .case-brand { min-height:92px; display:flex; align-items:center; margin:0; }
@@ -464,6 +467,8 @@
   .case-head>p { grid-row:auto; }
   .video-duo,.video-duo-reverse { grid-template-columns:1fr 1fr; }
   .case-scope { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .projects-intro { grid-template-columns:150px 1fr; }
+  .projects-intro>p { grid-column:2; }
   .work-references-head { grid-template-columns:1fr 1.5fr; }
   .work-references-head>p { grid-column:2; }
   .work-reference { padding:24px; }
@@ -510,6 +515,9 @@
   .work-guide-list>a:hover { padding-left:0; }
   .work-guide-list span,.work-guide-list strong,.work-guide-list small { grid-column:1; }
   .work-guide-list b { grid-column:2; grid-row:1/4; align-self:center; }
+  .projects-intro { display:block; padding-top:64px; padding-bottom:34px; }
+  .projects-intro h2 { margin-top:24px; font-size:clamp(43px,13vw,64px); }
+  .projects-intro>p { margin-top:22px; font-size:12.5px; }
   .case-study { padding-top:64px; padding-bottom:64px; }
   .case-head { grid-template-columns:1fr; gap:20px; margin-bottom:34px; padding-bottom:30px; }
   .case-number,.case-brand,.case-head>p,.case-tags { grid-column:1; grid-row:auto; }
