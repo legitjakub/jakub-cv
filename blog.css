@@ -355,7 +355,7 @@ button,input,textarea,select { font:inherit; }
   position:relative;
   padding:22px 52px 22px 0;
   color:var(--guide-text);
-  font-size:17px;
+  font-size:19px;
   font-weight:700;
   line-height:1.45;
   list-style:none;
@@ -380,7 +380,7 @@ button,input,textarea,select { font:inherit; }
 }
 .faq-list details[open] summary { padding-bottom:12px; }
 .faq-list details[open] summary::after { background:var(--guide-green); color:#071006; transform:translateY(-50%) rotate(45deg); }
-.faq-list p { max-width:690px; margin:0; padding:0 52px 24px 0; color:#b6b8b0; font-size:14px; line-height:1.75; }
+.faq-list p { max-width:690px; margin:0; padding:0 52px 24px 0; color:#b6b8b0; font-size:16px; line-height:1.85; }
 .faq-list summary:hover { color:var(--guide-green); }
 .faq-list summary:focus-visible { outline:2px solid var(--guide-green); outline-offset:5px; }
 .article-callout { margin:58px 0; padding:30px; border:1px solid rgba(var(--guide-green-rgb),.45); background:rgba(var(--guide-green-rgb),.035); }
@@ -499,10 +499,10 @@ button,input,textarea,select { font:inherit; }
   .decision-step { grid-template-columns:36px 1fr; gap:14px; }
   .article-faq { margin-top:58px; }
   .article-faq h2 { margin-top:0; }
-  .faq-list summary { padding-block:19px; padding-right:48px; font-size:16px; }
+  .faq-list summary { padding-block:19px; padding-right:48px; font-size:17px; }
   .faq-list summary::after { width:28px; height:28px; }
   .faq-list details[open] summary { padding-bottom:10px; }
-  .faq-list p { padding:0 46px 20px 0; font-size:14px; }
+  .faq-list p { padding:0 46px 20px 0; font-size:15px; }
   .article-callout { padding:24px 20px; }
   .checklist li { padding-left:44px; }
   .related-head { display:block; }

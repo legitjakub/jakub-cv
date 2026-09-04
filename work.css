@@ -154,7 +154,9 @@
 .brand-molecules img,.brand-facederma img { filter:grayscale(1) brightness(0) invert(1); }
 .brand-surprise img { filter:grayscale(1) brightness(1.7); }
 .brand-eco img,.brand-jmb img { max-width:38px; max-height:38px; }
-.brand-dude { font:800 16px "Manrope"; letter-spacing:-.045em; }
+/* Near-square wordmark, so it is sized off its height like the other
+   square marks rather than the wide default. */
+.brand-dude img { max-width:50px; max-height:44px; }
 @keyframes work-brand-run { to { transform:translateX(-50%); } }
 
 .shopify-services {
@@ -427,6 +429,7 @@
 .work-reference>header>strong { font-size:17px; letter-spacing:-.035em; }
 .work-reference>header>img { display:block; width:auto; max-width:125px; height:24px; object-fit:contain; object-position:left center; }
 .work-reference-posedla>header>img { max-width:135px; height:20px; }
+.work-reference-dude>header>img { max-width:48px; height:42px; }
 .work-reference>header>span { color:#686863; font:500 8px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
 .work-reference-quote { position:relative; z-index:1; margin-top:28px; color:#c0bfb8; }
 .work-reference-quote p { margin:0 0 16px; color:#e2e1db; font-size:clamp(16px,1.4vw,21px); line-height:1.48; letter-spacing:-.025em; }
@@ -490,7 +493,7 @@
   .work-brand-item { min-width:158px; height:70px; padding:0 23px; }
   .work-brand-item img { max-width:120px; max-height:27px; }
   .brand-eco img,.brand-jmb img { max-width:31px; max-height:31px; }
-  .brand-dude { font-size:14px; }
+  .brand-dude img { max-width:44px; max-height:38px; }
   .shopify-services { gap:40px; padding-top:64px; padding-bottom:64px; background-size:44px 100%,auto,auto; }
   .shopify-services::after { font-size:88px; top:24px; }
   .shopify-services-intro h2 { font-size:clamp(44px,13vw,66px); }

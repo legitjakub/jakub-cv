@@ -242,6 +242,7 @@ footer { border-top:1px solid var(--line); min-height:110px; padding:0 var(--pad
 .testimonial-card-posedla { min-height:520px; background:linear-gradient(145deg,rgba(var(--commerce-rgb),.09),rgba(255,255,255,.018) 48%,transparent); }
 .testimonial-card-posedla .testimonial-quote { margin:58px 0 26px; font-size:14px; line-height:1.72; }
 .testimonial-brand img { display:block; width:min(170px,48vw); height:auto; max-height:30px; object-fit:contain; object-position:left center; }
+.testimonial-brand-dude img { width:48px; max-height:42px; }
 .testimonial-brand span { margin-top:11px; }
 .testimonial-original { margin-top:18px; padding-top:14px; border-top:1px solid rgba(var(--commerce-rgb),.2); }
 .testimonial-original summary { width:max-content; max-width:100%; cursor:pointer; list-style:none; color:var(--commerce); font:600 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
@@ -269,6 +270,7 @@ footer { border-top:1px solid var(--line); min-height:110px; padding:0 var(--pad
 .logo-image img { display:block; width:118px; max-height:28px; object-fit:contain; filter:drop-shadow(0 0 16px rgba(255,255,255,.04)); }
 .logo-square { min-width:82px; padding:0 14px; }
 .logo-square img { width:34px; max-height:34px; }
+.logo-dude img { width:40px; max-height:36px; }
 .logo-surprise { min-width:154px; }
 .logo-surprise img { width:132px; max-height:38px; filter:grayscale(1) brightness(1.35) contrast(1.12); opacity:.92; }
 .logo-appfleece img { width:128px; max-height:24px; opacity:.94; }
@@ -325,6 +327,7 @@ footer { border-top:1px solid var(--line); min-height:110px; padding:0 var(--pad
   .logo-molecules img { width:108px; }
   .logo-square { min-width:72px; }
   .logo-square img { width:30px; max-height:30px; }
+  .logo-dude img { width:34px; max-height:31px; }
   .nav-actions { gap:7px; }.lang-switch { padding:3px; }.lang-switch a,.lang-switch span { min-width:25px; height:24px; }.nav-cta { font-size:9px; }
   .edu-list {
     position:relative;
