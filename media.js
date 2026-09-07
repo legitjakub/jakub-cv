@@ -53,6 +53,17 @@
     previews.forEach((video) => { video.preload = 'metadata'; });
   }
 
+  /* The scope list ships open so it is there without JS and on desktop, where
+     the column has room. On phones it is the tallest block in a case study, so
+     collapse it and let the reader open the ones they care about. */
+  const scopes = document.querySelectorAll('.case-scope-box');
+  if (scopes.length) {
+    const narrow = window.matchMedia('(max-width:760px)');
+    const syncScopes = () => scopes.forEach((box) => { box.open = !narrow.matches; });
+    syncScopes();
+    narrow.addEventListener('change', syncScopes);
+  }
+
   const marquees = document.querySelectorAll('.work-brand-marquee,.logo-marquee,.ticker');
   if ('IntersectionObserver' in window) {
     const marqueeObserver = new IntersectionObserver((entries) => {

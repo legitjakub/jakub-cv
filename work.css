@@ -307,7 +307,9 @@
 /* Three previews across the full-width case: equal thirds, so none of them
    turns into a billboard next to the other two. */
 .video-duo.video-trio { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.case-scope-label { margin:44px 0 0; color:var(--case-accent); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
+.case-scope-box { margin:44px 0 0; }
+.case-scope-box summary::-webkit-details-marker { display:none; }
+.case-scope-label { display:block; list-style:none; margin:0; color:var(--case-accent); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
 .case-scope {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -537,9 +539,17 @@
   .video-duo::-webkit-scrollbar { display:none; }
   .media-frame { flex:0 0 min(84vw,360px); scroll-snap-align:start; padding:7px; transform:none!important; }
   .media-frame video { min-height:0; max-height:64vh; aspect-ratio:16/9; }
-  .case-scope { grid-template-columns:1fr; gap:0; margin-top:14px; background:transparent; }
-  .case-scope li { padding:16px 0; border-bottom:1px solid rgba(255,255,255,.12); background:transparent; }
-  .case-molecules .case-scope li { border-color:rgba(0,0,0,.16); }
+  /* Six labelled sentences per case was the tallest block on the page; on
+     phones it starts closed and reads as one line you can scroll past. */
+  .case-scope-box { margin-top:26px; border-top:1px solid rgba(255,255,255,.14); }
+  .case-molecules .case-scope-box { border-color:rgba(0,0,0,.18); }
+  .case-scope-box .case-scope-label { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:0; padding:17px 0; cursor:pointer; }
+  .case-scope-box .case-scope-label::after { content:"+"; color:var(--case-accent); font:400 17px/1 "DM Mono"; transition:transform .25s ease; }
+  .case-scope-box[open] .case-scope-label::after { transform:rotate(45deg); }
+  .case-scope { grid-template-columns:1fr; gap:0; margin:0 0 6px; background:transparent; }
+  .case-scope li { padding:0 0 16px; background:transparent; }
+  .case-scope li+li { padding-top:16px; border-top:1px solid rgba(255,255,255,.12); }
+  .case-molecules .case-scope li+li { border-color:rgba(0,0,0,.16); }
   .case-quote { margin-top:44px; padding-left:20px; font-size:23px; }
   .work-references { padding-top:64px; padding-bottom:64px; background-size:44px 100%,auto,auto; }
   .work-references-head { display:block; margin-bottom:40px; }
