@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="/core.css?v=3" />
     <link rel="stylesheet" href="/work.css?v=26" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=13" />
-    <link rel="stylesheet" href="/shopify-plus.css?v=2" />
+    <link rel="stylesheet" href="/shopify-plus.css?v=3" />
     <script src="/core.js?v=4" defer></script>
     <script src="/media.js?v=4" defer></script>
     <script src="/shopify-vyvoj.js?v=1" defer></script>
@@ -108,7 +108,7 @@
             "name": "Shopify Plus: when it pays off and what it costs",
             "description": "When Shopify Plus makes sense for a store and when it does not. Published pricing, what Plus actually adds in 2026, and how migration runs.",
             "inLanguage": "en",
-            "dateModified": "2026-07-22",
+            "dateModified": "2026-11-07",
             "about": {
               "@id": "https://jhrncir.xyz/shopify-plus/en/#service"
             },
@@ -173,7 +173,7 @@
                 "name": "At what revenue does Shopify Plus pay off?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise Plus is decided by the need for specific capabilities, not by size of revenue."
+                  "text": "Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise the need for specific capabilities decides it."
                 }
               },
               {
@@ -181,7 +181,7 @@
                 "name": "What does Shopify Plus cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "For the European market Shopify publishes €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; each additional store is €250 per month. Above high volumes Shopify moves to a fee derived from revenue, and publishes neither the rate nor the threshold."
+                  "text": "For EU and EEA countries Shopify lists €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; Shopify does not publish a price for further stores. More complex, higher-volume businesses may also pay a variable platform fee based on revenue and business model, at a rate Shopify does not publish."
                 }
               },
               {
@@ -205,7 +205,7 @@
                 "name": "How long does migrating to Shopify Plus take?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. The usual cause of delay is not development but untidy product data."
+                  "text": "Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. Delays usually come from untidy product data."
                 }
               },
               {
@@ -308,13 +308,13 @@
       <section id="fit" class="solution-paths section-pad" aria-labelledby="fit-title">
         <header class="solution-paths-head reveal">
           <div><span class="work-index">Decision criteria</span><h2 id="fit-title">Who Plus fits<br /><em>and who it doesn't.</em></h2></div>
-          <p>The decision does not rest on revenue, but on whether you need specific things lower plans cannot do. If two or more points on the left apply, Plus is worth costing out.</p>
+          <p>The deciding question is whether you need specific things lower plans cannot do. If two or more points on the left apply, Plus is worth costing out.</p>
         </header>
         <div class="plus-verdict reveal">
           <article class="verdict-yes">
             <h3>Plus makes sense when…</h3>
             <ul>
-              <li>You need a <strong>custom app with Shopify Functions</strong> — cart validation, hiding delivery or payment options conditionally, or non-trivial discount logic. This is a hard wall, not a nice-to-have.</li>
+              <li>You need a <strong>custom app with Shopify Functions</strong> — cart validation, hiding delivery or payment options conditionally, or non-trivial discount logic. On lower plans there is no way around it.</li>
               <li>You want a <strong>second storefront</strong> for another country, brand or wholesale channel.</li>
               <li>In B2B you hit the <strong>three-catalog limit</strong>, or need pricing assigned to a specific company, deposits or partial payments.</li>
               <li>Integrations with <strong>ERP, PIM or a warehouse</strong> are running into API limits.</li>
@@ -329,7 +329,7 @@
               <li>You are dealing with <strong>untidy data</strong>, content or a weak mobile experience. A higher plan does not fix those, it just costs more.</li>
               <li>Your B2B needs are met by <strong>three catalogs</strong> and basic company profiles — both on all plans since April 2026.</li>
               <li>You want Plus for <strong>the badge</strong>. Customers cannot tell which plan you are on.</li>
-              <li>You lack the <strong>capacity to use those capabilities</strong>. Plus is infrastructure, not an outcome in itself.</li>
+              <li>You lack the <strong>capacity to use those capabilities</strong>. Plus is infrastructure; the results come from the store you build on it.</li>
             </ul>
           </article>
         </div>
@@ -338,7 +338,7 @@
       <section id="differences" class="solution-paths section-pad" aria-labelledby="differences-title">
         <header class="solution-paths-head reveal">
           <div><span class="work-index">Plus vs lower plans</span><h2 id="differences-title">What Plus actually adds<br /><em>in 2026.</em></h2></div>
-          <p>Through 2026 a lot of capability moved down to lower plans. The table below keeps only what is a real difference today — not what Plus was sold on two years ago.</p>
+          <p>Through 2026 a lot of capability moved down to lower plans. So the table keeps only what is a real difference today.</p>
         </header>
         <div class="plus-table-wrap reveal">
           <table class="plus-table">
@@ -358,6 +358,7 @@
             </tbody>
           </table>
         </div>
+        <p class="plus-sources reveal">Sources: <a href="https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-plus-plan" rel="noopener" target="_blank">Shopify Plus plan</a> · <a href="https://help.shopify.com/en/manual/b2b/getting-started/plan-features" rel="noopener" target="_blank">B2B by plan</a> · <a href="https://shopify.dev/docs/apps/build/apis/graphql-admin/rate-limits" rel="noopener" target="_blank">GraphQL Admin API rate limits</a> · <a href="https://shopify.dev/docs/apps/build/functions" rel="noopener" target="_blank">Shopify Functions</a> · <a href="https://www.shopify.com/plus/pricing" rel="noopener" target="_blank">Plus pricing</a>. Checked 7 Nov 2026.</p>
         <p class="plus-caveat reveal" style="margin-top:22px;max-width:820px;">What Plus is <strong>not</strong> needed for: Checkout Extensibility, checkout UI extensions, Shopify Flow, Markets or core B2B. All of those run on lower plans. If someone is pitching you Plus on the strength of these, keep asking questions.</p>
       </section>
 
@@ -370,12 +371,12 @@
           <div class="plus-cost-figures">
             <div><strong>€2,100</strong><span>per month on a three-year term</span></div>
             <div><strong>€2,250</strong><span>per month on a one-year term</span></div>
-            <div><strong>€250</strong><span>per month for each store beyond 10</span></div>
+            <div><strong>9</strong><span>expansion stores included</span></div>
           </div>
           <div class="plus-cost-notes">
-            <p>These figures are <strong>published by Shopify</strong> for the European market. They include the main store and nine expansion stores, unlimited staff accounts and priority support.</p>
+            <p>These figures are <strong>published by Shopify</strong> for EU and EEA countries in its <a href="https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-plus-plan" rel="noopener" target="_blank">Plus plan help article</a>; its <a href="https://www.shopify.com/plus/pricing" rel="noopener" target="_blank">pricing page</a> shows “from €2,100”. They include the main store and nine expansion stores, unlimited staff accounts and priority support. Checked 7 November 2026.</p>
             <p>On top of the plan you need to budget <strong>payment processing</strong>, apps and above all <strong>implementation</strong> — theme work, data migration, integrations and testing. In the first year implementation is usually the larger cost.</p>
-            <div class="plus-caveat">Above high volumes Shopify switches from a fixed fee to one derived from revenue. It <strong>publishes neither the rate nor the threshold</strong>, and the numbers circulating online are mostly out of date. Insist on getting the terms in writing from Shopify's sales team.</div>
+            <div class="plus-caveat">More complex, higher-volume businesses may pay a variable platform fee based on revenue and business model. Shopify <strong>publishes neither the rate nor the threshold</strong>, and the numbers circulating online are mostly out of date. Insist on getting the terms in writing from Shopify's sales team.</div>
           </div>
         </div>
       </section>
@@ -384,7 +385,7 @@
         <header class="reveal">
           <span class="work-index">How migration runs</span>
           <h2 id="migration-title">What the move<br /><em>actually involves.</em></h2>
-          <p>Moving up from a lower Shopify plan is a matter of weeks, because no data is migrated. Arriving from another platform is a project measured in months. The usual cause of delay is not development but untidy product data and checkout requirements discovered late.</p>
+          <p>Moving up from a lower Shopify plan is a matter of weeks, because no data is migrated. Arriving from another platform is a project measured in months. Delays usually come from untidy product data and checkout requirements discovered late.</p>
         </header>
         <div class="plus-timeline reveal">
           <article>
@@ -439,11 +440,11 @@
         <div class="plus-faq reveal">
           <details>
             <summary>At what revenue does Shopify Plus pay off?</summary>
-            <p>Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise Plus is decided by the need for specific capabilities, not by size of revenue.</p>
+            <p>Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise the need for specific capabilities decides it.</p>
           </details>
           <details>
             <summary>What does Shopify Plus cost?</summary>
-            <p>For the European market Shopify publishes €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; each additional store is €250 per month. Above high volumes Shopify moves to a fee derived from revenue, and publishes neither the rate nor the threshold.</p>
+            <p>For EU and EEA countries Shopify lists €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; Shopify does not publish a price for further stores. More complex, higher-volume businesses may also pay a variable platform fee based on revenue and business model, at a rate Shopify does not publish.</p>
           </details>
           <details>
             <summary>Can I customise checkout without Shopify Plus?</summary>
@@ -455,7 +456,7 @@
           </details>
           <details>
             <summary>How long does migrating to Shopify Plus take?</summary>
-            <p>Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. The usual cause of delay is not development but untidy product data.</p>
+            <p>Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. Delays usually come from untidy product data.</p>
           </details>
           <details>
             <summary>Will migration cost us search rankings?</summary>
