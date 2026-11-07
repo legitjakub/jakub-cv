@@ -1,4 +1,4 @@
-@media (max-width:1050px) {
+@media (max-width:1199px) {
   .mobile-nav-toggle,.guide-menu-toggle { display:none!important; }
   .nav-wrap,.guide-header {
     position:relative!important;
@@ -27,4 +27,4 @@
   .guide-header>.guide-back { display:none!important; }
   .work-hero,.inquiry-page-hero { padding-top:72px!important; }
 }
-.media-nojs { position:absolute; inset:10px 10px 42px; z-index:3; display:grid; place-items:center; color:#b7ff3c; font:500 10px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.media-nojs { position:absolute; inset:10px 10px 42px; z-index:3; display:grid; place-items:center; color:#b7ff3c; font:500 12px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }

@@ -84,7 +84,9 @@
     if (!menu.querySelector(`a[lang="${isEnglish ? 'cs' : 'en'}"]`)) {
       const language = document.createElement('a');
       language.className = 'mobile-nav-only';
-      language.href = isEnglish ? '/' : '/en/';
+      const alternate = document.querySelector(`link[rel="alternate"][hreflang="${isEnglish ? 'cs' : 'en'}"]`);
+      const alternateUrl = alternate ? new URL(alternate.href, window.location.href) : null;
+      language.href = alternateUrl ? alternateUrl.pathname + alternateUrl.search + alternateUrl.hash : (isEnglish ? '/' : '/en/');
       language.lang = isEnglish ? 'cs' : 'en';
       language.textContent = isEnglish ? 'Česká verze' : 'English version';
       menu.append(language);
@@ -116,7 +118,7 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && header.classList.contains('mobile-menu-open')) { close(); toggle.focus(); }
     });
-    window.addEventListener('resize', () => { if (window.innerWidth > 1050) close(); }, { passive:true });
+    window.addEventListener('resize', () => { if (window.innerWidth >= 1200) close(); }, { passive:true });
   }
 
   const navLinks = [...document.querySelectorAll('.nav-wrap nav a[href^="#"]')];

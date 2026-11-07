@@ -18,3 +18,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 scripts/check-static.py
+      - run: node --test scripts/test-*.cjs
+      - run: python3 scripts/test-static.py

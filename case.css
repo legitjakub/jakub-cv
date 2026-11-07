@@ -22,7 +22,7 @@ body.case-page footer { background:#0a0a0a; }
   padding-top:clamp(130px,17vh,190px);
   padding-bottom:clamp(44px,5vw,72px);
 }
-.case-hero .case-order { font-size:10px; }
+.case-hero .case-order { font-size:12px; }
 .case-hero .case-logo-title { margin:26px 0 30px; line-height:1; }
 .case-hero h1 { max-width:20ch; margin:0; font-size:clamp(34px,4.3vw,64px); line-height:1.03; letter-spacing:-.055em; }
 .case-hero h1 em { color:var(--case-accent); font-style:normal; }
@@ -30,13 +30,13 @@ body.case-page footer { background:#0a0a0a; }
 
 .case-facts { margin:0; border-top:1px solid var(--case-line); }
 .case-facts div { display:grid; grid-template-columns:112px 1fr; gap:18px; padding:13px 0; border-bottom:1px solid var(--case-line); }
-.case-facts dt { color:var(--case-accent); font:500 10px/1.7 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.case-facts dt { color:var(--case-accent); font:500 12px/1.7 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
 .case-facts dd { margin:0; color:var(--case-strong); font-size:14px; line-height:1.55; }
 .case-facts a { color:inherit; text-decoration:underline; text-decoration-color:rgba(var(--case-rgb),.55); text-underline-offset:3px; }
 
 .case-media { padding-bottom:clamp(56px,7vw,100px); }
 .case-media .media-frame { border-color:rgba(var(--case-rgb),.22); }
-.case-media .media-frame figcaption { font-size:10px; }
+.case-media .media-frame figcaption { font-size:12px; }
 
 .case-section {
   display:grid;
@@ -57,9 +57,9 @@ body.case-page footer { background:#0a0a0a; }
 .case-page .case-scope { max-width:900px; }
 
 .case-quote { max-width:820px; margin:0; padding-left:24px; border-left:2px solid var(--case-accent); color:var(--case-strong); font-size:clamp(19px,1.9vw,27px); line-height:1.45; letter-spacing:-.03em; }
-.case-quote cite { display:block; margin-top:18px; color:var(--case-body); font:500 10px "DM Mono",monospace; font-style:normal; letter-spacing:.08em; text-transform:uppercase; }
+.case-quote cite { display:block; margin-top:18px; color:var(--case-body); font:500 12px "DM Mono",monospace; font-style:normal; letter-spacing:.08em; text-transform:uppercase; }
 
-.case-page .case-action { max-width:420px; margin-top:28px; font-size:10px; }
+.case-page .case-action { max-width:420px; margin-top:28px; font-size:12px; }
 
 .case-links { max-width:900px; margin:0; padding:0; list-style:none; border-top:1px solid var(--case-line); }
 .case-links a { display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; padding:18px 0; border-bottom:1px solid var(--case-line); color:var(--case-strong); font-size:17px; line-height:1.35; letter-spacing:-.02em; transition:padding-left .3s ease; }
@@ -74,7 +74,7 @@ body.case-page footer { background:#0a0a0a; }
 /* Data map: one admin record on the left, the places it surfaces on the right. */
 .data-map { display:grid; grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr); gap:18px; align-items:stretch; max-width:900px; margin:30px 0 0; }
 .data-map-col { padding:22px; border:1px solid var(--case-line); background:rgba(var(--case-rgb),.04); }
-.data-map-label { display:block; margin:0 0 14px; color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.data-map-label { display:block; margin:0 0 14px; color:var(--case-accent); font:500 12px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
 .data-map ul,.data-map ol { margin:0; padding:0; list-style:none; }
 .data-map li { display:flex; flex-direction:column; gap:3px; padding:10px 0; border-top:1px solid var(--case-line); color:var(--case-body); font-size:14px; line-height:1.5; }
 .data-map li:first-child { border-top:0; padding-top:0; }
@@ -86,12 +86,12 @@ body.case-page footer { background:#0a0a0a; }
 /* Bottle-to-game journey and the three markets. */
 .journey { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; max-width:960px; margin:30px 0 0; padding:0; list-style:none; background:var(--case-line); counter-reset:j; }
 .journey li { display:flex; flex-direction:column; gap:6px; padding:20px 18px 22px; background:var(--case-canvas); color:var(--case-body); font-size:14px; line-height:1.55; }
-.journey span { color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.08em; }
+.journey span { color:var(--case-accent); font:500 12px "DM Mono",monospace; letter-spacing:.08em; }
 .journey b { color:var(--case-strong); font-size:17px; font-weight:600; letter-spacing:-.02em; }
 .markets { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-width:960px; margin:18px 0 0; padding:0; list-style:none; }
 .markets li { display:flex; flex-direction:column; gap:4px; padding:18px; border:1px solid var(--case-line); color:var(--case-body); font-size:14px; line-height:1.5; }
 .markets b { color:var(--case-strong); font-size:16px; }
-.markets small { color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.04em; }
+.markets small { color:var(--case-accent); font:500 12px "DM Mono",monospace; letter-spacing:.04em; }
 
 /* Real screenshots from the live store, each with a caption saying what it shows. */
 .case-stills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; margin:34px 0 0; }
@@ -120,3 +120,6 @@ body.case-page footer { background:#0a0a0a; }
   .journey { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .markets,.case-stills { grid-template-columns:1fr; }
 }
+
+.case-page .case-action { font-size:14px; }
+@media (max-width:760px) { .case-prose p,.case-list li { font-size:16px; } }
