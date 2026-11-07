@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script defer src="/consent.js?v=2"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facederma: WooCommerce to Shopify Plus · case study</title>
+    <meta name="description" content="Moving a Slovak skincare brand from WooCommerce to Shopify Plus: B2B catalogues for salons, a loyalty programme, newsletters and a catalogue by skin concern." />
+    <meta name="author" content="Jakub Hrnčíř" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#090b0a" />
+    <link rel="canonical" href="https://jhrncir.xyz/en/work/facederma/" />
+    <link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/realizace/facederma/" />
+    <link rel="alternate" hreflang="en" href="https://jhrncir.xyz/en/work/facederma/" />
+    <link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/realizace/facederma/" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="cs_CZ" />
+    <meta property="og:title" content="Facederma: WooCommerce to Shopify Plus · case study" />
+    <meta property="og:description" content="Moving a Slovak skincare brand from WooCommerce to Shopify Plus: B2B catalogues for salons, a loyalty programme, newsletters and a catalogue by skin concern." />
+    <meta property="og:url" content="https://jhrncir.xyz/en/work/facederma/" />
+    <meta property="og:image" content="https://jhrncir.xyz/assets/work/posters/facederma-storefront.jpg" />
+    <meta property="article:published_time" content="2026-11-07" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Facederma: WooCommerce to Shopify Plus · case study" />
+    <meta name="twitter:description" content="Moving a Slovak skincare brand from WooCommerce to Shopify Plus: B2B catalogues for salons, a loyalty programme, newsletters and a catalogue by skin concern." />
+    <meta name="twitter:image" content="https://jhrncir.xyz/assets/work/posters/facederma-storefront.jpg" />
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="/core.css?v=3" />
+    <link rel="stylesheet" href="/work.css?v=26" />
+    <link rel="stylesheet" href="/shopify-vyvoj.css?v=13" />
+    <link rel="stylesheet" href="/case.css?v=2" />
+    <script src="/core.js?v=4" defer></script>
+    <script src="/media.js?v=4" defer></script>
+    <script src="/shopify-vyvoj.js?v=2" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://jhrncir.xyz/en/work/facederma/#article",
+            "headline": "Facederma: WooCommerce to Shopify Plus with B2B for salons",
+            "description": "Moving a Slovak skincare brand from WooCommerce to Shopify Plus: B2B catalogues for salons, a loyalty programme, newsletters and a catalogue by skin concern.",
+            "inLanguage": "en",
+            "datePublished": "2026-11-07",
+            "dateModified": "2026-11-07",
+            "mainEntityOfPage": "https://jhrncir.xyz/en/work/facederma/",
+            "image": "https://jhrncir.xyz/assets/work/posters/facederma-storefront.jpg",
+            "author": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "publisher": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "isPartOf": {
+              "@id": "https://jhrncir.xyz/#website"
+            },
+            "about": {
+              "@type": "Organization",
+              "name": "Facederma",
+              "url": "https://facederma.sk/"
+            },
+            "video": [
+              {
+                "@id": "https://jhrncir.xyz/en/work/facederma/#video-1"
+              },
+              {
+                "@id": "https://jhrncir.xyz/en/work/facederma/#video-2"
+              },
+              {
+                "@id": "https://jhrncir.xyz/en/work/facederma/#video-3"
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Shopify development",
+                "item": "https://jhrncir.xyz/en/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Facederma",
+                "item": "https://jhrncir.xyz/en/work/facederma/"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://jhrncir.xyz/#person",
+            "name": "Jakub Hrnčíř",
+            "url": "https://jhrncir.xyz/",
+            "image": "https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp",
+            "jobTitle": "Shopify vývojář",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Praha",
+              "addressCountry": "CZ"
+            },
+            "knowsLanguage": [
+              "cs",
+              "en"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Shopify Plus",
+              "Shopify B2B",
+              "Liquid",
+              "Shopify Functions",
+              "Shopify Markets",
+              "Migrace na Shopify",
+              "JavaScript"
+            ]
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/en/work/facederma/#video-1",
+            "name": "Facederma — home page with loyalty programme and salon signup",
+            "description": "Facederma — home page with loyalty programme and salon signup",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/facederma-storefront.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/facederma-storefront.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT14S",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/en/work/facederma/#video-2",
+            "name": "Facederma — categories by skin concern and a bundle page",
+            "description": "Facederma — categories by skin concern and a bundle page",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/facederma-katalog.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/facederma-katalog.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT12S",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/en/work/facederma/#video-3",
+            "name": "Facederma — mobile: home, loyalty programme, salons",
+            "description": "Facederma — mobile: home, loyalty programme, salons",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/facederma-mobil.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/facederma-mobil.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT14S",
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
+  <body class="work-page shopify-conversion-page case-page case-facederma-new">
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <header class="nav-wrap">
+      <a class="brand" href="/en/" aria-label="Shopify development, home">JH<span>.</span></a>
+      <nav id="primary-navigation" aria-label="Work navigation">
+        <a href="/en/#shopify-development">Shopify development</a>
+        <a href="/shopify-plus/en/">Shopify Plus</a>
+        <a href="/shopify-guide/">Blog</a>
+        <a href="/en/#case-studies" class="active">Case studies</a>
+        <a href="/en/#work-references">References</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language selection"><a href="/realizace/facederma/" lang="cs">CZ</a><span aria-current="page">EN</span></div>
+        <a class="nav-cta" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Start a project <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="top" class="work-main">
+      <section class="case-hero section-pad">
+        <div class="reveal">
+          <span class="case-order">Case study · Shopify Plus migration</span>
+          <p class="case-logo-title case-logo-title-facederma"><img src="/assets/logos/facederma-logo.png" alt="Facederma" width="1386" height="224" /></p>
+          <h1>Facederma: WooCommerce to <em>Shopify Plus with B2B for salons</em></h1>
+          <p class="case-lead">Facederma is a Slovak professional skincare brand with its own clinic in Bratislava. As the developer on the project I handled the move from WooCommerce to Shopify Plus and the full build to the client’s brief, for retail customers and salons alike.</p>
+        </div>
+        <dl class="case-facts reveal">
+            <div><dt>Client</dt><dd><a href="https://facederma.sk/" rel="noopener">Facederma</a></dd></div>
+            <div><dt>Industry</dt><dd>Professional skincare</dd></div>
+            <div><dt>Platform</dt><dd>Shopify Plus, previously WooCommerce</dd></div>
+            <div><dt>Market</dt><dd>Slovakia, priced in euros</dd></div>
+            <div><dt>Customers</dt><dd>Retail customers and salons</dd></div>
+            <div><dt>My role</dt><dd>Developer on the project</dd></div>
+        </dl>
+      </section>
+
+      <section class="case-media section-pad" aria-label="Project previews">
+        <div class="video-duo video-trio reveal">
+          <figure class="media-frame media-frame-wide">
+            <video poster="/assets/work/posters/facederma-storefront.jpg" muted loop playsinline controls preload="none" aria-label="Facederma — home page with loyalty programme and salon signup"><source src="/assets/work/facederma-storefront.mp4" type="video/mp4" /></video>
+            <figcaption><span>01</span> Home · B2B signup</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <video poster="/assets/work/posters/facederma-katalog.jpg" muted loop playsinline controls preload="none" aria-label="Facederma — categories by skin concern and a bundle page"><source src="/assets/work/facederma-katalog.mp4" type="video/mp4" /></video>
+            <figcaption><span>02</span> Catalogue · bundles</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <video poster="/assets/work/posters/facederma-mobil.jpg" muted loop playsinline controls preload="none" aria-label="Facederma — mobile: home, loyalty programme, salons"><source src="/assets/work/facederma-mobil.mp4" type="video/mp4" /></video>
+            <figcaption><span>03</span> Mobile · loyalty &amp; salons</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">01</span><h2>Starting point</h2></header>
+        <div class="case-prose reveal">
+          <p>The old store ran on WooCommerce. Products, content and customers had to move without losing search rankings, and wholesale had to be separated: salons buy at their own prices with their own access to the store.</p>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">02</span><h2>Project scope</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-scope">
+          <li><b>Migration</b>Products, content, customers and the redirect map moved off WooCommerce.</li>
+          <li><b>B2B catalogues</b>A separate wholesale branch for salons, with their own prices and access.</li>
+          <li><b>Loyalty programme</b>Earning and spending points tied to the customer account.</li>
+          <li><b>Newsletters</b>Email flows configured and signup wired into the store.</li>
+          <li><b>Catalogue by skin concern</b>Categories built around a specific need, plus filters and bundles.</li>
+          <li><b>Product pages</b>Ingredients, reviews and related-product recommendations.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">03</span><h2>What runs on the site today</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-list">
+            <li>The loyalty programme returns 2% of every further order as credit on the customer account.</li>
+            <li>A “Facederma pre salóny” page with partner registration and wholesale pricing.</li>
+            <li>Categories by skin concern, such as wrinkles, acne, pigmentation or hydration.</li>
+            <li>Bundles that list the products they contain.</li>
+            <li>Newsletter signup and partner registration straight from the home page.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">04</span><h2>My work</h2></header>
+        <div class="case-prose reveal">
+          <p>The full build to the client’s brief: catalogue structure, a B2B branch for salons, the loyalty programme, email marketing and product pages.</p>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">05</span><h2>Working on something similar?</h2></header>
+        <div class="case-prose reveal">
+          <p>Send a short description of where the store is now and what it needs to do. I’ll go through it, ask what is missing and suggest a realistic next step.</p>
+          <a class="case-action" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20migration" data-track="case_page_facederma">Discuss a similar migration <span>↗︎</span></a>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">06</span><h2>Related articles</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-links">
+            <li><a href="/shopify-guide/migrate-to-shopify/"><span>Migrating to Shopify: Data, SEO and a Safer Launch<small>A practical Shopify migration checklist covering products, customers, orders, integrations, URL redirects, testing and launch planning.</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/shopify-guide/shopify-vs-woocommerce/"><span>Shopify vs WooCommerce<small>Shopify or WooCommerce in 2026? Compare cost, hosting, maintenance, design, SEO, performance and technical ownership for Czech and Slovak stores.</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/shopify-guide/shopify-plus-b2b-d2c/"><span>Shopify B2B in 2026: Standard Plans vs Shopify Plus<small>Shopify B2B in 2026: features on Basic, Grow and Advanced, catalogue limits and the cases that still require Shopify Plus.</small></span><b aria-hidden="true">→</b></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">07</span><h2>More case studies</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-links">
+            <li><a href="/en/work/posedla/"><span>Posedla<small>Shopify Plus</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/en/work/molecules/"><span>Molecules of Life<small>Entering the German market</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/en/work/surprisedrinks/"><span>Surprise Drinks<small>Brand presentation and mini-games</small></span><b aria-hidden="true">→</b></a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <button class="to-top" type="button" aria-label="Back to top">↑︎</button>
+    <footer><span>© <span id="year">2026</span> Jakub Hrnčíř</span><nav><a href="/en/#case-studies">Case studies</a><a href="/shopify-plus/en/">Shopify Plus</a><a href="/shopify-guide/">Blog</a><a href="/cv/en/">Personal CV</a></nav></footer>
+  </body>
+</html>

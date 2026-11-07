@@ -1,0 +1,29 @@
+# Jakub Hrnčíř — Shopify developer
+
+> Independent Shopify and Shopify Plus developer based in Prague, Czech Republic, with four years of practice. Builds, redesigns and extends Shopify stores for brands in Czechia, Slovakia and Europe: new stores, Liquid theme work, Shopify Plus, B2B, integrations and migrations from WooCommerce or Shoptet. The site is in Czech (primary) and English.
+
+Clients and teams worked with include Posedla, Facederma, Molecules of Life, Surprise Drinks, Dude Stuff and the Appfleece agency. Facts and figures on the site are taken from what Shopify publishes; where Shopify publishes nothing, the articles say so.
+
+## Services
+
+- [Shopify vývoj (Czech home)](https://jhrncir.xyz/): services, case studies, process, references, FAQ
+- [Shopify development (English home)](https://jhrncir.xyz/en/): the same in English
+- [Shopify Plus: kdy se vyplatí a kolik stojí](https://jhrncir.xyz/shopify-plus/): when Plus pays off, published pricing, migration
+- [Shopify Plus: when it pays off and what it costs](https://jhrncir.xyz/shopify-plus/en/)
+- [Poptávka](https://jhrncir.xyz/shopify-poptavka/): project inquiry form (Czech)
+
+## Case studies
+
+- [Posedla](https://jhrncir.xyz/realizace/posedla/): custom 3D-printed bike saddles on Shopify Plus across four regional stores ([EN](https://jhrncir.xyz/en/work/posedla/))
+- [Facederma](https://jhrncir.xyz/realizace/facederma/): WooCommerce to Shopify Plus migration with B2B for salons and a loyalty programme ([EN](https://jhrncir.xyz/en/work/facederma/))
+- [Molecules of Life](https://jhrncir.xyz/realizace/molecules/): a new Shopify store for Germany alongside an existing Shoptet store ([EN](https://jhrncir.xyz/en/work/molecules/))
+- [Surprise Drinks](https://jhrncir.xyz/realizace/surprisedrinks/): brand site for trade partners on Shopify with licensed mini-games ([EN](https://jhrncir.xyz/en/work/surprisedrinks/))
+
+## Guides
+
+- [Shopify průvodce (Czech)](https://jhrncir.xyz/shopify-pruvodce/): 19 articles on Shopify SEO, speed, pricing, migration, Shopify Plus, B2B, Markets, payments in Czechia and Slovakia, Functions, AI tooling, and Shopify vs Shoptet, Upgates and WooCommerce
+- [Shopify guide (English)](https://jhrncir.xyz/shopify-guide/): the same 19 articles in English
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/)

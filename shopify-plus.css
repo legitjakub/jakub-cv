@@ -166,6 +166,11 @@
 .plus-cost-notes { display:grid; gap:18px; }
 .plus-cost-notes p { margin:0; color:#9e9e97; font-size:14px; line-height:1.72; }
 .plus-cost-notes strong { color:#dcdbd5; }
+/* The primary sources behind every figure in the comparison table. */
+.plus-sources { max-width:900px; margin:18px 0 0; color:#8d8f88; font-size:12.5px; line-height:1.7; }
+.plus-sources a { color:#c6c6c0; text-decoration:underline; text-decoration-color:rgba(var(--commerce-rgb),.45); text-underline-offset:3px; }
+.plus-sources a:hover { color:var(--commerce); }
+.plus-cost-notes a { color:inherit; text-decoration:underline; text-decoration-color:rgba(var(--commerce-rgb),.45); text-underline-offset:3px; }
 .plus-caveat {
   padding:18px 20px;
   border-left:2px solid var(--commerce);
