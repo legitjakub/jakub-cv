@@ -90,6 +90,13 @@
   align-items:start;
   padding-top:clamp(72px,8vw,118px);
   padding-bottom:clamp(72px,8vw,118px);
+  border-top:1px solid rgba(var(--case-rgb),.3);
+  background:
+    radial-gradient(circle at var(--case-glow-x,20%) var(--case-glow-y,28%),rgba(var(--case-rgb),var(--case-glow)),transparent 30%),
+    var(--case-canvas);
+}
+.conversion-case,
+.case-page {
   --case-accent:var(--commerce);
   --case-rgb:var(--commerce-rgb);
   --case-canvas:#0a0e0c;
@@ -97,10 +104,6 @@
   --case-body:#a6a69f;
   --case-strong:#efeee8;
   --case-glow:.1;
-  border-top:1px solid rgba(var(--case-rgb),.3);
-  background:
-    radial-gradient(circle at var(--case-glow-x,20%) var(--case-glow-y,28%),rgba(var(--case-rgb),var(--case-glow)),transparent 30%),
-    var(--case-canvas);
 }
 .case-posedla-new   { --case-glow-x:18%; --case-glow-y:35%; }
 .case-facederma-new { --case-accent:#d7b57c; --case-rgb:215,181,124; --case-canvas:#16110b; --case-glow-x:78%; --case-glow-y:22%; }
@@ -136,6 +139,9 @@
 .conversion-case-copy dd { margin:0; color:var(--case-body); font-size:13px; line-height:1.68; }
 .conversion-case-copy blockquote { margin:30px 0 0; padding:0 0 0 22px; border-left:2px solid var(--case-accent); color:#d8d7d0; font-size:17px; line-height:1.55; letter-spacing:-.025em; }
 .conversion-case-copy blockquote cite { display:block; margin-top:17px; color:#73736d; font:500 8px "DM Mono"; font-style:normal; text-transform:uppercase; letter-spacing:.07em; }
+.case-more { display:inline-flex; gap:10px; margin-top:28px; color:var(--case-accent); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid rgba(var(--case-rgb),.4); padding-bottom:4px; }
+.case-more:hover { color:var(--case-strong); border-color:var(--case-strong); }
+.case-more + .case-action { margin-top:22px; }
 .case-action { display:flex; align-items:center; justify-content:space-between; margin-top:34px; padding:19px 20px; background:var(--case-accent); color:#0c0f06; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:background-color .25s ease,transform .25s ease; }
 .case-action:hover { background:var(--case-strong); transform:translateY(-2px); }
 .case-molecules-new .case-action { background:#12130f; color:#efeee8; }
