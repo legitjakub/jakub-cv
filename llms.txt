@@ -2,7 +2,7 @@
 
 > Independent Shopify and Shopify Plus developer based in Prague, Czech Republic, with four years of practice. Builds, redesigns and extends Shopify stores for brands in Czechia, Slovakia and Europe: new stores, Liquid theme work, Shopify Plus, B2B, integrations and migrations from WooCommerce or Shoptet. The site is in Czech (primary) and English.
 
-Clients and teams worked with include Posedla, Facederma, Molecules of Life, Surprise Drinks, Dude Stuff and the Appfleece agency. Facts and figures on the site are taken from what Shopify publishes; where Shopify publishes nothing, the articles say so.
+Clients and teams worked with include Posedla, Facederma, Bohemian Coffee House, Molecules of Life, Peace of Alm, Surprise Drinks, Dude Stuff and the Appfleece agency. Facts and figures on the site are taken from what Shopify publishes; where Shopify publishes nothing, the articles say so.
 
 ## Services
 
@@ -10,6 +10,7 @@ Clients and teams worked with include Posedla, Facederma, Molecules of Life, Sur
 - [Shopify development (English home)](https://jhrncir.xyz/en/): the same in English
 - [Shopify Plus: kdy se vyplatí a kolik stojí](https://jhrncir.xyz/shopify-plus/): when Plus pays off, published pricing, migration
 - [Shopify Plus: when it pays off and what it costs](https://jhrncir.xyz/shopify-plus/en/)
+- [Agentic commerce na Shopify](https://jhrncir.xyz/agentic-commerce/): how AI agents shop on Shopify (Shopify Catalog, Agentic Storefronts, MCP, UCP, WebMCP), channel availability for Czech and EU stores as of November 2026, an interactive walkthrough and merchant steps ([EN](https://jhrncir.xyz/agentic-commerce/en/))
 - [Poptávka](https://jhrncir.xyz/shopify-poptavka/): project inquiry form (Czech)
 
 ## Case studies
@@ -17,7 +18,9 @@ Clients and teams worked with include Posedla, Facederma, Molecules of Life, Sur
 - [Posedla](https://jhrncir.xyz/realizace/posedla/): custom 3D-printed bike saddles on Shopify Plus across four regional stores ([EN](https://jhrncir.xyz/en/work/posedla/))
 - [Facederma](https://jhrncir.xyz/realizace/facederma/): WooCommerce to Shopify Plus migration with B2B for salons and a loyalty programme ([EN](https://jhrncir.xyz/en/work/facederma/))
 - [Molecules of Life](https://jhrncir.xyz/realizace/molecules/): a new Shopify store for Germany alongside an existing Shoptet store ([EN](https://jhrncir.xyz/en/work/molecules/))
-- [Surprise Drinks](https://jhrncir.xyz/realizace/surprisedrinks/): brand site for trade partners on Shopify with licensed mini-games ([EN](https://jhrncir.xyz/en/work/surprisedrinks/))
+- [Bohemian Coffee House](https://jhrncir.xyz/realizace/bohemian/): Shopify theme and coffee data model for a Czech roastery (metafields, roast and acidity scales, filters, linked light/dark roasts), built in the Appfleece team ([EN](https://jhrncir.xyz/en/work/bohemian/))
+- [Peace of Alm](https://jhrncir.xyz/realizace/peaceofalm/): Shopify theme customisation for certified baby skincare (typography, product property labels, discounted bundles), Appfleece team ([EN](https://jhrncir.xyz/en/work/peaceofalm/))
+- [Surprise Drinks](https://jhrncir.xyz/realizace/surprisedrinks/): brand site on Shopify with mini-games per licence, reached by QR codes on the bottles, localised for the EU in 14 languages; it does not sell online ([EN](https://jhrncir.xyz/en/work/surprisedrinks/))
 
 ## Guides
 

@@ -59,7 +59,7 @@
 .solution-path-list h3 { margin:0; font-size:clamp(25px,2.5vw,39px); line-height:1.05; letter-spacing:-.055em; }
 .solution-path-list p { margin:0; color:#8b8d86; font-size:13px; line-height:1.7; }
 .solution-path-list article>div { display:flex; flex-direction:column; align-items:flex-start; gap:13px; }
-.solution-path-list a { color:#777a73; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.055em; transition:color .25s ease; }
+.solution-path-list a { color:#777a73; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.055em; transition:color .25s ease; }
 .solution-path-list a:last-child { display:flex; width:100%; justify-content:space-between; padding-top:13px; border-top:1px solid rgba(var(--commerce-rgb),.24); color:var(--commerce); }
 .solution-path-list a:hover { color:#efeee8; }
 .solution-path-list a b { font-size:15px; font-weight:400; transition:transform .25s ease; }
@@ -107,6 +107,8 @@
 }
 .case-posedla-new   { --case-glow-x:18%; --case-glow-y:35%; }
 .case-facederma-new { --case-accent:#d7b57c; --case-rgb:215,181,124; --case-canvas:#16110b; --case-glow-x:78%; --case-glow-y:22%; }
+.case-bohemian-new  { --case-accent:#9ed6b2; --case-rgb:158,214,178; --case-canvas:#101513; --case-glow:.08; --case-glow-x:82%; --case-glow-y:20%; }
+.case-peaceofalm-new { --case-accent:#a3a7ff; --case-rgb:163,167,255; --case-canvas:#14152c; --case-glow:.1; --case-glow-x:20%; --case-glow-y:28%; }
 .case-surprise-new  { --case-accent:#ffc60a; --case-rgb:255,198,10;  --case-canvas:#0a0f18; --case-glow:.07; }
 .case-molecules-new {
   --case-accent:#385d05; --case-rgb:56,93,5; --case-canvas:#efeee8;
@@ -128,35 +130,37 @@
 .case-molecules-new .media-frame { box-shadow:0 24px 70px rgba(0,0,0,.12); }
 .conversion-case .media-frame figcaption span { color:var(--case-accent); }
 .conversion-case-copy { grid-area:copy; }
-.case-order { color:var(--case-accent); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.1em; }
+.case-order { color:var(--case-accent); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.1em; }
 .conversion-case-head .case-logo-title { margin:34px 0 42px; line-height:1; }
 .case-logo-title img { display:block; width:clamp(240px,27vw,320px); max-width:100%; height:auto; max-height:68px; object-fit:contain; object-position:left center; }
 .case-logo-title-molecules img { width:clamp(220px,24vw,285px); max-height:88px; filter:brightness(0); }
 .case-logo-title span { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .conversion-case-copy dl { margin:0; border-top:1px solid var(--case-line); }
 .conversion-case-copy dl>div { display:grid; grid-template-columns:120px 1fr; gap:24px; padding:21px 0; border-bottom:1px solid var(--case-line); }
-.conversion-case-copy dt { color:var(--case-accent); font:500 8px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.conversion-case-copy dt { color:var(--case-accent); font:500 10px/1.5 "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
 .conversion-case-copy dd { margin:0; color:var(--case-body); font-size:13px; line-height:1.68; }
 .conversion-case-copy blockquote { margin:30px 0 0; padding:0 0 0 22px; border-left:2px solid var(--case-accent); color:#d8d7d0; font-size:17px; line-height:1.55; letter-spacing:-.025em; }
-.conversion-case-copy blockquote cite { display:block; margin-top:17px; color:#73736d; font:500 8px "DM Mono"; font-style:normal; text-transform:uppercase; letter-spacing:.07em; }
+.conversion-case-copy blockquote cite { display:block; margin-top:17px; color:#878780; font:500 10px "DM Mono"; font-style:normal; text-transform:uppercase; letter-spacing:.07em; }
 .case-more { display:inline-flex; gap:10px; margin-top:28px; color:var(--case-accent); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid rgba(var(--case-rgb),.4); padding-bottom:4px; }
 .case-more:hover { color:var(--case-strong); border-color:var(--case-strong); }
 .case-more + .case-action { margin-top:22px; }
-.case-action { display:flex; align-items:center; justify-content:space-between; margin-top:34px; padding:19px 20px; background:var(--case-accent); color:#0c0f06; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:background-color .25s ease,transform .25s ease; }
+.case-action { display:flex; align-items:center; justify-content:space-between; margin-top:34px; padding:19px 20px; background:var(--case-accent); color:#0c0f06; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; transition:background-color .25s ease,transform .25s ease; }
 .case-action:hover { background:var(--case-strong); transform:translateY(-2px); }
 .case-molecules-new .case-action { background:#12130f; color:#efeee8; }
 .case-molecules-new .case-action:hover { background:var(--case-accent); color:#efeee8; }
 .case-logo-title-facederma img { width:clamp(230px,25vw,300px); max-height:56px; filter:brightness(0) invert(1); }
 .case-scope-box { margin:30px 0 0; }
 .case-scope-box summary::-webkit-details-marker { display:none; }
-.case-scope-label { display:block; list-style:none; margin:0 0 12px; color:var(--case-accent); font:500 8px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.case-scope-label { display:block; list-style:none; margin:0 0 12px; color:var(--case-accent); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
 /* The 1px gaps are the container showing through, so each cell has to repaint
    its own section's canvas colour. */
 .case-scope { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:0; padding:0; list-style:none; background:var(--case-line); }
 .case-scope li { display:flex; flex-direction:column; gap:7px; padding:17px 18px 19px; background:var(--case-canvas); color:var(--case-body); font-size:12.5px; line-height:1.62; }
-.case-scope b { color:var(--case-strong); font:500 9px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
+.case-scope b { color:var(--case-strong); font:500 10px "DM Mono"; font-weight:500; text-transform:uppercase; letter-spacing:.07em; }
 /* The wordmark is red on yellow with a black keyline — it carries the brand
    better in full colour than as another monochrome logo. */
+.case-logo-title-bohemian img { width:clamp(150px,15vw,190px); max-height:72px; }
+.case-logo-title-peaceofalm img { width:clamp(220px,24vw,290px); max-height:44px; }
 .case-logo-title-surprise img { width:clamp(170px,18vw,215px); max-height:76px; }
 
 
@@ -214,15 +218,15 @@
 .diagnostic-options { display:grid; gap:9px; margin-top:38px; }
 .diagnostic-option { display:grid; grid-template-columns:24px 1fr auto; gap:17px; align-items:center; width:100%; min-height:62px; padding:15px 18px; border:1px solid rgba(255,255,255,.15); background:transparent; color:#d8d8d2; text-align:left; cursor:pointer; transition:border-color .25s ease,background-color .25s ease,transform .25s ease; }
 .diagnostic-option:hover,.diagnostic-option:focus-visible { border-color:rgba(var(--commerce-rgb),.55); background:rgba(var(--commerce-rgb),.035); transform:translateX(4px); }
-.diagnostic-option i { display:grid; place-items:center; width:18px; height:18px; border:1px solid rgba(var(--commerce-rgb),.55); color:var(--commerce); font:500 8px "DM Mono"; font-style:normal; }
+.diagnostic-option i { display:grid; place-items:center; width:18px; height:18px; border:1px solid rgba(var(--commerce-rgb),.55); color:var(--commerce); font:500 10px "DM Mono"; font-style:normal; }
 .diagnostic-option span { font-size:14px; }
 .diagnostic-option b { color:var(--commerce); font-size:16px; font-weight:400; }
-.diagnostic-result-label { color:var(--commerce); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
+.diagnostic-result-label { color:var(--commerce); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.09em; }
 .diagnostic-result-links { display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:30px; }
-.diagnostic-result-links a { color:#bfc0b9; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
+.diagnostic-result-links a { color:#bfc0b9; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
 .diagnostic-result-links a:hover { color:var(--commerce); }
 .diagnostic-result-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:38px; }
-.diagnostic-result-actions a,.diagnostic-reset { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 19px; border:1px solid rgba(255,255,255,.2); background:transparent; color:#c8c8c1; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; cursor:pointer; }
+.diagnostic-result-actions a,.diagnostic-reset { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 19px; border:1px solid rgba(255,255,255,.2); background:transparent; color:#c8c8c1; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; cursor:pointer; }
 .diagnostic-result-actions a { border-color:var(--commerce); background:var(--commerce); color:#091006; }
 .diagnostic-noscript { margin-top:34px; color:#979991; }
 .diagnostic-noscript a { display:inline-block; margin:18px 22px 0 0; color:var(--commerce); }
@@ -240,14 +244,14 @@
 .inquiry-copy>p { margin-top:28px; }
 .inquiry-expectation { display:grid; gap:0; margin-top:42px; border-top:1px solid var(--conversion-line); }
 .inquiry-expectation strong,.inquiry-expectation span { padding:15px 0; border-bottom:1px solid var(--conversion-line); }
-.inquiry-expectation strong { color:var(--commerce); font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
+.inquiry-expectation strong { color:var(--commerce); font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.08em; }
 .inquiry-expectation span { color:#8c8e87; font-size:13px; }
-.inquiry-copy>a { display:flex; justify-content:space-between; margin-top:30px; color:#a9aaa4; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
+.inquiry-copy>a { display:flex; justify-content:space-between; margin-top:30px; color:#a9aaa4; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
 .inquiry-copy>a:hover { color:var(--commerce); }
 .project-form { position:relative; display:grid; grid-template-columns:1fr 1fr; gap:25px 20px; padding:clamp(28px,4vw,52px); border:1px solid var(--conversion-line); background:rgba(255,255,255,.018); }
 .form-field { display:grid; gap:9px; min-width:0; }
 .form-field-wide,.form-submit-row,.form-status { grid-column:1/-1; }
-.form-field label { color:#b8b9b2; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
+.form-field label { color:#b8b9b2; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
 .form-field label span { color:var(--commerce); }
 .form-field input,.form-field select,.form-field textarea {
   width:100%;
@@ -267,8 +271,8 @@
 .form-field input::placeholder,.form-field textarea::placeholder { color:#555852; }
 .form-honeypot { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 .form-submit-row { display:flex; align-items:center; justify-content:space-between; gap:30px; margin-top:6px; }
-.form-submit-row p { max-width:380px; margin:0; color:#686a64; font:400 8px/1.55 "DM Mono"; }
-.form-submit-row button { display:flex; align-items:center; justify-content:space-between; gap:50px; min-width:235px; min-height:54px; padding:0 18px; border:0; background:var(--commerce); color:#091006; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; cursor:pointer; transition:background-color .25s ease,transform .25s ease; }
+.form-submit-row p { max-width:380px; margin:0; color:#686a64; font:400 10px/1.55 "DM Mono"; }
+.form-submit-row button { display:flex; align-items:center; justify-content:space-between; gap:50px; min-width:235px; min-height:54px; padding:0 18px; border:0; background:var(--commerce); color:#091006; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; cursor:pointer; transition:background-color .25s ease,transform .25s ease; }
 .form-submit-row button:hover { background:#efeee8; transform:translateY(-2px); }
 .form-submit-row button:disabled { opacity:.6; cursor:wait; }
 .form-submit-row button span { font-size:16px; }
@@ -301,7 +305,7 @@
 .inquiry-page-hero p { max-width:680px; margin:0; color:#979991; font-size:15px; line-height:1.72; }
 .inquiry-page-steps { margin:0; padding:0; list-style:none; border-top:1px solid rgba(255,255,255,.16); }
 .inquiry-page-steps li { display:grid; grid-template-columns:42px 1fr; gap:20px; align-items:center; min-height:76px; border-bottom:1px solid rgba(255,255,255,.16); }
-.inquiry-page-steps span { color:var(--commerce); font:500 9px "DM Mono"; }
+.inquiry-page-steps span { color:var(--commerce); font:500 10px "DM Mono"; }
 .inquiry-page-steps strong { font-size:19px; letter-spacing:-.035em; }
 .inquiry-page-form { border-top:0; }
 .shopify-inquiry-page>footer nav { display:flex; gap:28px; }
@@ -328,7 +332,7 @@
 
 @media (max-width:760px) {
   .shopify-conversion-page .nav-actions .lang-switch { display:none; }
-  .shopify-conversion-page .conversion-nav-cta { padding:9px 10px; font-size:8px; }
+  .shopify-conversion-page .conversion-nav-cta { padding:9px 10px; font-size:10px; }
   .conversion-hero .work-hero-primary { min-width:0; }
   .conversion-hero .work-hero h1>span,
   .conversion-hero h1>span { max-width:100%; white-space:normal; }
@@ -340,7 +344,7 @@
   .solution-path-list h3 { font-size:25px; }
   .solution-path-list article>p,.solution-path-list article>div { grid-column:2; }
   .solution-path-list article>div { display:flex; gap:15px; margin-top:5px; }
-  .solution-path-list a { font-size:8px; }
+  .solution-path-list a { font-size:10px; }
   .projects-intro { display:block; padding-top:64px; padding-bottom:34px; }
   .projects-intro h2 { margin-top:24px; }
   .projects-intro>p { margin-top:22px; }
@@ -437,9 +441,9 @@
   background:radial-gradient(circle at 82% 50%,rgba(var(--commerce-rgb),.1),transparent 28%),#080a09;
 }
 .conversion-close-actions { display:grid; gap:15px; }
-.conversion-close-actions>a { display:flex; min-height:54px; align-items:center; justify-content:space-between; padding:0 18px; border:1px solid rgba(255,255,255,.2); color:#d5d5ce; font:500 9px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
+.conversion-close-actions>a { display:flex; min-height:54px; align-items:center; justify-content:space-between; padding:0 18px; border:1px solid rgba(255,255,255,.2); color:#d5d5ce; font:500 10px "DM Mono"; text-transform:uppercase; letter-spacing:.07em; }
 .conversion-close-actions .conversion-close-primary { border-color:var(--commerce); background:var(--commerce); color:#091006; }
-.conversion-close-actions small { color:#71736c; font:400 8px/1.6 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
+.conversion-close-actions small { color:#71736c; font:400 10px/1.6 "DM Mono"; text-transform:uppercase; letter-spacing:.06em; }
 @media (max-width:1100px) {
   .commercial-faq,.conversion-close { grid-template-columns:1fr; gap:48px; }
 }
