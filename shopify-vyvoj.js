@@ -277,6 +277,40 @@
     if (source) source.value = params.get('zdroj') || form.dataset.formContext || 'web';
     if (summary) summary.value = params.get('souhrn') || '';
 
+    const emailDraft = () => {
+      const data = new FormData(form);
+      const labels = {
+        name: 'Jméno', email: 'E-mail', company: 'Firma nebo značka', store_url: 'URL e-shopu', platform: 'Současná platforma',
+        project_type: 'Typ projektu', timing: 'Požadovaný termín', budget: 'Rámcový rozpočet', message: 'Popis projektu',
+        source: 'Zdroj poptávky', diagnostic_summary: 'Souhrn diagnostiky'
+      };
+      return [...data.entries()]
+        .filter(([key, value]) => key !== '_gotcha' && String(value).trim())
+        .map(([key, value]) => {
+          const readable = key === 'project_type' ? projectType.selectedOptions[0]?.textContent : value;
+          return `${labels[key] || key}:\n${String(readable || value).trim()}`;
+        })
+        .join('\n\n');
+    };
+    const copyButton = form.querySelector('[data-copy-inquiry]');
+    if (copyButton) copyButton.hidden = false;
+    copyButton?.addEventListener('click', async () => {
+      if (!form.reportValidity()) return;
+      const draft = emailDraft();
+      try {
+        await navigator.clipboard.writeText(draft);
+        status.textContent = 'Text je zkopírovaný. Vložte ho do e-mailu pro jakub.hrncir24@gmail.com a odešlete.';
+      } catch {
+        const fallback = form.querySelector('[data-copy-fallback]');
+        fallback.parentElement.hidden = false;
+        fallback.value = draft;
+        fallback.focus();
+        fallback.select();
+        status.textContent = 'Zkopírujte označený text a odešlete ho e-mailem na jakub.hrncir24@gmail.com.';
+      }
+      status.className = 'form-status';
+    });
+
     form.addEventListener('input', (event) => {
       if (event.target instanceof HTMLElement) event.target.removeAttribute('aria-invalid');
       if (!formStarted) {
@@ -336,19 +370,11 @@
         return;
       }
 
-      const labels = {
-        name: 'Jméno', email: 'E-mail', company: 'Firma nebo značka', store_url: 'URL e-shopu', platform: 'Současná platforma',
-        project_type: 'Typ projektu', timing: 'Požadovaný termín', budget: 'Rámcový rozpočet', message: 'Popis projektu',
-        source: 'Zdroj poptávky', diagnostic_summary: 'Souhrn diagnostiky'
-      };
-      const body = [...data.entries()]
-        .filter(([key, value]) => key !== '_gotcha' && String(value).trim())
-        .map(([key, value]) => `${labels[key] || key}:\n${String(value).trim()}`)
-        .join('\n\n');
+      const body = emailDraft();
       const subject = `Shopify poptávka – ${data.get('company') || data.get('name')}`;
       if (status) {
-        status.textContent = 'Otevírám připravený e-mail. Pokud se neotevře, napište na jakub.hrncir24@gmail.com.';
-        status.className = 'form-status is-success';
+        status.textContent = 'Otevírám připravený e-mail. Poptávka zatím není odeslaná — odešlete ji ve své poště. Pokud se e-mail neotevře, zkopírujte text tlačítkem pod formulářem.';
+        status.className = 'form-status';
       }
       track('form_mailto_fallback', { source: data.get('source') || 'web' });
       window.location.href = `mailto:jakub.hrncir24@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

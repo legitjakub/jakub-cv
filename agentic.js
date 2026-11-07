@@ -1,9 +1,31 @@
-/* Agentic commerce walkthrough. The markup is a complete ordered list of
-   steps, so without this script the page still reads top to bottom. With it,
-   the list becomes a stepper and the three controls (shopper country, channel,
-   store data) pick which agent replies are shown. Nothing here talks to a
-   network: it is a labelled simulation. */
+/* Offline walkthrough. These state transitions are also exercised by the
+   dependency-free Node tests; the browser renders the same state. */
 (function () {
+  function journeyState(state) {
+    var s = Object.assign({}, state.settings);
+    s.blocked = s.data === 'gap';
+    s.completed = state.confirmed && !s.blocked;
+    s.pending = !s.completed && !s.blocked;
+    s.catalog = s.channel === 'google' ? 'google' : 'shopify';
+    s.route = s.channel === 'browser' ? 'browser' :
+      (s.country === 'us' && (s.channel === 'copilot' || s.channel === 'google') ? 'direct' : 'store');
+    return s;
+  }
+
+  function transition(state, event) {
+    if (event.type === 'settings') return { settings: Object.assign({}, event.settings), step: 0, confirmed: false };
+    var next = Object.assign({}, state);
+    if (event.type === 'go') next.step = Math.max(0, Math.min(5, event.step));
+    if (event.type === 'restart') { next.step = 0; next.confirmed = false; }
+    if (event.type === 'confirm' && next.step === 4 && !journeyState(next).blocked) {
+      next.confirmed = true;
+      next.step = 5;
+    }
+    return next;
+  }
+
+  if (typeof module !== 'undefined' && module.exports) module.exports = { journeyState: journeyState, transition: transition };
+  if (typeof document === 'undefined') return;
   var sim = document.querySelector('[data-sim]');
   if (!sim) return;
   var i18n = {};
@@ -14,86 +36,86 @@
   var nav = sim.querySelector('.sim-nav');
   var prev = sim.querySelector('.sim-prev');
   var next = sim.querySelector('.sim-next');
+  var confirm = sim.querySelector('.sim-confirm');
   var dotsWrap = sim.querySelector('.sim-dots');
   var live = sim.querySelector('.sim-live');
   var restartTpl = sim.querySelector('.sim-restart-label');
   var nextLabel = next.textContent;
-  var restartLabel = restartTpl ? restartTpl.innerHTML + ' ↺' : nextLabel;
-  var current = 0;
+  var restartLabel = restartTpl ? restartTpl.textContent + ' ↺' : nextLabel;
+  var state = transition(null, { type: 'settings', settings: readSettings() });
+
+  function readSettings() {
+    var values = {};
+    ['country', 'channel', 'data'].forEach(function (name) {
+      var el = form.querySelector('input[name="' + name + '"]:checked');
+      values[name] = el ? el.value : '';
+    });
+    return values;
+  }
 
   sim.classList.add('sim-js');
   nav.hidden = false;
-
   var dots = steps.map(function (step, i) {
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'sim-dot';
     var h = step.querySelector('h3');
-    var title = h ? h.lastChild.textContent : String(i + 1);
-    b.setAttribute('aria-label', (i + 1) + ': ' + title);
+    b.setAttribute('aria-label', (i + 1) + ': ' + (h ? h.lastChild.textContent : i + 1));
     b.innerHTML = '<span>' + (i + 1) + '</span>';
-    b.addEventListener('click', function () { go(i, true); });
+    b.addEventListener('click', function () { dispatch({ type: 'go', step: i }, true); });
     dotsWrap.appendChild(b);
     return b;
   });
 
-  function state() {
-    var s = {};
-    ['country', 'channel', 'data'].forEach(function (name) {
-      var el = form.querySelector('input[name="' + name + '"]:checked');
-      s[name] = el ? el.value : '';
-    });
-    s.blocked = s.channel !== 'browser' && s.country === 'cz';
-    return s;
-  }
-
   function matches(cond, s) {
     return cond.split(' ').every(function (tok) {
       if (tok === 'ok') return !s.blocked;
-      if (tok === 'blocked') return s.blocked;
+      if (tok === 'blocked' || tok === 'completed' || tok === 'pending') return s[tok];
       var kv = tok.split(':');
       return s[kv[0]] === kv[1];
     });
   }
 
-  function apply() {
-    var s = state();
-    sim.querySelectorAll('[data-when]').forEach(function (el) {
-      el.hidden = !matches(el.getAttribute('data-when'), s);
-    });
-    sim.classList.toggle('is-blocked', s.blocked);
-  }
-
-  function go(i, focus) {
-    current = Math.max(0, Math.min(steps.length - 1, i));
-    steps.forEach(function (step, k) { step.hidden = k !== current; });
+  function render(focus) {
+    var view = journeyState(state);
+    sim.querySelectorAll('[data-when]').forEach(function (el) { el.hidden = !matches(el.getAttribute('data-when'), view); });
+    sim.classList.toggle('is-blocked', view.blocked);
+    steps.forEach(function (step, k) { step.hidden = k !== state.step; });
     dots.forEach(function (d, k) {
-      if (k === current) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current');
-      d.classList.toggle('is-done', k < current);
+      if (k === state.step) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current');
+      d.classList.toggle('is-done', k < state.step);
     });
-    var active = (steps[current].getAttribute('data-layers') || '').split(' ');
+    var active = (steps[state.step].getAttribute('data-layers') || '').split(' ');
     layers.forEach(function (l) { l.classList.toggle('is-active', active.indexOf(l.getAttribute('data-layer')) > -1); });
-    prev.disabled = current === 0;
-    next.innerHTML = current === steps.length - 1 ? restartLabel : nextLabel;
-    if (live && i18n.state) live.textContent = i18n.state.replace('{n}', current + 1).replace('{t}', steps.length);
+    prev.disabled = state.step === 0;
+    next.textContent = state.step === steps.length - 1 ? restartLabel : nextLabel;
+    next.hidden = state.step === 4 && !view.blocked;
+    if (confirm) confirm.hidden = state.step !== 4 || view.blocked;
+    if (live && i18n.state) live.textContent = i18n.state.replace('{n}', state.step + 1).replace('{t}', steps.length);
     if (focus) {
-      var h = steps[current].querySelector('h3');
-      if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+      var h = steps[state.step].querySelector('h3');
+      if (h) {
+        h.setAttribute('tabindex', '-1');
+        h.focus({ preventScroll: true });
+        h.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
     }
   }
 
-  prev.addEventListener('click', function () { go(current - 1, true); });
-  next.addEventListener('click', function () { go(current === steps.length - 1 ? 0 : current + 1, true); });
+  function dispatch(event, focus) { state = transition(state, event); render(focus); }
+  prev.addEventListener('click', function () { dispatch({ type: 'go', step: state.step - 1 }, true); });
+  next.addEventListener('click', function () {
+    dispatch(state.step === steps.length - 1 ? { type: 'restart' } : { type: 'go', step: state.step + 1 }, true);
+  });
+  if (confirm) confirm.addEventListener('click', function () { dispatch({ type: 'confirm' }, true); });
   dotsWrap.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault();
-      go(current + (e.key === 'ArrowRight' ? 1 : -1), false);
-      dots[current].focus();
+      dispatch({ type: 'go', step: state.step + (e.key === 'ArrowRight' ? 1 : -1) }, false);
+      dots[state.step].focus();
     }
   });
-  form.addEventListener('change', apply);
+  form.addEventListener('change', function () { dispatch({ type: 'settings', settings: readSettings() }, false); });
   form.addEventListener('submit', function (e) { e.preventDefault(); });
-
-  apply();
-  go(0, false);
+  render(false);
 })();

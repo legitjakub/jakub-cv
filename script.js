@@ -249,7 +249,7 @@ const setupMobileNavigation = () => {
     }
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1050) closeMenu();
+    if (window.innerWidth >= 1200) closeMenu();
   }, { passive: true });
 };
 

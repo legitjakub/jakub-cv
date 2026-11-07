@@ -5,7 +5,8 @@
     if (slides.length < 2) return;
     const controls = document.createElement('div');
     controls.className = 'mobile-snap-controls';
-    controls.innerHTML = '<button type="button" data-snap-prev aria-label="Previous preview"><i aria-hidden="true"></i></button><span><b>1</b> / ' + slides.length + '</span><button type="button" data-snap-next aria-label="Next preview"><i aria-hidden="true"></i></button>';
+    const isEnglish = document.documentElement.lang === 'en';
+    controls.innerHTML = '<button type="button" data-snap-prev aria-label="' + (isEnglish ? 'Previous preview' : 'Předchozí ukázka') + '"><i aria-hidden="true"></i></button><span><b>1</b> / ' + slides.length + '</span><button type="button" data-snap-next aria-label="' + (isEnglish ? 'Next preview' : 'Další ukázka') + '"><i aria-hidden="true"></i></button>';
     rail.after(controls);
     const current = controls.querySelector('b');
     const move = (direction) => {
@@ -35,7 +36,12 @@
   const previews = document.querySelectorAll('.media-frame video');
   if (previews.length && 'IntersectionObserver' in window) {
     const inView = new Set();
-    const start = (video) => video.play().catch(() => {});
+    const autoStarted = new Set();
+    const start = (video) => {
+      if (reduceMotion.matches || !video.paused) return;
+      autoStarted.add(video);
+      video.play().catch(() => autoStarted.delete(video));
+    };
     const playObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
@@ -43,7 +49,13 @@
         else { inView.delete(video); if (!video.paused) video.pause(); }
       });
     }, { rootMargin:'150px 0px', threshold:0.2 });
-    previews.forEach((video) => playObserver.observe(video));
+    previews.forEach((video) => {
+      video.addEventListener('pause', () => autoStarted.delete(video));
+      playObserver.observe(video);
+    });
+    reduceMotion.addEventListener('change', () => {
+      if (reduceMotion.matches) autoStarted.forEach((video) => video.pause());
+    });
     /* A backgrounded tab refuses play() outright, and the rejection is the end
        of it — so retry whatever is still on screen once the tab comes back. */
     document.addEventListener('visibilitychange', () => {
