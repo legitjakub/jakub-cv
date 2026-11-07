@@ -76,9 +76,29 @@
             "@type": "Service",
             "@id": "https://jhrncir.xyz/shopify-plus/en/#service",
             "name": "Shopify Plus development and migration",
-            "serviceType": ["Shopify Plus migration", "Shopify Functions development", "B2B on Shopify Plus", "Expansion stores and international rollout"],
-            "provider": { "@id": "https://jhrncir.xyz/#person" },
-            "areaServed": [{ "@type": "Country", "name": "Czechia" }, { "@type": "Country", "name": "Slovakia" }, { "@type": "AdministrativeArea", "name": "Europe" }],
+            "serviceType": [
+              "Shopify Plus migration",
+              "Shopify Functions development",
+              "B2B on Shopify Plus",
+              "Expansion stores and international rollout"
+            ],
+            "provider": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Czechia"
+              },
+              {
+                "@type": "Country",
+                "name": "Slovakia"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Europe"
+              }
+            ],
             "url": "https://jhrncir.xyz/shopify-plus/en/"
           },
           {
@@ -89,15 +109,29 @@
             "description": "When Shopify Plus makes sense for a store and when it does not. Published pricing, what Plus actually adds in 2026, and how migration runs.",
             "inLanguage": "en",
             "dateModified": "2026-07-22",
-            "about": { "@id": "https://jhrncir.xyz/shopify-plus/en/#service" },
-            "breadcrumb": { "@id": "https://jhrncir.xyz/shopify-plus/en/#breadcrumb" }
+            "about": {
+              "@id": "https://jhrncir.xyz/shopify-plus/en/#service"
+            },
+            "breadcrumb": {
+              "@id": "https://jhrncir.xyz/shopify-plus/en/#breadcrumb"
+            }
           },
           {
             "@type": "BreadcrumbList",
             "@id": "https://jhrncir.xyz/shopify-plus/en/#breadcrumb",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Shopify work", "item": "https://jhrncir.xyz/en/" },
-              { "@type": "ListItem", "position": 2, "name": "Shopify Plus", "item": "https://jhrncir.xyz/shopify-plus/en/" }
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Shopify work",
+                "item": "https://jhrncir.xyz/en/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Shopify Plus",
+                "item": "https://jhrncir.xyz/shopify-plus/en/"
+              }
             ]
           },
           {
@@ -105,20 +139,83 @@
             "@id": "https://jhrncir.xyz/#person",
             "name": "Jakub Hrnčíř",
             "url": "https://jhrncir.xyz/",
+            "image": "https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp",
             "jobTitle": "Shopify developer",
-            "sameAs": ["https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"],
-            "knowsAbout": ["Shopify Plus", "Shopify Functions", "B2B ecommerce", "Liquid", "Shopify Markets"]
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Praha",
+              "addressCountry": "CZ"
+            },
+            "knowsLanguage": [
+              "cs",
+              "en"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Shopify Plus",
+              "Shopify B2B",
+              "Liquid",
+              "Shopify Functions",
+              "Shopify Markets",
+              "Shopify migrations",
+              "JavaScript"
+            ]
           },
           {
             "@type": "FAQPage",
             "@id": "https://jhrncir.xyz/shopify-plus/en/#faq",
             "mainEntity": [
-              { "@type": "Question", "name": "At what revenue does Shopify Plus pay off?", "acceptedAnswer": { "@type": "Answer", "text": "Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise Plus is decided by the need for specific capabilities, not by size of revenue." } },
-              { "@type": "Question", "name": "What does Shopify Plus cost?", "acceptedAnswer": { "@type": "Answer", "text": "For the European market Shopify publishes €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; each additional store is €250 per month. Above high volumes Shopify moves to a fee derived from revenue, and publishes neither the rate nor the threshold." } },
-              { "@type": "Question", "name": "Can I customise checkout without Shopify Plus?", "acceptedAnswer": { "@type": "Answer", "text": "Largely yes. Checkout Extensibility and checkout UI extensions work on all plans, as do Functions delivered by a public App Store app. Plus is required for a custom app containing Shopify Functions, and for deeper checkout branding." } },
-              { "@type": "Question", "name": "B2B is on lower plans now. Why pay for Plus?", "acceptedAnswer": { "@type": "Answer", "text": "Since 2 April 2026 company profiles, up to three catalogs, volume pricing and payment terms are on all plans. Plus adds an unlimited number of catalogs, direct catalog assignment to a company or location, deposits and partial payments. If three catalogs cover you, you do not need Plus for B2B." } },
-              { "@type": "Question", "name": "How long does migrating to Shopify Plus take?", "acceptedAnswer": { "@type": "Answer", "text": "Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. The usual cause of delay is not development but untidy product data." } },
-              { "@type": "Question", "name": "Will migration cost us search rankings?", "acceptedAnswer": { "@type": "Answer", "text": "Only with a faulty redirect map. If the URL structure is preserved or 301 redirects are set up properly, any dip tends to be temporary. Expect a few weeks before results settle, and note that customers moving from another platform have to reset their passwords." } }
+              {
+                "@type": "Question",
+                "name": "At what revenue does Shopify Plus pay off?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Revenue on its own is not the deciding criterion. The one reliably calculable reason is the third-party gateway fee: Plus charges 0.2%, Advanced 0.6%. The difference breaks even roughly where the saving on fees exceeds the difference in plan cost. Otherwise Plus is decided by the need for specific capabilities, not by size of revenue."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does Shopify Plus cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For the European market Shopify publishes €2,250 per month on a one-year term and €2,100 per month on a three-year term. That includes the main store and 9 expansion stores; each additional store is €250 per month. Above high volumes Shopify moves to a fee derived from revenue, and publishes neither the rate nor the threshold."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I customise checkout without Shopify Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Largely yes. Checkout Extensibility and checkout UI extensions work on all plans, as do Functions delivered by a public App Store app. Plus is required for a custom app containing Shopify Functions, and for deeper checkout branding."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "B2B is on lower plans now. Why pay for Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Since 2 April 2026 company profiles, up to three catalogs, volume pricing and payment terms are on all plans. Plus adds an unlimited number of catalogs, direct catalog assignment to a company or location, deposits and partial payments. If three catalogs cover you, you do not need Plus for B2B."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does migrating to Shopify Plus take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Moving up from a lower Shopify plan is usually a matter of weeks, since no data is migrated. Coming from another platform takes months, depending on catalog size, number of integrations and whether B2B or multiple markets are involved. The usual cause of delay is not development but untidy product data."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will migration cost us search rankings?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only with a faulty redirect map. If the URL structure is preserved or 301 redirects are set up properly, any dip tends to be temporary. Expect a few weeks before results settle, and note that customers moving from another platform have to reset their passwords."
+                }
+              }
             ]
           }
         ]

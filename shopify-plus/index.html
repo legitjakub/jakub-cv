@@ -76,9 +76,25 @@
             "@type": "Service",
             "@id": "https://jhrncir.xyz/shopify-plus/#service",
             "name": "Shopify Plus vývoj a migrace",
-            "serviceType": ["Migrace na Shopify Plus", "Vývoj Shopify Functions", "B2B na Shopify Plus", "Expansion stores a mezinárodní expanze"],
-            "provider": { "@id": "https://jhrncir.xyz/#person" },
-            "areaServed": [{ "@type": "Country", "name": "Česko" }, { "@type": "Country", "name": "Slovensko" }],
+            "serviceType": [
+              "Migrace na Shopify Plus",
+              "Vývoj Shopify Functions",
+              "B2B na Shopify Plus",
+              "Expansion stores a mezinárodní expanze"
+            ],
+            "provider": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Česko"
+              },
+              {
+                "@type": "Country",
+                "name": "Slovensko"
+              }
+            ],
             "url": "https://jhrncir.xyz/shopify-plus/"
           },
           {
@@ -89,15 +105,29 @@
             "description": "Kdy dává Shopify Plus smysl pro český e-shop a kdy ne. Reálná cena, co Plus v roce 2026 skutečně přidává, průběh migrace a reference.",
             "inLanguage": "cs",
             "dateModified": "2026-07-22",
-            "about": { "@id": "https://jhrncir.xyz/shopify-plus/#service" },
-            "breadcrumb": { "@id": "https://jhrncir.xyz/shopify-plus/#breadcrumb" }
+            "about": {
+              "@id": "https://jhrncir.xyz/shopify-plus/#service"
+            },
+            "breadcrumb": {
+              "@id": "https://jhrncir.xyz/shopify-plus/#breadcrumb"
+            }
           },
           {
             "@type": "BreadcrumbList",
             "@id": "https://jhrncir.xyz/shopify-plus/#breadcrumb",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Shopify vývoj", "item": "https://jhrncir.xyz/" },
-              { "@type": "ListItem", "position": 2, "name": "Shopify Plus", "item": "https://jhrncir.xyz/shopify-plus/" }
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Shopify vývoj",
+                "item": "https://jhrncir.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Shopify Plus",
+                "item": "https://jhrncir.xyz/shopify-plus/"
+              }
             ]
           },
           {
@@ -105,20 +135,83 @@
             "@id": "https://jhrncir.xyz/#person",
             "name": "Jakub Hrnčíř",
             "url": "https://jhrncir.xyz/",
+            "image": "https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp",
             "jobTitle": "Shopify vývojář",
-            "sameAs": ["https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"],
-            "knowsAbout": ["Shopify Plus", "Shopify Functions", "B2B e-commerce", "Liquid", "Shopify Markets"]
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Praha",
+              "addressCountry": "CZ"
+            },
+            "knowsLanguage": [
+              "cs",
+              "en"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Shopify Plus",
+              "Shopify B2B",
+              "Liquid",
+              "Shopify Functions",
+              "Shopify Markets",
+              "Migrace na Shopify",
+              "JavaScript"
+            ]
           },
           {
             "@type": "FAQPage",
             "@id": "https://jhrncir.xyz/shopify-plus/#faq",
             "mainEntity": [
-              { "@type": "Question", "name": "Od jakého obratu se Shopify Plus vyplatí?", "acceptedAnswer": { "@type": "Answer", "text": "Obrat sám o sobě není rozhodující kritérium. Jediný spolehlivě spočítatelný důvod je poplatek za externí platební bránu: Plus účtuje 0,2 %, Advanced 0,6 %. Rozdíl se vyrovná zhruba tam, kde by úspora na poplatcích přesáhla rozdíl v ceně tarifu. Jinak o Plus rozhoduje potřeba konkrétních funkcí, ne velikost obratu." } },
-              { "@type": "Question", "name": "Kolik Shopify Plus stojí?", "acceptedAnswer": { "@type": "Answer", "text": "Shopify pro evropský trh uvádí 2 250 € měsíčně při roční smlouvě a 2 100 € měsíčně při tříleté smlouvě. V ceně je hlavní obchod a 9 expansion stores, každý další stojí 250 € měsíčně. U velkých objemů Shopify přechází na poplatek odvozený z obratu, jehož sazbu ani hranici nezveřejňuje." } },
-              { "@type": "Question", "name": "Můžu upravit checkout bez Shopify Plus?", "acceptedAnswer": { "@type": "Answer", "text": "Z velké části ano. Checkout Extensibility i rozšíření checkoutu fungují na všech tarifech a Functions dodané veřejnou aplikací z App Store také. Plus je potřeba až pro vlastní aplikaci obsahující Shopify Functions a pro hlubší úpravy vzhledu pokladny." } },
-              { "@type": "Question", "name": "B2B je nově i na nižších tarifech. Proč tedy Plus?", "acceptedAnswer": { "@type": "Answer", "text": "Od 2. dubna 2026 jsou firemní profily, až tři katalogy, množstevní ceny a platební podmínky na všech tarifech. Plus přidává neomezený počet katalogů, přiřazení katalogu konkrétní firmě nebo pobočce, zálohy a částečné platby. Pokud vám tři katalogy stačí, Plus kvůli B2B nepotřebujete." } },
-              { "@type": "Question", "name": "Jak dlouho trvá migrace na Shopify Plus?", "acceptedAnswer": { "@type": "Answer", "text": "Přechod z nižšího tarifu Shopify bývá otázkou týdnů, protože se nemigrují data. Migrace z jiné platformy trvá řádově měsíce podle rozsahu katalogu, počtu integrací a toho, zda je součástí B2B nebo více trhů. Nejčastější zdržení nezpůsobuje vývoj, ale nepořádek v produktových datech." } },
-              { "@type": "Question", "name": "Přijdeme migrací o pozice ve vyhledávání?", "acceptedAnswer": { "@type": "Answer", "text": "Jen při chybné mapě přesměrování. Pokud se zachová struktura URL nebo se poctivě nastaví 301 přesměrování, propad bývá dočasný. Počítejte s několika týdny, než se výsledky srovnají, a s tím, že zákazníci si při přechodu z jiné platformy musí obnovit hesla." } }
+              {
+                "@type": "Question",
+                "name": "Od jakého obratu se Shopify Plus vyplatí?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Obrat sám o sobě není rozhodující kritérium. Jediný spolehlivě spočítatelný důvod je poplatek za externí platební bránu: Plus účtuje 0,2 %, Advanced 0,6 %. Rozdíl se vyrovná zhruba tam, kde by úspora na poplatcích přesáhla rozdíl v ceně tarifu. Jinak o Plus rozhoduje potřeba konkrétních funkcí, ne velikost obratu."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kolik Shopify Plus stojí?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Shopify pro evropský trh uvádí 2 250 € měsíčně při roční smlouvě a 2 100 € měsíčně při tříleté smlouvě. V ceně je hlavní obchod a 9 expansion stores, každý další stojí 250 € měsíčně. U velkých objemů Shopify přechází na poplatek odvozený z obratu, jehož sazbu ani hranici nezveřejňuje."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Můžu upravit checkout bez Shopify Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Z velké části ano. Checkout Extensibility i rozšíření checkoutu fungují na všech tarifech a Functions dodané veřejnou aplikací z App Store také. Plus je potřeba až pro vlastní aplikaci obsahující Shopify Functions a pro hlubší úpravy vzhledu pokladny."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "B2B je nově i na nižších tarifech. Proč tedy Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Od 2. dubna 2026 jsou firemní profily, až tři katalogy, množstevní ceny a platební podmínky na všech tarifech. Plus přidává neomezený počet katalogů, přiřazení katalogu konkrétní firmě nebo pobočce, zálohy a částečné platby. Pokud vám tři katalogy stačí, Plus kvůli B2B nepotřebujete."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak dlouho trvá migrace na Shopify Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Přechod z nižšího tarifu Shopify bývá otázkou týdnů, protože se nemigrují data. Migrace z jiné platformy trvá řádově měsíce podle rozsahu katalogu, počtu integrací a toho, zda je součástí B2B nebo více trhů. Nejčastější zdržení nezpůsobuje vývoj, ale nepořádek v produktových datech."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Přijdeme migrací o pozice ve vyhledávání?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Jen při chybné mapě přesměrování. Pokud se zachová struktura URL nebo se poctivě nastaví 301 přesměrování, propad bývá dočasný. Počítejte s několika týdny, než se výsledky srovnají, a s tím, že zákazníci si při přechodu z jiné platformy musí obnovit hesla."
+                }
+              }
             ]
           }
         ]
