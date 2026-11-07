@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script defer src="/consent.js?v=2"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bohemian Coffee House: šablona a datový model kávy</title>
+    <meta name="description" content="Shopify obchod pražírny z Rumburku: kávy popsané metafieldy, stupnice pražení a acidity, filtry podle přípravy, původu a zpracování a propojení obou pražení." />
+    <meta name="author" content="Jakub Hrnčíř" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#090b0a" />
+    <link rel="canonical" href="https://jhrncir.xyz/realizace/bohemian/" />
+    <link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/realizace/bohemian/" />
+    <link rel="alternate" hreflang="en" href="https://jhrncir.xyz/en/work/bohemian/" />
+    <link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/realizace/bohemian/" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="Bohemian Coffee House: šablona a datový model kávy" />
+    <meta property="og:description" content="Shopify obchod pražírny z Rumburku: kávy popsané metafieldy, stupnice pražení a acidity, filtry podle přípravy, původu a zpracování a propojení obou pražení." />
+    <meta property="og:url" content="https://jhrncir.xyz/realizace/bohemian/" />
+    <meta property="og:image" content="https://jhrncir.xyz/assets/work/posters/bohemian-katalog.jpg" />
+    <meta property="article:published_time" content="2026-11-07" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bohemian Coffee House: šablona a datový model kávy" />
+    <meta name="twitter:description" content="Shopify obchod pražírny z Rumburku: kávy popsané metafieldy, stupnice pražení a acidity, filtry podle přípravy, původu a zpracování a propojení obou pražení." />
+    <meta name="twitter:image" content="https://jhrncir.xyz/assets/work/posters/bohemian-katalog.jpg" />
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="/core.css?v=4" />
+    <link rel="stylesheet" href="/work.css?v=27" />
+    <link rel="stylesheet" href="/shopify-vyvoj.css?v=14" />
+    <link rel="stylesheet" href="/case.css?v=3" />
+    <script src="/core.js?v=4" defer></script>
+    <script src="/media.js?v=4" defer></script>
+    <script src="/shopify-vyvoj.js?v=2" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://jhrncir.xyz/realizace/bohemian/#article",
+            "headline": "Bohemian Coffee House: datový model kávy v Shopify šabloně",
+            "description": "Shopify obchod pražírny z Rumburku: kávy popsané metafieldy, stupnice pražení a acidity, filtry podle přípravy, původu a zpracování a propojení obou pražení.",
+            "inLanguage": "cs",
+            "datePublished": "2026-11-07",
+            "dateModified": "2026-11-07",
+            "mainEntityOfPage": "https://jhrncir.xyz/realizace/bohemian/",
+            "image": "https://jhrncir.xyz/assets/work/posters/bohemian-katalog.jpg",
+            "author": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "publisher": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "isPartOf": {
+              "@id": "https://jhrncir.xyz/#website"
+            },
+            "about": {
+              "@type": "Organization",
+              "name": "Bohemian Coffee House",
+              "url": "https://bohemiancoffeehouse.cz/"
+            },
+            "video": [
+              {
+                "@id": "https://jhrncir.xyz/realizace/bohemian/#video-1"
+              },
+              {
+                "@id": "https://jhrncir.xyz/realizace/bohemian/#video-2"
+              },
+              {
+                "@id": "https://jhrncir.xyz/realizace/bohemian/#video-3"
+              }
+            ],
+            "contributor": {
+              "@type": "Organization",
+              "name": "Appfleece",
+              "url": "https://appfleece.cz/"
+            },
+            "citation": "https://appfleece.cz/reference/bohemian-coffee-house"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Shopify vývoj",
+                "item": "https://jhrncir.xyz/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Bohemian Coffee House",
+                "item": "https://jhrncir.xyz/realizace/bohemian/"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://jhrncir.xyz/#person",
+            "name": "Jakub Hrnčíř",
+            "url": "https://jhrncir.xyz/",
+            "image": "https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp",
+            "jobTitle": "Shopify vývojář",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Praha",
+              "addressCountry": "CZ"
+            },
+            "knowsLanguage": [
+              "cs",
+              "en"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Shopify Plus",
+              "Shopify B2B",
+              "Liquid",
+              "Shopify Functions",
+              "Shopify Markets",
+              "Migrace na Shopify",
+              "JavaScript"
+            ]
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/realizace/bohemian/#video-1",
+            "name": "Bohemian Coffee House — kolekce s filtry a chuťovými profily",
+            "description": "Bohemian Coffee House — kolekce s filtry a chuťovými profily",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/bohemian-katalog.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/bohemian-katalog.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT15S",
+            "inLanguage": "cs"
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/realizace/bohemian/#video-2",
+            "name": "Bohemian Coffee House — přepnutí ze světlého na tmavé pražení",
+            "description": "Bohemian Coffee House — přepnutí ze světlého na tmavé pražení",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/bohemian-produkt.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/bohemian-produkt.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT15S",
+            "inLanguage": "cs"
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://jhrncir.xyz/realizace/bohemian/#video-3",
+            "name": "Bohemian Coffee House — mobilní verze: úvod, kolekce, produkt",
+            "description": "Bohemian Coffee House — mobilní verze: úvod, kolekce, produkt",
+            "thumbnailUrl": "https://jhrncir.xyz/assets/work/posters/bohemian-mobil.jpg",
+            "contentUrl": "https://jhrncir.xyz/assets/work/bohemian-mobil.mp4",
+            "uploadDate": "2026-11-07T09:00:00+01:00",
+            "duration": "PT14S",
+            "inLanguage": "cs"
+          }
+        ]
+      }
+    </script>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
+  <body class="work-page shopify-conversion-page case-page case-bohemian-new">
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <header class="nav-wrap">
+      <a class="brand" href="/" aria-label="Shopify vývoj, úvodní stránka">JH<span>.</span></a>
+      <nav id="primary-navigation" aria-label="Navigace Shopify vývoje">
+        <a href="/#reseni">Služby</a>
+        <a href="/#projekty" class="active">Realizace</a>
+        <a href="/#spoluprace">Spolupráce</a>
+        <a href="/#reference">Reference</a>
+        <a href="/shopify-plus/">Shopify Plus</a>
+        <a href="/agentic-commerce/">Agentic commerce</a>
+        <a href="/shopify-pruvodce/">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Volba jazyka"><span aria-current="page">CZ</span><a href="/en/work/bohemian/" lang="en">EN</a></div>
+        <a class="nav-cta conversion-nav-cta" href="/shopify-poptavka/?zdroj=hlavicka-case" data-track="nav_inquiry">Poptat projekt <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Otevřít navigaci"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="top" class="work-main">
+      <section class="case-hero section-pad">
+        <div class="reveal">
+          <span class="case-order">Případová studie · Shopify šablona a data</span>
+          <p class="case-logo-title case-logo-title-bohemian"><img src="/assets/logos/bohemian-coffee-house-white.webp" alt="Bohemian Coffee House" width="760" height="276" /></p>
+          <h1>Bohemian Coffee House: <em>datový model kávy v&nbsp;Shopify šabloně</em></h1>
+          <p class="case-lead">Bohemian Coffee House je rodinná kavárna a&nbsp;pražírna z&nbsp;Rumburku. Při rebrandingu dostala nový e-shop na Shopify, který navrhl Zdeněk Zeman a&nbsp;vyvinul tým agentury Appfleece. V&nbsp;tomto týmu jsem pracoval na šabloně a&nbsp;na tom, jak obchod zachází s&nbsp;údaji o&nbsp;kávě.</p>
+        </div>
+        <dl class="case-facts reveal">
+            <div><dt>Klient</dt><dd><a href="https://bohemiancoffeehouse.cz/" rel="noopener">Bohemian Coffee House</a></dd></div>
+            <div><dt>Obor</dt><dd>Výběrová káva, kavárna a&nbsp;pražírna</dd></div>
+            <div><dt>Platforma</dt><dd>Shopify, šablona Motion převedená na Online Store 2.0</dd></div>
+            <div><dt>Jazyky</dt><dd>Čeština, angličtina, němčina</dd></div>
+            <div><dt>Spuštění</dt><dd>Duben 2026</dd></div>
+            <div><dt>Tým</dt><dd>Appfleece, design Zdeněk Zeman</dd></div>
+            <div><dt>Moje role</dt><dd>Vývoj šablony a&nbsp;datového modelu, v&nbsp;týmu Appfleece</dd></div>
+        </dl>
+      </section>
+
+      <section class="case-media section-pad" aria-label="Ukázky z projektu">
+        <div class="video-duo video-trio reveal">
+          <figure class="media-frame media-frame-wide">
+            <video poster="/assets/work/posters/bohemian-katalog.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — kolekce s filtry a chuťovými profily"><source src="/assets/work/bohemian-katalog.mp4" type="video/mp4" /></video>
+            <figcaption><span>01</span> Kolekce · filtr a chuťové profily</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <video poster="/assets/work/posters/bohemian-produkt.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — přepnutí ze světlého na tmavé pražení"><source src="/assets/work/bohemian-produkt.mp4" type="video/mp4" /></video>
+            <figcaption><span>02</span> Produkt · světlé a tmavé pražení</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <video poster="/assets/work/posters/bohemian-mobil.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — mobilní verze: úvod, kolekce, produkt"><source src="/assets/work/bohemian-mobil.mp4" type="video/mp4" /></video>
+            <figcaption><span>03</span> Mobil · kolekce a produkt</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">01</span><h2>Výchozí situace</h2></header>
+        <div class="case-prose reveal">
+          <p>Pražírna nabízí kávy z&nbsp;několika zemí a&nbsp;většinu z&nbsp;nich praží světle i&nbsp;tmavě. Zákazník vybírá podle toho, jak kávu doma připravuje, odkud pochází a&nbsp;jak byla zpracovaná. Pražírna zároveň potřebuje nové kávy přidávat sama, bez programátora.</p>
+          <p>Kdyby tyto údaje žily jen v&nbsp;popisu produktu, nedalo by se podle nich filtrovat ani je jednotně zobrazit. Každá káva proto potřebovala strukturovaný záznam.</p>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">02</span><h2>Projekt v týmu Appfleece</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-scope">
+            <li><b>Rebranding a&nbsp;nový e-shop</b>Design od Zdeňka Zemana, vývoj v&nbsp;týmu Appfleece.</li>
+            <li><b>Online Store 2.0</b>Šablona Motion převedená na sekce, takže stránky kavárny, pražírny nebo O&nbsp;nás upravuje klient sám.</li>
+            <li><b>19 údajů o&nbsp;každé kávě</b>Jeden záznam v&nbsp;administraci napájí stupnice, filtry, karty i&nbsp;štítky.</li>
+            <li><b>Mobilní rozvržení</b>Dva sloupce káv, sbalitelné filtry a&nbsp;větší tlačítka variant.</li>
+            <li><b>Tři jazyky</b>Čeština, angličtina a&nbsp;němčina včetně stupnic a&nbsp;návodů na přípravu.</li>
+            <li><b>Doprava</b>Výběr Z-BOXu už v&nbsp;košíku přes aplikaci Globe od Appfleece a&nbsp;štítky Zásilkovny v&nbsp;Shopify.</li>
+          </ul>
+          <p class="case-source">Rozsah celého projektu vychází z&nbsp;veřejné reference Appfleece a&nbsp;z&nbsp;živého webu. Můj podíl popisuji zvlášť v&nbsp;další části. Zdroj: <a href="https://appfleece.cz/reference/bohemian-coffee-house" rel="noopener">Reference Appfleece: Bohemian Coffee House</a> (ověřeno 7. 11. 2026).</p>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">03</span><h2>Můj podíl</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-list">
+            <li>Vývoj Shopify šablony.</li>
+            <li>Datový model kávy: údaje o&nbsp;každé kávě jako metafieldy produktu, od země původu a&nbsp;regionu přes zpracování po chuťový profil, stupeň pražení a&nbsp;aciditu.</li>
+            <li>Stupnice pražení a&nbsp;acidity na produktové stránce, vykreslené přímo z&nbsp;těchto polí.</li>
+            <li>Chuťové profily, které se na kartě v&nbsp;kolekci ukážou po najetí myší.</li>
+            <li>Filtry podle přípravy, původu a&nbsp;zpracování postavené na metafieldech.</li>
+            <li>Propojení světlé a&nbsp;tmavé verze téže kávy: dva samostatné produkty se sdíleným přepínačem pražení.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">04</span><h2>Jak data kávy procházejí obchodem</h2></header>
+        <div class="case-prose reveal">
+          <p>Údaje o&nbsp;kávě se vyplní jednou v&nbsp;administraci a&nbsp;obchod si je bere na několika místech. Klíče metafieldů v&nbsp;diagramu jsou převzaté z&nbsp;parametrů filtrů na živém webu.</p>
+          <div class="data-map">
+            <div class="data-map-col"><span class="data-map-label">Záznam kávy v administraci</span><ul>
+              <li><code>custom.priprava</code><span>Příprava: na filtr</span></li>
+              <li><code>custom.zeme_puvodu</code><span>Původ: Střední Amerika</span></li>
+              <li><code>custom.zpracovani-new</code><span>Zpracování: promyté</span></li>
+              <li><code>Stupeň pražení · acidita</code><span>City · střední</span></li>
+              <li><code>Chuťový profil</code><span>sušené ovoce, pomeranč, karamel, marcipán</span></li>
+            </ul></div>
+            <div class="data-map-arrow" aria-hidden="true">→</div>
+            <div class="data-map-col"><span class="data-map-label">Kde se projeví</span><ol>
+              <li><b>Filtry kolekce</b>Příprava, původ a&nbsp;zpracování bez načtení stránky</li>
+              <li><b>Stupnice na produktu</b>Šest bodů pro pražení a&nbsp;aciditu</li>
+              <li><b>Karta v&nbsp;kolekci</b>Chuťový profil po najetí myší</li>
+              <li><b>Přepínač pražení</b>Světlá a&nbsp;tmavá verze jako dva produkty</li>
+            </ol></div>
+          </div>
+          <p class="data-map-note">Příklad: Mexiko Organic Caracolillo, světlé pražení. Klíče metafieldů filtrů jsou převzaté z&nbsp;živého webu, ostatní pole uvádím jejich názvem v&nbsp;administraci.</p>
+          <div class="case-stills">
+            <figure class="case-still"><img src="/assets/work/stills/bohemian-prazeni.webp" alt="Produktová stránka světlé a tmavé verze kávy Mexiko Organic Premium vedle sebe" width="1400" height="428" loading="lazy" decoding="async" /><figcaption>Světlé a&nbsp;tmavé pražení jsou dva produkty. Přepínač mezi nimi mění i&nbsp;stupnice: City+ se střední aciditou, Full City s&nbsp;nízkou.</figcaption></figure>
+            <figure class="case-still"><img src="/assets/work/stills/bohemian-filtry.webp" alt="Filtry kolekce s vybranou přípravou Moderní espresso a výsledné karty káv" width="1440" height="820" loading="lazy" decoding="async" /><figcaption>Filtr „Moderní espresso“ zúží nabídku bez načtení stránky. Karty pod ním ukazují přípravu, zpracování, zemi a&nbsp;region.</figcaption></figure>
+            <figure class="case-still"><img src="/assets/work/stills/bohemian-chutovy-profil.webp" alt="Karta kávy v kolekci s chuťovým profilem po najetí myší" width="1440" height="610" loading="lazy" decoding="async" /><figcaption>Po najetí na kartu se ukáže chuťový profil v&nbsp;barvě kontinentu, odkud káva pochází.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">05</span><h2>Řešíte něco podobného?</h2></header>
+        <div class="case-prose reveal">
+          <p>Pošlete stručný popis současného stavu a&nbsp;cíle. Zadání projdu, doplním otázky, které chybí, a&nbsp;navrhnu realistický další krok.</p>
+          <a class="case-action" href="/shopify-poptavka/?typ=redesign&amp;zdroj=case-bohemian" data-track="case_page_bohemian">Potřebuji vlastní šablonu <span>↗︎</span></a>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">06</span><h2>Související články</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-links">
+            <li><a href="/shopify-pruvodce/shopify-sablona-a-redesign/"><span>Kdy Shopify šablona nestačí<small>Kdy stačí Shopify šablona a kdy je čas na vlastní sekce nebo redesign? Praktický pohled na Liquid, mobilní UX, výkon, správu obsahu a technický dluh.</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/shopify-pruvodce/shopify-seo/"><span>Shopify SEO: co platforma řeší sama a co musíte nastavit<small>Co Shopify řeší pro SEO automaticky a co musí nastavit majitel e-shopu: struktura, produkty, kolekce, titulky, obrázky, robots.txt a Search Console.</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/shopify-pruvodce/rychlost-shopify-eshopu/"><span>Jak zrychlit Shopify e-shop bez honby za skóre<small>Praktický postup pro rychlejší Shopify e-shop: LCP, INP, CLS, měření reálných návštěv, Lighthouse, šablona, aplikace, JavaScript, obrázky a analytika.</small></span><b aria-hidden="true">→</b></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="case-section section-pad">
+        <header class="reveal"><span class="work-index">07</span><h2>Další realizace</h2></header>
+        <div class="case-prose reveal">
+          <ul class="case-links">
+            <li><a href="/realizace/posedla/"><span>Posedla<small>Shopify Plus</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/realizace/facederma/"><span>Facederma<small>Migrace na Shopify Plus</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/realizace/molecules/"><span>Molecules of Life<small>Vstup na německý trh</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/realizace/peaceofalm/"><span>Peace of Alm<small>Úprava šablony</small></span><b aria-hidden="true">→</b></a></li>
+            <li><a href="/realizace/surprisedrinks/"><span>Surprise Drinks<small>Prezentace značky a minihry</small></span><b aria-hidden="true">→</b></a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <button class="to-top" type="button" aria-label="Zpět nahoru">↑︎</button>
+    <footer><span>© <span id="year">2026</span> Jakub Hrnčíř</span><nav><a href="/#projekty">Realizace</a><a href="/shopify-plus/">Shopify Plus</a><a href="/agentic-commerce/">Agentic commerce</a><a href="/shopify-pruvodce/">Shopify blog</a><a href="/shopify-poptavka/">Poptávka</a><a href="/cv/">Osobní CV</a></nav></footer>
+  </body>
+</html>

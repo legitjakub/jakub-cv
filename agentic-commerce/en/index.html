@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <!-- Google tag (gtag.js) + Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+    <script defer src="/consent.js?v=2"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic commerce on Shopify: what works today (2026)</title>
+    <meta name="description" content="How AI agents shop on Shopify: Catalog, Agentic Storefronts, MCP, UCP and WebMCP, availability for EU stores, an interactive walkthrough and practical steps." />
+    <meta name="author" content="Jakub Hrnčíř" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#090b0a" />
+    <link rel="canonical" href="https://jhrncir.xyz/agentic-commerce/en/" />
+    <link rel="alternate" hreflang="cs" href="https://jhrncir.xyz/agentic-commerce/" />
+    <link rel="alternate" hreflang="en" href="https://jhrncir.xyz/agentic-commerce/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://jhrncir.xyz/agentic-commerce/" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="cs_CZ" />
+    <meta property="og:title" content="Agentic commerce on Shopify: what works today (2026)" />
+    <meta property="og:description" content="How AI agents shop on Shopify: Catalog, Agentic Storefronts, MCP, UCP and WebMCP, availability for EU stores, an interactive walkthrough and practical steps." />
+    <meta property="og:url" content="https://jhrncir.xyz/agentic-commerce/en/" />
+    <meta property="og:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agentic commerce on Shopify: what works today (2026)" />
+    <meta name="twitter:description" content="How AI agents shop on Shopify: Catalog, Agentic Storefronts, MCP, UCP and WebMCP, availability for EU stores, an interactive walkthrough and practical steps." />
+    <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
+    <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
+    <link rel="stylesheet" href="/core.css?v=4" />
+    <link rel="stylesheet" href="/work.css?v=27" />
+    <link rel="stylesheet" href="/shopify-vyvoj.css?v=14" />
+    <link rel="stylesheet" href="/shopify-plus.css?v=4" />
+    <link rel="stylesheet" href="/agentic.css?v=1" />
+    <script src="/core.js?v=4" defer></script>
+    <script src="/shopify-vyvoj.js?v=2" defer></script>
+    <script src="/agentic.js?v=1" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://jhrncir.xyz/agentic-commerce/en/#webpage",
+            "url": "https://jhrncir.xyz/agentic-commerce/en/",
+            "name": "Agentic commerce on Shopify: what works today (2026)",
+            "description": "How AI agents shop on Shopify: Catalog, Agentic Storefronts, MCP, UCP and WebMCP, availability for EU stores, an interactive walkthrough and practical steps.",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@id": "https://jhrncir.xyz/#website"
+            },
+            "author": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "dateModified": "2026-11-07",
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Agentic commerce"
+              },
+              {
+                "@type": "Thing",
+                "name": "Shopify Catalog"
+              },
+              {
+                "@type": "Thing",
+                "name": "Agentic Storefronts"
+              },
+              {
+                "@type": "Thing",
+                "name": "Universal Commerce Protocol"
+              },
+              {
+                "@type": "Thing",
+                "name": "Model Context Protocol"
+              },
+              {
+                "@type": "Thing",
+                "name": "WebMCP"
+              }
+            ],
+            "citation": [
+              "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts",
+              "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt",
+              "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft",
+              "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google",
+              "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta",
+              "https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin",
+              "https://shopify.dev/changelog/webmcp-support-for-checkout",
+              "https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+              "https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels",
+              "https://www.shopify.com/editions/fall2026",
+              "https://shopify.dev/docs/agents",
+              "https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp",
+              "https://ucp.dev/",
+              "https://modelcontextprotocol.io/",
+              "https://developer.chrome.com/blog/ai-webmcp-origin-trial"
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://jhrncir.xyz/agentic-commerce/en/#service",
+            "name": "Agentic commerce on Shopify: audit and implementation",
+            "provider": {
+              "@id": "https://jhrncir.xyz/#person"
+            },
+            "areaServed": [
+              "CZ",
+              "SK",
+              "EU"
+            ],
+            "url": "https://jhrncir.xyz/agentic-commerce/en/",
+            "serviceType": [
+              "Readiness audit",
+              "Product data and metafields",
+              "Theme and checkout",
+              "A custom agent or app"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Shopify development",
+                "item": "https://jhrncir.xyz/en/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Agentic commerce",
+                "item": "https://jhrncir.xyz/agentic-commerce/en/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://jhrncir.xyz/agentic-commerce/en/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need to switch anything on for agentic commerce on Shopify?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For eligible stores, Agentic Storefronts is active by default. It is still worth checking Sales channels > Agentic to see which channels are on and whether direct checkout is allowed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will shoppers in Czechia see my store in ChatGPT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not through Agentic Storefronts yet. According to Shopify, ChatGPT requires selling to customers in the US, so does Copilot, and Google serves the US, Canada and Australia. AI tools can still find your site by ordinary web crawling."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need Shopify Plus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Shopify ties Agentic Storefronts to store and product eligibility and to each channel’s requirements, not to the Plus plan."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between MCP, UCP and WebMCP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MCP is a general way for AI to call tools. UCP is a commerce standard for catalog, cart, checkout and orders that can run over MCP. WebMCP is a proposed web standard that lets a page offer tools to an agent directly in the browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will better data guarantee more sales?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Good data improves the chance that a channel understands your offer correctly, but each channel decides on display and ranking by relevance, popularity and its own rules."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://jhrncir.xyz/#person",
+            "name": "Jakub Hrnčíř",
+            "url": "https://jhrncir.xyz/",
+            "image": "https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp",
+            "jobTitle": "Shopify developer",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Praha",
+              "addressCountry": "CZ"
+            },
+            "knowsLanguage": [
+              "cs",
+              "en"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Shopify Plus",
+              "Shopify B2B",
+              "Liquid",
+              "Shopify Functions",
+              "Shopify Markets",
+              "Shopify migrations",
+              "JavaScript"
+            ]
+          }
+        ]
+      }
+    </script>
+  <noscript><link rel="stylesheet" href="/no-js.css" /></noscript></head>
+  <body class="work-page shopify-conversion-page plus-page agentic-page">
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <header class="nav-wrap">
+      <a class="brand" href="/en/" aria-label="Shopify development, home">JH<span>.</span></a>
+      <nav id="primary-navigation" aria-label="Agentic commerce navigation">
+        <a href="/en/">Shopify development</a>
+        <a href="#simulace">Walkthrough</a>
+        <a href="#role">Who does what</a>
+        <a href="#dostupnost">Availability</a>
+        <a href="#kroky">What to do</a>
+        <a href="#pomoc">How I help</a>
+        <a class="mobile-nav-only" href="/agentic-commerce/" lang="cs">Česká verze</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language selection"><a href="/agentic-commerce/" lang="cs">CZ</a><span aria-current="page">EN</span></div>
+        <a class="nav-cta conversion-nav-cta" href="mailto:jakub.hrncir24@gmail.com?subject=Agentic%20commerce" data-track="nav_inquiry">Check my store <span>↗︎</span></a>
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="top" class="work-main">
+      <section class="plus-hero ac-hero section-pad" aria-labelledby="hero-title">
+        <div class="plus-hero-main reveal">
+          <span class="plus-eyebrow">Shopify · Agentic commerce · as of 7 Nov 2026</span>
+          <h1 id="hero-title">Agentic commerce<br /><em>on Shopify, without the fog.</em></h1>
+          <p>AI agents in ChatGPT, Copilot, Gemini or right in the browser can already search Shopify stores, and on some channels they can pay too. This page shows how that shopping journey works, what is available today and what it means for a store in Czechia or the wider EU.</p>
+          <div class="plus-hero-actions">
+            <a class="plus-cta-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Agentic%20commerce" data-track="hero_inquiry">Check my store’s readiness <span aria-hidden="true">↗︎</span></a>
+            <a class="plus-cta-ghost" href="#simulace" data-track="hero_sim">Walk through a purchase <span aria-hidden="true">↓︎</span></a>
+          </div>
+          <p class="ac-guide-link"><a href="/shopify-guide/shopify-agentic-commerce/">Need the basics first? The guide article explains what agentic commerce is and where it comes from. <span aria-hidden="true">→</span></a></p>
+        </div>
+        <aside class="plus-hero-card ac-answer reveal" aria-label="The short answer for an EU store">
+          <span class="ac-answer-title">The short answer for an EU store</span>
+          <dl>
+            <div><dt>You sell only in the EU</dt><dd>None of the AI channels in Agentic Storefronts serves shoppers in the EU today.</dd></div>
+            <div><dt>You also sell to the US</dt><dd>ChatGPT, Copilot and Google can show your products to shoppers in the US.</dd></div>
+            <div><dt>True for everyone</dt><dd>Good product data and completed store policies are a condition for every channel.</dd></div>
+          </dl>
+          <p>Based on each channel’s requirements in the Shopify Help Center, checked 7 Nov 2026.</p>
+        </aside>
+      </section>
+
+      <section id="simulace" class="ac-sim section-pad" aria-labelledby="sim-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">Interactive walkthrough</span><h2 id="sim-title">How an AI agent<br /><em>shops.</em></h2></div>
+          <p>Step through six stages of one purchase. Use the controls to change where the shopper is, which channel they use and the state of the store’s data, and watch the journey change. Each step hides its technical details behind a button.</p>
+        </header>
+        <div class="sim" data-sim data-i18n='{&quot;state&quot;: &quot;Simulation: step {n} of {t}&quot;, &quot;unavailable&quot;: &quot;Unavailable&quot;}'>
+          <p class="sim-disclaimer"><span class="sim-badge">Simulation</span> This is a simulation. It does not connect to any store, AI or Shopify API. The store “Demo Roastery” and its coffees are made up; the availability rules follow Shopify’s requirements as of 7 Nov 2026.</p>
+          <form class="sim-controls" aria-label="Simulation"><fieldset class="sim-ctl"><legend>Shopper is in</legend><div><label><input type="radio" name="country" value="cz" /><span>Czechia</span></label><label><input type="radio" name="country" value="us" checked /><span>the US</span></label></div></fieldset><fieldset class="sim-ctl"><legend>Shopping via</legend><div><label><input type="radio" name="channel" value="chatgpt" checked /><span>ChatGPT</span></label><label><input type="radio" name="channel" value="copilot" /><span>Microsoft Copilot</span></label><label><input type="radio" name="channel" value="google" /><span>Google AI Mode</span></label><label><input type="radio" name="channel" value="browser" /><span>A browser agent</span></label></div></fieldset><fieldset class="sim-ctl"><legend>Store data</legend><div><label><input type="radio" name="data" value="full" checked /><span>Complete</span></label><label><input type="radio" name="data" value="gap" /><span>No return policy</span></label></div></fieldset></form>
+          <div class="sim-stage">
+            <ol class="sim-steps">
+          <li class="sim-step" id="krok-zadani" data-layers="agent">
+            <h3><span>Step 1 of 6</span>The shopper sets a task</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-user">I’m looking for whole-bean espresso coffee under CZK 400. It needs to arrive by Friday.</p></div>
+            <p class="sim-text">The shopper doesn’t type into the store’s search box but talks to an agent. The agent pulls the criteria out of the sentence: product type, brew method, price and delivery date.</p>
+            <p class="sim-lever"><b>What you control:</b> Nothing. This happens outside your store, before the agent knows you exist.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>An agent is a model with access to tools. The platform decides which tools: ChatGPT, Copilot, Gemini, Meta or an agent running in the browser. For Shopify purchases, the channels in Agentic Storefronts use Shopify’s catalog.</p></details>
+          </li>
+          <li class="sim-step" id="krok-katalog" data-layers="agent protocol shopify">
+            <h3><span>Step 2 of 6</span>The agent searches the catalog</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-agent">I found three espresso coffees under CZK 400. Let me check stock and delivery.</p><ul class="sim-results"><li><small>Demo Roastery</small><b>Brazil Cerrado, 250 g</b><span>CZK 329</span></li><li><small>Another store</small><b>Ethiopia Sidamo, 250 g</b><span>CZK 389</span></li><li><small>Another store</small><b>Colombia Huila, 250 g</b><span>CZK 359</span></li></ul></div>
+            <p class="sim-text">The agent searches Shopify Catalog: a structured view of products from the stores connected to it. It gets titles, prices, variants, images and availability rather than a scraped web page.</p>
+            <p class="sim-lever"><b>What you control:</b> Titles, categories, variants and product properties. The agent can’t filter on what isn’t in the data.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>Shopify offers two catalogs: Global Catalog searches across Shopify stores, Storefront Catalog within a single store. Agents connect through MCP servers that follow the Universal Commerce Protocol (UCP).</p><pre class="sim-code" aria-label="Simplified illustration, not a real API call."><code>search_catalog({
+  query: &quot;whole bean espresso&quot;,
+  max_price: 400, currency: &quot;CZK&quot;
+})</code></pre><p class="sim-code-note">Simplified illustration, not a real API call.</p></details>
+          </li>
+          <li class="sim-step" id="krok-overeni" data-layers="protocol shopify store">
+            <h3><span>Step 3 of 6</span>The agent checks the details</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-agent" data-when="data:full">Demo Roastery: in stock, delivered by Thursday, 14-day returns. I recommend it.</p><p class="sim-msg sim-msg-agent" data-when="data:gap">Demo Roastery doesn’t state a return policy, so I can’t confirm it. I recommend a coffee from another store.</p></div>
+            <p class="sim-text">Before recommending anything, the agent reads the product detail and facts about the store: shipping, returns, terms. In Agentic Storefronts the store’s knowledge base serves this too.</p>
+            <p class="sim-lever"><b>What you control:</b> Completed store policies and the knowledge base. Without return, privacy and terms policies a store doesn’t get into AI channels at all.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>A tool such as <code>get_product</code> returns the product detail. The store knowledge base (Fall ’26 Edition) collects the policies and FAQ answers the merchant approves, and Shopify suggests what to add.</p><pre class="sim-code" aria-label="Simplified illustration, not a real API call."><code>get_product({ id: &quot;brazil-cerrado-250&quot; })
+→ stock, shipping, returns</code></pre><p class="sim-code-note">Simplified illustration, not a real API call.</p></details>
+          </li>
+          <li class="sim-step" id="krok-kosik" data-layers="protocol shopify">
+            <h3><span>Step 4 of 6</span>The agent builds a cart</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-agent">I’ve added Brazil Cerrado, 250 g. CZK 329 plus shipping.</p></div>
+            <p class="sim-text">The cart lives on Shopify’s side, not in the agent’s head. Prices, discounts, taxes and shipping are calculated by the store’s own rules, as in any other purchase.</p>
+            <p class="sim-lever"><b>What you control:</b> Your pricing, discount and shipping rules. Since 9 Oct 2026 Shopify Catalog also shows compare-at prices to agents; you can turn the sharing off in the admin.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>Cart MCP builds and updates the cart, including lines, localisation and buyer context. Checkout MCP then turns the same cart into a checkout.</p><pre class="sim-code" aria-label="Simplified illustration, not a real API call."><code>create_cart({
+  lines: [{ variant: &quot;…-250g&quot;, qty: 1 }],
+  country: &quot;CZ&quot;
+})</code></pre><p class="sim-code-note">Simplified illustration, not a real API call.</p></details>
+          </li>
+          <li class="sim-step" id="krok-pokladna" data-layers="agent protocol shopify">
+            <h3><span>Step 5 of 6</span>Payment</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-agent" data-when="channel:chatgpt country:us">To finish, I’ll send you to Demo Roastery’s checkout.</p><p class="sim-msg sim-msg-agent" data-when="channel:copilot country:us">You can pay by card right here in Copilot.</p><p class="sim-msg sim-msg-agent" data-when="channel:google country:us">You can finish the purchase right in Google, if direct checkout has reached you yet.</p><p class="sim-msg sim-msg-agent" data-when="channel:browser">I’ve filled in the checkout in your open tab. Please review it and confirm the order.</p><p class="sim-msg sim-msg-blocked" data-when="channel:chatgpt country:cz">This path doesn’t exist for a shopper in Czechia today. ChatGPT in Agentic Storefronts requires selling to customers in the US.</p><p class="sim-msg sim-msg-blocked" data-when="channel:copilot country:cz">This path doesn’t exist for a shopper in Czechia today. The Copilot channel requires selling to the US, and direct checkout shows only to US shoppers.</p><p class="sim-msg sim-msg-blocked" data-when="channel:google country:cz">This path doesn’t exist for a shopper in Czechia today. Google AI Mode and Gemini serve shoppers in the US, Canada and Australia.</p></div>
+            <p class="sim-text">Where the shopper pays depends on the channel. ChatGPT sends them to the store’s checkout; Copilot, Google and Meta can take payment inside the conversation. A browser agent fills in the checkout in the open tab, but a person has to confirm the order.</p>
+            <p class="sim-lever"><b>What you control:</b> Which channels and direct checkout are on, under Sales channels > Agentic. If you turn direct checkout off for a channel, the shopper completes the purchase in your checkout.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>Server-side agents use Checkout MCP. An agent running in the buyer’s browser can, since 28 Sep 2026, use Checkout WebMCP: the <code>get_checkout</code>, <code>update_checkout</code> and <code>complete_checkout</code> tools run inside checkout and submit only after the buyer confirms. 3-D Secure and similar steps always hand control back to the buyer.</p><p>WebMCP is still a proposed standard. Chrome is testing it in an origin trial from version 149, so this is an experiment, not a finished channel.</p></details>
+          </li>
+          <li class="sim-step" id="krok-objednavka" data-layers="shopify store">
+            <h3><span>Step 6 of 6</span>After the purchase</h3>
+            <div class="sim-chat"><p class="sim-msg sim-msg-agent" data-when="ok">Your order is confirmed. I’ll let you know when the roastery ships it.</p><p class="sim-msg sim-msg-blocked" data-when="blocked">With these settings the purchase through an agent didn’t complete. The shopper can still find the product and buy it on the store’s website.</p></div>
+            <p class="sim-text">The order shows up in the Shopify admin like any other. The agent can follow up on delivery, returns or refunds.</p>
+            <p class="sim-lever"><b>What you control:</b> Fulfilment, tracking and returns. What the shopper experiences after the purchase is still yours.</p>
+            <details class="sim-tech"><summary>Technical detail</summary><p>Order MCP returns the current order state through <code>get_order</code>, and webhooks report fulfilment, returns, refunds and edits. According to Shopify, Shop MCP has no webhooks yet, so agents have to poll for status.</p><pre class="sim-code" aria-label="Simplified illustration, not a real API call."><code>get_order({ id: &quot;…&quot; })
+→ shipped, tracking number</code></pre><p class="sim-code-note">Simplified illustration, not a real API call.</p></details>
+          </li>
+            </ol>
+            <aside class="sim-layers" aria-label="Under the hood">
+              <span class="sim-layers-title">Under the hood</span>
+              <ol>
+            <li data-layer="agent"><b>Agent</b><span>ChatGPT, Copilot, Gemini, a browser agent</span></li>
+            <li data-layer="protocol"><b>Protocol</b><span>UCP over MCP, or WebMCP in the browser</span></li>
+            <li data-layer="shopify"><b>Shopify</b><span>Catalog, cart, checkout, orders</span></li>
+            <li data-layer="store"><b>Your store</b><span>Products, policies, stock, knowledge base</span></li>
+              </ol>
+            </aside>
+          </div>
+          <div class="sim-nav" hidden>
+            <button type="button" class="sim-prev">← Previous step</button>
+            <div class="sim-dots" role="group" aria-label="Step"></div>
+            <button type="button" class="sim-next">Next step →</button>
+          </div>
+          <p class="sim-live" aria-live="polite"></p>
+          <template class="sim-restart-label">Start again</template>
+        </div>
+      </section>
+
+      <section id="role" class="solution-paths section-pad" aria-labelledby="role-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">Who does what</span><h2 id="role-title">Five terms,<br /><em>five roles.</em></h2></div>
+          <p>Articles mix these names up. Each one actually covers a different layer, and only some of them concern the merchant directly.</p>
+        </header>
+        <div class="ac-roles reveal">
+          <article class="ac-role">
+            <header><span class="ac-layer">Data</span><h3>Shopify Catalog</h3><span class="ac-status ac-status-ok">Available</span></header>
+            <p>A structured view of products from Shopify stores that AI channels and custom agents read from.</p>
+            <p class="ac-role-you">Concerns you directly. Your store’s data goes into Catalog; Fall ’26 added an eligibility check that shows what to fix.</p>
+            <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a> · <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a></p>
+          </article>
+          <article class="ac-role">
+            <header><span class="ac-layer">Channels</span><h3>Agentic Storefronts</h3><span class="ac-status ac-status-partial">Available, depending on shopper country</span></header>
+            <p>The part of the Shopify admin (Sales channels > Agentic) where you decide which AI channels get your data and direct checkout.</p>
+            <p class="ac-role-you">Concerns you directly. It is on by default for eligible stores, but the channels currently target shoppers outside the EU.</p>
+            <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a></p>
+          </article>
+          <article class="ac-role">
+            <header><span class="ac-layer">Connection</span><h3>MCP</h3><span class="ac-status ac-status-ok">Open protocol</span></header>
+            <p>Model Context Protocol: a general way for an AI model to call tools and read data. Not specific to commerce.</p>
+            <p class="ac-role-you">Indirectly. Agents connect to Shopify over MCP; since 13 Oct 2026 Shopify also offers a hosted Shop MCP.</p>
+            <p class="ac-role-src"><a href="https://modelcontextprotocol.io/" rel="noopener">Model Context Protocol</a> · <a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify.dev Changelog, 13 Oct 2026: Shop MCP</a></p>
+          </article>
+          <article class="ac-role">
+            <header><span class="ac-layer">Commerce rules</span><h3>UCP</h3><span class="ac-status ac-status-ok">Open standard</span></header>
+            <p>Universal Commerce Protocol: a shared language for catalog, cart, checkout, identity linking and orders. Runs over REST, MCP or A2A.</p>
+            <p class="ac-role-you">Indirectly. Shopify implements it for you; a custom agent or app works with it.</p>
+            <p class="ac-role-src"><a href="https://ucp.dev/" rel="noopener">Universal Commerce Protocol</a> · <a href="https://shopify.dev/docs/agents" rel="noopener">Shopify.dev: Agentic commerce</a></p>
+          </article>
+          <article class="ac-role">
+            <header><span class="ac-layer">Browser</span><h3>WebMCP</h3><span class="ac-status ac-status-exp">Experiment (origin trial)</span></header>
+            <p>A proposed web standard that lets a page offer tools to an agent in the browser, instead of the agent clicking blindly.</p>
+            <p class="ac-role-you">Watch for now. Shopify has used it in checkout since 28 Sep 2026; Chrome has been testing it since version 149.</p>
+            <p class="ac-role-src"><a href="https://developer.chrome.com/blog/ai-webmcp-origin-trial" rel="noopener">Chrome for Developers, 9 Jun 2026: WebMCP origin trial</a> · <a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Shopify.dev Changelog, 28 Sep 2026: WebMCP for checkout</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dostupnost" class="solution-paths section-pad" aria-labelledby="avail-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">Availability</span><h2 id="avail-title">Where it<br /><em>actually works today.</em></h2></div>
+          <p>Channel requirements in Agentic Storefronts according to the Shopify Help Center. What matters is where the shopper is, not where the store is based.</p>
+        </header>
+        <div class="ac-table-wrap reveal">
+          <table class="ac-table">
+            <thead><tr><th scope="col">Channel</th><th scope="col">Shoppers in</th><th scope="col">Where they pay</th><th scope="col">Status</th><th scope="col">Shopper in Czechia / EU</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt" rel="noopener">ChatGPT</a></th><td data-label="Shoppers in">US</td><td data-label="Where they pay">In the store’s checkout</td><td data-label="Status">Available</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-no">No</td></tr>
+              <tr><th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft" rel="noopener">Microsoft Copilot</a></th><td data-label="Shoppers in">US</td><td data-label="Where they pay">In Copilot, or in the store’s checkout</td><td data-label="Status">Available</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-no">No</td></tr>
+              <tr><th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noopener">Google AI Mode and Gemini</a></th><td data-label="Shoppers in">US, Canada, Australia</td><td data-label="Where they pay">In Google, or in the store’s checkout</td><td data-label="Status">Direct checkout rolling out gradually</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-no">No</td></tr>
+              <tr><th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta" rel="noopener">Meta (including Muse)</a></th><td data-label="Shoppers in">Australia, Brazil, Canada, India, Japan, Mexico, New Zealand, Singapore, South Korea, UK, US</td><td data-label="Where they pay">In Meta, or in the store’s checkout</td><td data-label="Status">Available, in the admin since 8 Sep 2026</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-no">No</td></tr>
+              <tr><th scope="row"><a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Personal agents via Shop MCP</a></th><td data-label="Shoppers in">Not stated</td><td data-label="Where they pay">Shop Pay</td><td data-label="Status">Launched 13 Oct 2026</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-maybe">Not stated</td></tr>
+              <tr><th scope="row"><a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Browser agent (Checkout WebMCP)</a></th><td data-label="Shoppers in">Not limited by channel</td><td data-label="Where they pay">In your checkout, after the buyer confirms</td><td data-label="Status">Experiment: WebMCP is in an origin trial</td><td data-label="Shopper in Czechia / EU" class="ac-eu ac-eu-maybe">Technically yes, few agents so far</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="plus-sources reveal">Shared requirements: products eligible for Shopify Catalog, accepting the Agentic Storefronts Supplemental Terms, and completed terms of service, privacy and return policies. B2B-only products aren’t supported. Google direct checkout also excludes subscriptions, bundles, customisable products, store pickup and pickup points. Checked 7 nov 2026.</p>
+      </section>
+
+      <section id="novinky" class="solution-paths section-pad" aria-labelledby="news-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">What’s new</span><h2 id="news-title">The last<br /><em>two months.</em></h2></div>
+          <p>Changes from 7 September to 7 November 2026, from the official changelogs and the Shopify Editions page.</p>
+        </header>
+        <ol class="ac-news reveal">
+          <li><time>8 Sep 2026</time><div><h3>Meta as an AI channel</h3><p>Meta appeared among the AI channels in the admin. Products are shared with it through Shopify Catalog by default. <a href="https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin" rel="noopener">Shopify Changelog, 8 Sep 2026: Meta as an AI channel</a></p></div></li>
+          <li><time>28 Sep 2026</time><div><h3>WebMCP in checkout</h3><p>Browser agents can read and fill in checkout in the open tab. They submit the order only after the buyer confirms, and the merchant sets nothing up. <a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Shopify.dev Changelog, 28 Sep 2026: WebMCP for checkout</a></p></div></li>
+          <li><time>9 Oct 2026</time><div><h3>Compare-at prices for agents</h3><p>Shopify Catalog shares compare-at prices with AI agents. On by default for most stores, and it can be turned off. <a href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noopener">Shopify Changelog, 9 Oct 2026: compare-at prices for agentic channels</a></p></div></li>
+          <li><time>13 Oct 2026</time><div><h3>Shop MCP</h3><p>A hosted server at mcp.shop.com: one connection for Catalog search, cart and Shop Pay checkout. For developers of agents and apps. <a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify.dev Changelog, 13 Oct 2026: Shop MCP</a></p></div></li>
+          <li><time>Fall ’26</time><div><h3>Knowledge base and eligibility check</h3><p>Merchants approve the facts agents repeat about the store and can see why products aren’t in Catalog. UCP adds /buy and /ask endpoints. <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a></p></div></li>
+        </ol>
+      </section>
+
+      <section id="kroky" class="collaboration-flow section-pad" aria-labelledby="steps-title">
+        <header class="reveal"><span class="work-index">What to do</span><h2 id="steps-title">Practical steps<br /><em>for merchants.</em></h2><p>Most of these improve the store even without AI channels. None of them promises visibility or sales; each channel ranks offers by its own rules.</p></header>
+        <ol class="ac-steps reveal">
+          <li><span>01</span><h3>Check Sales channels > Agentic</h3><p>See whether the store is eligible, which channels are on and whether direct checkout is allowed. The channel decision is yours.</p></li>
+          <li><span>02</span><h3>Decide by market</h3><p>Selling only in Czechia and the EU? Then the AI channels in Agentic Storefronts don’t reach your shoppers today, and preparing is enough. Selling to the US, Canada or the UK too? Then it’s worth going through the channels one by one.</p></li>
+          <li><span>03</span><h3>Fill in product data</h3><p>Accurate titles, variants, images, categories and properties in metafields. An agent chooses from the data it can see; the <a href="/en/work/bohemian/">Bohemian Coffee House case study</a> shows a data model in practice.</p></li>
+          <li><span>04</span><h3>Complete policies and the knowledge base</h3><p>Terms of service, privacy and returns are required for every channel. The knowledge base then holds the facts an agent repeats about your store.</p></li>
+          <li><span>05</span><h3>Check prices and discounts</h3><p>For most stores, compare-at prices are shared with agents automatically. If you use them as a manufacturer’s recommended price, check the setting. The EU also has rules on how discounts are shown, so a struck-through price must reflect reality.</p></li>
+          <li><span>06</span><h3>Test the theme and checkout</h3><p>Custom theme code, checkout extensions and apps can affect what a browser agent sees. Worth testing before a larger change.</p></li>
+          <li><span>07</span><h3>Measure before you invest</h3><p>AI channel performance is in the Agentic settings. Decide on next steps from real visits and orders.</p></li>
+        </ol>
+      </section>
+
+      <section id="pomoc" class="solution-paths section-pad" aria-labelledby="help-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">How I help</span><h2 id="help-title">Where I can<br /><em>step in.</em></h2></div>
+          <p>I’m a Shopify developer. I can help with the technical and data side; I don’t promise guaranteed visibility in AI channels, because nobody can.</p>
+        </header>
+        <div class="ac-help reveal">
+          <article><h3>Readiness audit</h3><p>I go through store eligibility, the Agentic settings, policies and product data, and write down what to change and in what order.</p><a href="mailto:jakub.hrncir24@gmail.com?subject=Agentic%20commerce%20audit" data-track="agentic_help_1">Ask for an audit <span aria-hidden="true">↗︎</span></a></article>
+          <article><h3>Product data and metafields</h3><p>I design and implement a structure for product properties that works for filters on the site and in the catalog.</p><a href="mailto:jakub.hrncir24@gmail.com?subject=Product%20data" data-track="agentic_help_2">Describe your catalog <span aria-hidden="true">↗︎</span></a></article>
+          <article><h3>Theme and checkout</h3><p>I check custom code, extensions and apps that can get in a browser agent’s way, and fix them.</p><a href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20theme" data-track="agentic_help_3">Describe your store <span aria-hidden="true">↗︎</span></a></article>
+          <article><h3>A custom agent or app</h3><p>For projects that want their own shopping assistant on Storefront Catalog or Shop MCP: design, prototype and integration.</p><a href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20agent" data-track="agentic_help_4">Discuss the brief <span aria-hidden="true">↗︎</span></a></article>
+        </div>
+      </section>
+
+      <section id="faq" class="solution-paths section-pad" aria-labelledby="faq-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">FAQ</span><h2 id="faq-title">What people<br /><em>ask.</em></h2></div>
+        </header>
+        <div class="plus-faq reveal">
+          <details>
+            <summary>Do I need to switch anything on for agentic commerce on Shopify?</summary>
+            <p>For eligible stores, Agentic Storefronts is active by default. It is still worth checking Sales channels > Agentic to see which channels are on and whether direct checkout is allowed.</p>
+          </details>
+          <details>
+            <summary>Will shoppers in Czechia see my store in ChatGPT?</summary>
+            <p>Not through Agentic Storefronts yet. According to Shopify, ChatGPT requires selling to customers in the US, so does Copilot, and Google serves the US, Canada and Australia. AI tools can still find your site by ordinary web crawling.</p>
+          </details>
+          <details>
+            <summary>Do I need Shopify Plus?</summary>
+            <p>No. Shopify ties Agentic Storefronts to store and product eligibility and to each channel’s requirements, not to the Plus plan.</p>
+          </details>
+          <details>
+            <summary>What is the difference between MCP, UCP and WebMCP?</summary>
+            <p>MCP is a general way for AI to call tools. UCP is a commerce standard for catalog, cart, checkout and orders that can run over MCP. WebMCP is a proposed web standard that lets a page offer tools to an agent directly in the browser.</p>
+          </details>
+          <details>
+            <summary>Will better data guarantee more sales?</summary>
+            <p>No. Good data improves the chance that a channel understands your offer correctly, but each channel decides on display and ranking by relevance, popularity and its own rules.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="zdroje" class="solution-paths section-pad" aria-labelledby="sources-title">
+        <header class="solution-paths-head reveal">
+          <div><span class="work-index">Sources</span><h2 id="sources-title">What this<br /><em>is based on.</em></h2></div>
+          <p>Official documentation and announcements, all checked on 7 Nov 2026. Unverified claims from blogs and aggregators are left out.</p>
+        </header>
+        <ul class="ac-sources reveal">
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt" rel="noopener">Shopify Help Center: ChatGPT</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft" rel="noopener">Shopify Help Center: Microsoft Copilot</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noopener">Shopify Help Center: Google AI Mode and Gemini</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta" rel="noopener">Shopify Help Center: Meta</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin" rel="noopener">Shopify Changelog, 8 Sep 2026: Meta as an AI channel</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Shopify.dev Changelog, 28 Sep 2026: WebMCP for checkout</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify.dev Changelog, 13 Oct 2026: Shop MCP</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noopener">Shopify Changelog, 9 Oct 2026: compare-at prices for agentic channels</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://shopify.dev/docs/agents" rel="noopener">Shopify.dev: Agentic commerce</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp" rel="noopener">Shopify.dev: Checkout WebMCP</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://ucp.dev/" rel="noopener">Universal Commerce Protocol</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://modelcontextprotocol.io/" rel="noopener">Model Context Protocol</a><span>checked 7 Nov 2026</span></li>
+          <li><a href="https://developer.chrome.com/blog/ai-webmcp-origin-trial" rel="noopener">Chrome for Developers, 9 Jun 2026: WebMCP origin trial</a><span>checked 7 Nov 2026</span></li>
+        </ul>
+      </section>
+
+      <section class="plus-close section-pad" aria-labelledby="close-title">
+        <div class="plus-close-lead reveal">
+          <span class="plus-eyebrow">Next step</span>
+          <h2 id="close-title">Want to know where<br /><em>your store stands?</em></h2>
+          <p>Send me the store address and the markets you sell to. I’ll tell you which parts of agentic commerce concern you today, what is worth changing and what can wait.</p>
+        </div>
+        <div class="plus-close-paths reveal">
+          <a class="plus-path plus-path-primary" href="mailto:jakub.hrncir24@gmail.com?subject=Agentic%20commerce" data-track="agentic_close_1">
+            <span class="plus-path-tag">Store check</span>
+            <strong>Describe the store and markets</strong>
+            <small>A short email is enough; you get concrete next steps back.</small>
+            <b aria-hidden="true">↗︎</b>
+          </a>
+          <a class="plus-path" href="/shopify-guide/shopify-agentic-commerce/" data-track="agentic_close_2">
+            <span class="plus-path-tag">Still reading</span>
+            <strong>The agentic commerce article</strong>
+            <small>What it is, where it came from and the figures Shopify has published.</small>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="plus-path" href="/en/" data-track="agentic_close_3">
+            <span class="plus-path-tag">Shopify development</span>
+            <strong>All services and case studies</strong>
+            <small>From migrations and B2B to custom themes.</small>
+            <b aria-hidden="true">→</b>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <button class="to-top" type="button" aria-label="Back to top">↑︎</button>
+    <footer><span>© <span id="year">2026</span> Jakub Hrnčíř</span><nav><a href="/en/">Shopify development</a><a href="/shopify-plus/en/">Shopify Plus</a><a href="/shopify-guide/">Blog</a><a href="/cv/en/">Personal CV</a></nav></footer>
+  </body>
+</html>

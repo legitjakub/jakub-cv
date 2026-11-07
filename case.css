@@ -67,6 +67,39 @@ body.case-page footer { background:#0a0a0a; }
 .case-links small { display:block; margin-top:5px; color:var(--case-body); font-size:13px; letter-spacing:0; }
 .case-links b { color:var(--case-accent); font-size:18px; font-weight:400; }
 
+/* Team projects: the scope of the whole project, then a source note. */
+.case-source { max-width:760px; margin:18px 0 0; color:var(--case-body); font-size:13px; line-height:1.65; }
+.case-source a { color:var(--case-strong); text-decoration:underline; text-decoration-color:rgba(var(--case-rgb),.6); text-underline-offset:3px; }
+
+/* Data map: one admin record on the left, the places it surfaces on the right. */
+.data-map { display:grid; grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr); gap:18px; align-items:stretch; max-width:900px; margin:30px 0 0; }
+.data-map-col { padding:22px; border:1px solid var(--case-line); background:rgba(var(--case-rgb),.04); }
+.data-map-label { display:block; margin:0 0 14px; color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.data-map ul,.data-map ol { margin:0; padding:0; list-style:none; }
+.data-map li { display:flex; flex-direction:column; gap:3px; padding:10px 0; border-top:1px solid var(--case-line); color:var(--case-body); font-size:14px; line-height:1.5; }
+.data-map li:first-child { border-top:0; padding-top:0; }
+.data-map code { color:var(--case-strong); font:500 12px "DM Mono",monospace; }
+.data-map b { color:var(--case-strong); font-weight:600; }
+.data-map-arrow { display:flex; align-items:center; justify-content:center; color:var(--case-accent); font-size:24px; }
+.data-map-note { margin-top:14px!important; font-size:13px!important; }
+
+/* Bottle-to-game journey and the three markets. */
+.journey { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; max-width:960px; margin:30px 0 0; padding:0; list-style:none; background:var(--case-line); counter-reset:j; }
+.journey li { display:flex; flex-direction:column; gap:6px; padding:20px 18px 22px; background:var(--case-canvas); color:var(--case-body); font-size:14px; line-height:1.55; }
+.journey span { color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.08em; }
+.journey b { color:var(--case-strong); font-size:17px; font-weight:600; letter-spacing:-.02em; }
+.markets { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-width:960px; margin:18px 0 0; padding:0; list-style:none; }
+.markets li { display:flex; flex-direction:column; gap:4px; padding:18px; border:1px solid var(--case-line); color:var(--case-body); font-size:14px; line-height:1.5; }
+.markets b { color:var(--case-strong); font-size:16px; }
+.markets small { color:var(--case-accent); font:500 10px "DM Mono",monospace; letter-spacing:.04em; }
+
+/* Real screenshots from the live store, each with a caption saying what it shows. */
+.case-stills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; margin:34px 0 0; }
+.case-still { margin:0; }
+.case-still:first-child:not(:last-child) { grid-column:1/-1; }
+.case-still img { display:block; width:100%; height:auto; border:1px solid rgba(var(--case-rgb),.22); background:#fff; }
+.case-still figcaption { max-width:640px; margin-top:12px; color:var(--case-body); font-size:13px; line-height:1.6; }
+
 .case-page.case-molecules-new .media-frame { box-shadow:0 24px 70px rgba(0,0,0,.12); }
 
 @media (max-width:960px) {
@@ -82,4 +115,8 @@ body.case-page footer { background:#0a0a0a; }
   .case-page .case-scope li { padding:15px 0; border-bottom:1px solid var(--case-line); background:transparent; }
   .case-prose p { font-size:15px; }
   .case-links a { font-size:16px; }
+  .data-map { grid-template-columns:1fr; }
+  .data-map-arrow { transform:rotate(90deg); height:28px; }
+  .journey { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .markets,.case-stills { grid-template-columns:1fr; }
 }
