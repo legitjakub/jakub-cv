@@ -134,12 +134,12 @@
     '.jh-consent[data-open="1"]{opacity:1;transform:translateY(0)}' +
     '@media (prefers-reduced-motion:reduce){.jh-consent{transition:none}}' +
     '.jh-consent-in{padding:22px}' +
-    '.jh-consent h2{margin:0 0 10px;font-size:9px;font-weight:700;letter-spacing:.22em;' +
-    'text-transform:uppercase;color:#a8ff3e}' +
+    '.jh-consent h2{margin:0 0 10px;font-size:14px;font-weight:700;letter-spacing:0;' +
+    'color:#a8ff3e}' +
     '.jh-consent p{margin:0 0 18px;font-size:13.5px;line-height:1.62;color:#b9bbb3}' +
     '.jh-consent-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
     '.jh-consent button{min-height:44px;padding:12px 14px;border:1px solid transparent;' +
-    'font:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;' +
+    'font:inherit;font-size:14px;font-weight:600;letter-spacing:0;' +
     'cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}' +
     '.jh-consent button:focus-visible{outline:2px solid #a8ff3e;outline-offset:2px}' +
     /* Accept and reject must carry equal visual weight: same size, same fill,
@@ -149,15 +149,15 @@
     '.jh-btn-reject{background:#efeee8;color:#0a0a0a}' +
     '.jh-btn-reject:hover{background:#fff}' +
     '.jh-btn-link{grid-column:1/-1;background:transparent;color:#989a92;border-color:transparent;' +
-    'min-height:0;padding:6px 0 0;letter-spacing:.14em;text-decoration:underline;' +
+    'min-height:0;padding:6px 0 0;letter-spacing:0;text-decoration:underline;' +
     'text-underline-offset:3px}' +
     '.jh-btn-link:hover{color:#efeee8}' +
     '.jh-consent-cat{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:start;' +
     'padding:15px 0;border-top:1px solid rgba(255,255,255,.12)}' +
     '.jh-consent-cat strong{font-size:12.5px;font-weight:700;letter-spacing:.02em}' +
     '.jh-consent-cat span{grid-column:1/-1;font-size:12px;line-height:1.55;color:#8f918a}' +
-    '.jh-consent-fixed{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;' +
-    'color:#656860;padding-top:3px}' +
+    '.jh-consent-fixed{font-size:12px;font-weight:600;letter-spacing:0;' +
+    'color:#8f918a;padding-top:3px}' +
     '.jh-switch{position:relative;width:40px;height:23px;flex:0 0 auto}' +
     '.jh-switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}' +
     '.jh-switch i{position:absolute;inset:0;background:rgba(255,255,255,.14);border-radius:999px;' +
