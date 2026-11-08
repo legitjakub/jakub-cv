@@ -2,9 +2,6 @@
   const page = document.querySelector('.shopify-conversion-page, .shopify-inquiry-page');
   if (!page) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-
   const track = (event, details = {}) => {
     const payload = { event, ...details };
     if (Array.isArray(window.dataLayer)) window.dataLayer.push(payload);
@@ -17,40 +14,6 @@
       destination: element.getAttribute('href') || element.getAttribute('type') || ''
     }));
   });
-
-  if (finePointer.matches && !reduceMotion.matches) {
-    let pointerFrame = 0;
-    document.addEventListener('pointermove', (event) => {
-      if (pointerFrame) return;
-      pointerFrame = requestAnimationFrame(() => {
-        const section = event.target instanceof Element ? event.target.closest('section') : null;
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          section.style.setProperty('--work-x', `${((event.clientX - rect.left) / rect.width * 100).toFixed(2)}%`);
-          section.style.setProperty('--work-y', `${((event.clientY - rect.top) / rect.height * 100).toFixed(2)}%`);
-        }
-        pointerFrame = 0;
-      });
-    }, { passive: true });
-
-    document.querySelectorAll('.media-frame').forEach((frame) => {
-      let mediaFrame = 0;
-      frame.addEventListener('pointermove', (event) => {
-        cancelAnimationFrame(mediaFrame);
-        mediaFrame = requestAnimationFrame(() => {
-          const rect = frame.getBoundingClientRect();
-          const x = (event.clientX - rect.left) / rect.width - 0.5;
-          const y = (event.clientY - rect.top) / rect.height - 0.5;
-          frame.style.setProperty('--media-rx', `${(-y * 2.2).toFixed(2)}deg`);
-          frame.style.setProperty('--media-ry', `${(x * 2.2).toFixed(2)}deg`);
-        });
-      }, { passive: true });
-      frame.addEventListener('pointerleave', () => {
-        frame.style.removeProperty('--media-rx');
-        frame.style.removeProperty('--media-ry');
-      });
-    });
-  }
 
   const diagnosticRoot = document.querySelector('[data-diagnostic]');
   const diagnosticLive = diagnosticRoot?.querySelector('.diagnostic-live');

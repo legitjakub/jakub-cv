@@ -1,7 +1,7 @@
 /* Agentic commerce page. Builds on core/work/shopify-vyvoj/shopify-plus.
    Lime (--commerce) stays the site's action colour; cyan (--cyber) marks
    everything the agent says or does, so the two voices never blur.
-   Microtext floor is 10px; body greys stay at or above 4.5:1 on #090b0a. */
+   Shared typography and motion preferences match the rest of the site. */
 
 .ac-hero { grid-template-areas:"main card"; padding-bottom:clamp(40px,6vw,90px); }
 .ac-hero .plus-hero-main h1 em { color:var(--cyber); }
@@ -24,7 +24,7 @@
 .sim-badge { flex:0 0 auto; padding:5px 9px; border:1px dashed var(--cyber); color:var(--cyber); font:500 12px "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
 
 .sim-controls { display:none; }
-.sim-js .sim-controls { display:grid; grid-template-columns:repeat(3,auto); justify-content:start; gap:16px 34px; margin:0 0 28px; }
+.sim-js .sim-controls { display:grid; grid-template-columns:auto minmax(0,1fr) auto; justify-content:start; gap:16px 24px; margin:0 0 28px; }
 .sim-ctl { margin:0; padding:0; border:0; min-width:0; }
 .sim-ctl legend { margin-bottom:9px; padding:0; color:#9b9b94; font:500 12px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
 .sim-ctl div { display:flex; flex-wrap:wrap; gap:6px; }
@@ -194,4 +194,23 @@ html[lang="cs"] .sim-msg-agent::before { content:"Agent"; }
   .sim-nav { flex-wrap:wrap; }
   .sim-confirm { flex:1 1 180px; }
   .sim-text,.sim-msg,.sim-lever,.sim-tech p,.ac-role p { font-size:16px; }
+}
+
+.ac-availability { min-width:1120px; }
+.ac-availability th:first-child { width:125px; }
+.ac-practical { margin-top:48px; }
+.ac-practical details p,.ac-practical details li { color:#b4b4ad; font-size:15px; line-height:1.75; }
+.ac-practical details p { max-width:900px; }
+.ac-practical ul { max-width:900px; padding-left:22px; }
+.ac-practical li + li { margin-top:8px; }
+.ac-practical code,.ac-role code { overflow-wrap:anywhere; font-size:.92em; }
+.ac-practical a,.sim-tech a,.ac-answer a { color:var(--cyber); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.ac-practical .ac-role-src { font-size:12px; }
+@media (max-width:1050px) {
+  .sim-js .sim-controls { grid-template-columns:1fr; }
+}
+@media (max-width:640px) {
+  .ac-availability { min-width:0; }
+  .ac-availability th:first-child { width:auto; }
+  .ac-practical details p,.ac-practical details li { font-size:16px; }
 }

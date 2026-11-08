@@ -2,26 +2,6 @@
   const header = document.querySelector('.nav-wrap');
   const toTop = document.querySelector('.to-top');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-
-  if (finePointer.matches && !reduceMotion.matches) {
-    const glow = document.createElement('div');
-    glow.className = 'site-pointer-glow';
-    glow.setAttribute('aria-hidden', 'true');
-    document.body.append(glow);
-    let frame = 0;
-    window.addEventListener('pointermove', (event) => {
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        glow.style.setProperty('--pointer-x', `${event.clientX}px`);
-        glow.style.setProperty('--pointer-y', `${event.clientY}px`);
-        glow.classList.add('is-visible');
-        frame = 0;
-      });
-    }, { passive:true });
-    document.documentElement.addEventListener('pointerleave', () => glow.classList.remove('is-visible'));
-  }
-
   let maxScroll = 0;
   let scrollFrame = 0;
   const measure = () => { maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight); };
@@ -42,7 +22,7 @@
   refresh();
 
   const reveals = document.querySelectorAll('.reveal');
-  if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+  if (document.body.classList.contains('portfolio-home') || reduceMotion.matches || !('IntersectionObserver' in window)) {
     reveals.forEach((item) => item.classList.add('visible'));
   } else {
     const observer = new IntersectionObserver((entries) => {

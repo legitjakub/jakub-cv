@@ -3,12 +3,16 @@
 (function () {
   function journeyState(state) {
     var s = Object.assign({}, state.settings);
-    s.blocked = s.data === 'gap';
+    s.route = s.channel === 'meta' && s.country === 'cz' ? 'unavailable' :
+      s.channel === 'shop' ? 'shop' : s.channel === 'browser' ? 'browser' :
+      (s.country === 'us' && ['copilot', 'google', 'meta'].indexOf(s.channel) > -1 ? 'direct' : 'store');
+    s.unavailable = s.route === 'unavailable';
+    s.available = !s.unavailable;
+    s.gap = s.data === 'gap' && !s.unavailable;
+    s.blocked = s.gap || s.unavailable;
     s.completed = state.confirmed && !s.blocked;
     s.pending = !s.completed && !s.blocked;
-    s.catalog = s.channel === 'google' ? 'google' : 'shopify';
-    s.route = s.channel === 'browser' ? 'browser' :
-      (s.country === 'us' && (s.channel === 'copilot' || s.channel === 'google') ? 'direct' : 'store');
+    s.catalog = s.channel === 'google' ? 'google' : s.channel === 'browser' ? 'storefront' : 'shopify';
     return s;
   }
 
@@ -70,7 +74,7 @@
   function matches(cond, s) {
     return cond.split(' ').every(function (tok) {
       if (tok === 'ok') return !s.blocked;
-      if (tok === 'blocked' || tok === 'completed' || tok === 'pending') return s[tok];
+      if (['blocked', 'completed', 'pending', 'gap', 'unavailable', 'available'].indexOf(tok) > -1) return s[tok];
       var kv = tok.split(':');
       return s[kv[0]] === kv[1];
     });

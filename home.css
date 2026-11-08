@@ -1,0 +1,138 @@
+/* The homepage leads with real work. Keep controls quiet and copy brief. */
+.portfolio-home .work-hero { min-height:auto; padding-top:160px; padding-bottom:38px; background:#090c0a; }
+.portfolio-home .work-hero::after,
+.portfolio-home .shopify-services::after { display:none; }
+.portfolio-home .work-hero h1 { margin-block:28px; line-height:.98; letter-spacing:-.05em; }
+.portfolio-home .work-hero h1>span { letter-spacing:-.04em; }
+.portfolio-home .work-hero h1 em { text-shadow:none; }
+.portfolio-home .work-hero-copy>p { max-width:660px; font-size:18px; line-height:1.65; }
+.portfolio-home .reveal { opacity:1; transform:none; transition:none; }
+.portfolio-home :is(.solution-paths,.shopify-services,.work-references,.work-guide,.project-diagnostic) { background:#0b0e0c; }
+.portfolio-home :is(.solution-paths,.shopify-services)::after { display:none; }
+.portfolio-home .project-showcase { background:var(--case-canvas); }
+.portfolio-home :is(.work-hero-primary,.work-hero-secondary,.case-more,.flow-action,.conversion-close-actions a,.work-contact a,.shopify-service-cta a,.diagnostic-result-actions a,.diagnostic-reset,.diagnostic-result-links a) {
+  font-family:"Manrope",sans-serif; font-size:14px; font-weight:600; letter-spacing:0; text-transform:none;
+}
+body.portfolio-home .nav-actions .nav-cta { display:inline-flex; align-items:center; min-height:42px; border-color:rgba(255,255,255,.3); background:transparent; color:var(--paper); font:600 13px/1.4 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.portfolio-home .work-hero-actions { gap:28px; }
+.portfolio-home .work-hero-actions a { font:600 15px/1.4 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.portfolio-home .work-hero-primary { min-width:210px; padding:15px 18px; }
+.portfolio-home .work-hero-primary:hover { transform:none; }
+.portfolio-home .work-hero-secondary { justify-content:flex-start; width:auto; gap:16px; }
+.portfolio-home .work-hero-proof { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:720px; margin-top:56px; }
+.portfolio-home .work-hero-proof>div { display:block; padding:22px 24px 0 0; }
+.portfolio-home .work-hero-proof>div+div { padding-left:24px; }
+.portfolio-home .work-hero-proof strong { display:block; margin-bottom:12px; font-size:36px; }
+.portfolio-home .work-hero-proof span { display:block; max-width:180px; font:400 13px/1.5 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.portfolio-home .work-brands-head { display:block; padding-block:20px; }
+.portfolio-home .work-brand-item { border:0; }
+.portfolio-home .work-brand-item:hover { transform:none; background:transparent; }
+.portfolio-home :is(.solution-paths,.shopify-services) { display:block; padding-block:72px; }
+.portfolio-home :is(.solution-paths-head,.shopify-services-intro) { display:block; margin-bottom:32px; }
+.portfolio-home :is(.solution-paths-head,.shopify-services-intro,.projects-intro,.collaboration-flow header,.work-references-head,.work-guide-head,.commercial-faq-head) h2 {
+  margin-top:18px; font-size:clamp(36px,4.5vw,62px); line-height:1.08; letter-spacing:-.045em;
+}
+.portfolio-home :is(.solution-path-list,.shopify-service-list) { border-top:1px solid var(--line); }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) article { display:grid; grid-template-columns:32px minmax(0,1fr) minmax(0,.9fr); align-items:center; gap:24px; min-height:0; padding:24px 0; border-bottom:1px solid var(--line); background:none; }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) article:hover { padding-left:0; background:none; }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) h3 { margin:0; }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) h3 a { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:44px; padding:4px 0; color:var(--paper); font:600 clamp(20px,2vw,28px)/1.3 "Manrope",sans-serif; letter-spacing:-.025em; text-transform:none; border:0; }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) h3 a span { flex-shrink:0; color:var(--commerce); font-size:20px; font-weight:400; }
+.portfolio-home :is(.solution-path-list,.shopify-service-list) p { margin:0; color:#a4a69e; font-size:16px; line-height:1.6; }
+.portfolio-home .projects-intro { padding-top:64px; padding-bottom:36px; }
+.portfolio-home .projects-intro>p { max-width:530px; font-size:16px; line-height:1.65; }
+.portfolio-home .project-showcase { padding-top:64px; padding-bottom:64px; }
+.portfolio-home .conversion-case-copy { margin-top:26px; }
+.portfolio-home .conversion-case-copy dl>div { padding-block:18px; }
+.portfolio-home .conversion-case-copy dd { font-size:16px; line-height:1.65; }
+.portfolio-home .case-more { margin-top:22px; padding-block:8px; }
+.portfolio-home .case-number { transform:none; text-shadow:none; }
+.portfolio-home .project-gallery>.media-frame { border-radius:2px; box-shadow:none; }
+.portfolio-home .project-gallery-tab { border-radius:2px; }
+.portfolio-home .project-gallery-tab-label { font:500 12px/1.45 "Manrope",sans-serif; letter-spacing:0; }
+.portfolio-home .project-gallery-heading { font:500 12px/1.5 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.portfolio-home .media-frame figcaption { font:500 12px/1.5 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.portfolio-home .collaboration-flow header { display:block; }
+.portfolio-home .collaboration-steps { margin-top:38px; gap:34px; }
+.portfolio-home .collaboration-steps::before,.portfolio-home .collaboration-steps li::before { display:none; }
+.portfolio-home .collaboration-steps li { padding-top:0; border-top:1px solid var(--line); }
+.portfolio-home .collaboration-steps li>span { position:static; display:block; margin-block:18px; font-size:13px; }
+.portfolio-home .collaboration-steps h3 { font-size:24px; letter-spacing:-.025em; }
+.portfolio-home .collaboration-steps p { color:#a4a69e; font-size:16px; line-height:1.65; }
+.portfolio-home .work-references-head { margin-bottom:34px; }
+.portfolio-home .work-reference { min-height:0; box-shadow:none; }
+.portfolio-home .work-guide-list strong { font-size:21px; line-height:1.4; letter-spacing:-.025em; }
+.portfolio-home .project-diagnostic { display:block; padding-block:30px; }
+.home-diagnostic>summary { display:flex; align-items:center; justify-content:space-between; gap:26px; min-height:66px; list-style:none; cursor:pointer; }
+.home-diagnostic>summary::-webkit-details-marker { display:none; }
+.home-diagnostic>summary h2 { margin:0; font-size:28px; line-height:1.2; letter-spacing:-.035em; }
+.home-diagnostic>summary>span { display:flex; align-items:center; gap:20px; color:#b6b8af; font-size:14px; }
+.home-diagnostic>summary b { color:var(--commerce); font-size:24px; font-weight:400; }
+.home-diagnostic[open]>summary b { transform:rotate(45deg); }
+.home-diagnostic-content { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:60px; padding-block:30px 12px; }
+.portfolio-home .diagnostic-intro>p { margin-top:0; font-size:16px; line-height:1.65; }
+.portfolio-home .diagnostic-stage { min-height:0; padding:28px; }
+.portfolio-home .diagnostic-option { transform:none; }
+.portfolio-home .diagnostic-option span { font:500 15px/1.5 "Manrope",sans-serif; }
+.portfolio-home .commercial-faq { gap:50px; }
+.portfolio-home .commercial-faq-list summary { font-size:16px; font-weight:600; }
+.portfolio-home .conversion-close h2 { font-size:clamp(40px,5vw,76px); line-height:1.08; letter-spacing:-.045em; }
+.portfolio-home .conversion-close p { font-size:16px; line-height:1.65; }
+.portfolio-home .conversion-close-actions a { min-height:48px; }
+.portfolio-home .work-contact h2 { font-size:clamp(40px,5vw,76px); line-height:1.08; letter-spacing:-.045em; }
+.portfolio-home .work-contact>a { font-size:20px; }
+.portfolio-home a:focus-visible,.portfolio-home button:focus-visible,.home-diagnostic>summary:focus-visible { outline:2px solid var(--commerce); outline-offset:4px; }
+
+@media (max-width:1199px) {
+  body.portfolio-home .nav-wrap>nav { background:#090c0a; transition:none; }
+  body.portfolio-home .mobile-nav-toggle { font:600 13px/1 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+}
+
+@media (max-width:760px) {
+  .portfolio-home .work-hero { padding-top:120px; padding-bottom:30px; }
+  .portfolio-home .work-hero h1 { margin-block:24px; font-size:clamp(48px,13vw,66px); }
+  html[lang="en"] .portfolio-home .work-hero h1>span { font-size:.68em; }
+  .portfolio-home .work-hero-copy>p { max-width:35ch; font-size:16px; line-height:1.65; }
+  .portfolio-home .work-hero-actions { gap:18px; margin-top:24px; }
+  .portfolio-home .work-hero-primary { min-width:0; width:100%; min-height:50px; }
+  .portfolio-home .work-hero-secondary { min-height:36px; padding:0; }
+  .portfolio-home .work-hero-proof { margin-top:32px; }
+  .portfolio-home .work-hero-proof>div { min-height:0; padding:18px 12px 0 0; }
+  .portfolio-home .work-hero-proof>div+div { padding-left:12px; }
+  .portfolio-home .work-hero-proof>div:nth-child(3) { grid-column:auto; border-top:0; border-left:1px solid var(--line); }
+  .portfolio-home .work-hero-proof strong { font-size:27px; margin-bottom:8px; }
+  .portfolio-home .work-hero-proof span { font-size:12px; line-height:1.5; }
+  .portfolio-home .work-brands-head { padding-block:18px 8px; }
+  .portfolio-home :is(.solution-paths,.shopify-services,.collaboration-flow,.commercial-faq,.conversion-close,.work-guide,.work-references) { padding-block:48px; }
+  .portfolio-home :is(.solution-paths-head,.shopify-services-intro,.projects-intro,.collaboration-flow header,.work-references-head,.work-guide-head,.commercial-faq-head) h2 { font-size:34px; line-height:1.12; }
+  .portfolio-home :is(.solution-path-list,.shopify-service-list) article { grid-template-columns:22px minmax(0,1fr); gap:5px 12px; padding-block:18px; }
+  .portfolio-home :is(.solution-path-list,.shopify-service-list) article>span { grid-column:1; grid-row:1; padding-top:3px; }
+  .portfolio-home :is(.solution-path-list,.shopify-service-list) h3 { grid-column:2; }
+  .portfolio-home :is(.solution-path-list,.shopify-service-list) h3 a { font-size:21px; }
+  .portfolio-home :is(.solution-path-list,.shopify-service-list) p { grid-column:2; font-size:16px; }
+  .portfolio-home .projects-intro { padding-top:48px; padding-bottom:20px; }
+  .portfolio-home .projects-intro>p { margin-top:18px; font-size:16px; }
+  .portfolio-home .project-showcase { padding-top:38px; padding-bottom:44px; }
+  .portfolio-home .conversion-case-copy dl>div { padding-block:0 18px; }
+  .portfolio-home .conversion-case-copy dl>div+div { padding-top:18px; }
+  .portfolio-home .case-head>p { font-size:16px; line-height:1.65; }
+  .portfolio-home .case-tags { display:none; }
+  .portfolio-home .project-gallery>.media-frame figcaption { min-height:54px; padding:10px 12px; }
+  .portfolio-home .project-gallery-tab-label { padding:8px 3px 4px; font-size:12px; }
+  .portfolio-home .collaboration-steps { gap:0; padding-left:0; }
+  .portfolio-home .collaboration-steps li { min-height:0; padding-bottom:22px; }
+  .portfolio-home .collaboration-steps h3 { font-size:21px; }
+  .portfolio-home .work-guide-list strong { font-size:19px; }
+  .portfolio-home .project-diagnostic { padding-block:22px; }
+  .home-diagnostic>summary { display:grid; gap:10px; padding-block:10px; }
+  .home-diagnostic>summary h2 { font-size:26px; }
+  .home-diagnostic>summary>span { justify-content:space-between; }
+  .home-diagnostic-content { grid-template-columns:1fr; gap:24px; padding-top:24px; }
+  .portfolio-home .diagnostic-stage { padding:20px 16px; }
+  .portfolio-home .diagnostic-live h3 { font-size:26px; }
+  .portfolio-home .commercial-faq { gap:28px; }
+  .portfolio-home .commercial-faq-list p { font-size:16px; line-height:1.65; }
+  .portfolio-home .conversion-close h2 { font-size:38px; }
+  .portfolio-home .conversion-close-actions { gap:18px; }
+  .portfolio-home .work-contact { padding-block:56px; }
+}

@@ -19,6 +19,8 @@ test('every country/channel/data combination follows its payment route without c
     ['cz', 'chatgpt', 'store'], ['us', 'chatgpt', 'store'],
     ['cz', 'copilot', 'store'], ['us', 'copilot', 'direct'],
     ['cz', 'google', 'store'], ['us', 'google', 'direct'],
+    ['cz', 'meta', 'unavailable'], ['us', 'meta', 'direct'],
+    ['cz', 'shop', 'shop'], ['us', 'shop', 'shop'],
     ['cz', 'browser', 'browser'], ['us', 'browser', 'browser']
   ];
   for (const [country, channel, route] of routes) {
@@ -26,10 +28,29 @@ test('every country/channel/data combination follows its payment route without c
       const state = initial({ country, channel, data });
       const view = api.journeyState(state);
       assert.equal(view.route, route);
-      assert.equal(view.blocked, data === 'gap');
+      assert.equal(view.blocked, data === 'gap' || route === 'unavailable');
       assert.equal(view.completed, false);
+      const payment = api.transition(state, { type: 'go', step: 4 });
+      const confirmed = api.transition(payment, { type: 'confirm' });
+      assert.equal(api.journeyState(confirmed).completed, !view.blocked);
     }
   }
+});
+
+test('unverified Meta shopping in Czechia cannot be presented as a successful purchase', () => {
+  const state = initial({ channel: 'meta', country: 'cz' });
+  const view = api.journeyState(state);
+  assert.equal(view.unavailable, true);
+  assert.equal(view.gap, false, 'do not blame a complete store for channel availability');
+  assert.equal(view.available, false);
+  const payment = api.transition(state, { type: 'go', step: 4 });
+  assert.equal(api.transition(payment, { type: 'confirm' }).confirmed, false);
+});
+
+test('Google discovery uses Merchant Center and browser tools are scoped to one storefront', () => {
+  assert.equal(api.journeyState(initial({ channel: 'google' })).catalog, 'google');
+  assert.equal(api.journeyState(initial({ channel: 'browser' })).catalog, 'storefront');
+  assert.equal(api.journeyState(initial({ channel: 'shop' })).catalog, 'shopify');
 });
 
 test('missing returns policy prevents confirmation at checkout', () => {
