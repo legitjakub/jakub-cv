@@ -61,6 +61,8 @@
     <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
     <link rel="stylesheet" href="/core.css?v=574e1a4213" />
     <link rel="stylesheet" href="/work.css?v=571884607b" />
+    <link rel="stylesheet" href="/project-gallery.css?v=508f523607" />
+    <script src="/project-gallery.js?v=cfa11f4b4f" defer></script>
     <script src="/core.js?v=6e8a13ae47" defer></script>
     <script src="/media.js?v=189e666a97" defer></script>
     <script src="/work.js?v=1" defer></script>
@@ -97,7 +99,7 @@
             "mainEntity": {
               "@id": "https://jhrncir.xyz/en/#case-studies"
             },
-            "dateModified": "2026-11-07"
+            "dateModified": "2026-11-08"
           },
           {
             "@type": "ProfessionalService",
@@ -348,7 +350,7 @@
         <p>Six projects, from migration and B2B to a custom theme. I worked on them as a developer, independently and in the Appfleece agency team. For team projects, I distinguish the overall scope from my contribution.</p>
       </div>
 
-      <section id="posedla" class="case-study case-posedla section-pad">
+      <section id="posedla" class="project-showcase case-study case-posedla section-pad">
         <header class="case-head reveal">
           <div class="case-number">01 / 06</div>
           <h2 class="case-brand"><img src="/assets/logos/posedla-white.webp" alt="" width="1367" height="176" /><span>Posedla</span></h2>
@@ -356,7 +358,7 @@
           <div class="case-tags"><span>Shopify Plus</span><span>UX/UI</span><span>Integrations</span><span>Front-end</span></div>
           <a class="case-more" href="/en/work/posedla/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo reveal">
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/posedla-showreel.jpg" muted loop playsinline controls preload="none" aria-label="Posedla — new store preview"><source src="/assets/work/posedla-showreel.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> New store · showreel</figcaption>
@@ -380,7 +382,7 @@
         <blockquote class="case-quote reveal">“Jakub has helped us build and grow our Shopify store both as a freelancer and as part of an agency.” <cite>Jiri Duzar · Co-Founder at Posedla</cite></blockquote>
       </section>
 
-      <section id="facederma" class="case-study case-facederma section-pad">
+      <section id="facederma" class="project-showcase case-study case-facederma section-pad">
         <header class="case-head reveal">
           <div class="case-number">02 / 06</div>
           <h2 class="case-brand facederma-brand"><img src="/assets/logos/facederma-logo.png" alt="" width="1386" height="224" /><span>Facederma</span></h2>
@@ -388,7 +390,7 @@
           <div class="case-tags"><span>Shopify Plus</span><span>WooCommerce migration</span><span>B2B</span><span>Loyalty</span></div>
           <a class="case-more" href="/en/work/facederma/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo video-trio reveal">
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/facederma-storefront.jpg" muted loop playsinline controls preload="none" aria-label="Facederma — storefront preview"><source src="/assets/work/facederma-storefront.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> Home · B2B signup</figcaption>
@@ -415,7 +417,7 @@
         </details>
       </section>
 
-      <section id="bohemian" class="case-study case-bohemian section-pad">
+      <section id="bohemian" class="project-showcase case-study case-bohemian section-pad">
         <header class="case-head reveal">
           <div class="case-number">03 / 06</div>
           <h2 class="case-brand bohemian-brand"><img src="/assets/logos/bohemian-coffee-house-white.webp" alt="" width="760" height="276" /><span>Bohemian Coffee House</span></h2>
@@ -423,7 +425,7 @@
           <div class="case-tags"><span>Shopify theme</span><span>Metafields</span><span>Filters</span><span>Appfleece team</span></div>
           <a class="case-more" href="/en/work/bohemian/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo video-trio reveal">
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/bohemian-katalog.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — collection with filters and flavour profiles"><source src="/assets/work/bohemian-katalog.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> Collection · filter &amp; flavour profiles</figcaption>
@@ -450,7 +452,7 @@
         </details>
       </section>
 
-      <section id="molecules" class="case-study case-molecules section-pad">
+      <section id="molecules" class="project-showcase case-study case-molecules section-pad">
         <header class="case-head reveal">
           <div class="case-number">04 / 06</div>
           <h2 class="case-brand molecules-brand"><img src="/assets/logos/molecules-of-life.svg" alt="" width="726" height="216" /><span>Molecules of Life</span></h2>
@@ -458,14 +460,14 @@
           <div class="case-tags"><span>Shopify</span><span>Localisation</span><span>Product page</span><span>Mobile UX</span></div>
           <a class="case-more" href="/en/work/molecules/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo video-duo-reverse reveal">
-          <figure class="media-frame">
-            <video poster="/assets/work/posters/molecules-mobile.jpg" muted loop playsinline controls preload="none" aria-label="Molecules of Life — mobile preview"><source src="/assets/work/molecules-mobile.mp4" type="video/mp4" /></video>
-            <figcaption><span>01</span> Mobile interface</figcaption>
-          </figure>
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/molecules-product.jpg" muted loop playsinline controls preload="none" aria-label="Molecules of Life — product page"><source src="/assets/work/molecules-product.mp4" type="video/mp4" /></video>
-            <figcaption><span>02</span> Product detail</figcaption>
+            <figcaption><span>01</span> Product detail</figcaption>
+          </figure>
+          <figure class="media-frame">
+            <video poster="/assets/work/posters/molecules-mobile.jpg" muted loop playsinline controls preload="none" aria-label="Molecules of Life — mobile preview"><source src="/assets/work/molecules-mobile.mp4" type="video/mp4" /></video>
+            <figcaption><span>02</span> Mobile interface</figcaption>
           </figure>
         </div>
         <details class="case-scope-box reveal" open>
@@ -481,7 +483,7 @@
         </details>
       </section>
 
-      <section id="peaceofalm" class="case-study case-peaceofalm section-pad">
+      <section id="peaceofalm" class="project-showcase case-study case-peaceofalm section-pad">
         <header class="case-head reveal">
           <div class="case-number">05 / 06</div>
           <h2 class="case-brand peaceofalm-brand"><img src="/assets/logos/peace-of-alm-white.webp" alt="" width="1001" height="143" /><span>Peace of Alm</span></h2>
@@ -489,7 +491,7 @@
           <div class="case-tags"><span>Theme customisation</span><span>Typography</span><span>Labels</span><span>Bundles</span></div>
           <a class="case-more" href="/en/work/peaceofalm/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo video-trio reveal">
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/peaceofalm-obchod.jpg" muted loop playsinline controls preload="none" aria-label="Peace of Alm — store home page"><source src="/assets/work/peaceofalm-obchod.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> Home · bestsellers &amp; brand</figcaption>
@@ -514,7 +516,7 @@
         </details>
       </section>
 
-      <section id="surprisedrinks" class="case-study case-surprise section-pad">
+      <section id="surprisedrinks" class="project-showcase case-study case-surprise section-pad">
         <header class="case-head reveal">
           <div class="case-number">06 / 06</div>
           <h2 class="case-brand surprise-brand"><img src="/assets/logos/surprisedrinks-logo.avif" alt="" width="456" height="160" /><span>Surprise Drinks</span></h2>
@@ -522,7 +524,7 @@
           <div class="case-tags"><span>Shopify</span><span>Brand site</span><span>Mini-games</span><span>Localisation</span></div>
           <a class="case-more" href="/en/work/surprisedrinks/">Full case study <span aria-hidden="true">→</span></a>
         </header>
-        <div class="video-duo video-trio reveal">
+        <div class="project-gallery reveal" data-project-gallery>
           <figure class="media-frame media-frame-wide">
             <video poster="/assets/work/posters/surprisedrinks-site.jpg" muted loop playsinline controls preload="none" aria-label="Surprise Drinks — brand site: licences and flavours"><source src="/assets/work/surprisedrinks-site.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> Brand site · licences &amp; flavours</figcaption>
