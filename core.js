@@ -98,7 +98,7 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && header.classList.contains('mobile-menu-open')) { close(); toggle.focus(); }
     });
-    window.addEventListener('resize', () => { if (window.innerWidth >= 1200) close(); }, { passive:true });
+    window.addEventListener('resize', () => { if (window.innerWidth >= 1024) close(); }, { passive:true });
   }
 
   const navLinks = [...document.querySelectorAll('.nav-wrap nav a[href^="#"]')];
