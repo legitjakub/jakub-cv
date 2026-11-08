@@ -10,7 +10,7 @@ Clients and teams worked with include Posedla, Facederma, Bohemian Coffee House,
 - [Shopify development (English home)](https://jhrncir.xyz/en/): the same in English
 - [Shopify Plus: kdy se vyplatí a kolik stojí](https://jhrncir.xyz/shopify-plus/): when Plus pays off, published pricing, migration
 - [Shopify Plus: when it pays off and what it costs](https://jhrncir.xyz/shopify-plus/en/)
-- [Agentic commerce na Shopify](https://jhrncir.xyz/agentic-commerce/): how AI agents shop on Shopify (Shopify Catalog, Agentic Storefronts, MCP, UCP, WebMCP), channel availability for Czech and EU stores as of November 2026, an interactive walkthrough and merchant steps ([EN](https://jhrncir.xyz/agentic-commerce/en/))
+- [Agentic commerce na Shopify](https://jhrncir.xyz/agentic-commerce/): how AI agents shop on Shopify (Shopify Catalog, Agentic Storefronts, MCP, UCP, WebMCP), channel availability for Czech and EU stores as of November 2026, and how to prepare a store for AI agents ([EN](https://jhrncir.xyz/agentic-commerce/en/))
 - [Poptávka](https://jhrncir.xyz/shopify-poptavka/): project inquiry form (Czech)
 
 ## Case studies
@@ -24,8 +24,8 @@ Clients and teams worked with include Posedla, Facederma, Bohemian Coffee House,
 
 ## Guides
 
-- [Shopify průvodce (Czech)](https://jhrncir.xyz/shopify-pruvodce/): 19 articles on Shopify SEO, speed, pricing, migration, Shopify Plus, B2B, Markets, payments in Czechia and Slovakia, Functions, AI tooling, and Shopify vs Shoptet, Upgates and WooCommerce
-- [Shopify guide (English)](https://jhrncir.xyz/shopify-guide/): the same 19 articles in English
+- [Shopify průvodce (Czech)](https://jhrncir.xyz/shopify-pruvodce/): 20 articles on Shopify SEO, speed, pricing, migration, Shopify Plus, B2B, Markets, payments in Czechia and Slovakia, Functions, AI tooling, and Shopify vs Shoptet, Upgates and WooCommerce, plus a practical guide to optimising Shopify for AI agents ([CZ](https://jhrncir.xyz/shopify-pruvodce/optimalizace-shopify-pro-ai-agenty/), [EN](https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/))
+- [Shopify guide (English)](https://jhrncir.xyz/shopify-guide/): the same 20 articles in English
 
 ## Contact
 
