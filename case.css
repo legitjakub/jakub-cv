@@ -157,3 +157,111 @@ body.case-page footer { background:#0a0a0a; }
 .case-media .media-frame:hover .media-toggle,.case-media .media-toggle:focus-visible { opacity:1; }
 .case-media .media-toggle:hover { border-color:var(--case-accent); }
 @media (prefers-reduced-motion:reduce) { .case-media .media-toggle { transition:none; } }
+
+/* ── Store tour, phones and brand kit ───────────────────────────
+   Real screens from the live store. The tour is a tab list (case-tour.js);
+   without the script every screen is listed in order. */
+.case-tour,.case-phones { padding-top:clamp(56px,6vw,92px); padding-bottom:clamp(56px,6vw,92px); border-top:1px solid var(--case-line); }
+.tour-head { display:grid; grid-template-columns:minmax(190px,.4fr) minmax(0,1fr); gap:6px clamp(30px,6vw,96px); align-items:end; }
+.tour-eyebrow { grid-column:1; color:var(--case-accent); font:600 13px/1.4 "Manrope",sans-serif; }
+.tour-head h2 { grid-column:1; margin:0; font-size:clamp(26px,2.7vw,40px); line-height:1.06; letter-spacing:-.05em; }
+.tour-head p { grid-column:2; grid-row:1/3; max-width:560px; margin:0; color:var(--case-body); font-size:15px; line-height:1.7; }
+
+.tour { margin-top:clamp(30px,4vw,48px); }
+.tour-tabs { display:flex; gap:clamp(18px,2.4vw,34px); overflow-x:auto; border-bottom:1px solid var(--case-line); scrollbar-width:none; }
+.tour-tabs::-webkit-scrollbar { display:none; }
+.tour-tabs button {
+  flex:none; margin:0 0 -1px; padding:0 0 14px; border:0; border-bottom:2px solid transparent; background:none;
+  color:var(--case-body); font:600 14px/1.3 "Manrope",sans-serif; cursor:pointer; transition:color .2s ease,border-color .2s ease;
+}
+.tour-tabs button:hover { color:var(--case-strong); }
+.tour-tabs button[aria-selected="true"] { border-bottom-color:var(--case-accent); color:var(--case-strong); }
+.tour-tabs button:focus-visible { outline:2px solid var(--case-accent); outline-offset:4px; }
+.tour:not(.is-ready) .tour-tabs,.tour:not(.is-ready) .tour-steps { display:none; }
+
+.tour-stage { position:relative; margin-top:28px; }
+.tour-panel { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,300px); gap:clamp(24px,3.6vw,52px); align-items:end; margin:0; }
+.tour-panel[hidden] { display:none; }
+.tour:not(.is-ready) .tour-panel + .tour-panel { margin-top:48px; }
+.tour.is-ready .tour-panel { animation:tour-in .35s ease both; }
+@keyframes tour-in { from { opacity:0; transform:translateY(8px); } }
+
+.tour-browser { overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 30px 80px rgba(0,0,0,.28); }
+.case-molecules-new .tour-browser { box-shadow:0 26px 70px rgba(0,0,0,.12); }
+.tour-bar { display:flex; align-items:center; gap:6px; height:36px; padding:0 14px; border-bottom:1px solid rgba(var(--case-rgb),.18); background:rgba(var(--case-rgb),.07); }
+.tour-bar i { width:9px; height:9px; border-radius:50%; background:rgba(var(--case-rgb),.32); }
+.tour-bar span { overflow:hidden; max-width:min(560px,70%); margin:0 auto; padding:4px 14px; border:1px solid rgba(var(--case-rgb),.2); color:var(--case-body); font:500 12px/1.3 "Manrope",sans-serif; white-space:nowrap; text-overflow:ellipsis; }
+.tour-bar b { color:var(--case-strong); font-weight:600; }
+
+.shot-zoom { display:block; width:100%; margin:0; padding:0; border:0; background:none; cursor:zoom-in; }
+.shot-zoom img { display:block; width:100%; height:auto; }
+.shot-zoom:focus-visible { outline:2px solid var(--case-accent); outline-offset:3px; }
+
+.tour-panel figcaption { padding-bottom:58px; }
+.tour:not(.is-ready) .tour-panel figcaption { padding-bottom:0; }
+.tour-count { color:var(--case-accent); font:600 13px "Manrope",sans-serif; }
+.tour-panel h3 { margin:14px 0 0; color:var(--case-strong); font-size:clamp(22px,2vw,28px); line-height:1.12; letter-spacing:-.04em; }
+.tour-panel figcaption p { margin:12px 0 0; color:var(--case-body); font-size:15px; line-height:1.7; }
+.tour-steps { position:absolute; right:0; bottom:0; display:flex; gap:8px; width:min(300px,100%); }
+.tour-steps button {
+  display:grid; place-items:center; width:46px; height:46px; padding:0; border:1px solid var(--case-line); background:none;
+  color:var(--case-strong); font:500 18px/1 "Manrope",sans-serif; cursor:pointer; transition:border-color .2s ease,background-color .2s ease;
+}
+.tour-steps button:hover { border-color:var(--case-accent); }
+.tour-steps button:focus-visible { outline:2px solid var(--case-accent); outline-offset:2px; }
+
+.phone-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,3vw,44px); max-width:1080px; margin:clamp(30px,4vw,48px) 0 0; padding:0; list-style:none; }
+.phone-row figure { margin:0; }
+.phone-row .shot-zoom { overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 24px 60px rgba(0,0,0,.24); }
+.case-molecules-new .phone-row .shot-zoom { box-shadow:0 20px 50px rgba(0,0,0,.1); }
+.phone-row figcaption { margin-top:12px; color:var(--case-body); font-size:13px; line-height:1.5; }
+
+.brand-kit { display:grid; grid-template-columns:minmax(190px,.4fr) minmax(0,1fr); gap:20px clamp(30px,6vw,96px); margin-top:clamp(48px,6vw,80px); padding-top:clamp(32px,4vw,48px); border-top:1px solid var(--case-line); }
+.brand-kit h3 { grid-row:span 3; margin:0; color:var(--case-strong); font-size:clamp(20px,1.8vw,24px); line-height:1.15; letter-spacing:-.035em; }
+.brand-swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(118px,1fr)); gap:14px; margin:0; padding:0; list-style:none; }
+.brand-swatches li { display:flex; flex-direction:column; gap:3px; }
+.brand-swatches i { display:block; aspect-ratio:4/3; margin-bottom:9px; border:1px solid var(--case-line); background:var(--sw); }
+.brand-swatches b { color:var(--case-strong); font:600 14px "Manrope",sans-serif; font-variant-numeric:tabular-nums; }
+.brand-swatches small,.brand-fonts small { color:var(--case-body); font-size:12.5px; line-height:1.45; }
+.brand-fonts { display:flex; flex-wrap:wrap; gap:14px 40px; margin:8px 0 0; padding:0; list-style:none; }
+.brand-fonts li { display:flex; flex-direction:column; gap:3px; }
+.brand-fonts b { color:var(--case-strong); font-size:19px; font-weight:600; letter-spacing:-.02em; }
+.brand-note { margin:0; color:var(--case-body); font-size:12.5px; }
+
+.shot-dialog { width:min(1440px,calc(100vw - 32px)); max-width:none; max-height:calc(100dvh - 32px); padding:0; overflow:auto; border:1px solid rgba(255,255,255,.16); background:#0b0c0b; color:#efeee8; }
+.shot-dialog::backdrop { background:rgba(4,5,4,.84); }
+.shot-dialog figure { margin:0; }
+.shot-dialog img { display:block; width:100%; height:auto; max-height:calc(100dvh - 150px); object-fit:contain; background:#0b0c0b; }
+.shot-dialog img.is-tall { width:auto; margin:0 auto; }
+.shot-dialog figcaption { padding:14px 18px 0; color:#b8b9b1; font-size:14px; line-height:1.6; }
+.shot-dialog figcaption b { margin-right:6px; color:#efeee8; font-weight:600; }
+.shot-dialog-bar { display:flex; align-items:center; gap:8px; padding:12px 18px 16px; }
+.shot-dialog-bar span { margin:0 6px; color:#989a92; font-size:13px; font-variant-numeric:tabular-nums; }
+.shot-dialog-bar button { min-width:42px; height:42px; padding:0 14px; border:1px solid rgba(255,255,255,.18); background:none; color:#efeee8; font:600 14px "Manrope",sans-serif; cursor:pointer; }
+.shot-dialog-bar button:hover { border-color:#efeee8; }
+.shot-dialog-bar [data-close] { margin-left:auto; }
+.shot-dialog-bar button:focus-visible { outline:2px solid #efeee8; outline-offset:2px; }
+
+@media (max-width:960px) {
+  .tour-head,.brand-kit { grid-template-columns:1fr; }
+  .tour-head p { grid-column:1; grid-row:auto; margin-top:10px; }
+  .brand-kit h3 { grid-row:auto; }
+  .tour-panel { grid-template-columns:1fr; gap:20px; }
+  .tour-panel figcaption { padding-bottom:0; padding-right:112px; min-height:46px; }
+  .tour-steps { top:auto; width:auto; }
+}
+@media (max-width:760px) {
+  .tour-tabs button { font-size:15px; }
+  .tour-bar { height:30px; padding:0 10px; }
+  .tour-bar i { width:7px; height:7px; }
+  .tour-bar span { max-width:76%; padding:3px 10px; font-size:11px; }
+  .tour-panel figcaption { padding-right:0; }
+  .tour-steps { position:static; justify-content:flex-end; margin-top:18px; }
+  .phone-row { grid-auto-flow:column; grid-template-columns:none; grid-auto-columns:72%; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:6px; }
+  .phone-row li { scroll-snap-align:start; }
+  .brand-swatches { grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .tour.is-ready .tour-panel { animation:none; }
+  .tour-tabs button,.tour-steps button { transition:none; }
+}

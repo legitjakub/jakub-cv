@@ -810,3 +810,15 @@ body { background:var(--guide-bg); }
   .guide-menu-toggle { order:3; flex:0 0 auto; }
 }
 .guide-hero::after,.visual-stage::before { display:none; }
+
+/* Related articles: the article cover above each card. */
+.related-thumb { display:block; overflow:hidden; aspect-ratio:40/21; margin:0 0 18px; border:1px solid var(--guide-line); background:var(--guide-surface); }
+.related-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+.related-card:hover .related-thumb img { transform:scale(1.03); }
+@media (prefers-reduced-motion:reduce) { .related-thumb img { transition:none; } }
+
+/* Hub: floating cover that follows the pointer (blog.js, desktop only). */
+.row-peek { position:fixed; left:0; top:0; z-index:40; width:300px; pointer-events:none; opacity:0; border:1px solid rgba(var(--guide-green-rgb),.4); background:var(--guide-surface); box-shadow:0 24px 60px rgba(0,0,0,.5); transition:opacity .2s ease; }
+.row-peek.is-on { opacity:1; }
+.row-peek img { width:100%; height:auto; }
+@media (max-width:1023px),(hover:none) { .row-peek { display:none; } }
