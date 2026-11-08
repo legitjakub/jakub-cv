@@ -138,3 +138,67 @@
 @media (prefers-reduced-motion:reduce) {
   .project-gallery-tab,.project-gallery-tab img { transition:none; }
 }
+
+/* ── Desktop: bento grid ───────────────────────────────────────
+   Every clip stays visible. Three clips: a lead on the left and two on the
+   right whose stacked height matches the lead (2fr / 1fr). Two clips: halves.
+   The clips already carry their own browser frame on the brand canvas, so the
+   tile adds no second frame or caption bar: the label and the play/pause chip
+   sit on the image. */
+@media (min-width:901px) {
+  .project-showcase .project-gallery,
+  .project-showcase .project-gallery.is-enhanced {
+    grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+    grid-auto-rows:auto;
+    align-items:stretch;
+    gap:16px;
+  }
+  .project-showcase .project-gallery:not(:has(> figure:nth-of-type(3))) { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  /* The lead fills both rows; its height comes from the two clips beside it. */
+  .project-showcase .project-gallery:has(> figure:nth-of-type(3)) > figure:first-of-type { grid-row:span 2; }
+  .project-showcase .project-gallery:has(> figure:nth-of-type(3)) > figure:first-of-type video { position:absolute; inset:0; aspect-ratio:auto; }
+  .project-gallery-picker { display:none; }
+  .project-showcase .project-gallery > .media-frame[hidden] { display:block; }
+}
+.project-showcase .project-gallery > .media-frame {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(var(--case-rgb),.16);
+  border-radius:10px;
+  background:var(--case-canvas,#080a09);
+  box-shadow:none;
+}
+.project-showcase .project-gallery > .media-frame video { height:100%; object-fit:cover; }
+.project-showcase .project-gallery > .media-frame figcaption,
+.project-showcase .project-gallery > .media-frame figcaption.has-playback-toggle {
+  position:absolute;
+  inset:auto 12px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-height:0;
+  padding:0;
+  border:0;
+  z-index:2;
+  color:#efeee8;
+  pointer-events:none;
+}
+.project-showcase .media-caption-text,
+.project-showcase .media-toggle {
+  pointer-events:auto;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  background:rgba(8,10,9,.62);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+}
+.project-showcase .media-caption-text { padding:6px 12px; color:#efeee8; font:500 12px/1.4 "Manrope",sans-serif; }
+.project-showcase .media-caption-text > span { margin-right:8px; color:var(--case-accent); }
+.case-molecules-new .media-caption-text > span { color:#b9dd84; }
+/* Icon-only chip; the accessible name comes from aria-label set in media.js. */
+.project-showcase .media-toggle { width:32px; min-height:32px; height:32px; padding:0; font-size:0; opacity:.72; transition:opacity .2s ease,border-color .2s ease; }
+.project-showcase .media-frame:hover .media-toggle,
+.project-showcase .media-toggle:focus-visible { opacity:1; }
+.project-showcase .media-toggle:hover { border-color:var(--case-accent); }
+@media (prefers-reduced-motion:reduce) { .project-showcase .media-toggle { transition:none; } }

@@ -13,7 +13,6 @@
 .portfolio-home :is(.work-hero-primary,.work-hero-secondary,.case-more,.flow-action,.conversion-close-actions a,.work-contact a,.shopify-service-cta a,.diagnostic-result-actions a,.diagnostic-reset,.diagnostic-result-links a) {
   font-family:"Manrope",sans-serif; font-size:14px; font-weight:600; letter-spacing:0; text-transform:none;
 }
-body.portfolio-home .nav-actions .nav-cta { display:inline-flex; align-items:center; min-height:42px; border-color:rgba(255,255,255,.3); background:transparent; color:var(--paper); font:600 13px/1.4 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
 .portfolio-home .work-hero-actions { gap:28px; }
 .portfolio-home .work-hero-actions a { font:600 15px/1.4 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
 .portfolio-home .work-hero-primary { min-width:210px; padding:15px 18px; }

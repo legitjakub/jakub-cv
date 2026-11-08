@@ -55,6 +55,58 @@ button,input,select,textarea { font:inherit; }
 .to-top.show { opacity:1; pointer-events:auto; }
 footer { min-height:110px; padding-inline:var(--pad); border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; color:#777; font:400 12px "DM Mono",monospace; text-transform:uppercase; }
 
+/* ── Header, desktop ──────────────────────────────────────────
+   Five links in one quiet pill group, the page you are on marked in the
+   accent colour, and a single solid call to action. The bar itself stays
+   transparent over the hero and turns into frosted glass once scrolled. */
+@media (min-width:1200px) {
+  .work-page .nav-wrap>nav {
+    justify-self:center;
+    align-items:center;
+    gap:2px;
+    padding:4px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:999px;
+    background:rgba(18,21,19,.55);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+  }
+  .work-page .nav-wrap nav a {
+    padding:9px 16px;
+    border-radius:999px;
+    color:#c3c5bd;
+    font:600 14px/1.2 "Manrope",sans-serif;
+    letter-spacing:-.005em;
+    text-transform:none;
+    transition:color .2s ease,background-color .2s ease;
+  }
+  .work-page .nav-wrap nav a:hover { color:#fff; background:rgba(255,255,255,.07); }
+  .work-page .nav-wrap nav a.active,
+  .work-page .nav-wrap nav a[aria-current="page"] { color:var(--commerce); background:rgba(var(--commerce-rgb),.12); }
+  .work-page .nav-wrap nav a:focus-visible { outline:2px solid var(--commerce); outline-offset:2px; }
+  .work-page .nav-wrap.scrolled {
+    background:rgba(9,11,10,.78);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    backdrop-filter:blur(14px) saturate(140%);
+  }
+}
+.work-page .nav-actions { display:flex; align-items:center; gap:10px; }
+.work-page .lang-switch { border-color:rgba(255,255,255,.12); border-radius:999px; padding:3px; }
+.work-page .lang-switch a,.work-page .lang-switch span { min-width:32px; height:28px; border-radius:999px; }
+.work-page .lang-switch a { color:#9b9b94; }
+.work-page .lang-switch a:hover { color:#fff; }
+body.work-page .nav-actions .nav-cta {
+  display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:0 18px;
+  border:1px solid var(--commerce); border-radius:999px; background:var(--commerce); color:#0b0f06;
+  font:700 14px/1 "Manrope",sans-serif; letter-spacing:-.005em; text-transform:none;
+  transition:background-color .2s ease,border-color .2s ease;
+}
+body.work-page .nav-actions .nav-cta span { margin:0; color:inherit; }
+body.work-page .nav-actions .nav-cta:hover { background:#d2ff7a; border-color:#d2ff7a; }
+@media (prefers-reduced-motion:reduce) {
+  .work-page .nav-wrap nav a,body.work-page .nav-actions .nav-cta { transition:none; }
+}
+
 @media (max-width:1199px) {
   .nav-wrap { grid-template-columns:auto 1fr auto; }
   .work-page .nav-wrap>nav { display:none; }
