@@ -150,7 +150,7 @@ const setupGuideMobileNavigation = () => {
     }
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1200) close();
+    if (window.innerWidth >= 1024) close();
   }, { passive:true });
 };
 setupGuideMobileNavigation();

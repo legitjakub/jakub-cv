@@ -82,7 +82,7 @@
 .portfolio-home .work-contact>a { font-size:20px; }
 .portfolio-home a:focus-visible,.portfolio-home button:focus-visible,.home-diagnostic>summary:focus-visible { outline:2px solid var(--commerce); outline-offset:4px; }
 
-@media (max-width:1199px) {
+@media (max-width:1023px) {
   body.portfolio-home .nav-wrap>nav { background:#090c0a; transition:none; }
   body.portfolio-home .mobile-nav-toggle { font:600 13px/1 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
 }

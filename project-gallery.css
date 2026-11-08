@@ -60,9 +60,9 @@
   justify-content:space-between;
   gap:12px;
   margin-bottom:14px;
-  font:500 12px/1.5 "DM Mono",monospace;
-  text-transform:uppercase;
-  letter-spacing:.04em;
+  font:600 13px/1.5 "Manrope",sans-serif;
+  text-transform:none;
+  letter-spacing:0;
 }
 .project-gallery-tabs { display:grid; gap:12px; }
 .project-gallery-tab {
@@ -91,7 +91,7 @@
 .project-gallery-tab-label {
   display:block;
   padding:10px 6px 6px;
-  font:500 12px/1.5 "DM Mono",monospace;
+  font:600 13px/1.5 "Manrope",sans-serif;
 }
 .project-gallery-tab:hover { border-color:var(--case-accent); }
 .project-gallery-tab:hover img,.project-gallery-tab[aria-selected="true"] img { opacity:1; }
