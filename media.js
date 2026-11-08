@@ -29,16 +29,50 @@
     }, { passive:true });
   });
 
-  /* Nine preview clips on one page. With `autoplay` the browser fetched every
-     one of them up front — ~14 MB before a single scroll. The sources stay in
-     the markup so the clips still work without JS (they get native controls);
-     playback, and therefore the download, only starts once one is in view. */
+  /* Previews use a caption button, keeping the image free of browser panels.
+     Without JavaScript the poster remains visible. Clips are fetched on view. */
   const previews = document.querySelectorAll('.media-frame video');
+  const manuallyPaused = new Set();
+  previews.forEach((video) => {
+    video.controls = false;
+    video.disablePictureInPicture = true;
+    video.disableRemotePlayback = true;
+    const caption = video.closest('.media-frame')?.querySelector('figcaption');
+    if (!caption) return;
+    const english = document.documentElement.lang === 'en';
+    const label = document.createElement('span');
+    label.className = 'media-caption-text';
+    while (caption.firstChild) label.append(caption.firstChild);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'media-toggle';
+    const sync = () => {
+      const action = video.paused ? (english ? 'Play' : 'Přehrát') : (english ? 'Pause' : 'Pozastavit');
+      button.textContent = action;
+      button.dataset.playing = String(!video.paused);
+      button.setAttribute('aria-label', action + ': ' + (video.getAttribute('aria-label') || (english ? 'Project preview' : 'Ukázka projektu')));
+    };
+    button.addEventListener('click', async () => {
+      if (video.paused) {
+        manuallyPaused.delete(video);
+        try { await video.play(); } catch { sync(); }
+      } else {
+        manuallyPaused.add(video);
+        video.pause();
+      }
+    });
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    video.addEventListener('ended', sync);
+    caption.classList.add('has-playback-toggle');
+    caption.append(label, button);
+    sync();
+  });
   if (previews.length && 'IntersectionObserver' in window) {
     const inView = new Set();
     const autoStarted = new Set();
     const start = (video) => {
-      if (reduceMotion.matches || !video.paused) return;
+      if (reduceMotion.matches || manuallyPaused.has(video) || !video.paused) return;
       autoStarted.add(video);
       video.play().catch(() => autoStarted.delete(video));
     };

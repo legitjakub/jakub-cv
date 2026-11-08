@@ -63,11 +63,11 @@
     <meta name="twitter:image" content="https://jhrncir.xyz/assets/work/posters/bohemian-katalog.jpg" />
     <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=1" />
     <link rel="stylesheet" href="/core.css?v=574e1a4213" />
-    <link rel="stylesheet" href="/work.css?v=571884607b" />
+    <link rel="stylesheet" href="/work.css?v=cabf078af4" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=5ee57205d0" />
     <link rel="stylesheet" href="/case.css?v=9da5885392" />
     <script src="/core.js?v=6e8a13ae47" defer></script>
-    <script src="/media.js?v=189e666a97" defer></script>
+    <script src="/media.js?v=5675d23657" defer></script>
     <script src="/shopify-vyvoj.js?v=8cd6cb25b5" defer></script>
     <script type="application/ld+json">
       {
@@ -224,7 +224,7 @@
           <span class="case-order">Case study · Shopify theme and data</span>
           <p class="case-logo-title case-logo-title-bohemian"><img src="/assets/logos/bohemian-coffee-house-white.webp" alt="Bohemian Coffee House" width="760" height="276" /></p>
           <h1>Bohemian Coffee House: <em>a coffee data model in a Shopify theme</em></h1>
-          <p class="case-lead">Bohemian Coffee House is a family café and roastery in Rumburk, northern Czechia. Its rebrand came with a new Shopify store, designed by Zdeněk Zeman and built by the Appfleece agency team. In that team I worked on the theme and on how the store handles coffee data.</p>
+          <p class="case-lead">Bohemian Coffee House is a family café and roastery in Rumburk, northern Czechia. Its rebrand came with a new Shopify store, designed by Zdeněk Zeman and built by the Appfleece agency team. I developed the theme and structured coffee product data as part of that team.</p>
         </div>
         <dl class="case-facts reveal">
             <div><dt>Client</dt><dd><a href="https://bohemiancoffeehouse.cz/" rel="noopener">Bohemian Coffee House</a></dd></div>
@@ -240,15 +240,15 @@
       <section class="case-media section-pad" aria-label="Project previews">
         <div class="video-duo video-trio reveal">
           <figure class="media-frame media-frame-wide">
-            <video poster="/assets/work/posters/bohemian-katalog.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — collection with filters and flavour profiles"><source src="/assets/work/bohemian-katalog.mp4" type="video/mp4" /></video>
+            <video poster="/assets/work/posters/bohemian-katalog.jpg" muted loop playsinline preload="none" aria-label="Bohemian Coffee House — collection with filters and flavour profiles" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"><source src="/assets/work/bohemian-katalog.mp4" type="video/mp4" /></video>
             <figcaption><span>01</span> Collection · filter &amp; flavour profiles</figcaption>
           </figure>
           <figure class="media-frame">
-            <video poster="/assets/work/posters/bohemian-produkt.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — switching from light to dark roast"><source src="/assets/work/bohemian-produkt.mp4" type="video/mp4" /></video>
+            <video poster="/assets/work/posters/bohemian-produkt.jpg" muted loop playsinline preload="none" aria-label="Bohemian Coffee House — switching from light to dark roast" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"><source src="/assets/work/bohemian-produkt.mp4" type="video/mp4" /></video>
             <figcaption><span>02</span> Product · light &amp; dark roast</figcaption>
           </figure>
           <figure class="media-frame">
-            <video poster="/assets/work/posters/bohemian-mobil.jpg" muted loop playsinline controls preload="none" aria-label="Bohemian Coffee House — mobile: home, collection, product"><source src="/assets/work/bohemian-mobil.mp4" type="video/mp4" /></video>
+            <video poster="/assets/work/posters/bohemian-mobil.jpg" muted loop playsinline preload="none" aria-label="Bohemian Coffee House — mobile: home, collection, product" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"><source src="/assets/work/bohemian-mobil.mp4" type="video/mp4" /></video>
             <figcaption><span>03</span> Mobile · collection &amp; product</figcaption>
           </figure>
         </div>
@@ -257,16 +257,16 @@
       <section class="case-section section-pad">
         <header class="reveal"><span class="work-index">01</span><h2>Starting point</h2></header>
         <div class="case-prose reveal">
-          <p>The roastery sells coffees from several countries and roasts most of them both light and dark. Customers choose by how they brew at home, where the coffee comes from and how it was processed. The roastery also needs to add new coffees itself, without a developer.</p>
-          <p>If that information only lived in the product description, nobody could filter by it or show it consistently. Every coffee needed a structured record.</p>
+          <p>The roastery sells coffees with different origins, processes and roast levels. Customers choose by taste and brew method. The store needed clear filters, links between the light and dark versions of selected coffees and straightforward product management.</p>
+          <p>Structured fields allow the same data to appear in product details, filters, collection cards and labels. The store team enters it once in the admin.</p>
         </div>
       </section>
       <section class="case-section section-pad">
-        <header class="reveal"><span class="work-index">02</span><h2>The project in the Appfleece team</h2></header>
+        <header class="reveal"><span class="work-index">02</span><h2>Project scope</h2></header>
         <div class="case-prose reveal">
           <ul class="case-scope">
             <li><b>Rebrand and new store</b>Design by Zdeněk Zeman, build by the Appfleece team.</li>
-            <li><b>Online Store 2.0</b>The Motion theme moved to sections, so the client edits the café, roastery and about pages itself.</li>
+            <li><b>Online Store 2.0</b>The Motion theme moved to sections, so the client’s team can edit the café, roastery and about pages independently.</li>
             <li><b>19 fields per coffee</b>One admin record feeds the scales, filters, cards and labels.</li>
             <li><b>Mobile layout</b>Two columns of coffees, collapsible filters and larger variant buttons.</li>
             <li><b>Three languages</b>Czech, English and German, including the scales and brew guides.</li>
@@ -290,11 +290,11 @@
       <section class="case-section section-pad">
         <header class="reveal"><span class="work-index">04</span><h2>How coffee data moves through the store</h2></header>
         <div class="case-prose reveal">
-          <p>Coffee details are entered once in the admin and the store reuses them in several places. The metafield keys in the diagram are taken from the filter parameters on the live site.</p>
+          <p>The data model connects product management to the storefront. The same fields drive filters, flavour profiles and roast and acidity scales.</p>
           <div class="data-map">
             <div class="data-map-col"><span class="data-map-label">Coffee record in the admin</span><ul>
               <li><code>custom.priprava</code><span>Brew method: filter</span></li>
-              <li><code>custom.zeme_puvodu</code><span>Origin: Central America</span></li>
+              <li><code>custom.zeme_puvodu</code><span>Origin: Mexico</span></li>
               <li><code>custom.zpracovani-new</code><span>Process: washed</span></li>
               <li><code>Roast level · acidity</code><span>City · medium</span></li>
               <li><code>Flavour profile</code><span>dried fruit, orange, caramel, marzipan</span></li>
@@ -307,7 +307,7 @@
               <li><b>Roast switch</b>Light and dark versions as two products</li>
             </ol></div>
           </div>
-          <p class="data-map-note">Example: Mexiko Organic Caracolillo, light roast. The filter metafield keys are taken from the live site; other fields are named as they appear in the admin.</p>
+          <p class="data-map-note">Example data for the light roast of Mexiko Organic Caracolillo.</p>
           <div class="case-stills">
             <figure class="case-still"><img src="/assets/work/stills/bohemian-prazeni.webp" alt="Product pages for the light and dark roast of Mexiko Organic Premium side by side" width="1400" height="428" loading="lazy" decoding="async" /><figcaption>Light and dark roasts are two products. The switch between them changes the scales too: City+ with medium acidity, Full City with low.</figcaption></figure>
             <figure class="case-still"><img src="/assets/work/stills/bohemian-filtry.webp" alt="Collection filters with Modern espresso selected and the matching coffee cards" width="1440" height="820" loading="lazy" decoding="async" /><figcaption>The “Modern espresso” filter narrows the range without a page reload. The cards below show brew method, process, country and region.</figcaption></figure>
