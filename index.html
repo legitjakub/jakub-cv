@@ -59,18 +59,20 @@
     <meta name="twitter:title" content="Jakub Hrnčíř – Shopify vývoj na míru" />
     <meta name="twitter:description" content="Jakub Hrnčíř, Shopify vývojář z Prahy: nové e-shopy, redesigny, Shopify Plus, B2B a migrace z WooCommerce i Shoptetu. Reálné projekty a reference klientů." />
     <meta name="twitter:image" content="https://jhrncir.xyz/assets/seo-preview.jpg" />
+    <link rel="preload" as="image" href="/assets/work/hero/po.webp" fetchpriority="high" />
     <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=2fd096098c" />
     <link rel="stylesheet" href="/core.css?v=0f50583ba8" />
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
     <link rel="stylesheet" href="/project-gallery.css?v=84e5340586" />
-    <link rel="stylesheet" href="/home.css?v=cd7dbd0b20" />
+    <link rel="stylesheet" href="/home.css?v=0f55e31169" />
     <link rel="stylesheet" href="/refine.css?v=c9a176bc8d" />
     <link rel="stylesheet" href="/mega-menu.css?v=7085ded21b" />
     <script src="/mega-menu.js?v=d8b3a1a84d" defer></script>
     <script src="/project-gallery.js?v=a057df43da" defer></script>
     <script src="/core.js?v=edaf51bff4" defer></script>
     <script src="/media.js?v=5675d23657" defer></script>
+    <script src="/hero-show.js?v=99028ada04" defer></script>
     <script src="/shopify-vyvoj.js?v=260bfa063b" defer></script>
     <script type="application/ld+json">
       {
@@ -323,22 +325,32 @@
     </header>
 
     <main id="top" class="work-main">
-      <section class="work-hero section-pad conversion-hero">
-        <div class="work-hero-stage">
+      <section class="work-hero section-pad hero-proof-of-work conversion-hero">
+        <div class="hero-grid">
           <div class="work-hero-copy reveal">
-            <span class="work-index">Shopify vývoj · Praha</span>
-            <h1><span>Shopify vývoj.</span><br /><em>Na míru.</em></h1>
-            <p>Jsem Jakub Hrnčíř, Shopify vývojář z Prahy. Stavím a rozvíjím e-shopy, od vlastní šablony po B2B. Čtyři roky praxe, přímá spolupráce se mnou.</p>
+            <span class="work-index">Shopify vývojář · Praha</span>
+            <h1>Shopify e-shopy na míru <em>pro značky, které rostou.</em></h1>
+            <p>Jsem Jakub Hrnčíř. Navrhuji a vyvíjím Shopify e-shopy, od vlastní šablony po B2B a více trhů. Pracujete přímo se mnou, bez prostředníků.</p>
             <div class="work-hero-actions">
               <a class="work-hero-primary" href="/shopify-poptavka/?zdroj=hero" data-track="hero_inquiry">Probrat projekt <span>→</span></a>
               <a class="work-hero-secondary" href="#projekty" data-track="hero_projects">Prohlédnout realizace <span>↓︎</span></a>
             </div>
           </div>
-        </div>
-        <div class="work-hero-proof reveal" aria-label="Projektová zkušenost">
-          <div><strong>50+</strong><span>značek a spoluprací</span></div>
-          <div><strong>4+</strong><span>roky Shopify vývoje</span></div>
-          <div><strong>1:1</strong><span>přímo s vývojářem</span></div>
+          <div class="hero-show reveal" data-hero-show aria-label="Ukázky živých e-shopů klientů">
+            <div class="hero-stage">
+              <div class="hero-browser">
+                <div class="hero-bar" aria-hidden="true"><i></i><i></i><i></i><span class="hero-url">posedla.cz</span></div>
+                <div class="hero-screens"><img class="is-on" src="/assets/work/hero/po.webp" alt="posedla.cz: úvodní stránka" width="1280" height="800" decoding="async" fetchpriority="high" /><img data-src="/assets/work/hero/fd.webp" alt="facederma.sk: úvodní stránka" width="1280" height="800" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/bc.webp" alt="bohemiancoffeehouse.cz: úvodní stránka" width="1280" height="800" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/mo.webp" alt="moleculesoflife.eu: úvodní stránka" width="1280" height="800" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/pa.webp" alt="peaceofalm.cz: úvodní stránka" width="1280" height="800" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/sd.webp" alt="eu.surprisedrinks.com: úvodní stránka" width="1280" height="800" decoding="async" loading="lazy" /></div>
+              </div>
+              <div class="hero-phone"><div class="hero-phone-screens"><img class="is-on" src="/assets/work/hero/po-m.webp" alt="posedla.cz: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/fd-m.webp" alt="facederma.sk: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/bc-m.webp" alt="bohemiancoffeehouse.cz: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/mo-m.webp" alt="moleculesoflife.eu: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/pa-m.webp" alt="peaceofalm.cz: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /><img data-src="/assets/work/hero/sd-m.webp" alt="eu.surprisedrinks.com: mobilní verze" width="360" height="780" decoding="async" loading="lazy" /></div></div>
+            </div>
+            <a class="hero-caption" href="/realizace/posedla/"><span class="hero-caption-text"><b>Posedla</b><span>Shopify Plus pro čtyři trhy</span></span><span class="hero-caption-link">Případová studie <span aria-hidden="true">→</span></span></a>
+            <div class="hero-controls">
+              <ul class="hero-clients" aria-label="Vybrat projekt"><li><button type="button" data-i="0" data-href="/realizace/posedla/" data-name="Posedla" data-sub="Shopify Plus pro čtyři trhy" data-domain="posedla.cz" aria-pressed="true" aria-label="Posedla"><span aria-hidden="true">01</span><i aria-hidden="true"></i></button></li><li><button type="button" data-i="1" data-href="/realizace/facederma/" data-name="Facederma" data-sub="Z WooCommerce na Shopify Plus, B2B pro salony" data-domain="facederma.sk" aria-pressed="false" aria-label="Facederma"><span aria-hidden="true">02</span><i aria-hidden="true"></i></button></li><li><button type="button" data-i="2" data-href="/realizace/bohemian/" data-name="Bohemian Coffee House" data-sub="Šablona a datový model kávy" data-domain="bohemiancoffeehouse.cz" aria-pressed="false" aria-label="Bohemian Coffee House"><span aria-hidden="true">03</span><i aria-hidden="true"></i></button></li><li><button type="button" data-i="3" data-href="/realizace/molecules/" data-name="Molecules of Life" data-sub="Nový e-shop pro německý trh" data-domain="moleculesoflife.eu" aria-pressed="false" aria-label="Molecules of Life"><span aria-hidden="true">04</span><i aria-hidden="true"></i></button></li><li><button type="button" data-i="4" data-href="/realizace/peaceofalm/" data-name="Peace of Alm" data-sub="Šablona pro certifikovanou dětskou kosmetiku" data-domain="peaceofalm.cz" aria-pressed="false" aria-label="Peace of Alm"><span aria-hidden="true">05</span><i aria-hidden="true"></i></button></li><li><button type="button" data-i="5" data-href="/realizace/surprisedrinks/" data-name="Surprise Drinks" data-sub="Web značky s minihrami" data-domain="eu.surprisedrinks.com" aria-pressed="false" aria-label="Surprise Drinks"><span aria-hidden="true">06</span><i aria-hidden="true"></i></button></li></ul>
+              <button type="button" class="hero-pause" aria-pressed="false" data-pause="Pozastavit přehrávání" data-play="Spustit přehrávání" aria-label="Pozastavit přehrávání"></button>
+            </div>
+          </div>
+          <dl class="hero-stats reveal" aria-label="Projektová zkušenost"><div><dt>50+</dt><dd>značek a spoluprací</dd></div><div><dt>4+</dt><dd>roky Shopify vývoje</dd></div><div><dt>1:1</dt><dd>přímo s vývojářem</dd></div></dl>
         </div>
       </section>
 
