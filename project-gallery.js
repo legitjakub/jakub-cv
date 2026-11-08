@@ -12,7 +12,7 @@
     const heading = document.createElement('div');
     heading.className = 'project-gallery-heading';
     const label = document.createElement('span');
-    label.textContent = english ? 'Project previews' : 'Ukázky projektu';
+    label.textContent = english ? 'Previews' : 'Ukázky';
     const count = document.createElement('span');
     count.setAttribute('aria-hidden', 'true');
     heading.append(label, count);
