@@ -190,3 +190,32 @@ document.querySelectorAll('.article-toc').forEach((toc,index) => {
   });
   list.querySelectorAll('a').forEach((link) => link.addEventListener('click',close));
 });
+
+// Hub: a cover of the article follows the pointer over its row (desktop with a mouse only).
+(() => {
+  const rows = document.querySelectorAll('.guide-row[href]');
+  const fine = window.matchMedia('(min-width:1024px) and (hover:hover) and (pointer:fine)');
+  if (!rows.length || !fine.matches || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'cs';
+  const peek = document.createElement('div');
+  peek.className = 'row-peek';
+  peek.setAttribute('aria-hidden','true');
+  peek.innerHTML = '<img alt="" width="720" height="378" />';
+  document.body.append(peek);
+  const img = peek.querySelector('img');
+  let x = 0, y = 0, frame = 0;
+  const place = () => {
+    frame = 0;
+    const px = x + 328 > innerWidth ? x - 328 : x + 28;
+    const py = Math.min(Math.max(y - 95, 12), innerHeight - 180);
+    peek.style.transform = `translate3d(${px}px,${py}px,0)`;
+  };
+  rows.forEach((row) => {
+    const slug = row.getAttribute('href').replace(/^\.?\/?|\/$/g,'').split('/').pop();
+    const src = `/assets/covers/${lang}-${slug}-720.webp`;
+    row.addEventListener('pointerenter',() => { if (img.getAttribute('src') !== src) img.src = src; peek.classList.add('is-on'); });
+    row.addEventListener('pointerleave',() => peek.classList.remove('is-on'));
+    row.addEventListener('pointermove',(e) => { x = e.clientX; y = e.clientY; if (!frame) frame = requestAnimationFrame(place); });
+  });
+  window.addEventListener('scroll',() => peek.classList.remove('is-on'),{ passive:true });
+})();

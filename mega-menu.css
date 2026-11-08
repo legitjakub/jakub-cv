@@ -1,6 +1,8 @@
 /* Mega menu panels (built by mega-menu.js). Desktop only; square corners,
-   same dark surface as the header, the accent only for hover and the
-   "all" link. On narrow screens the plain mobile menu is used instead. */
+   same dark surface as the header, the accent only for hover, the current
+   page and the "all" link. Realizace shows a card per project with a screen
+   from the live store; Služby and Průvodce show a preview that follows the
+   item under the pointer. On narrow screens the plain mobile menu is used. */
 .mega-toggle,.mega-panel { display:none; }
 @media (min-width:1024px) {
   .has-mega { margin-right:calc(2px - clamp(20px,2.4vw,34px)); }
@@ -15,18 +17,67 @@
 
   .mega-panel:not([hidden]) {
     display:block; position:absolute; left:0; right:0; top:100%; z-index:30;
+    max-height:calc(100vh - 80px); overflow-y:auto; overscroll-behavior:contain;
     border-top:1px solid rgba(255,255,255,.1); border-bottom:1px solid rgba(255,255,255,.14);
     background:#0b0d0c; box-shadow:0 30px 60px rgba(0,0,0,.45);
+    animation:mega-in .22s ease both;
   }
-  .mega-inner { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:40px; max-width:1440px; margin:0 auto; padding:30px var(--pad,clamp(24px,5vw,80px)) 32px; }
+  @keyframes mega-in { from { opacity:0; transform:translateY(-6px); } }
+  .mega-inner { max-width:1440px; margin:0 auto; padding:28px var(--pad,clamp(24px,5vw,80px)) 30px; }
+
+  .mega-thumb { display:block; overflow:hidden; aspect-ratio:16/10; border:1px solid rgba(255,255,255,.1); background:#141614; }
+  .mega-thumb img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .3s ease; }
+  .mega-thumb img:not([src]) { opacity:0; }
+
+  /* Realizace: one card per project */
+  .mega-work { display:grid; grid-template-columns:minmax(0,1fr); gap:22px; }
+  .mega-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 18px; margin:0; padding:0; list-style:none; }
+  .mega-card { display:block; color:#e8e8e2; }
+  .mega-card-text { display:block; margin-top:12px; }
+  .mega-card-text span { display:block; font:600 15px/1.3 "Manrope",sans-serif; transition:color .2s ease; }
+  .mega-card-text small { display:block; margin-top:4px; color:#8f918a; font:400 13px/1.45 "Manrope",sans-serif; }
+  .mega-card:hover .mega-thumb img,.mega-card:focus-visible .mega-thumb img { transform:scale(1.04); }
+  .mega-card:hover .mega-thumb,.mega-card:focus-visible .mega-thumb { border-color:rgba(183,255,60,.45); }
+  .mega-card:hover .mega-card-text span,.mega-card[aria-current] .mega-card-text span { color:var(--commerce,#b7ff3c); }
+  .mega-card:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:4px; }
+  .mega-work .mega-all { justify-self:start; }
+
+  /* Služby and Průvodce: links on the left, live preview on the right */
+  .mega-split { display:grid; grid-template-columns:minmax(0,1fr) clamp(250px,24vw,340px); grid-template-rows:auto auto; gap:24px clamp(32px,4vw,56px); }
+  .mega-split .mega-cols { grid-column:1; }
+  .mega-split .mega-all { grid-column:1; grid-row:2; justify-self:start; align-self:start; }
+  .mega-nb { white-space:nowrap; }
   .mega-cols { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:36px; }
   .mega-head { margin:0 0 12px; color:#8f918a; font:600 13px/1.4 "Manrope",sans-serif; }
   .mega-col ul { display:grid; gap:2px; margin:0; padding:0; list-style:none; }
-  .mega-col a { display:block; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.07); color:#e8e8e2; font:500 15px/1.35 "Manrope",sans-serif; }
+  .mega-col a { position:relative; display:block; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.07); color:#e8e8e2; font:500 15px/1.35 "Manrope",sans-serif; transition:padding-left .25s ease; }
+  .mega-col a::before { content:""; position:absolute; left:0; top:50%; width:0; height:1.5px; background:var(--commerce,#b7ff3c); transition:width .25s ease; }
+  .mega-col a:hover,.mega-col a:focus-visible { padding-left:16px; }
+  .mega-col a:hover::before,.mega-col a:focus-visible::before { width:9px; }
   .mega-col a small { display:block; margin-top:3px; color:#8f918a; font-size:13px; font-weight:400; }
-  .mega-col a:hover span { color:var(--commerce,#b7ff3c); }
+  .mega-col a:hover span,.mega-col a[aria-current] span { color:var(--commerce,#b7ff3c); }
   .mega-col a:focus-visible,.mega-all:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:3px; }
-  .mega-all { align-self:end; padding:10px 0; border-bottom:1px solid currentColor; color:var(--commerce,#b7ff3c); font:600 14px/1 "Manrope",sans-serif; white-space:nowrap; }
   .mega-guide .mega-col a { padding:8px 0; font-size:14px; }
+  .mega-guide .mega-col a:hover,.mega-guide .mega-col a:focus-visible { padding-left:16px; }
+
+  .mega-preview { grid-column:2; grid-row:1 / span 2; align-self:start; padding-left:clamp(24px,2.6vw,36px); border-left:1px solid rgba(255,255,255,.1); }
+  .mega-preview.is-swapping .mega-thumb img,.mega-preview.is-swapping p { animation:mega-swap .3s ease both; }
+  @keyframes mega-swap { from { opacity:.15; } }
+  .mega-guide .mega-preview .mega-thumb { aspect-ratio:40/21; }
+  .mega-guide .mega-preview .mega-thumb img { object-position:center; }
+  .mega-preview-meta { margin:14px 0 0; color:var(--commerce,#b7ff3c); font:600 12px/1.4 "Manrope",sans-serif; }
+  .mega-preview-title { margin:6px 0 0; color:#efeee8; font:600 17px/1.3 "Manrope",sans-serif; letter-spacing:-.02em; }
+  .mega-preview-text { margin:6px 0 0; color:#a3a59d; font:400 13px/1.55 "Manrope",sans-serif; }
+
+  .mega-all { padding:10px 0; border-bottom:1px solid currentColor; color:var(--commerce,#b7ff3c); font:600 14px/1 "Manrope",sans-serif; white-space:nowrap; }
 }
-@media (prefers-reduced-motion:reduce) { .mega-toggle::before { transition:none; } }
+@media (min-width:1200px) {
+  .mega-cards { grid-template-columns:repeat(6,minmax(0,1fr)); }
+}
+@media (min-width:1024px) and (max-width:1279px) {
+  .mega-guide .mega-cols { grid-auto-flow:row; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 28px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .mega-toggle::before,.mega-thumb img,.mega-col a,.mega-col a::before,.mega-card-text span { transition:none; }
+  .mega-panel:not([hidden]),.mega-preview.is-swapping .mega-thumb img,.mega-preview.is-swapping p { animation:none; }
+}
