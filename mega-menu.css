@@ -1,0 +1,32 @@
+/* Mega menu panels (built by mega-menu.js). Desktop only; square corners,
+   same dark surface as the header, the accent only for hover and the
+   "all" link. On narrow screens the plain mobile menu is used instead. */
+.mega-toggle,.mega-panel { display:none; }
+@media (min-width:1024px) {
+  .has-mega { margin-right:calc(2px - clamp(20px,2.4vw,34px)); }
+  .mega-toggle {
+    display:inline-grid; place-items:center; width:20px; height:20px; padding:0; border:0; background:transparent;
+    color:#8f918a; cursor:pointer;
+  }
+  .mega-toggle::before { content:""; width:6px; height:6px; margin-top:-3px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform .2s ease,margin .2s ease; }
+  .mega-toggle[aria-expanded="true"]::before { margin-top:3px; transform:rotate(-135deg); }
+  .mega-toggle:hover,.mega-toggle[aria-expanded="true"] { color:#fff; }
+  .mega-toggle:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:2px; }
+
+  .mega-panel:not([hidden]) {
+    display:block; position:absolute; left:0; right:0; top:100%; z-index:30;
+    border-top:1px solid rgba(255,255,255,.1); border-bottom:1px solid rgba(255,255,255,.14);
+    background:#0b0d0c; box-shadow:0 30px 60px rgba(0,0,0,.45);
+  }
+  .mega-inner { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:40px; max-width:1440px; margin:0 auto; padding:30px var(--pad,clamp(24px,5vw,80px)) 32px; }
+  .mega-cols { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:36px; }
+  .mega-head { margin:0 0 12px; color:#8f918a; font:600 13px/1.4 "Manrope",sans-serif; }
+  .mega-col ul { display:grid; gap:2px; margin:0; padding:0; list-style:none; }
+  .mega-col a { display:block; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.07); color:#e8e8e2; font:500 15px/1.35 "Manrope",sans-serif; }
+  .mega-col a small { display:block; margin-top:3px; color:#8f918a; font-size:13px; font-weight:400; }
+  .mega-col a:hover span { color:var(--commerce,#b7ff3c); }
+  .mega-col a:focus-visible,.mega-all:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:3px; }
+  .mega-all { align-self:end; padding:10px 0; border-bottom:1px solid currentColor; color:var(--commerce,#b7ff3c); font:600 14px/1 "Manrope",sans-serif; white-space:nowrap; }
+  .mega-guide .mega-col a { padding:8px 0; font-size:14px; }
+}
+@media (prefers-reduced-motion:reduce) { .mega-toggle::before { transition:none; } }

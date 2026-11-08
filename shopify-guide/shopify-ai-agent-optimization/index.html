@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      /* Deny before gtag.js loads: nothing is stored until the visitor opts in. */
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      /* Re-apply a previous choice on repeat visits. */
+      try {
+        var jhSaved = JSON.parse(localStorage.getItem('jh-consent') || 'null');
+        if (jhSaved && jhSaved.v === 1) {
+          gtag('consent', 'update', {
+            analytics_storage: jhSaved.analytics ? 'granted' : 'denied',
+            ad_storage: jhSaved.marketing ? 'granted' : 'denied',
+            ad_user_data: jhSaved.marketing ? 'granted' : 'denied',
+            ad_personalization: jhSaved.marketing ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+
+      gtag('js', new Date());
+      gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
+    </script>
+<script defer="" src="/consent.js?v=7753553b88"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Optimising Shopify for AI Agents: A Practical Guide (2026)</title><meta content="How to prepare a Shopify store for AI agents in ChatGPT, Copilot and Gemini: Catalog mapping, categories, metafields, variants, prices and policies." name="description"/><meta content="Jakub Hrnčíř" name="author"/><meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/><meta content="#090b0a" name="theme-color"/><link href="https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/optimalizace-shopify-pro-ai-agenty/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/optimalizace-shopify-pro-ai-agenty/" hreflang="x-default" rel="alternate"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="article" property="og:type"/><meta content="Optimising Shopify for AI Agents: A Practical Guide (2026)" property="og:title"/><meta content="How to prepare a Shopify store for AI agents in ChatGPT, Copilot and Gemini: Catalog mapping, categories, metafields, variants, prices and policies." property="og:description"/><meta content="https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/" property="og:url"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/><meta content="2026-11-08" property="article:published_time"/><meta content="2026-11-08" property="article:modified_time"/><meta content="summary_large_image" name="twitter:card"/><meta content="Optimising Shopify for AI Agents: A Practical Guide (2026)" name="twitter:title"/><meta content="How to prepare a Shopify store for AI agents in ChatGPT, Copilot and Gemini: Catalog mapping, categories, metafields, variants, prices and policies." name="twitter:description"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/><link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=2fd096098c" /><link href="../../blog.css?v=34f98166f6" rel="stylesheet"/>
+    <link rel="stylesheet" href="/mega-menu.css?v=ed8d0b135f" />
+    <script src="/mega-menu.js?v=184fde0186" defer></script><script defer="" src="../../blog.js?v=45ef1ab543"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/#article","headline":"Optimising Shopify for AI Agents: A Practical Guide (2026)","description":"How to prepare a Shopify store for AI agents in ChatGPT, Copilot and Gemini: Catalog mapping, categories, metafields, variants, prices and policies.","datePublished":"2026-11-08","dateModified":"2026-11-08","inLanguage":"en","mainEntityOfPage":"https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/","image":"https://jhrncir.xyz/assets/seo-preview.jpg","author":{"@id":"https://jhrncir.xyz/#person"},"publisher":{"@id":"https://jhrncir.xyz/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shopify work","item":"https://jhrncir.xyz/en/"},{"@type":"ListItem","position":2,"name":"Shopify blog","item":"https://jhrncir.xyz/shopify-guide/"},{"@type":"ListItem","position":3,"name":"Optimising for AI agents","item":"https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/"}]},{"@type":"Person","@id":"https://jhrncir.xyz/#person","name":"Jakub Hrnčíř","url":"https://jhrncir.xyz/","image":"https://jhrncir.xyz/assets/jakub-hrncir-portrait-768.webp","jobTitle":"Shopify developer","address":{"@type":"PostalAddress","addressLocality":"Praha","addressCountry":"CZ"},"knowsLanguage":["cs","en"],"sameAs":["https://www.linkedin.com/in/jakub-hrn%C4%8D%C3%AD%C5%99/"],"knowsAbout":["Shopify","Shopify Plus","Shopify B2B","Liquid","Shopify Functions","Shopify Markets","Shopify migrations","JavaScript"]},{"@type":"FAQPage","@id":"https://jhrncir.xyz/shopify-guide/shopify-ai-agent-optimization/#faq","mainEntity":[{"@type":"Question","name":"Do I need to change my theme for AI agents?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Product data and the settings in Sales channels > Agentic matter most. Changing the theme makes sense when important details exist only there, for example in a Liquid section or in JavaScript."}},{"@type":"Question","name":"Will good data guarantee that AI recommends me?","acceptedAnswer":{"@type":"Answer","text":"No. Being in Shopify Catalog doesn’t guarantee appearing in a specific answer. Good data does improve the chance that a channel understands and compares your offer correctly."}},{"@type":"Question","name":"Do I need Shopify Plus for this?","acceptedAnswer":{"@type":"Answer","text":"No. Catalog mapping, categories, metafields and the Knowledge Base are available on standard plans. What matters is store eligibility and each channel’s requirements."}}]}]}</script>
+<meta content="Shopify Blog" property="og:site_name"/><noscript><link rel="stylesheet" href="/no-js.css?v=ba751ccb07" /></noscript></head><body><header class="guide-header guide-shell"><a aria-label="Shopify development, home" class="guide-brand" href="/en/">JH<span>.</span></a><button type="button" class="guide-menu-toggle" aria-controls="guide-navigation" aria-expanded="false" aria-label="Open navigation"><span class="guide-menu-label">Menu</span><i aria-hidden="true"><b></b><b></b></i></button><nav id="guide-navigation" aria-label="Main navigation" class="guide-nav"><a href="/en/#case-studies">Work</a><a href="/en/#shopify-development">Services</a><a href="/shopify-plus/en/">Shopify Plus</a><a href="/agentic-commerce/en/">Agentic commerce</a><a aria-current="page" href="/shopify-guide/">Guide</a><a class="guide-language-link" href="https://jhrncir.xyz/shopify-pruvodce/optimalizace-shopify-pro-ai-agenty/" lang="cs">CZ</a></nav><a class="guide-nav-cta" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Start a project <span aria-hidden="true">↗︎</span></a></header>
+<main><header class="article-hero guide-shell"><nav class="breadcrumbs"><span><a href="/en/">Shopify work</a></span><span><a href="../">Shopify blog</a></span><span>Optimising for AI agents</span></nav><div class="article-hero-grid"><div><span class="article-category">AI · Agentic commerce · how-to</span><h1>Optimising Shopify for AI agents: what actually helps</h1><p class="article-deck">AI agents don’t pick products by how good a page looks, but by the data they receive about them. This is a step-by-step approach based on Shopify’s documentation and what merchants have learned over the last few months.</p></div><aside class="article-meta"><span>Author<strong>Jakub Hrnčíř</strong></span><span>Updated<strong>8 November 2026</strong></span><span>Reading time<strong>8 minutes</strong></span></aside></div></header>
+<div class="article-layout guide-shell"><article class="article-body">
+<p>When a shopper asks an AI assistant to “find a fragrance-free cream for sensitive skin under €20”, the agent doesn’t browse stores like a person. It reads structured data: category, properties, price, availability and store policies. On Shopify, the main source of that data is <a class="source-link" href="https://help.shopify.com/en/manual/shopify-catalog" rel="noreferrer" target="_blank">Shopify Catalog</a>.</p>
+<p>The good news is that most of the work happens in the admin and in product data, not in code. The bad news is that none of it guarantees visibility. Shopify says so plainly: being in Catalog doesn’t mean a product will appear in a specific AI answer, because each channel controls its own ranking and presentation.</p>
+<div class="article-callout article-case"><span>Context</span><h3>Which AI channels are available for EU stores</h3><p>Availability of ChatGPT, Copilot, Google AI Mode, Meta and Shop depends on the shopper’s country and how payment works. The verified overview is on a separate page.</p><a class="guide-button" data-track="guide_agentic_page" href="/agentic-commerce/en/">Agentic commerce on Shopify →︎</a></div>
+<h2 id="audit">1. Start with what Shopify Catalog sees</h2>
+<p>In the admin, open <strong>Sales channels &gt; Agentic</strong>, choose Shopify Catalog under Sources and click <strong>Review product data mapping</strong>. Each field shows the share of products with a value, and “Fix … products” takes you straight to the gaps (<a class="source-link" href="https://help.shopify.com/en/manual/shopify-catalog/mapping" rel="noreferrer" target="_blank">mapping documentation</a>). It’s the fastest AI-channel audit you have, and it’s free.</p>
+<h2 id="categories">2. Categories and properties as data, not sentences</h2>
+<p>Give every product the most specific category in the Shopify taxonomy. Shopify’s <a class="source-link" href="https://www.shopify.com/enterprise/blog/agentic-ready-product-data" rel="noreferrer" target="_blank">guide to agent-ready product data</a> uses “men’s insulated winter boots” rather than “footwear” as the example. The product category can’t be remapped in Catalog mapping, so it has to be right on the product itself.</p>
+<p>Properties shoppers decide on belong in fields and metafields: material, size, colour, ingredients, suitability for sensitive skin. An agent looking for “fragrance-free” needs that as a value, not a word buried in a paragraph.</p>
+<h2 id="copy">3. Write titles and descriptions literally</h2>
+<p>The title should say what the product is. The description should explain in natural language who it’s for, what it’s made of and how it differs. Shopify’s article on <a class="source-link" href="https://www.shopify.com/blog/agentic-shopping" rel="noreferrer" target="_blank">agentic shopping</a> recommends factual copy without vague marketing phrases or keyword lists. Don’t bulk-fill empty fields with generated claims you haven’t verified: the agent will repeat them to the shopper as fact.</p>
+<h2 id="variants">4. Variants belong to one product</h2>
+<p>If the same item comes in several versions, group them under one product. Otherwise agents may treat them as different things and answer wrongly, for example about available colours. If you keep variants as separate products for good reasons, such as their own URLs, use <strong>custom variant grouping</strong> in Catalog mapping. Two variants with the same option combination can’t be grouped, and custom grouping overrides the Combined Listings app.</p>
+<p>A real example: in the <a href="/en/work/bohemian/">Bohemian Coffee House</a> store, the light and dark roast of the same coffee are deliberately two products with a shared switch. That’s right for the website; for the catalog it’s worth grouping them.</p>
+<h2 id="theme">5. Don’t rely on the theme</h2>
+<p>Information that exists only in a Liquid template, in JavaScript or in section text isn’t visible to agents through the catalog. Shopify Enterprise points this out explicitly. Move it into product fields or metafields and let the mapping build the title or description from them. There’s a bonus for the site: the same data can then drive filters, comparisons and the theme.</p>
+<h2 id="price-policies">6. Price, stock and policies must match</h2>
+<p>Agents work with live price and availability, and a mismatch between stock and the site ends in a lost purchase. Since 9 Oct 2026 Shopify shares compare-at prices as list price for most stores (<a class="source-link" href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noreferrer" target="_blank">changelog</a>). In the EU, an announced discount must be based on the lowest price of the previous 30 days, so a struck-through price has to reflect reality. Discounts applied only in the cart don’t show in the catalog price.</p>
+<p>Terms of service, privacy and return policies are required for AI channels. Describe shipping, delivery times and exchanges concretely, and review the facts in the Knowledge Base (Sales channels &gt; Agentic &gt; Sources). Publish only what any shopper may see.</p>
+<h2 id="measure">7. Test and measure</h2>
+<p>In Sales channels &gt; Agentic, try Search preview with queries your customers actually use: product type, use, property, size. It’s Catalog’s raw output, not the ranking in ChatGPT, but it shows missing data quickly. Track AI channel performance in the Agentic reports. With Google direct checkout, Google Analytics and custom pixels don’t fire (<a class="source-link" href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noreferrer" target="_blank">Google channel requirements</a>), so compare orders in the admin, not just GA4.</p>
+<h2 id="practice">What merchants and agencies recommend</h2>
+<p>Beyond the official documentation, these points keep coming up in <a class="source-link" href="https://community.shopify.com/t/how-are-you-optimizing-your-store-for-ai-shopping-tools-chatgpt-gemini-claude/660763" rel="noreferrer" target="_blank">merchant discussions</a> and <a class="source-link" href="https://jadepuma.com/blogs/the-shopify-solutions-podcast/episode-182-a-practical-guide-to-shopify-s-agentic-storefronts" rel="noreferrer" target="_blank">Shopify podcasts</a> over the last weeks. They aren’t Shopify requirements, but sensible practice:</p>
+<ul class="checklist">
+<li><strong>Identifiers</strong>: GTIN or EAN and brand for products that have them. For the Google channel, which draws on Merchant Center, they’re a common requirement.</li>
+<li><strong>Images</strong>: several product photos from different angles, with descriptive alt text.</li>
+<li><strong>Reviews</strong>: real ratings and review text help in comparisons. Never invent them.</li>
+<li><strong>Categories and attributes first</strong>: they’re the most structured part of what Shopify sends to agents.</li>
+<li><strong>Crawler access</strong>: if you’ve edited robots.txt, check you aren’t blocking AI search crawlers.</li>
+</ul>
+<h2 id="avoid">What to avoid</h2>
+<ul class="checklist">
+<li>Apps promising “first place in ChatGPT”. The channel decides the ranking, not an app in your store.</li>
+<li>Bulk-generated descriptions with claims about ingredients, certification or effects you can’t back up.</li>
+<li>Key details only in images, JavaScript-loaded tabs or PDFs.</li>
+<li>Different prices on the site, in the catalog and in Merchant Center.</li>
+</ul>
+<h2 id="checklist">Checklist</h2>
+<ul class="checklist">
+<li>Field coverage in Catalog mapping is close to 100%</li>
+<li>Every product has the most specific category available</li>
+<li>Deciding properties live in fields or metafields, not only in text</li>
+<li>Variants are grouped under one product or via custom variant grouping</li>
+<li>Prices, compare-at prices and stock match reality and the law</li>
+<li>Store policies and Knowledge Base facts are complete and public</li>
+<li>Search preview returns the right products for real queries</li>
+</ul>
+<section class="article-faq" id="faq"><h2>FAQ</h2><div class="faq-list">
+<details><summary>Do I need to change my theme for AI agents?</summary><p>Usually not. Product data and the settings in Sales channels > Agentic matter most. Changing the theme makes sense when important details exist only there, for example in a Liquid section or in JavaScript.</p></details>
+<details><summary>Will good data guarantee that AI recommends me?</summary><p>No. Being in Shopify Catalog doesn’t guarantee appearing in a specific answer. Good data does improve the chance that a channel understands and compares your offer correctly.</p></details>
+<details><summary>Do I need Shopify Plus for this?</summary><p>No. Catalog mapping, categories, metafields and the Knowledge Base are available on standard plans. What matters is store eligibility and each channel’s requirements.</p></details>
+</div></section>
+<div class="article-callout"><span>AI channel data audit</span><h3>Want to know how your catalog stands?</h3><p>Send me your store link. I’ll go through Catalog mapping, categories, variants and policies, and write down what to change and in what order.</p><a class="guide-button" data-track="guide_inquiry" href="mailto:jakub.hrncir24@gmail.com?subject=AI%20agent%20data%20audit">Ask for an audit →︎</a></div>
+<section class="article-sources"><h2>Sources (checked 8 Nov 2026)</h2><ul>
+<li><a href="https://help.shopify.com/en/manual/shopify-catalog" rel="noreferrer" target="_blank">Shopify Help Center: Shopify Catalog</a></li>
+<li><a href="https://help.shopify.com/en/manual/shopify-catalog/mapping" rel="noreferrer" target="_blank">Shopify Help Center: Mapping product data for Shopify Catalog</a></li>
+<li><a href="https://www.shopify.com/blog/agentic-shopping" rel="noreferrer" target="_blank">Shopify blog: Agentic shopping (2. 4. 2026)</a></li>
+<li><a href="https://www.shopify.com/enterprise/blog/agentic-ready-product-data" rel="noreferrer" target="_blank">Shopify Enterprise: Agentic-ready product data (5. 6. 2026)</a></li>
+<li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noreferrer" target="_blank">Shopify Help Center: Google AI Mode a Gemini</a></li>
+<li><a href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noreferrer" target="_blank">Shopify Changelog: Compare-at prices for agentic channels (9. 10. 2026)</a></li>
+<li><a href="https://community.shopify.com/t/how-are-you-optimizing-your-store-for-ai-shopping-tools-chatgpt-gemini-claude/660763" rel="noreferrer" target="_blank">Shopify Community: How are you optimizing your store for AI shopping tools?</a></li>
+<li><a href="https://jadepuma.com/blogs/the-shopify-solutions-podcast/episode-182-a-practical-guide-to-shopify-s-agentic-storefronts" rel="noreferrer" target="_blank">The Shopify Solutions Podcast, ep. 182: Agentic Storefronts</a></li>
+</ul></section>
+</article><aside class="article-toc"><span>In this article</span><ol><li><a href="#audit">What Catalog sees</a></li><li><a href="#categories">Categories and properties</a></li><li><a href="#copy">Titles and descriptions</a></li><li><a href="#variants">Variants</a></li><li><a href="#theme">Data outside the theme</a></li><li><a href="#price-policies">Price and policies</a></li><li><a href="#measure">Test and measure</a></li><li><a href="#practice">From practice</a></li><li><a href="#checklist">Checklist</a></li></ol></aside></div>
+<section class="related guide-shell"><div class="related-head"><h2>Related articles</h2><a href="../">All articles →︎</a></div><div class="related-grid"><a class="related-card" href="../shopify-agentic-commerce/"><span class="guide-topic">AI</span><h3>Agentic commerce</h3><p>How AI agents shop and what it means for a store.</p></a><a class="related-card" href="../shopify-seo/"><span class="guide-topic">SEO</span><h3>Shopify SEO</h3><p>What Shopify handles and what you control.</p></a><a class="related-card" href="../shopify-theme-redesign/"><span class="guide-topic">Development</span><h3>Theme vs redesign</h3><p>Custom sections, data and redesign.</p></a></div></section>
+</main><footer class="guide-footer guide-shell"><span>© 2026 Jakub Hrnčíř</span><nav><a href="/en/">Shopify work</a><a href="../">Blog</a><a href="mailto:jakub.hrncir24@gmail.com">Contact</a></nav></footer></body></html>

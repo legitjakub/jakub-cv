@@ -785,17 +785,17 @@ body { background:var(--guide-bg); }
 .guide-nav a,.guide-back { letter-spacing:0; }
 .guide-nav-cta {
   display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:0 18px;
-  border-radius:8px; background:var(--guide-green); color:#0b0f06;
+  border-radius:0; background:var(--guide-green); color:#0b0f06;
   font:700 14px/1 "Manrope",sans-serif; white-space:nowrap;
 }
 .guide-nav-cta:hover { background:#d2ff7a; }
 .guide-nav-cta:focus-visible { outline:2px solid #fff; outline-offset:3px; }
 @media (min-width:1024px) {
-  .guide-nav { justify-self:center; gap:2px; padding:4px; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:rgba(18,21,19,.55); }
-  .guide-nav a { padding:9px 16px; border-radius:8px; color:#c3c5bd; font:600 14px/1.2 "Manrope",sans-serif; }
+  .guide-nav { justify-self:center; gap:clamp(20px,2.4vw,34px); }
+  .guide-nav a { color:#c6c6c0; font:500 14px/1.2 "Manrope",sans-serif; }
   .guide-nav a::after { display:none; }
-  .guide-nav a:hover { color:#fff; background:rgba(255,255,255,.07); }
-  .guide-nav a[aria-current="page"] { color:var(--guide-green); background:rgba(var(--guide-green-rgb),.12); }
+  .guide-nav a:hover { color:#fff; }
+  .guide-nav a[aria-current="page"] { color:var(--guide-green); }
   .guide-nav .guide-language-link { color:#9b9b94; }
 }
 @media (max-width:1023px) {

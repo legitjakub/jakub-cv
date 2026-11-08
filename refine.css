@@ -1,14 +1,9 @@
 /* Final layer, loaded last on every work page.
    It removes decorative defaults that made the site read as generated:
    glows and grid textures behind sections, a coloured word in every heading,
-   fade-in on scroll, a gradient progress bar and side accent bars. It also
-   fixes one radius scale, so controls and surfaces agree:
-     --r-control  8px   buttons, inputs, nav links, chips
-     --r-surface 12px   media tiles, cards, panels
-     circles only for icon-only buttons.
+   fade-in on scroll, a gradient progress bar and side accent bars.
+   Corners stay square, as in the rest of the identity.
    One typeface (Manrope) everywhere; DM Mono is kept for code samples. */
-
-:root { --r-control:8px; --r-surface:12px; }
 
 /* ── Flat section backgrounds ──────────────────────────────── */
 body.work-page .work-hero,body.work-page .work-guide,body.work-page .inquiry-page-hero,body.work-page .conversion-close,body.work-page .work-references,body.work-page .plus-close { background:#090b0a; }
@@ -34,39 +29,21 @@ body.work-page .nav-wrap>nav { background-image:none; }
 /* The accent stays in the page's main h1 only. */
 body.work-page h2 em,body.work-page h2 em * { color:inherit; text-shadow:none; }
 
-/* ── Radius scale ──────────────────────────────────────────── */
-.work-hero-primary,.work-hero-secondary,.plus-cta-primary,.plus-cta-ghost,.case-action,
-.flow-action,.conversion-close-actions a,.work-contact a,.diagnostic-option,.diagnostic-result-actions a,
-.diagnostic-reset,.sim-prev,.sim-next,.sim-dot,.sim-ctl span,.project-gallery-tab,
-.project-form input,.project-form select,.project-form textarea,.project-form button,
-.form-field input,.form-field select,.form-field textarea,.to-top { border-radius:var(--r-control); }
-.plus-hero-card,.plus-path,.plus-verdict article,.plus-cost-figures div,.ac-answer,.ac-help article,
-.sim-js .sim-step,.sim-layers,.data-map-col,.case-still img,.work-reference,.diagnostic-stage,
-.project-gallery > .media-frame,.case-media .video-duo > .media-frame { border-radius:var(--r-surface); }
-.ac-roles,.ac-table-wrap { border-radius:var(--r-surface); overflow:hidden; }
-
-/* Header controls on the same scale as everything else. */
-@media (min-width:1024px) {
-  .work-page .nav-wrap>nav { border-radius:12px; }
-  .work-page .nav-wrap nav a { border-radius:var(--r-control); }
-}
-.work-page .lang-switch { border-radius:var(--r-control); }
-.work-page .lang-switch a,.work-page .lang-switch span { border-radius:6px; }
-body.work-page .nav-actions .nav-cta { border-radius:var(--r-control); }
-
-/* Caption chips: small rectangles, the icon button stays a circle. */
-.project-showcase .media-caption-text,.case-media .media-caption-text { border-radius:6px; }
+/* ── Square corners ────────────────────────────────────────── */
+.project-showcase .project-gallery > .media-frame,.case-media .video-duo > .media-frame { border-radius:2px; }
+.project-showcase .media-caption-text,.case-media .media-caption-text,
+.project-showcase .media-toggle,.case-media .media-toggle { border-radius:2px; }
 
 /* ── Play / pause chip: icon optically centred ─────────────────
    The visually empty label still took part in the flex gap and pushed the
    glyph off centre. The play triangle is nudged right by its optical centre. */
-.project-showcase .media-toggle,.case-media .media-toggle { gap:0; line-height:0; border-radius:50%; }
+.project-showcase .media-toggle,.case-media .media-toggle { gap:0; line-height:0; }
 .project-showcase .media-toggle::before,.case-media .media-toggle::before { margin:0; }
 .project-showcase .media-toggle:not([data-playing="true"])::before,
 .case-media .media-toggle:not([data-playing="true"])::before { margin-left:2px; }
 
 /* ── Notes as tinted panels, not side bars ─────────────────── */
-.sim-lever { border-left:0; border-radius:var(--r-control); background:rgba(var(--commerce-rgb),.07); }
+.sim-lever { border-left:0; background:rgba(var(--commerce-rgb),.07); }
 
 /* Cards don't jump on hover; the border change is enough. */
 .solution-path-list article:hover,.work-reference:hover,.plus-path:hover,.work-brand-item:hover { transform:none; }
