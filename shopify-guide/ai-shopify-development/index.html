@@ -33,7 +33,7 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-<script defer="" src="/consent.js?v=7753553b88"></script>
+<script defer="" src="/consent.js?v=b23e2cdbf8"></script>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>AI in Shopify Development: What the AI Toolkit Changes</title><meta content="How Shopify AI Toolkit supports app and store development, what it can automate, and where experienced technical review is still essential." name="description"/><meta content="Jakub Hrnčíř" name="author"/><meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/><meta content="#090b0a" name="theme-color"/><link href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/ai-vyvoj-shopify/" hreflang="x-default" rel="alternate"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
 <meta content="article" property="og:type"/><meta content="en_US" property="og:locale"/><meta content="cs_CZ" property="og:locale:alternate"/><meta content="AI in Shopify Development: What the AI Toolkit Changes" property="og:title"/><meta content="How Shopify AI Toolkit supports app and store development, what it can automate, and where experienced technical review is still essential." property="og:description"/><meta content="https://jhrncir.xyz/shopify-guide/ai-shopify-development/" property="og:url"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/><meta content="2026-07-22" property="article:published_time"/><meta content="2026-08-13" property="article:modified_time"/><meta content="summary_large_image" name="twitter:card"/><meta content="AI in Shopify Development: What the AI Toolkit Changes" name="twitter:title"/><meta content="How Shopify AI Toolkit supports app and store development, what it can automate, and where experienced technical review is still essential." name="twitter:description"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/><link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=2fd096098c" /><link href="../../blog.css?v=34f98166f6" rel="stylesheet"/>
     <link rel="stylesheet" href="/mega-menu.css?v=ed8d0b135f" />
@@ -58,26 +58,26 @@
 <p>AI Toolkit is an open-source collection of tools for supported AI assistants. It brings together official Shopify documentation, GraphQL API schemas, code validation and, through Shopify CLI, operations for a specific store.</p>
 <p>Shopify currently lists support for <strong>Claude Code, Codex, Antigravity CLI, Cursor, Hermes and Visual Studio Code</strong>. Plugins are the recommended installation route; individual skills and the optional local Dev MCP server are also available. Node.js 18 or newer is required.</p>
 <h2 id="co-to-meni">What does it change in practice?</h2>
-<p>The difference isn't that AI can do something it couldn't do before. The difference is in accuracy and speed. Previously, AI generated Shopify code from what it learned from the public internet — often out of date. With the AI ​​Toolkit, it reads the current documentation and validates queries against the actual API schema.</p>
+<p>The difference isn't that AI can do something it couldn't do before. The difference is in accuracy and speed. Previously, AI generated Shopify code from what it learned from the public internet, which was often out of date. With the AI ​​Toolkit, it reads the current documentation and validates queries against the actual API schema.</p>
 <div class="article-table-wrap"><table class="article-table"><thead><tr><th>Area</th><th>Before</th><th>With AI Toolkit</th></tr></thead><tbody>
 <tr><td>Working with APIs</td><td>Manual search in the documentation</td><td>AI reads current documentation directly</td></tr>
 <tr><td>GraphQL queries</td><td>Trial and error against the API</td><td>Validation against the scheme before execution</td></tr>
-<tr><td>Obsolete code</td><td>Frequent — the model did not know the news</td><td>Less risk, but not completely gone</td></tr>
+<tr><td>Obsolete code</td><td>Frequent: the model did not know the news</td><td>Less risk, but not completely gone</td></tr>
 <tr><td>Routine adjustments</td><td>More manual setup and documentation research</td><td>Faster drafting with mandatory review</td></tr>
 </tbody></table></div>
 <h2 id="kde-ai-nestaci">Where AI is still not enough</h2>
 <p>This is more important for online store owners than a list of features. AI handles well-defined tasks with a clear brief. But it does not handle decisions that require knowledge of the business context:</p>
 <ul class="checklist">
-<li><strong>Architecture and data model</strong> — whether the function should be in a theme, app, or Shopify Function, long-term sustainability decides, not what can be written the fastest</li>
-<li><strong>Impact on performance</strong> — code that works on ten products may crash on ten thousand; AI will not guess this difference from one prompt</li>
-<li><strong>Operational context</strong> — what happens to the warehouse, invoicing or ordering process, only a person who knows the operation of the store knows</li>
-<li><strong>Responsibility for the result</strong> — AI is not accountable if checkout fails during peak traffic; responsibility still rests with the developer</li>
+<li><strong>Architecture and data model</strong>: whether the function should be in a theme, app, or Shopify Function, long-term sustainability decides, not what can be written the fastest</li>
+<li><strong>Impact on performance</strong>: code that works on ten products may crash on ten thousand; AI will not guess this difference from one prompt</li>
+<li><strong>Operational context</strong>: what happens to the warehouse, invoicing or ordering process, only a person who knows the operation of the store knows</li>
+<li><strong>Responsibility for the result</strong>: AI is not accountable if checkout fails during peak traffic; responsibility still rests with the developer</li>
 </ul>
-<blockquote>AI makes writing code faster, not deciding what to write. The quality of a Shopify project still boils down to input, data, and operational knowledge — and these are exactly the places where AI doesn't save time.</blockquote>
+<blockquote>AI makes writing code faster, not deciding what to write. The quality of a Shopify project still boils down to input, data, and operational knowledge, and these are exactly the places where AI doesn't save time.</blockquote>
 <h2 id="na-co-se-ptat">What to ask your Shopify developer</h2>
 <p>If someone offers you Shopify development and mentions AI, three questions make sense:</p>
 <ul class="checklist">
-<li><strong>Who reviews the code?</strong> Generated code needs revision just as much as hand-written — perhaps more so with AI, because mistakes look credible</li>
+<li><strong>Who reviews the code?</strong> Generated code needs revision just as much as hand-written, perhaps more so with AI, because mistakes look credible</li>
 <li><strong>How is testing handled?</strong> Faster development must not mean that verification on real data and scenarios is skipped</li>
 <li><strong>Who will understand this in a year?</strong> Code that even the vendor doesn't understand is a problem no matter who wrote it</li>
 </ul>
@@ -90,9 +90,9 @@
 </div></section>
 <div class="article-callout"><span>Custom development</span><h3>Do you need a custom Shopify feature?</h3><p>Describe what the store should be able to do. I will propose an approach that makes sense both operationally and technically, including what can be kept simpler.</p><a class="guide-button" data-track="guide_inquiry" href="mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project">Discuss your Shopify project →︎</a></div>
 <section class="article-sources"><h2>Resources and further reading</h2><ul>
-<li><a href="https://shopify.dev/" rel="noreferrer" target="_blank">Shopify.dev — official developer documentation</a></li>
+<li><a href="https://shopify.dev/" rel="noreferrer" target="_blank">Shopify.dev: official developer documentation</a></li>
 <li><a href="https://github.com/Shopify/shopify-ai-toolkit" rel="noreferrer" target="_blank">Shopify AI Toolkit on GitHub</a></li>
-<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — overview of what's new</a></li>
+<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26: overview of what's new</a></li>
 <li><a href="../shopify-apps-integrations/">Shopify apps and integrations: how to choose a solution</a></li>
 </ul></section>
 </article><aside class="article-toc"><span>Content of the article</span><ol><li><a href="#co-je-toolkit">What is AI Toolkit?</a></li><li><a href="#co-to-meni">What does it change?</a></li><li><a href="#kde-ai-nestaci">Where AI is not enough</a></li><li><a href="#na-co-se-ptat">What to ask</a></li></ol></aside></div>

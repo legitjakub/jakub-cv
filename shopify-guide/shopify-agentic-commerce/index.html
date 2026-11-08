@@ -33,7 +33,7 @@
       gtag('js', new Date());
       gtag('config', 'G-Z1XDQ184HR', { anonymize_ip: true });
     </script>
-<script defer="" src="/consent.js?v=7753553b88"></script>
+<script defer="" src="/consent.js?v=b23e2cdbf8"></script>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Agentic Commerce: AI Shopping on Shopify in 2026</title><meta content="How AI shopping agents, Universal Commerce Protocol and Shopify Agentic Storefronts affect product discovery and checkout." name="description"/><meta content="Jakub Hrnčíř" name="author"/><meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/><meta content="#090b0a" name="theme-color"/><link href="https://jhrncir.xyz/shopify-guide/shopify-agentic-commerce/" rel="canonical"/><link href="https://jhrncir.xyz/shopify-guide/shopify-agentic-commerce/" hreflang="en" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/" hreflang="cs" rel="alternate"/><link href="https://jhrncir.xyz/shopify-pruvodce/shopify-agentic-commerce/" hreflang="x-default" rel="alternate"/><link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
 <meta content="article" property="og:type"/><meta content="Agentic Commerce: AI Shopping on Shopify in 2026" property="og:title"/><meta content="How AI shopping agents, Universal Commerce Protocol and Shopify Agentic Storefronts affect product discovery and checkout." property="og:description"/><meta content="https://jhrncir.xyz/shopify-guide/shopify-agentic-commerce/" property="og:url"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" property="og:image"/><meta content="2026-07-22" property="article:published_time"/><meta content="2026-11-07" property="article:modified_time"/><meta content="summary_large_image" name="twitter:card"/><meta content="Agentic Commerce: AI Shopping on Shopify in 2026" name="twitter:title"/><meta content="How AI shopping agents, Universal Commerce Protocol and Shopify Agentic Storefronts affect product discovery and checkout." name="twitter:description"/><meta content="https://jhrncir.xyz/assets/seo-preview.jpg" name="twitter:image"/><link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin /><link rel="stylesheet" href="/fonts.css?v=2fd096098c" /><link href="../../blog.css?v=34f98166f6" rel="stylesheet"/>
     <link rel="stylesheet" href="/mega-menu.css?v=ed8d0b135f" />
@@ -46,13 +46,13 @@
 <p>The <a href="../shopify-editions-spring-26/">Shopify Editions Spring '26</a> overview covers the wider release. This article focuses on how agentic commerce works in practice and what merchants should prepare.</p>
 <div class="article-callout article-case"><span>Current status</span><h3>What works today, and for whom</h3><p>This article explains what agentic commerce is and where it came from. Current channel availability for EU stores is on a separate page, and the step-by-step approach is in <a href="../shopify-ai-agent-optimization/">Optimising Shopify for AI agents</a>.</p><a class="guide-button" data-track="guide_agentic_page" href="/agentic-commerce/en/">Agentic commerce on Shopify →︎</a></div>
 <h2 id="co-je-agentic-commerce">What is agentic commerce?</h2>
-<p>In classic e-commerce, the customer browses the catalogue, makes a decision and buys. In agentic commerce, an AI agent can take over part of that journey — based on a request such as "find me running shoes under CZK 3,000 that will arrive by Friday", it searches available stores, compares offers and, where supported, can suggest or complete the purchase. Structured data is essential for the agent; storefront usability and brand presentation still matter when the customer visits the store.</p>
+<p>In classic e-commerce, the customer browses the catalogue, makes a decision and buys. In agentic commerce, an AI agent can take over part of that journey, based on a request such as "find me running shoes under CZK 3,000 that will arrive by Friday", it searches available stores, compares offers and, where supported, can suggest or complete the purchase. Structured data is essential for the agent; storefront usability and brand presentation still matter when the customer visits the store.</p>
 <h2 id="ucp">Universal Commerce Protocol (UCP)</h2>
 <p><strong>Universal Commerce Protocol</strong> is an open standard that Shopify developed together with Google and which has the support of companies such as Amazon, Meta, Microsoft, Salesforce, Stripe, Etsy, Target or Visa. It solves a fundamental problem: without a common standard, each AI platform (ChatGPT, Copilot, Gemini) would require its own integration with the cart and checkout of each store separately.</p>
 <p>UCP structures communication between an AI agent and a store across four areas:</p>
 <div class="decision-flow">
 <div class="decision-step"><span>01</span><div><strong>Authentication</strong><p>The agent identifies itself, and the store applies the relevant permissions and limits.</p></div></div>
-<div class="decision-step"><span>02</span><div><strong>Catalogue</strong><p>The agent searches for products — either across all Shopify stores or in the catalog of a specific online store.</p></div></div>
+<div class="decision-step"><span>02</span><div><strong>Catalogue</strong><p>The agent searches for products, either across all Shopify stores or in the catalog of a specific online store.</p></div></div>
 <div class="decision-step"><span>03</span><div><strong>Cart and checkout</strong><p>The agent builds the cart and, where supported, can complete the purchase for the customer.</p></div></div>
 <div class="decision-step"><span>04</span><div><strong>Order tracking</strong><p>Delivery, claims and return information can be exchanged through APIs and webhooks.</p></div></div>
 </div>
@@ -68,24 +68,24 @@
 <tr><td>Orders from AI channels</td><td>almost 13x growth</td><td>year-on-year, Q1 2026</td></tr>
 <tr><td>Sessions landing on product pages</td><td>more than 50% of visits</td><td>versus around 20% for organic search</td></tr>
 </tbody></table></div>
-<p>The last line is the most important from a practical point of view: the AI agent sends the customer directly to a specific product, not to the homepage or to a category. Thus, the product detail itself must contain everything necessary to make a decision — a complete description, availability, shipping and return conditions.</p>
+<p>The last line is the most important from a practical point of view: the AI agent sends the customer directly to a specific product, not to the homepage or to a category. Thus, the product detail itself must contain everything necessary to make a decision: a complete description, availability, shipping and return conditions.</p>
 <p>For specific brands, Shopify reports, for example, 3.2% of total revenue from AI channels (Omnilux, March 2026) or 20x year-over-year revenue growth from these channels (Cozy Earth). According to Shopify, search built on the structured Shopify Catalog should convert roughly twice as well as results from scraped data.</p>
-<p>The numbers need to be taken with a grain of salt — this is data published by Shopify itself, not independent research, and the high growth multiple comes from a low base. But they show a consistent direction across categories.</p>
+<p>The numbers need to be taken with a grain of salt: this is data published by Shopify itself, not independent research, and the high growth multiple comes from a low base. But they show a consistent direction across categories.</p>
 <h2 id="co-delat">What you need to do for AI agents to find you</h2>
 <p>AI agents rely primarily on structured data. Alongside a strong storefront experience, the priorities should therefore include:</p>
 <ul class="checklist">
-<li><strong>Complete and accurate product data</strong> — names, descriptions, variants, images and categories without gaps and inconsistencies</li>
-<li><strong>Current availability</strong> — warehouse, delivery times and delivery options must correspond to reality, the agent compares deals precisely according to the reliability of this data</li>
-<li><strong>Clear policies</strong> — shipping, returns, privacy and terms completed in Shopify admin</li>
-<li><strong>Review Agentic Storefronts</strong> — confirm store eligibility, default channel settings and whether direct checkout is available</li>
+<li><strong>Complete and accurate product data</strong>: names, descriptions, variants, images and categories without gaps and inconsistencies</li>
+<li><strong>Current availability</strong>: warehouse, delivery times and delivery options must correspond to reality, the agent compares deals precisely according to the reliability of this data</li>
+<li><strong>Clear policies</strong>: shipping, returns, privacy and terms completed in Shopify admin</li>
+<li><strong>Review Agentic Storefronts</strong>: confirm store eligibility, default channel settings and whether direct checkout is available</li>
 </ul>
-<p>This is closely intertwined with the concept that has recently been called <strong>Answer Engine Optimization (AEO)</strong> — an SEO equivalent focused on visibility in AI answers and recommendations, not just in classic search results.</p>
+<p>This is closely intertwined with the concept that has recently been called <strong>Answer Engine Optimization (AEO)</strong>: an SEO equivalent focused on visibility in AI answers and recommendations, not just in classic search results.</p>
 <h2 id="rizika">Risks and open questions</h2>
 <p>Agentic commerce is still an early topic and it is worth approaching it objectively, not as an automatic guarantee of higher sales:</p>
 <ul class="checklist">
 <li>Customer adoption is still developing, and public data is not yet sufficient to estimate a typical revenue share for an individual store</li>
 <li>Data protection and security issues remain open when authorizing payments on behalf of the customer</li>
-<li>Not every type of product or business model lends itself equally well to AI-mediated purchasing — for products where personal testing or advice is decisive, the role of the agent will be more complementary</li>
+<li>Not every type of product or business model lends itself equally well to AI-mediated purchasing. For products where personal testing or advice is decisive, the role of the agent will be more complementary</li>
 <li>Merchants have less control over brand presentation inside AI interfaces; after a customer reaches the store, visual identity, trust and usability still matter</li>
 </ul>
 <h2 id="plus-nebo-ne">Do you need Shopify Plus for this?</h2>
@@ -106,7 +106,7 @@
 <li><a href="https://shopify.dev/docs/agents" rel="noreferrer" target="_blank">Shopify.dev: Build commerce agents with UCP</a></li>
 <li><a href="https://shopify.engineering/ucp" rel="noreferrer" target="_blank">Shopify Engineering: Building the Universal Commerce Protocol</a></li>
 <li><a href="https://www.shopify.com/enterprise/blog/ai-search-insights" rel="noreferrer" target="_blank">Shopify: traffic and conversion data from AI channels (Q1 2026)</a></li>
-<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26 — complete release overview</a></li>
+<li><a href="../shopify-editions-spring-26/">Shopify Editions Spring '26: complete release overview</a></li>
 <li><a href="../ai-shopify-development/">AI in the development of Shopify online stores</a></li>
 <li><a href="../shopify-seo/">Shopify SEO: what the platform does on its own</a></li>
 </ul></section>
