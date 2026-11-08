@@ -1,4 +1,5 @@
-/* Homepage previews: native videos first, labelled tabs as an enhancement. */
+/* Homepage previews. On desktop every clip is visible in a bento grid; on
+   narrow screens the same clips become one preview with labelled tabs. */
 (() => {
   const english = document.documentElement.lang === 'en';
   const stacked = window.matchMedia('(max-width:900px)');
@@ -53,9 +54,19 @@
 
     function select(index, focus = false) {
       selected = index;
+      const tabbed = stacked.matches;
       panels.forEach((panel, i) => {
-        panel.hidden = i !== selected;
+        panel.hidden = tabbed && i !== selected;
         if (panel.hidden) panel.querySelector('video').pause();
+        if (tabbed) {
+          panel.setAttribute('role', 'tabpanel');
+          panel.setAttribute('aria-labelledby', buttons[i].id);
+          panel.tabIndex = 0;
+        } else {
+          panel.removeAttribute('role');
+          panel.removeAttribute('aria-labelledby');
+          panel.removeAttribute('tabindex');
+        }
         buttons[i].setAttribute('aria-selected', String(i === selected));
         buttons[i].tabIndex = i === selected ? 0 : -1;
       });
@@ -74,9 +85,8 @@
       select(index, true);
     });
 
-    const orient = () => tabs.setAttribute('aria-orientation', stacked.matches ? 'horizontal' : 'vertical');
-    orient();
-    stacked.addEventListener('change', orient);
+    tabs.setAttribute('aria-orientation', 'horizontal');
+    stacked.addEventListener('change', () => select(selected));
     gallery.append(picker);
     gallery.classList.add('is-enhanced');
     select(0);

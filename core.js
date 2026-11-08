@@ -110,11 +110,14 @@
         if (target) targets.set(target,id);
       });
     });
+    /* Track every observed section, not just the entries that changed, so the
+       highlight follows the reader through long multi-section areas. */
+    const visible = new Set();
     const spy = new IntersectionObserver((entries) => {
-      const current = entries.find((entry) => entry.isIntersecting);
-      if (!current) return;
-      const id = targets.get(current.target);
-      navLinks.forEach((link) => link.classList.toggle('active',(link.dataset.navTargets || link.hash.slice(1)).split(/\s+/).includes(id)));
+      entries.forEach((entry) => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));
+      const current = [...targets.keys()].find((target) => visible.has(target));
+      const id = current ? targets.get(current) : null;
+      navLinks.forEach((link) => link.classList.toggle('active', Boolean(id) && (link.dataset.navTargets || link.hash.slice(1)).split(/\s+/).includes(id)));
     }, { rootMargin:'-32% 0px -60%' });
     targets.forEach((_,target) => spy.observe(target));
   }

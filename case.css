@@ -123,3 +123,37 @@ body.case-page footer { background:#0a0a0a; }
 
 .case-page .case-action { font-size:14px; }
 @media (max-width:760px) { .case-prose p,.case-list li { font-size:16px; } }
+
+/* ── Case-page previews: same bento as the homepage ─────────────
+   Lead clip left, the others stacked right at matching height; two clips
+   split evenly. No second frame or caption bar: label and play/pause chip
+   sit on the clip, which already carries its own browser frame. */
+@media (min-width:901px) {
+  .case-media .video-duo,.case-media .video-duo-reverse { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; align-items:stretch; }
+  .case-media .video-duo.video-trio { grid-template-columns:minmax(0,2fr) minmax(0,1fr); }
+  .case-media .video-trio > .media-frame:first-child { grid-row:span 2; }
+  .case-media .video-trio > .media-frame:first-child video { position:absolute; inset:0; height:100%; aspect-ratio:auto; }
+}
+.case-media .video-duo > .media-frame {
+  width:100%; margin:0; padding:0; justify-self:stretch; transform:none;
+  border:1px solid rgba(var(--case-rgb),.16); border-radius:10px;
+  background:var(--case-canvas); box-shadow:none;
+}
+.case-media .video-duo > .media-frame video { display:block; width:100%; height:100%; aspect-ratio:16/9; object-fit:cover; }
+.case-media .media-frame figcaption,
+.case-media .media-frame figcaption.has-playback-toggle {
+  position:absolute; inset:auto 12px 12px; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  min-height:0; margin:0; padding:0; border:0; color:#efeee8; pointer-events:none;
+}
+.case-media .media-caption-text,.case-media .media-toggle {
+  pointer-events:auto; border:1px solid rgba(255,255,255,.14); border-radius:999px;
+  background:rgba(8,10,9,.62); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+}
+.case-media .media-caption-text { padding:6px 12px; color:#efeee8; font:500 12px/1.4 "Manrope",sans-serif; letter-spacing:0; text-transform:none; }
+.case-media .media-caption-text > span { margin-right:8px; color:var(--case-accent); }
+.case-molecules-new .case-media .media-caption-text > span { color:#b9dd84; }
+.case-media .media-toggle { width:32px; height:32px; min-height:32px; padding:0; font-size:0; opacity:.72; transition:opacity .2s ease,border-color .2s ease; }
+.case-media .media-frame:hover .media-toggle,.case-media .media-toggle:focus-visible { opacity:1; }
+.case-media .media-toggle:hover { border-color:var(--case-accent); }
+@media (prefers-reduced-motion:reduce) { .case-media .media-toggle { transition:none; } }
