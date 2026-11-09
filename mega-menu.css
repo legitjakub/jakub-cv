@@ -1,8 +1,8 @@
 /* Mega menu panels (built by mega-menu.js). Desktop only; square corners,
    same dark surface as the header, the accent only for hover, the current
-   page and the "all" link. Realizace shows a card per project with a screen
-   from the live store; Služby and Průvodce show a preview that follows the
-   item under the pointer. On narrow screens the plain mobile menu is used. */
+   page and the "all" link. Realizace shows a card per project with a short
+   loop from the live store; Služby and Průvodce show a preview that follows
+   the item under the pointer. On narrow screens the plain mobile menu is used. */
 .mega-toggle,.mega-panel { display:none; }
 @media (min-width:1024px) {
   .has-mega { margin-right:calc(2px - clamp(20px,2.4vw,34px)); }
@@ -26,8 +26,9 @@
   .mega-inner { max-width:1440px; margin:0 auto; padding:28px var(--pad,clamp(24px,5vw,80px)) 30px; }
 
   .mega-thumb { display:block; overflow:hidden; aspect-ratio:16/10; border:1px solid rgba(255,255,255,.1); background:#141614; }
-  .mega-thumb img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transform-origin:50% 100%; transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .3s ease; }
+  .mega-thumb img,.mega-thumb video { display:block; width:100%; height:100%; object-fit:cover; object-position:top; transform-origin:50% 100%; transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .3s ease; }
   .mega-thumb img:not([src]) { opacity:0; }
+  .mega-thumb > [hidden] { display:none; }
 
   /* Realizace: one card per project */
   .mega-work { display:grid; grid-template-columns:minmax(0,1fr); gap:22px; }
@@ -36,7 +37,7 @@
   .mega-card-text { display:block; margin-top:12px; }
   .mega-card-text span { display:block; font:600 15px/1.3 "Manrope",sans-serif; transition:color .2s ease; }
   .mega-card-text small { display:block; margin-top:4px; color:#8f918a; font:400 13px/1.45 "Manrope",sans-serif; }
-  .mega-card:hover .mega-thumb img,.mega-card:focus-visible .mega-thumb img { transform:scale(1.04); }
+  .mega-card:hover .mega-thumb :is(img,video),.mega-card:focus-visible .mega-thumb :is(img,video) { transform:scale(1.04); }
   .mega-card:hover .mega-thumb,.mega-card:focus-visible .mega-thumb { border-color:rgba(183,255,60,.45); }
   .mega-card:hover .mega-card-text span,.mega-card[aria-current] .mega-card-text span { color:var(--commerce,#b7ff3c); }
   .mega-card:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:4px; }
@@ -61,7 +62,7 @@
   .mega-guide .mega-col a:hover,.mega-guide .mega-col a:focus-visible { padding-left:16px; }
 
   .mega-preview { grid-column:2; grid-row:1 / span 2; align-self:start; padding-left:clamp(24px,2.6vw,36px); border-left:1px solid rgba(255,255,255,.1); }
-  .mega-preview.is-swapping .mega-thumb img,.mega-preview.is-swapping p { animation:mega-swap .3s ease both; }
+  .mega-preview.is-swapping .mega-thumb :is(img,video),.mega-preview.is-swapping p { animation:mega-swap .3s ease both; }
   @keyframes mega-swap { from { opacity:.15; } }
   .mega-guide .mega-preview .mega-thumb { aspect-ratio:40/21; }
   .mega-guide .mega-preview .mega-thumb img { object-position:center; }
@@ -78,6 +79,6 @@
   .mega-guide .mega-cols { grid-auto-flow:row; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 28px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .mega-toggle::before,.mega-thumb img,.mega-col a,.mega-col a::before,.mega-card-text span { transition:none; }
-  .mega-panel:not([hidden]),.mega-preview.is-swapping .mega-thumb img,.mega-preview.is-swapping p { animation:none; }
+  .mega-toggle::before,.mega-thumb img,.mega-thumb video,.mega-col a,.mega-col a::before,.mega-card-text span { transition:none; }
+  .mega-panel:not([hidden]),.mega-preview.is-swapping .mega-thumb :is(img,video),.mega-preview.is-swapping p { animation:none; }
 }

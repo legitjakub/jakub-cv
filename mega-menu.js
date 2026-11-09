@@ -1,9 +1,10 @@
 /* Mega menu for the desktop header (main site and blog).
    The header keeps plain links, so everything works without this script.
    On wide screens Realizace / Služby / Průvodce get a panel: project cards
-   with a screen from each live store, and for services and articles a
-   preview that follows the item under the pointer or keyboard focus.
-   Images load the first time a panel opens. */
+   with a short muted loop from each live store, and for services and articles
+   a preview that follows the item under the pointer or keyboard focus.
+   Media load the first time a panel opens; the loops play only while their
+   panel is open and stay still posters for reduced motion or Save-Data. */
 (() => {
   const en = document.documentElement.lang === 'en';
   const S = '/assets/work/menu/';
@@ -11,21 +12,21 @@
   const A = ARTICLES[en ? 'en' : 'cs'];
   const DATA = en ? {
     work: { title: 'Case studies', all: ['/en/#case-studies', 'All case studies'], cards: [
-      ['/en/work/posedla/', 'Posedla', 'Shopify Plus across four markets', S + 'tile-po.webp'],
-      ['/en/work/facederma/', 'Facederma', 'WooCommerce to Shopify Plus, B2B for salons', S + 'tile-fd.webp'],
-      ['/en/work/bohemian/', 'Bohemian Coffee House', 'Theme and coffee data model', S + 'tile-bc.webp'],
-      ['/en/work/molecules/', 'Molecules of Life', 'A new store for the German market', S + 'tile-mo.webp'],
-      ['/en/work/peaceofalm/', 'Peace of Alm', 'Theme for certified baby skincare', S + 'tile-pa.webp'],
-      ['/en/work/surprisedrinks/', 'Surprise Drinks', 'Brand site with mini-games', S + 'tile-sd.webp'],
+      ['/en/work/posedla/', 'Posedla', 'Shopify Plus across four markets', 'po'],
+      ['/en/work/facederma/', 'Facederma', 'WooCommerce to Shopify Plus, B2B for salons', 'fd'],
+      ['/en/work/bohemian/', 'Bohemian Coffee House', 'Theme and coffee data model', 'bc'],
+      ['/en/work/molecules/', 'Molecules of Life', 'A new store for the German market', 'mo'],
+      ['/en/work/peaceofalm/', 'Peace of Alm', 'Theme for certified baby skincare', 'pa'],
+      ['/en/work/surprisedrinks/', 'Surprise Drinks', 'Brand site with mini-games', 'sd'],
     ] },
     services: { title: 'Services', all: ['/en/#shopify-development', 'All services'], cols: [
       { items: [
-        ['/en/#shopify-development', 'New store or redesign', 'From first design to launch', S + 'tile-pa.webp', 'Example: Peace of Alm', 'A theme adapted to the brand, its labels and bundles.'],
-        ['/en/#shopify-development', 'Theme and custom features', 'Liquid sections and changes', S + 'tile-bc-data.webp', 'Example: Bohemian Coffee House', 'Coffee data in metafields drives filters, scales and labels.'],
-        ['/en/#shopify-development', 'Integrations and B2B', 'Systems, Shopify Plus, wholesale', S + 'tile-fd-b2b.webp', 'Example: Facederma', 'Salon sign-up and a separate B2B branch with its own prices.'],
+        ['/en/#shopify-development', 'New store or redesign', 'From first design to launch', 'pa', 'Example: Peace of Alm', 'A theme adapted to the brand, its labels and bundles.'],
+        ['/en/#shopify-development', 'Theme and custom features', 'Liquid sections and changes', 'bc-data', 'Example: Bohemian Coffee House', 'Coffee data in metafields drives filters, scales and labels.'],
+        ['/en/#shopify-development', 'Integrations and B2B', 'Systems, Shopify Plus, wholesale', 'fd-b2b', 'Example: Facederma', 'Salon sign-up and a separate B2B branch with its own prices.'],
       ] },
       { items: [
-        ['/shopify-plus/en/', 'Shopify Plus', 'When it pays off and what it costs', S + 'tile-po-plus.webp', 'Example: Posedla', 'Plus with several markets, B2B and an ERP connection.'],
+        ['/shopify-plus/en/', 'Shopify Plus', 'When it pays off and what it costs', 'po-plus', 'Example: Posedla', 'Plus with several markets, B2B and an ERP connection.'],
         ['/agentic-commerce/en/', 'Agentic commerce', 'Selling through AI agents', S + 'tile-agentic-en.webp', 'Guide', 'Which AI channels can sell your products and what to prepare.'],
         ['mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project', 'Start a project', 'Describe what you need', S + 'tile-contact.webp', 'Jakub Hrnčíř', 'Send a short brief. I reply with questions and a realistic next step.'],
       ] },
@@ -58,22 +59,22 @@
     ] },
   } : {
     work: { title: 'Realizace', all: ['/#projekty', 'Všechny realizace'], cards: [
-      ['/realizace/posedla/', 'Posedla', 'Shopify Plus pro čtyři trhy', S + 'tile-po.webp'],
-      ['/realizace/facederma/', 'Facederma', 'Z WooCommerce na Shopify Plus, B2B pro salony', S + 'tile-fd.webp'],
-      ['/realizace/bohemian/', 'Bohemian Coffee House', 'Šablona a datový model kávy', S + 'tile-bc.webp'],
-      ['/realizace/molecules/', 'Molecules of Life', 'Nový e-shop pro německý trh', S + 'tile-mo.webp'],
-      ['/realizace/peaceofalm/', 'Peace of Alm', 'Šablona pro certifikovanou dětskou kosmetiku', S + 'tile-pa.webp'],
-      ['/realizace/surprisedrinks/', 'Surprise Drinks', 'Web značky s minihrami', S + 'tile-sd.webp'],
+      ['/realizace/posedla/', 'Posedla', 'Shopify Plus pro čtyři trhy', 'po'],
+      ['/realizace/facederma/', 'Facederma', 'Z WooCommerce na Shopify Plus, B2B pro salony', 'fd'],
+      ['/realizace/bohemian/', 'Bohemian Coffee House', 'Šablona a datový model kávy', 'bc'],
+      ['/realizace/molecules/', 'Molecules of Life', 'Nový e-shop pro německý trh', 'mo'],
+      ['/realizace/peaceofalm/', 'Peace of Alm', 'Šablona pro certifikovanou dětskou kosmetiku', 'pa'],
+      ['/realizace/surprisedrinks/', 'Surprise Drinks', 'Web značky s minihrami', 'sd'],
     ] },
     services: { title: 'Služby', all: ['/#reseni', 'Všechny služby'], cols: [
       { items: [
-        ['/#novy-eshop', 'Nový e-shop a redesign', 'Od návrhu po spuštění', S + 'tile-pa.webp', 'Ukázka: Peace of Alm', 'Šablona přizpůsobená značce, jejím štítkům a balíčkům.'],
-        ['/#liquid-upravy', 'Šablona a vlastní funkce', 'Sekce v Liquidu a úpravy', S + 'tile-bc-data.webp', 'Ukázka: Bohemian Coffee House', 'Údaje o kávě v metafieldech řídí filtry, stupnice i štítky.'],
-        ['/#integrace', 'Integrace a B2B', 'Napojení systémů a velkoobchod', S + 'tile-fd-b2b.webp', 'Ukázka: Facederma', 'Registrace salonů a oddělená B2B větev s vlastními cenami.'],
-        ['/#sprava', 'Správa a rozvoj', 'Opravy a průběžná vylepšení', S + 'tile-po-care.webp', 'Ukázka: Posedla', 'Po projektu v agentuře navázala přímá spolupráce se značkou.'],
+        ['/#novy-eshop', 'Nový e-shop a redesign', 'Od návrhu po spuštění', 'pa', 'Ukázka: Peace of Alm', 'Šablona přizpůsobená značce, jejím štítkům a balíčkům.'],
+        ['/#liquid-upravy', 'Šablona a vlastní funkce', 'Sekce v Liquidu a úpravy', 'bc-data', 'Ukázka: Bohemian Coffee House', 'Údaje o kávě v metafieldech řídí filtry, stupnice i štítky.'],
+        ['/#integrace', 'Integrace a B2B', 'Napojení systémů a velkoobchod', 'fd-b2b', 'Ukázka: Facederma', 'Registrace salonů a oddělená B2B větev s vlastními cenami.'],
+        ['/#sprava', 'Správa a rozvoj', 'Opravy a průběžná vylepšení', 'po-care', 'Ukázka: Posedla', 'Po projektu v agentuře navázala přímá spolupráce se značkou.'],
       ] },
       { items: [
-        ['/shopify-plus/', 'Shopify Plus', 'Kdy se vyplatí a kolik stojí', S + 'tile-po-plus.webp', 'Ukázka: Posedla', 'Plus s více trhy, B2B a napojením na ERP.'],
+        ['/shopify-plus/', 'Shopify Plus', 'Kdy se vyplatí a kolik stojí', 'po-plus', 'Ukázka: Posedla', 'Plus s více trhy, B2B a napojením na ERP.'],
         ['/agentic-commerce/', 'Agentic commerce', 'Prodej přes AI agenty', S + 'tile-agentic-cs.webp', 'Průvodce', 'Které AI kanály mohou prodávat vaše produkty a co připravit.'],
         ['/shopify-poptavka/?zdroj=mega-menu', 'Poptat projekt', 'Krátký formulář', S + 'tile-contact.webp', 'Jakub Hrnčíř', 'Pošlete stručné zadání. Odpovím s otázkami a realistickým dalším krokem.'],
       ] },
@@ -123,8 +124,18 @@
   const cur = (href) => (!href.includes('#') && href.split('?')[0] === here ? ' aria-current="page"' : '');
   // keep words like "e-shop" on one line
   const nb = (s) => esc(s).replace(/(\S*-\S+)/g, '<span class="mega-nb">$1</span>');
-  const thumb = (src, cls = '') => `<span class="mega-thumb${cls}"><img data-src="${src}" alt="" width="640" height="400" decoding="async" /></span>`;
-  const preview = (p) => `<div class="mega-preview" aria-hidden="true">${thumb(p.img, ' mega-preview-img')}<p class="mega-preview-meta">${esc(p.meta)}</p><p class="mega-preview-title">${esc(p.title)}</p><p class="mega-preview-text">${esc(p.text)}</p></div>`;
+  // a bare key ('po') is a clip in S with a poster of the same name; a path is a still image
+  const isClip = (m) => !m.includes('/');
+  const motion = !window.matchMedia('(prefers-reduced-motion:reduce)').matches && !(navigator.connection && navigator.connection.saveData);
+  const clip = (k) => `<video data-src="${S}${k}.mp4" data-poster="${S}${k}.webp" width="576" height="360" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true"></video>`;
+  const still = (src) => `<img data-src="${src}" alt="" width="640" height="400" decoding="async" />`;
+  const thumb = (m, cls = '') => `<span class="mega-thumb${cls}">${isClip(m) ? clip(m) : still(m)}</span>`;
+  const preview = (p) => `<div class="mega-preview" aria-hidden="true"><span class="mega-thumb mega-preview-img"><img alt="" width="640" height="400" decoding="async" hidden /><video width="576" height="360" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback hidden></video></span><p class="mega-preview-meta">${esc(p.meta)}</p><p class="mega-preview-title">${esc(p.title)}</p><p class="mega-preview-text">${esc(p.text)}</p></div>`;
+  const wake = (v) => {
+    if (v.dataset.poster) { v.poster = v.dataset.poster; v.removeAttribute('data-poster'); }
+    if (motion && v.dataset.src) { v.src = v.dataset.src; v.removeAttribute('data-src'); }
+    if (motion && v.src) v.play().catch(() => {});
+  };
 
   // Preview content for every link that has one, by href.
   const previews = {};
@@ -152,8 +163,15 @@
     const box = panel.querySelector('.mega-preview');
     if (!p || !box || box.dataset.key === pk) return;
     box.dataset.key = pk;
-    const img = box.querySelector('img');
-    img.src = p.img;
+    const img = box.querySelector('img'), video = box.querySelector('video');
+    if (isClip(p.img)) {
+      video.poster = S + p.img + '.webp';
+      if (motion) { video.src = S + p.img + '.mp4'; video.play().catch(() => {}); }
+      img.hidden = true; video.hidden = false;
+    } else {
+      video.pause(); video.removeAttribute('src'); video.load();
+      img.src = p.img; video.hidden = true; img.hidden = false;
+    }
     box.querySelector('.mega-preview-meta').textContent = p.meta;
     box.querySelector('.mega-preview-title').textContent = p.title;
     box.querySelector('.mega-preview-text').textContent = p.text;
@@ -162,6 +180,7 @@
   const close = (focusToggle) => {
     if (!openItem) return;
     openItem.panel.hidden = true;
+    openItem.panel.querySelectorAll('video').forEach((v) => v.pause());
     openItem.toggle.setAttribute('aria-expanded', 'false');
     header.classList.remove('mega-open');
     if (focusToggle) openItem.toggle.focus();
@@ -173,6 +192,9 @@
     item.panel.querySelectorAll('img[data-src]').forEach((i) => { i.src = i.dataset.src; i.removeAttribute('data-src'); });
     if (item.reset) setPreview(item.panel, item.reset);
     item.panel.hidden = false;
+    item.panel.querySelectorAll('.mega-cards video').forEach(wake);
+    const pv = item.panel.querySelector('.mega-preview video');
+    if (pv && !pv.hidden && pv.src && motion) pv.play().catch(() => {});
     item.toggle.setAttribute('aria-expanded', 'true');
     header.classList.add('mega-open');
     openItem = item;
@@ -198,7 +220,6 @@
     panel.innerHTML = build(key, d);
     header.append(panel);
     const item = { key, link, toggle, panel, reset: key === 'guide' ? d.featured : key === 'services' ? d.cols[0].items[0][0] + '|' + d.cols[0].items[0][1] : null };
-    if (item.reset) panel.querySelector('.mega-preview').dataset.key = item.reset;
     panels.push(item);
 
     toggle.addEventListener('click', () => (openItem === item ? close(false) : open(item)));

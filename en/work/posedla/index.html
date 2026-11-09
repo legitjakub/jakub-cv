@@ -65,13 +65,13 @@
     <link rel="stylesheet" href="/core.css?v=0f50583ba8" />
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
-    <link rel="stylesheet" href="/case.css?v=b662318bf5" />
+    <link rel="stylesheet" href="/case.css?v=0f2f14c39b" />
     <link rel="stylesheet" href="/refine.css?v=c9a176bc8d" />
-    <link rel="stylesheet" href="/mega-menu.css?v=65ef241124" />
-    <script src="/mega-menu.js?v=e065f6e67f" defer></script>
+    <link rel="stylesheet" href="/mega-menu.css?v=f3b79f9f7b" />
+    <script src="/mega-menu.js?v=62a64280ce" defer></script>
     <script src="/core.js?v=edaf51bff4" defer></script>
     <script src="/media.js?v=5675d23657" defer></script>
-    <script src="/case-tour.js?v=87d9235423" defer></script>
+    <script src="/case-tour.js?v=83ab2f7f59" defer></script>
     <script src="/shopify-vyvoj.js?v=260bfa063b" defer></script>
     <script type="application/ld+json">
       {
@@ -238,51 +238,83 @@
         <div class="tour-head">
           <span class="tour-eyebrow">From the live site</span>
           <h2 id="tour-title">Walk through the store</h2>
-          <p>Screens from posedla.cz, captured in November 2026. Switch between pages or enlarge a screen.</p>
+          <p>Recordings from posedla.eu, captured in November 2026. Switching pages starts the clip from the beginning.</p>
         </div>
-        <div class="tour" data-tour>
-          <div class="tour-tabs" role="tablist" aria-label="Store pages"><button type="button" role="tab" id="tour-tab-1" aria-controls="tour-panel-1" aria-selected="true">Home page</button><button type="button" role="tab" id="tour-tab-2" aria-controls="tour-panel-2" aria-selected="false" tabindex="-1">Joyseat product</button><button type="button" role="tab" id="tour-tab-3" aria-controls="tour-panel-3" aria-selected="false" tabindex="-1">How it works</button><button type="button" role="tab" id="tour-tab-4" aria-controls="tour-panel-4" aria-selected="false" tabindex="-1">Posedla Academy</button><button type="button" role="tab" id="tour-tab-5" aria-controls="tour-panel-5" aria-selected="false" tabindex="-1">Academy topics</button></div>
+        <div class="tour tour-clips" data-tour>
+          <div class="tour-tabs" role="tablist" aria-label="Store pages"><button type="button" role="tab" id="tour-tab-1" aria-controls="tour-panel-1" aria-selected="true">Home page</button><button type="button" role="tab" id="tour-tab-2" aria-controls="tour-panel-2" aria-selected="false" tabindex="-1">Joyseat product</button><button type="button" role="tab" id="tour-tab-3" aria-controls="tour-panel-3" aria-selected="false" tabindex="-1">Accessories</button><button type="button" role="tab" id="tour-tab-4" aria-controls="tour-panel-4" aria-selected="false" tabindex="-1">About</button><button type="button" role="tab" id="tour-tab-5" aria-controls="tour-panel-5" aria-selected="false" tabindex="-1">Blog</button></div>
           <div class="tour-stage">
           <figure class="tour-panel" id="tour-panel-1" role="tabpanel" aria-labelledby="tour-tab-1">
             <div class="tour-browser">
-              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.cz<b>/</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Home page"><img src="/assets/work/screens/po-domov.webp" alt="posedla.cz/: Home page" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/</b></span></div>
+              <video class="tour-video" poster="/assets/work/tour/po-home.webp" data-src="/assets/work/tour/po-home.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: Home page"></video>
             </div>
-            <figcaption><span class="tour-count">01 / 05</span><h3>Home page</h3><p>A full-width video. The header holds the market switcher, the B2B entry and the cart.</p></figcaption>
+            <figcaption><span class="tour-count">01 / 05</span><h3>Home page</h3><p>The brand video across the full width, then the case for a custom saddle, numbers and press logos, the three-step process, reviews, the model picker and the riders who race on the saddles.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-2" role="tabpanel" aria-labelledby="tour-tab-2">
             <div class="tour-browser">
-              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.cz<b>/products/joyseat</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Joyseat product"><img src="/assets/work/screens/po-joyseat.webp" alt="posedla.cz/products/joyseat: Joyseat product" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/products/joyseat</b></span></div>
+              <video class="tour-video" data-poster="/assets/work/tour/po-product.webp" data-src="/assets/work/tour/po-product.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: Joyseat product"></video>
             </div>
-            <figcaption><span class="tour-count">02 / 05</span><h3>Joyseat product</h3><p>Below the opening video the product page explains what the custom saddle solves in three short blocks.</p></figcaption>
+            <figcaption><span class="tour-count">02 / 05</span><h3>Joyseat product</h3><p>The clip starts at the product itself. Switching the model from PLUS to PRO and ULTRA changes the gallery, price and description. Further down the page explains what is made to measure, compares the models, shows the production timeline and ends at the reviews.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-3" role="tabpanel" aria-labelledby="tour-tab-3">
             <div class="tour-browser">
-              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.cz<b>/pages/how-it-works</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: How it works"><img src="/assets/work/screens/po-how.webp" alt="posedla.cz/pages/how-it-works: How it works" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/collections/accessories</b></span></div>
+              <video class="tour-video" data-poster="/assets/work/tour/po-acc.webp" data-src="/assets/work/tour/po-acc.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: Accessories"></video>
             </div>
-            <figcaption><span class="tour-count">03 / 05</span><h3>How it works</h3><p>The first step: 12 facts about the rider and a sit-bone imprint, used to calculate the saddle shape.</p></figcaption>
+            <figcaption><span class="tour-count">03 / 05</span><h3>Accessories</h3><p>The accessories collection with a video banner. Hovering a card shows a second product photo, and the button by the rating opens the store-wide reviews in a window.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-4" role="tabpanel" aria-labelledby="tour-tab-4">
             <div class="tour-browser">
-              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.cz<b>/pages/academy</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Posedla Academy"><img src="/assets/work/screens/po-academy.webp" alt="posedla.cz/pages/academy: Posedla Academy" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/pages/about</b></span></div>
+              <video class="tour-video" data-poster="/assets/work/tour/po-about.webp" data-src="/assets/work/tour/po-about.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: About"></video>
             </div>
-            <figcaption><span class="tour-count">04 / 05</span><h3>Posedla Academy</h3><p>The education section has its own look and navigation: talks, a blog and a Strava club.</p></figcaption>
+            <figcaption><span class="tour-count">04 / 05</span><h3>About</h3><p>In The essentials you can’t skip a card unfolds when you click its plus: the photo stays behind and a short text with a link appears over it. Below are rider stories, the community and Posedla Academy.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-5" role="tabpanel" aria-labelledby="tour-tab-5">
             <div class="tour-browser">
-              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.cz<b>/pages/academy</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Academy topics"><img src="/assets/work/screens/po-academy-obsah.webp" alt="posedla.cz/pages/academy: Academy topics" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/blogs/blog</b></span></div>
+              <video class="tour-video" data-poster="/assets/work/tour/po-blog.webp" data-src="/assets/work/tour/po-blog.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: Blog"></video>
             </div>
-            <figcaption><span class="tour-count">05 / 05</span><h3>Academy topics</h3><p>A topic index with photos and links to detailed pages.</p></figcaption>
+            <figcaption><span class="tour-count">05 / 05</span><h3>Blog</h3><p>The article list with topic tags. Clicking a card opens the article with its intro and a summary of what the reader will learn.</p></figcaption>
           </figure>
           </div>
           <div class="tour-steps"><button type="button" class="tour-prev" aria-label="Previous page">←</button><button type="button" class="tour-next" aria-label="Next page">→</button></div>
         </div>
       </section>
       <!-- tour:end -->
+
+      <!-- viz:start -->
+      <section class="case-viz section-pad" aria-labelledby="viz-title">
+        <div class="tour-head">
+          <span class="tour-eyebrow">Custom section</span>
+          <h2 id="viz-title">Saddle visualiser</h2>
+          <p>A custom saddle is hard to explain in words. On the How it works page a visitor sets their sit-bone width and riding position and immediately sees how the saddle width changes and where the pressure moves. I built the section as part of the theme.</p>
+        </div>
+        <div class="viz-main">
+          <div class="tour-browser">
+            <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>posedla.eu<b>/pages/how-it-works</b></span></div>
+            <video class="tour-video" poster="/assets/work/tour/po-viz.webp" data-src="/assets/work/tour/po-viz.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from posedla.eu: saddle visualiser"></video>
+          </div>
+          <dl class="viz-stats" aria-label="The visualiser in numbers"><div><dt>90–150 mm</dt><dd>sit-bone width on the slider</dd></div><div><dt>3</dt><dd>riding positions: recreational, performance, aero</dd></div><div><dt>40</dt><dd>saddle outline widths</dd></div><div><dt>120</dt><dd>SVG drawings with a pressure map</dd></div></dl>
+        </div>
+        <div class="viz-grid">
+          <div class="viz-col">
+            <h3><span>01</span>What the customer sees</h3>
+            <ul><li><b>Saddle outline from above</b>The width follows the slider, with a pressure map from highest to lowest laid over the outline.</li><li><b>Pelvis on the saddle</b>Changing the position tilts the pelvis. A label shows the angle: ≥ 65° for recreational riding, 46–64° for performance and ≤ 45° in the aero position.</li><li><b>Pressure focus</b>A small outline with a line shows where the pressure moves: to the rear, the centre or the front.</li></ul>
+          </div>
+          <div class="viz-col">
+            <h3><span>02</span>How it is built</h3>
+            <ul><li><b>Saddle width is calculated</b>Sit-bone width plus an allowance for the position: 30 mm for recreational riding, 23 mm for performance and 17 mm for aero, kept between 130 and 170 mm.</li><li><b>120 prepared drawings</b>The outline exists in 40 widths, each with three pressure maps. The slider switches which layer is visible; the position swaps the whole set of drawings.</li><li><b>A custom slider</b>It drags with a mouse or a finger and redraws once per browser frame, so the movement stays smooth.</li></ul>
+          </div>
+          <div class="viz-col">
+            <h3><span>03</span>What took the most work</h3>
+            <p>The layout. Three views, their labels and two controls have to fit side by side on a monitor and stacked on a phone, and the drawings have to keep the same scale across all 120 variants so the widths can be compared.</p><p>The phone therefore has its own composition: pelvis and pressure focus side by side at the top, the saddle with a width marker below them and the controls at the bottom. Both versions share one state, and the labels are translated with the store, so on posedla.cz the section is in Czech.</p>
+          </div>
+        </div>
+      </section>
+      <!-- viz:end -->
+
 
       <section class="case-section section-pad">
         <header class="reveal"><span class="work-index">01</span><h2>Starting point</h2></header>
@@ -299,6 +331,7 @@
           <li><b>Multi-currency</b>Localised pricing and a geolocation redirect for visitors.</li>
           <li><b>B2B branch</b>A wholesale side of the store running alongside direct-to-customer sales.</li>
           <li><b>ERP integration</b>The store connected to the brand's own ERP system.</li>
+          <li><b>Saddle visualiser</b>An interactive section on the How it works page: sit-bone width, riding position and pressure map.</li>
           <li><b>Posedla Academy</b>The educational part of the site, with landing pages built on metaobjects.</li>
           </ul>
         </div>
