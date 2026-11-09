@@ -228,7 +228,7 @@
           <span class="case-order">Case study · Shopify theme and data</span>
           <p class="case-logo-title case-logo-title-bohemian"><img src="/assets/logos/bohemian-coffee-house-white.webp" alt="Bohemian Coffee House" width="760" height="276" /></p>
           <h1>Bohemian Coffee House: <em>a coffee data model in a Shopify theme</em></h1>
-          <p class="case-lead">Bohemian Coffee House is a family café and roastery in Rumburk, northern Czechia. Its rebrand came with a new Shopify store, designed by Zdeněk Zeman and built by the Appfleece agency team. I developed the theme and structured coffee product data as part of that team.</p>
+          <p class="case-lead">The Rumburk roastery Bohemian Coffee House changed its visual identity, and its online store changed with it. Design came from Zdeněk Zeman, the build from the Appfleece team. My part was the theme, and working out how to store a coffee’s details in Shopify so the theme can use them on its own.</p>
         </div>
         <dl class="case-facts reveal">
             <div><dt>Client</dt><dd><a href="https://bohemiancoffeehouse.cz/" rel="noopener">Bohemian Coffee House</a></dd></div>
@@ -273,21 +273,21 @@
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>bohemiancoffeehouse.cz<b>/</b></span></div>
               <button class="shot-zoom" type="button" aria-label="Enlarge screen: Home page"><img src="/assets/work/screens/bc-domov.webp" alt="bohemiancoffeehouse.cz/: Home page" width="1920" height="1200" loading="lazy" decoding="async" /></button>
             </div>
-            <figcaption><span class="tour-count">01 / 03</span><h3>Home page</h3><p>Shop, café, roastery and coffee lab on one site. The café and roastery pages are built from sections.</p></figcaption>
+            <figcaption><span class="tour-count">01 / 03</span><h3>Home page</h3><p>The main navigation splits into the coffee range, café, roastery and Coffee Lab. The client assembles content pages from theme sections in the editor.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-2" role="tabpanel" aria-labelledby="tour-tab-2">
             <div class="tour-browser">
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>bohemiancoffeehouse.cz<b>/collections/vyberove-kavy</b></span></div>
               <button class="shot-zoom" type="button" aria-label="Enlarge screen: Speciality coffee"><img src="/assets/work/screens/bc-kolekce.webp" alt="bohemiancoffeehouse.cz/collections/vyberove-kavy: Speciality coffee" width="1920" height="1200" loading="lazy" decoding="async" /></button>
             </div>
-            <figcaption><span class="tour-count">02 / 03</span><h3>Speciality coffee</h3><p>Filters for brewing, origin and processing above the coffee grid. Each card shows the price and variety.</p></figcaption>
+            <figcaption><span class="tour-count">02 / 03</span><h3>Speciality coffee</h3><p>Narrow the collection by how you brew, where the coffee is from and how it was processed. Each card carries the price and variety.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-3" role="tabpanel" aria-labelledby="tour-tab-3">
             <div class="tour-browser">
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>bohemiancoffeehouse.cz<b>/products/mexiko-organic-premium-light-roast</b></span></div>
               <button class="shot-zoom" type="button" aria-label="Enlarge screen: Coffee detail"><img src="/assets/work/screens/bc-produkt.webp" alt="bohemiancoffeehouse.cz/products/mexiko-organic-premium-light-roast: Coffee detail" width="1920" height="1200" loading="lazy" decoding="async" /></button>
             </div>
-            <figcaption><span class="tour-count">03 / 03</span><h3>Coffee detail</h3><p>Data from metafields: brewing, roast and acidity scales and the light and dark roast switch.</p></figcaption>
+            <figcaption><span class="tour-count">03 / 03</span><h3>Coffee detail</h3><p>The product page reads metafields: the suggested brew method, scales for roast level and acidity, and a link to the other roast of the same coffee.</p></figcaption>
           </figure>
           </div>
           <div class="tour-steps"><button type="button" class="tour-prev" aria-label="Previous page">←</button><button type="button" class="tour-next" aria-label="Next page">→</button></div>
@@ -307,11 +307,11 @@
         <div class="case-prose reveal">
           <ul class="case-scope">
             <li><b>Rebrand and new store</b>Design by Zdeněk Zeman, build by the Appfleece team.</li>
-            <li><b>Online Store 2.0</b>The Motion theme moved to sections, so the client’s team can edit the café, roastery and about pages independently.</li>
-            <li><b>19 fields per coffee</b>One admin record feeds the scales, filters, cards and labels.</li>
-            <li><b>Mobile layout</b>Two columns of coffees, collapsible filters and larger variant buttons.</li>
-            <li><b>Three languages</b>Czech, English and German, including the scales and brew guides.</li>
-            <li><b>Shipping</b>Z-BOX pickup chosen in the cart via Appfleece’s Globe app, and Packeta labels inside Shopify.</li>
+            <li><b>Online Store 2.0</b>The older Motion theme became JSON templates with sections. The client now builds a new content page without a developer.</li>
+            <li><b>Coffee as data</b>Origin, process, taste and roast are product metafields, not a paragraph in the description. The theme builds on them.</li>
+            <li><b>Mobile</b>The coffee grid, filters and variant picker tuned for thumbs.</li>
+            <li><b>CZ, EN, DE</b>Translated down to the text the theme generates: scale labels and brewing tips.</li>
+            <li><b>Shipping</b>Packeta through Appfleece’s Globe app, with the pickup point chosen before checkout.</li>
           </ul>
         </div>
       </section>
@@ -320,39 +320,39 @@
         <div class="case-prose reveal">
           <ul class="case-list">
             <li>Shopify theme development.</li>
-            <li>The coffee data model: each coffee’s details stored as product metafields, from country and region through process to flavour profile, roast level and acidity.</li>
-            <li>Roast and acidity scales on the product page, rendered straight from those fields.</li>
-            <li>Flavour profiles that appear on collection cards on hover.</li>
-            <li>Filters by brew method, origin and process, built on metafields.</li>
-            <li>Linking the light and dark roast of the same coffee: two separate products with a shared roast switch.</li>
+            <li>A metafield structure for coffee: origin, region, process, taste, roast and acidity as separate fields the theme can work with.</li>
+            <li>Roast and acidity scales drawn from the metafield values, in all three languages.</li>
+            <li>A collection card that uncovers the tasting notes on hover.</li>
+            <li>Collection filtering on the same metafields, with no hand-written tags.</li>
+            <li>A switch between the light and dark roast. The two roasts are separate products that act like variants on the page.</li>
           </ul>
         </div>
       </section>
       <section class="case-section section-pad">
         <header class="reveal"><span class="work-index">04</span><h2>How coffee data moves through the store</h2></header>
         <div class="case-prose reveal">
-          <p>The data model connects product management to the storefront. The same fields drive filters, flavour profiles and roast and acidity scales.</p>
+          <p>Below is a real coffee record from the store and the places where the theme uses it.</p>
           <div class="data-map">
             <div class="data-map-col"><span class="data-map-label">Coffee record in the admin</span><ul>
-              <li><code>custom.priprava</code><span>Brew method: filter</span></li>
-              <li><code>custom.zeme_puvodu</code><span>Origin: Mexico</span></li>
+              <li><code>custom.priprava</code><span>Brew method: alternative brewing</span></li>
+              <li><code>custom.zeme_puvodu</code><span>Origin: Colombia</span></li>
               <li><code>custom.zpracovani-new</code><span>Process: washed</span></li>
-              <li><code>Roast level · acidity</code><span>City · medium</span></li>
-              <li><code>Flavour profile</code><span>dried fruit, orange, caramel, marzipan</span></li>
+              <li><code>Roast level · acidity</code><span>City · high</span></li>
+              <li><code>Flavour profile</code><span>lemon, caramel, red apple, raspberry</span></li>
             </ul></div>
             <div class="data-map-arrow" aria-hidden="true">→</div>
             <div class="data-map-col"><span class="data-map-label">Where it shows up</span><ol>
-              <li><b>Collection filters</b>Brew method, origin and process without a page reload</li>
-              <li><b>Product scales</b>Six points for roast and acidity</li>
-              <li><b>Collection card</b>Flavour profile on hover</li>
-              <li><b>Roast switch</b>Light and dark versions as two products</li>
+              <li><b>Collection filters</b>Listed under alternative brewing, Colombia and washed</li>
+              <li><b>Product scales</b>City and high acidity as points on the scale</li>
+              <li><b>Collection card</b>Lemon, caramel and raspberry on hover</li>
+              <li><b>Roast switch</b>The dark roast is its own product: Full City, medium acidity, for espresso</li>
             </ol></div>
           </div>
-          <p class="data-map-note">Example data for the light roast of Mexiko Organic Caracolillo.</p>
+          <p class="data-map-note">Data for the light roast of Kolumbie Finca la Rochela, taken from the live store in November 2026.</p>
           <div class="case-stills">
             <figure class="case-still"><img src="/assets/work/stills/bohemian-prazeni.webp" alt="Product pages for the light and dark roast of Mexiko Organic Premium side by side" width="1400" height="428" loading="lazy" decoding="async" /><figcaption>Light and dark roasts are two products. The switch between them changes the scales too: City+ with medium acidity, Full City with low.</figcaption></figure>
-            <figure class="case-still"><img src="/assets/work/stills/bohemian-filtry.webp" alt="Collection filters with Modern espresso selected and the matching coffee cards" width="1440" height="820" loading="lazy" decoding="async" /><figcaption>The “Modern espresso” filter narrows the range without a page reload. The cards below show brew method, process, country and region.</figcaption></figure>
-            <figure class="case-still"><img src="/assets/work/stills/bohemian-chutovy-profil.webp" alt="A coffee card in the collection showing its flavour profile on hover" width="1440" height="610" loading="lazy" decoding="async" /><figcaption>Hovering a card reveals the flavour profile in the colour of the coffee’s continent.</figcaption></figure>
+            <figure class="case-still"><img src="/assets/work/stills/bohemian-filtry.webp" alt="Collection filters with Modern espresso selected and the matching coffee cards" width="1440" height="820" loading="lazy" decoding="async" /><figcaption>The “Modern espresso” filter selected, with the coffees that match. Each card sums up brew method, process, country and region.</figcaption></figure>
+            <figure class="case-still"><img src="/assets/work/stills/bohemian-chutovy-profil.webp" alt="A coffee card in the collection showing its flavour profile on hover" width="1440" height="610" loading="lazy" decoding="async" /><figcaption>Pointing at a card recolours it by continent of origin and uncovers the tasting notes.</figcaption></figure>
           </div>
         </div>
       </section>
