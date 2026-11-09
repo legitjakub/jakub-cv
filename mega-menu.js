@@ -11,23 +11,23 @@
   const A = ARTICLES[en ? 'en' : 'cs'];
   const DATA = en ? {
     work: { title: 'Case studies', all: ['/en/#case-studies', 'All case studies'], cards: [
-      ['/en/work/posedla/', 'Posedla', 'Shopify Plus across four markets', S + 'po-domov.webp'],
-      ['/en/work/facederma/', 'Facederma', 'WooCommerce to Shopify Plus, B2B for salons', S + 'fd-domov.webp'],
-      ['/en/work/bohemian/', 'Bohemian Coffee House', 'Theme and coffee data model', S + 'bc-domov.webp'],
-      ['/en/work/molecules/', 'Molecules of Life', 'A new store for the German market', S + 'mo-domov.webp'],
-      ['/en/work/peaceofalm/', 'Peace of Alm', 'Theme for certified baby skincare', S + 'pa-domov.webp'],
-      ['/en/work/surprisedrinks/', 'Surprise Drinks', 'Brand site with mini-games', S + 'sd-domov.webp'],
+      ['/en/work/posedla/', 'Posedla', 'Shopify Plus across four markets', S + 'tile-po.webp'],
+      ['/en/work/facederma/', 'Facederma', 'WooCommerce to Shopify Plus, B2B for salons', S + 'tile-fd.webp'],
+      ['/en/work/bohemian/', 'Bohemian Coffee House', 'Theme and coffee data model', S + 'tile-bc.webp'],
+      ['/en/work/molecules/', 'Molecules of Life', 'A new store for the German market', S + 'tile-mo.webp'],
+      ['/en/work/peaceofalm/', 'Peace of Alm', 'Theme for certified baby skincare', S + 'tile-pa.webp'],
+      ['/en/work/surprisedrinks/', 'Surprise Drinks', 'Brand site with mini-games', S + 'tile-sd.webp'],
     ] },
     services: { title: 'Services', all: ['/en/#shopify-development', 'All services'], cols: [
       { items: [
-        ['/en/#shopify-development', 'New store or redesign', 'From first design to launch', S + 'pa-domov.webp', 'Example: Peace of Alm', 'A theme adapted to the brand, its labels and bundles.'],
-        ['/en/#shopify-development', 'Theme and custom features', 'Liquid sections and changes', S + 'bc-produkt.webp', 'Example: Bohemian Coffee House', 'Coffee data in metafields drives filters, scales and labels.'],
-        ['/en/#shopify-development', 'Integrations and B2B', 'Systems, Shopify Plus, wholesale', S + 'fd-salony.webp', 'Example: Facederma', 'Salon sign-up and a separate B2B branch with its own prices.'],
+        ['/en/#shopify-development', 'New store or redesign', 'From first design to launch', S + 'tile-pa.webp', 'Example: Peace of Alm', 'A theme adapted to the brand, its labels and bundles.'],
+        ['/en/#shopify-development', 'Theme and custom features', 'Liquid sections and changes', S + 'tile-bc-data.webp', 'Example: Bohemian Coffee House', 'Coffee data in metafields drives filters, scales and labels.'],
+        ['/en/#shopify-development', 'Integrations and B2B', 'Systems, Shopify Plus, wholesale', S + 'tile-fd-b2b.webp', 'Example: Facederma', 'Salon sign-up and a separate B2B branch with its own prices.'],
       ] },
       { items: [
-        ['/shopify-plus/en/', 'Shopify Plus', 'When it pays off and what it costs', S + 'po-joyseat.webp', 'Example: Posedla', 'Plus with several markets, B2B and an ERP connection.'],
-        ['/agentic-commerce/en/', 'Agentic commerce', 'Selling through AI agents', '/assets/covers/en-shopify-agentic-commerce-720.webp', 'Guide', 'Which AI channels can sell your products and what to prepare.'],
-        ['mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project', 'Start a project', 'Describe what you need', '/assets/jakub-hrncir-portrait-480.webp', 'Jakub Hrnčíř', 'Send a short brief. I reply with questions and a realistic next step.'],
+        ['/shopify-plus/en/', 'Shopify Plus', 'When it pays off and what it costs', S + 'tile-po-plus.webp', 'Example: Posedla', 'Plus with several markets, B2B and an ERP connection.'],
+        ['/agentic-commerce/en/', 'Agentic commerce', 'Selling through AI agents', S + 'tile-agentic-en.webp', 'Guide', 'Which AI channels can sell your products and what to prepare.'],
+        ['mailto:jakub.hrncir24@gmail.com?subject=Shopify%20project', 'Start a project', 'Describe what you need', S + 'tile-contact.webp', 'Jakub Hrnčíř', 'Send a short brief. I reply with questions and a realistic next step.'],
       ] },
     ] },
     guide: { title: 'Guide', all: ['/shopify-guide/', 'All articles'], featured: '/shopify-guide/shopify-ai-agent-optimization/', cols: [
@@ -58,24 +58,24 @@
     ] },
   } : {
     work: { title: 'Realizace', all: ['/#projekty', 'Všechny realizace'], cards: [
-      ['/realizace/posedla/', 'Posedla', 'Shopify Plus pro čtyři trhy', S + 'po-domov.webp'],
-      ['/realizace/facederma/', 'Facederma', 'Z WooCommerce na Shopify Plus, B2B pro salony', S + 'fd-domov.webp'],
-      ['/realizace/bohemian/', 'Bohemian Coffee House', 'Šablona a datový model kávy', S + 'bc-domov.webp'],
-      ['/realizace/molecules/', 'Molecules of Life', 'Nový e-shop pro německý trh', S + 'mo-domov.webp'],
-      ['/realizace/peaceofalm/', 'Peace of Alm', 'Šablona pro certifikovanou dětskou kosmetiku', S + 'pa-domov.webp'],
-      ['/realizace/surprisedrinks/', 'Surprise Drinks', 'Web značky s minihrami', S + 'sd-domov.webp'],
+      ['/realizace/posedla/', 'Posedla', 'Shopify Plus pro čtyři trhy', S + 'tile-po.webp'],
+      ['/realizace/facederma/', 'Facederma', 'Z WooCommerce na Shopify Plus, B2B pro salony', S + 'tile-fd.webp'],
+      ['/realizace/bohemian/', 'Bohemian Coffee House', 'Šablona a datový model kávy', S + 'tile-bc.webp'],
+      ['/realizace/molecules/', 'Molecules of Life', 'Nový e-shop pro německý trh', S + 'tile-mo.webp'],
+      ['/realizace/peaceofalm/', 'Peace of Alm', 'Šablona pro certifikovanou dětskou kosmetiku', S + 'tile-pa.webp'],
+      ['/realizace/surprisedrinks/', 'Surprise Drinks', 'Web značky s minihrami', S + 'tile-sd.webp'],
     ] },
     services: { title: 'Služby', all: ['/#reseni', 'Všechny služby'], cols: [
       { items: [
-        ['/#novy-eshop', 'Nový e-shop a redesign', 'Od návrhu po spuštění', S + 'pa-domov.webp', 'Ukázka: Peace of Alm', 'Šablona přizpůsobená značce, jejím štítkům a balíčkům.'],
-        ['/#liquid-upravy', 'Šablona a vlastní funkce', 'Sekce v Liquidu a úpravy', S + 'bc-produkt.webp', 'Ukázka: Bohemian Coffee House', 'Údaje o kávě v metafieldech řídí filtry, stupnice i štítky.'],
-        ['/#integrace', 'Integrace a B2B', 'Napojení systémů a velkoobchod', S + 'fd-salony.webp', 'Ukázka: Facederma', 'Registrace salonů a oddělená B2B větev s vlastními cenami.'],
-        ['/#sprava', 'Správa a rozvoj', 'Opravy a průběžná vylepšení', S + 'po-domov.webp', 'Ukázka: Posedla', 'Po projektu v agentuře navázala přímá spolupráce se značkou.'],
+        ['/#novy-eshop', 'Nový e-shop a redesign', 'Od návrhu po spuštění', S + 'tile-pa.webp', 'Ukázka: Peace of Alm', 'Šablona přizpůsobená značce, jejím štítkům a balíčkům.'],
+        ['/#liquid-upravy', 'Šablona a vlastní funkce', 'Sekce v Liquidu a úpravy', S + 'tile-bc-data.webp', 'Ukázka: Bohemian Coffee House', 'Údaje o kávě v metafieldech řídí filtry, stupnice i štítky.'],
+        ['/#integrace', 'Integrace a B2B', 'Napojení systémů a velkoobchod', S + 'tile-fd-b2b.webp', 'Ukázka: Facederma', 'Registrace salonů a oddělená B2B větev s vlastními cenami.'],
+        ['/#sprava', 'Správa a rozvoj', 'Opravy a průběžná vylepšení', S + 'tile-po-care.webp', 'Ukázka: Posedla', 'Po projektu v agentuře navázala přímá spolupráce se značkou.'],
       ] },
       { items: [
-        ['/shopify-plus/', 'Shopify Plus', 'Kdy se vyplatí a kolik stojí', S + 'po-joyseat.webp', 'Ukázka: Posedla', 'Plus s více trhy, B2B a napojením na ERP.'],
-        ['/agentic-commerce/', 'Agentic commerce', 'Prodej přes AI agenty', '/assets/covers/cs-shopify-agentic-commerce-720.webp', 'Průvodce', 'Které AI kanály mohou prodávat vaše produkty a co připravit.'],
-        ['/shopify-poptavka/?zdroj=mega-menu', 'Poptat projekt', 'Krátký formulář', '/assets/jakub-hrncir-portrait-480.webp', 'Jakub Hrnčíř', 'Pošlete stručné zadání. Odpovím s otázkami a realistickým dalším krokem.'],
+        ['/shopify-plus/', 'Shopify Plus', 'Kdy se vyplatí a kolik stojí', S + 'tile-po-plus.webp', 'Ukázka: Posedla', 'Plus s více trhy, B2B a napojením na ERP.'],
+        ['/agentic-commerce/', 'Agentic commerce', 'Prodej přes AI agenty', S + 'tile-agentic-cs.webp', 'Průvodce', 'Které AI kanály mohou prodávat vaše produkty a co připravit.'],
+        ['/shopify-poptavka/?zdroj=mega-menu', 'Poptat projekt', 'Krátký formulář', S + 'tile-contact.webp', 'Jakub Hrnčíř', 'Pošlete stručné zadání. Odpovím s otázkami a realistickým dalším krokem.'],
       ] },
     ] },
     guide: { title: 'Průvodce', all: ['/shopify-pruvodce/', 'Všechny články'], featured: '/shopify-pruvodce/optimalizace-shopify-pro-ai-agenty/', cols: [
