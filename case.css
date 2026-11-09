@@ -249,6 +249,10 @@ body.case-page footer { background:#0a0a0a; }
 .phone-row .shot-zoom { overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 24px 60px rgba(0,0,0,.24); }
 .case-molecules-new .phone-row .shot-zoom { box-shadow:0 20px 50px rgba(0,0,0,.1); }
 .phone-row figcaption { margin-top:12px; color:var(--case-body); font-size:13px; line-height:1.5; }
+.phone-clip { position:relative; overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 24px 60px rgba(0,0,0,.24); }
+.case-molecules-new .phone-clip { box-shadow:0 20px 50px rgba(0,0,0,.1); }
+.phone-clip .tour-video { aspect-ratio:360/780; }
+.phone-clip .tour-play { right:10px; bottom:10px; width:32px; height:32px; }
 
 .brand-kit { display:grid; grid-template-columns:minmax(190px,.4fr) minmax(0,1fr); gap:20px clamp(30px,6vw,96px); margin-top:clamp(48px,6vw,80px); padding-top:clamp(32px,4vw,48px); border-top:1px solid var(--case-line); }
 .brand-kit h3 { grid-row:span 3; margin:0; color:var(--case-strong); font-size:clamp(20px,1.8vw,24px); line-height:1.15; letter-spacing:-.035em; }

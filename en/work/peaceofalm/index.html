@@ -65,10 +65,10 @@
     <link rel="stylesheet" href="/core.css?v=0f50583ba8" />
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
-    <link rel="stylesheet" href="/case.css?v=0f2f14c39b" />
+    <link rel="stylesheet" href="/case.css?v=ae5791108b" />
     <link rel="stylesheet" href="/refine.css?v=c9a176bc8d" />
-    <link rel="stylesheet" href="/mega-menu.css?v=f3b79f9f7b" />
-    <script src="/mega-menu.js?v=62a64280ce" defer></script>
+    <link rel="stylesheet" href="/mega-menu.css?v=1df51ac58c" />
+    <script src="/mega-menu.js?v=79c855037d" defer></script>
     <script src="/core.js?v=edaf51bff4" defer></script>
     <script src="/media.js?v=5675d23657" defer></script>
     <script src="/case-tour.js?v=83ab2f7f59" defer></script>
@@ -263,31 +263,31 @@
         <div class="tour-head">
           <span class="tour-eyebrow">From the live site</span>
           <h2 id="tour-title">Walk through the store</h2>
-          <p>Screens from peaceofalm.cz, captured in November 2026. Switch between pages or enlarge a screen.</p>
+          <p>Recordings from peaceofalm.cz, captured in November 2026. Switching pages starts the clip from the beginning.</p>
         </div>
-        <div class="tour" data-tour>
+        <div class="tour tour-clips" data-tour>
           <div class="tour-tabs" role="tablist" aria-label="Store pages"><button type="button" role="tab" id="tour-tab-1" aria-controls="tour-panel-1" aria-selected="true">Home page</button><button type="button" role="tab" id="tour-tab-2" aria-controls="tour-panel-2" aria-selected="false" tabindex="-1">Product</button><button type="button" role="tab" id="tour-tab-3" aria-controls="tour-panel-3" aria-selected="false" tabindex="-1">Bundle</button></div>
           <div class="tour-stage">
           <figure class="tour-panel" id="tour-panel-1" role="tabpanel" aria-labelledby="tour-tab-1">
             <div class="tour-browser">
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>peaceofalm.cz<b>/</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Home page"><img src="/assets/work/screens/pa-domov.webp" alt="peaceofalm.cz/: Home page" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <video class="tour-video" poster="/assets/work/tour/pa-home.webp" data-src="/assets/work/tour/pa-home.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz: Home page"></video>
             </div>
-            <figcaption><span class="tour-count">01 / 03</span><h3>Home page</h3><p>A banner with the product, rating and brand message set in Gazpacho.</p></figcaption>
+            <figcaption><span class="tour-count">01 / 03</span><h3>Home page</h3><p>The banner with a product and its rating, then the brand message set in Gazpacho, the bestsellers and blocks about care from the Alps.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-2" role="tabpanel" aria-labelledby="tour-tab-2">
             <div class="tour-browser">
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>peaceofalm.cz<b>/products/detsky-telovy-olej</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Product"><img src="/assets/work/screens/pa-produkt.webp" alt="peaceofalm.cz/products/detsky-telovy-olej: Product" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <video class="tour-video" data-poster="/assets/work/tour/pa-prod.webp" data-src="/assets/work/tour/pa-prod.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz: Product"></video>
             </div>
-            <figcaption><span class="tour-count">02 / 03</span><h3>Product</h3><p>Coloured property labels above the price, certification and benefit icons below the add-to-cart button.</p></figcaption>
+            <figcaption><span class="tour-count">02 / 03</span><h3>Product</h3><p>Coloured property labels above the price, a gallery with photos in use and the collapsible Use and Ingredients blocks. Further down, ingredient cards and the NATRUE certification.</p></figcaption>
           </figure>
           <figure class="tour-panel" id="tour-panel-3" role="tabpanel" aria-labelledby="tour-tab-3">
             <div class="tour-browser">
               <div class="tour-bar" aria-hidden="true"><i></i><i></i><i></i><span>peaceofalm.cz<b>/products/kompletni-svisti-ritual</b></span></div>
-              <button class="shot-zoom" type="button" aria-label="Enlarge screen: Bundle"><img src="/assets/work/screens/pa-balicek.webp" alt="peaceofalm.cz/products/kompletni-svisti-ritual: Bundle" width="1920" height="1200" loading="lazy" decoding="async" /></button>
+              <video class="tour-video" data-poster="/assets/work/tour/pa-bundle.webp" data-src="/assets/work/tour/pa-bundle.mp4" width="1280" height="800" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz: Bundle"></video>
             </div>
-            <figcaption><span class="tour-count">03 / 03</span><h3>Bundle</h3><p>The complete marmot ritual: five products, the original and discounted price and a list of contents.</p></figcaption>
+            <figcaption><span class="tour-count">03 / 03</span><h3>Bundle</h3><p>The complete marmot ritual. Opening What’s in the bundle shows five products with their size and a short description, followed by a summary of the bundle and the brand.</p></figcaption>
           </figure>
           </div>
           <div class="tour-steps"><button type="button" class="tour-prev" aria-label="Previous page">←</button><button type="button" class="tour-next" aria-label="Next page">→</button></div>
@@ -339,12 +339,12 @@
         <div class="tour-head">
           <span class="tour-eyebrow">On a phone</span>
           <h2 id="phones-title">Mobile version</h2>
-          <p>The same pages at 390 px wide, the way most visitors see them.</p>
+          <p>Phone recordings at 390 px wide, the way most visitors see the site.</p>
         </div>
-        <ul class="phone-row">
-          <li><figure><button class="shot-zoom" type="button" aria-label="Enlarge screen: Home page"><img src="/assets/work/screens/pa-m-domov.webp" alt="peaceofalm.cz: Home page" width="780" height="1688" loading="lazy" decoding="async" /></button><figcaption>Home page</figcaption></figure></li>
-          <li><figure><button class="shot-zoom" type="button" aria-label="Enlarge screen: Product with labels"><img src="/assets/work/screens/pa-m-produkt.webp" alt="peaceofalm.cz: Product with labels" width="780" height="1688" loading="lazy" decoding="async" /></button><figcaption>Product with labels</figcaption></figure></li>
-          <li><figure><button class="shot-zoom" type="button" aria-label="Enlarge screen: Bundle"><img src="/assets/work/screens/pa-m-balicek.webp" alt="peaceofalm.cz: Bundle" width="780" height="1688" loading="lazy" decoding="async" /></button><figcaption>Bundle</figcaption></figure></li>
+        <ul class="phone-row phone-clips">
+          <li><figure><div class="phone-clip"><video class="tour-video" poster="/assets/work/tour/pa-m-home.webp" data-src="/assets/work/tour/pa-m-home.mp4" width="360" height="780" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz on a phone: Home page"></video></div><figcaption>Home page</figcaption></figure></li>
+          <li><figure><div class="phone-clip"><video class="tour-video" poster="/assets/work/tour/pa-m-prod.webp" data-src="/assets/work/tour/pa-m-prod.mp4" width="360" height="780" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz on a phone: Product with labels"></video></div><figcaption>Product with labels</figcaption></figure></li>
+          <li><figure><div class="phone-clip"><video class="tour-video" poster="/assets/work/tour/pa-m-bundle.webp" data-src="/assets/work/tour/pa-m-bundle.mp4" width="360" height="780" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-label="Recording from peaceofalm.cz on a phone: What’s in the bundle"></video></div><figcaption>What’s in the bundle</figcaption></figure></li>
         </ul>
         <div class="brand-kit">
           <h3>Store colours and type</h3>

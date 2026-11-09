@@ -45,6 +45,7 @@
 
   /* Služby and Průvodce: links on the left, live preview on the right */
   .mega-split { display:grid; grid-template-columns:minmax(0,1fr) clamp(250px,24vw,340px); grid-template-rows:auto auto; gap:24px clamp(32px,4vw,56px); }
+  .mega-split:has(.mega-note) { grid-template-rows:auto auto 1fr; }
   .mega-split .mega-cols { grid-column:1; }
   .mega-split .mega-all { grid-column:1; grid-row:2; justify-self:start; align-self:start; }
   .mega-nb { white-space:nowrap; }
@@ -61,7 +62,8 @@
   .mega-guide .mega-col a { padding:8px 0; font-size:14px; }
   .mega-guide .mega-col a:hover,.mega-guide .mega-col a:focus-visible { padding-left:16px; }
 
-  .mega-preview { grid-column:2; grid-row:1 / span 2; align-self:start; padding-left:clamp(24px,2.6vw,36px); border-left:1px solid rgba(255,255,255,.1); }
+  .mega-note { grid-column:1; grid-row:3; margin:-14px 0 0; color:#8f918a; font:400 13px/1.5 "Manrope",sans-serif; }
+  .mega-preview { grid-column:2; grid-row:1 / -1; align-self:start; padding-left:clamp(24px,2.6vw,36px); border-left:1px solid rgba(255,255,255,.1); }
   .mega-preview.is-swapping .mega-thumb :is(img,video),.mega-preview.is-swapping p { animation:mega-swap .3s ease both; }
   @keyframes mega-swap { from { opacity:.15; } }
   .mega-guide .mega-preview .mega-thumb { aspect-ratio:40/21; }
