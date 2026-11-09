@@ -61,10 +61,10 @@
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
     <link rel="stylesheet" href="/shopify-plus.css?v=b4db974c66" />
-    <link rel="stylesheet" href="/agentic.css?v=6196d7fde1" />
+    <link rel="stylesheet" href="/agentic.css?v=152e488810" />
     <link rel="stylesheet" href="/refine.css?v=c9a176bc8d" />
     <link rel="stylesheet" href="/mega-menu.css?v=1df51ac58c" />
-    <script src="/mega-menu.js?v=79c855037d" defer></script>
+    <script src="/mega-menu.js?v=90444268c5" defer></script>
     <script src="/core.js?v=edaf51bff4" defer></script>
     <script src="/shopify-vyvoj.js?v=260bfa063b" defer></script>
     <script type="application/ld+json">
@@ -199,7 +199,7 @@
                 "name": "Jaký je rozdíl mezi MCP, UCP a WebMCP?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "MCP propojuje AI s nástroji a daty. UCP definuje obchodní capabilities a více transportů, včetně MCP. WebMCP nabízí nástroje přímo v prohlížeči a Chrome ho stále označuje jako origin trial. Ask MCP je navíc UCP draft, nikoliv univerzální stabilní funkce."
+                  "text": "MCP propojuje AI s nástroji a daty. UCP definuje obchodní funkce (capabilities) a více transportů, včetně MCP. WebMCP nabízí nástroje přímo v prohlížeči a Chrome ho stále označuje jako origin trial. Ask MCP je navíc UCP draft, nikoliv univerzální stabilní funkce."
                 }
               },
               {
@@ -264,7 +264,7 @@
         <a href="/#reseni">Služby</a>
         <a href="/shopify-plus/">Shopify Plus</a>
         <a href="/agentic-commerce/" aria-current="page">Agentic commerce</a>
-        <a href="/shopify-pruvodce/">Průvodce</a>
+        <a href="/shopify-pruvodce/">Blog</a>
         <a class="mobile-nav-only" href="/agentic-commerce/en/" lang="en">English version</a>
       </nav>
       <div class="nav-actions">
@@ -324,61 +324,66 @@
           <h2 id="role-title">Jednotlivé vrstvy,<br /><em>odlišné role.</em>
           </h2>
           </div>
-          <p>Názvy se v&nbsp;článcích míchají. Ve skutečnosti každý řeší jinou vrstvu a&nbsp;jen některé se týkají přímo obchodníka.</p>
+          <p>Názvy se v&nbsp;článcích míchají. Každý řeší jinou vrstvu a&nbsp;jen některé se týkají přímo obchodníka. Žádná z&nbsp;nich sama nezaručí, že AI váš produkt doporučí.</p>
         </header>
         <div class="ac-roles reveal">
           <article class="ac-role">
-            <header><span class="ac-layer">Data</span>
+          <header><span class="ac-layer">Data</span>
           <h3>Shopify Catalog</h3><span class="ac-status ac-status-ok">Dostupné</span>
           </header>
-            <p>Global Catalog hledá napříč obchody; Storefront Catalog jen v jednom obchodě. Oba používají UCP Catalog capability. search_catalog hledá, lookup_catalog dohledá známé identifikátory a get_product rozpracuje produkt a varianty. Google pro své produktové vyhledávání používá Merchant Center.</p>
-            <p class="ac-role-you">Týká se vás přímo. Do Catalogu jdou data z&nbsp;vašeho obchodu; Fall ’26 přidal kontrolu způsobilosti, která ukáže, co změnit.</p>
-            <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a> · <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a>
+          <p>Katalog produktů, ze kterého AI agenti vybírají. Hledá buď napříč všemi Shopify obchody, nebo jen v&nbsp;jednom. Google pro své vyhledávání používá vlastní Merchant Center.</p>
+          <p class="ac-role-you">Týká se vás přímo. Do Catalogu jdou data z&nbsp;vašeho obchodu a&nbsp;od Fall ’26 vám Shopify ukáže, co upravit, aby byl obchod způsobilý.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p>Global Catalog hledá napříč obchody, Storefront Catalog v&nbsp;jednom obchodě. Oba používají UCP Catalog capability: <code>search_catalog</code> hledá, <code>lookup_catalog</code> dohledá známé identifikátory a&nbsp;<code>get_product</code> rozpracuje produkt a&nbsp;varianty.</p></details>
+          <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a> · <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a>
           </p>
           <p class="ac-role-src"><a href="https://shopify.dev/docs/agents/catalog/global-catalog" rel="noopener">Global Catalog</a> · <a href="https://shopify.dev/docs/agents/catalog/storefront-catalog" rel="noopener">Storefront Catalog</a> · <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noopener">Google Merchant Center</a>
           </p>
           </article>
           <article class="ac-role">
-            <header><span class="ac-layer">Kanály</span>
+          <header><span class="ac-layer">Kanály</span>
           <h3>Agentic Storefronts</h3><span class="ac-status ac-status-partial">Dostupné, podle podmínek kanálu</span>
           </header>
-            <p>Část administrace Shopify (Sales channels > Agentic), kde se rozhoduje, kterým AI kanálům obchod data a&nbsp;přímou platbu zpřístupní.</p>
-            <p class="ac-role-you">Výchozí aktivace se vztahuje na dostupné možnosti způsobilých obchodů. Samostatný Agentic plan má přímý checkout ve výchozím stavu vypnutý. Způsobilost ani aktivace nezaručuje doporučení produktu.</p>
-            <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a>
+          <p>Část administrace Shopify (Sales channels &gt; Agentic), kde se rozhoduje, kterým AI kanálům obchod data a&nbsp;přímou platbu zpřístupní.</p>
+          <p class="ac-role-you">U&nbsp;způsobilých obchodů je vše dostupné zapnuté automaticky. Samostatný Agentic plan má přímý checkout ve výchozím stavu vypnutý.</p>
+          <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a>
           </p>
           </article>
           <article class="ac-role">
-            <header><span class="ac-layer">Spojení</span>
+          <header><span class="ac-layer">Spojení</span>
           <h3>MCP</h3><span class="ac-status ac-status-ok">Otevřený protokol</span>
           </header>
-            <p>Model Context Protocol: obecný způsob, jak AI model volá nástroje a&nbsp;čte data. Není specifický pro obchod.</p>
-            <p class="ac-role-you">Nepřímo. Přes MCP se k&nbsp;Shopify připojují agenti; od 13. 10. 2026 nabízí Shopify i&nbsp;hostovaný Shop MCP.</p>
-            <p class="ac-role-src"><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="noopener">Model Context Protocol</a> · <a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify.dev Changelog, 13. 10. 2026: Shop MCP</a>
+          <p>Model Context Protocol: obecný způsob, jak AI model volá nástroje a&nbsp;čte data. Není specifický pro obchod.</p>
+          <p class="ac-role-you">Nepřímo. Přes MCP se k&nbsp;Shopify připojují agenti; od 13. 10. 2026 nabízí Shopify i&nbsp;hostovaný Shop MCP.</p>
+          <p class="ac-role-src"><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="noopener">Model Context Protocol</a> · <a href="https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify.dev Changelog, 13. 10. 2026: Shop MCP</a>
           </p>
           </article>
           <article class="ac-role">
-            <header><span class="ac-layer">Obchodní pravidla</span>
+          <header><span class="ac-layer">Obchodní pravidla</span>
           <h3>UCP</h3><span class="ac-status ac-status-ok">Otevřený standard</span>
           </header>
-            <p>Universal Commerce Protocol definuje obchodní capabilities pro katalog, košík, checkout a objednávky. Podporuje transporty a vazby REST, MCP, A2A i embedded; konkrétní nástroje a verze se vyjednávají mezi stranami.</p>
-            <p class="ac-role-you">Nepřímo. Shopify ho implementuje za vás; vlastní agent nebo aplikace s&nbsp;ním pracuje.</p>
-            <p class="ac-role-src"><a href="https://ucp.dev/" rel="noopener">Universal Commerce Protocol</a> · <a href="https://shopify.dev/docs/agents" rel="noopener">Shopify.dev: Agentic commerce</a>
+          <p>Universal Commerce Protocol je společná řeč pro katalog, košík, pokladnu a&nbsp;objednávky, aby se obchod nemusel napojovat na každou AI platformu zvlášť.</p>
+          <p class="ac-role-you">Nepřímo. Shopify ho implementuje za vás; pracuje s&nbsp;ním až vlastní agent nebo aplikace.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p>Definuje obchodní funkce (capabilities) a&nbsp;podporuje transporty a&nbsp;vazby REST, MCP, A2A i&nbsp;embedded. Konkrétní nástroje a&nbsp;verze se vyjednávají mezi stranami.</p></details>
+          <p class="ac-role-src"><a href="https://ucp.dev/" rel="noopener">Universal Commerce Protocol</a> · <a href="https://shopify.dev/docs/agents" rel="noopener">Shopify.dev: Agentic commerce</a>
           </p>
           </article>
           <article class="ac-role">
-            <header><span class="ac-layer">Prohlížeč</span>
+          <header><span class="ac-layer">Prohlížeč</span>
           <h3>WebMCP</h3><span class="ac-status ac-status-exp">Experiment (origin trial)</span>
           </header>
-            <p>Návrh webového standardu, kterým stránka sama nabídne agentovi v&nbsp;prohlížeči nástroje, místo aby agent klikal naslepo.</p>
-            <p class="ac-role-you">Chrome uvádí origin trial od verze 149. Shopify nabízí nástroje pokladny od 28. 9. 2026, ale dostupnost vyžaduje kompatibilní prohlížeč, agenta a implementaci. Jde stále o experimentální webové API, ne obecně dostupný prodejní kanál.</p>
-            <p class="ac-role-src"><a href="https://developer.chrome.com/blog/ai-webmcp-origin-trial" rel="noopener">Chrome for Developers, 9. 6. 2026: WebMCP origin trial</a> · <a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Shopify.dev Changelog, 28. 9. 2026: WebMCP pro pokladnu</a>
+          <p>Návrh webového standardu, kterým stránka sama nabídne agentovi v&nbsp;prohlížeči nástroje, místo aby agent klikal naslepo.</p>
+          <p class="ac-role-you">Zatím experiment. Chrome ho zkouší od verze 149 a&nbsp;Shopify nabízí nástroje pokladny od 28. 9. 2026, prodejním kanálem ale WebMCP není.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p>Jde o&nbsp;origin trial: funguje jen s&nbsp;kompatibilním prohlížečem, agentem a&nbsp;implementací na straně obchodu.</p></details>
+          <p class="ac-role-src"><a href="https://developer.chrome.com/blog/ai-webmcp-origin-trial" rel="noopener">Chrome for Developers, 9. 6. 2026: WebMCP origin trial</a> · <a href="https://shopify.dev/changelog/webmcp-support-for-checkout" rel="noopener">Shopify.dev Changelog, 28. 9. 2026: WebMCP pro pokladnu</a>
           </p>
           </article>
         <article class="ac-role">
           <header><span class="ac-layer">Rozhraní</span>
           <h3>Ask MCP</h3><span class="ac-status ac-status-partial">UCP draft</span>
           </header>
-          <p>ask_business odpovídá na otázky o zásadách a službách z Knowledge Base a politik obchodu. Nemění košík, nezakládá objednávku ani vrácení. Není v datovaných UCP vydáních: profil musí deklarovat draft a dev.ucp.common.ask, obchod musí nástroj skutečně nabídnout.</p>
+          <p>Agent se přes něj může obchodu zeptat na zásady a&nbsp;služby, třeba na dopravu nebo vrácení. Nic nemění, neobjednává ani nezakládá vrácení.</p>
+          <p class="ac-role-you">Týká se vás přes Knowledge Base: agent odpovídá z&nbsp;toho, co v&nbsp;ní a&nbsp;v&nbsp;zásadách obchodu máte.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p>Nástroj <code>ask_business</code> je zatím návrh (draft), který není v&nbsp;datovaných vydáních UCP. Profil agenta musí deklarovat draft a&nbsp;<code>dev.ucp.common.ask</code> a&nbsp;obchod musí nástroj nabídnout.</p></details>
           <p class="ac-role-src"><a href="https://shopify.dev/docs/agents/ask" rel="noopener">Ask MCP · draft</a> · <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/knowledge-base" rel="noopener">Knowledge Base</a>
           </p>
           </article>
@@ -386,7 +391,9 @@
           <header><span class="ac-layer">Rozhraní</span>
           <h3>Order MCP</h3><span class="ac-status ac-status-partial">Omezený přístup</span>
           </header>
-          <p>get_order čte pouze objednávky vytvořené tímto agentem. Vyžaduje Token tier, Global API JWT se scope read_global_api_orders, deklaraci capability a při volání na obchod také Shopify-Buyer-IP. Nejde o univerzální historii kupujícího. Webhooky mají být primární zdroj změn; jejich URL a témata registruje Shopify přes partner managera, nikoliv samoobslužné API nebo samotné webhook_url v profilu.</p>
+          <p>Umožňuje agentovi číst objednávky, které sám vytvořil, ne celou historii zákazníka.</p>
+          <p class="ac-role-you">Obchodníka se týká jen nepřímo, přes aplikace a&nbsp;agenty, které ho používají.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p><code>get_order</code> vyžaduje Token tier, Global API JWT se scope <code>read_global_api_orders</code>, deklaraci capability a&nbsp;při volání na obchod také <code>Shopify-Buyer-IP</code>. Hlavním zdrojem změn mají být webhooky; jejich URL a&nbsp;témata registruje Shopify přes partner managera, ne samoobslužné API ani samotné <code>webhook_url</code> v&nbsp;profilu.</p></details>
           <p class="ac-role-src"><a href="https://shopify.dev/docs/agents/orders/order-mcp" rel="noopener">Order MCP</a> · <a href="https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting" rel="noopener">Auth tiers</a> · <a href="https://shopify.dev/docs/agents/orders/order-webhooks" rel="noopener">Order webhooks</a>
           </p>
           </article>
@@ -394,7 +401,9 @@
           <header><span class="ac-layer">Rozhraní</span>
           <h3>Shop / Shop MCP</h3><span class="ac-status ac-status-partial">Dva různé produkty</span>
           </header>
-          <p>Shop je zákaznická aplikace a web, s produkty z Catalogu a vlastním nastavením prodeje. Shop MCP je hostované rozhraní pro osobní agenty na mcp.shop.com. Hledání nepotřebuje klíč; přihlášení Shop zpřístupní osobní funkce a autorizovanou platbu Shop Pay. search_orders umí objednávky a tracking přihlášeného zákazníka; get_checkout sleduje konkrétní checkout. Oznámení při spuštění uvádí, že Shop MCP zatím nemá webhooky – toto omezení se nesmí přenášet na Order MCP.</p>
+          <p>Shop je zákaznická aplikace a&nbsp;web s&nbsp;produkty z&nbsp;Catalogu. Shop MCP je rozhraní, přes které se k&nbsp;Shopu připojují osobní agenti.</p>
+          <p class="ac-role-you">Týká se vás přes aplikaci Shop: produkty z&nbsp;vašeho obchodu v&nbsp;ní agent může najít a&nbsp;po přihlášení zákazníka zaplatit přes Shop Pay.</p>
+          <details class="ac-role-tech"><summary>Technické detaily</summary><p>Shop MCP běží na <code>mcp.shop.com</code>. Hledání nepotřebuje klíč, přihlášení zpřístupní osobní funkce a&nbsp;autorizovanou platbu Shop Pay. <code>search_orders</code> vrací objednávky a&nbsp;tracking přihlášeného zákazníka, <code>get_checkout</code> sleduje rozpracovaný checkout. Shop MCP zatím webhooky nemá, u&nbsp;Order MCP jsou naopak hlavním zdrojem změn.</p></details>
           <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/agentic-home" rel="noopener">Shop in Agentic</a> · <a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Selling on Shop</a> · <a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shop MCP · 13 Oct 2026</a>
           </p>
           </article>
@@ -406,7 +415,7 @@
           <h2 id="avail-title">Kde to dnes<br /><em>skutečně funguje.</em>
           </h2>
           </div>
-          <p>Dostupnost aplikace, produktové dohledání, zapojení obchodu a přímý checkout jsou čtyři různá rozhodnutí. Tabulka je odděluje; nezaměňuje zemi firmy se zemí zákazníka.</p>
+          <p>Dostupnost aplikace, produktové dohledání, zapojení obchodu a přímý checkout jsou čtyři různá rozhodnutí.</p>
           </header>
           <div class="ac-table-wrap reveal">
           <table class="ac-table ac-availability">
@@ -445,8 +454,8 @@
           <td data-label="Aplikace v ČR">Obě služby v ČR; čeština je podporovaná.</td>
           <td data-label="Dohledání / data">Google Merchant Center, typicky přes Google &amp; YouTube nebo vlastní feed.</td>
           <td data-label="Zapojení obchodníka">Pro přímý checkout prodej do USA, Kanady nebo Austrálie; Merchant Center, Catalog a zásady.</td>
-          <td data-label="Přímý checkout">USA, Kanada a Austrálie; postupný rollout. Ostatní zákazníci mohou být přesměrováni do e-shopu.</td>
-          <td data-label="Praktický dopad pro ČR / EU">České produktové doporučení a přechod na web nejsou omezením přímé platby vyloučené.</td>
+          <td data-label="Přímý checkout">USA, Kanada a Austrálie; postupné spouštění. Ostatní zákazníci mohou být přesměrováni do e-shopu.</td>
+          <td data-label="Praktický dopad pro ČR / EU">I&nbsp;když přímá platba v&nbsp;Česku nefunguje, Google může český produkt doporučit a&nbsp;poslat zákazníka na web.</td>
           </tr>
           <tr>
           <th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta" rel="noopener">Meta / Muse</a>
@@ -455,7 +464,7 @@
           <td data-label="Dohledání / data">Shopify Catalog; pro shoppable ads také synchronizovaný kanál Facebook &amp; Instagram.</td>
           <td data-label="Zapojení obchodníka">Pro přímý checkout prodej do alespoň jedné z 11 podporovaných zemí, Catalog a zásady.</td>
           <td data-label="Přímý checkout">Austrálie, Brazílie, Kanada, Indie, Japonsko, Mexiko, Nový Zéland, Singapur, Jižní Korea, Spojené království a USA.</td>
-          <td data-label="Praktický dopad pro ČR / EU">ČR není mezi zeměmi přímého checkoutu. Dostupnost konkrétního discovery zážitku v ČR není použitými zdroji potvrzená.</td>
+          <td data-label="Praktický dopad pro ČR / EU">ČR není mezi zeměmi přímého checkoutu. Jestli v&nbsp;Česku funguje aspoň dohledání produktů, se mi zatím nepodařilo ověřit.</td>
           </tr>
           <tr>
           <th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Shop</a>
@@ -463,7 +472,7 @@
           <td data-label="Aplikace v ČR">Aplikace dostupná českým zákazníkům, včetně češtiny; také web shop.com.</td>
           <td data-label="Dohledání / data">Shopify Catalog a nákupní asistent v Shop. Nejde o Shop MCP.</td>
           <td data-label="Zapojení obchodníka">Způsobilost Catalogu a samostatná pravidla Shop. Přímý prodej se řídí publikací produktu a metodou prodeje v Shop.</td>
-          <td data-label="Přímý checkout">U produktů publikovaných pro přímý prodej v Shop; jinak Purchase at odkaz do e-shopu.</td>
+          <td data-label="Přímý checkout">U produktů publikovaných pro přímý prodej v Shop; jinak odkaz Purchase at do e-shopu.</td>
           <td data-label="Praktický dopad pro ČR / EU">Důležitý kanál i pro české zákazníky. Konkrétní nákup závisí na produktu, dopravě do ČR a platebních možnostech.</td>
           </tr>
           <tr>
@@ -473,7 +482,7 @@
           <td data-label="Dohledání / data">Hledání v Catalogu přes MCP; osobní funkce po přihlášení Shop.</td>
           <td data-label="Zapojení obchodníka">Kompatibilní agent a podporovaný obchod / checkout.</td>
           <td data-label="Přímý checkout">Shop Pay po přihlášení a schválení kupujícím; dostupnost se ověřuje pro transakci.</td>
-          <td data-label="Praktický dopad pro ČR / EU">Z dokumentace nelze vyvodit univerzální příslib platby každým agentem v celé EU.</td>
+          <td data-label="Praktický dopad pro ČR / EU">Platbu přes libovolného agenta v&nbsp;celé EU zatím nikdo negarantuje.</td>
           </tr>
           <tr>
           <th scope="row"><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp" rel="noopener">Agent v prohlížeči</a>
@@ -494,7 +503,7 @@
       <section id="novinky" class="solution-paths section-pad" aria-labelledby="news-title">
         <header class="solution-paths-head reveal">
           <div><span class="work-index">Co je nového</span>
-          <h2 id="news-title">Poslední<br /><em>dva měsíce.</em>
+          <h2 id="news-title">Novinky od září<br /><em>do listopadu 2026.</em>
           </h2>
           </div>
           <p>Změny od 7. září do 7. listopadu 2026 z&nbsp;oficiálních changelogů a&nbsp;stránky Shopify Editions.</p>
@@ -608,7 +617,7 @@
           </article>
           <article>
           <h3>Produktová data a&nbsp;metafieldy</h3>
-          <p>Navrhnu a&nbsp;zavedu strukturu vlastností produktů, pro kvalitní data na webu i pro podporovaná pole Catalogu; možnosti vyhledávání nejdřív ověřím.</p><a href="/shopify-poptavka/?typ=liquid&amp;zdroj=agentic-data" data-track="agentic_help_2">Popsat katalog <span aria-hidden="true">↗︎</span></a>
+          <p>Navrhnu a&nbsp;zavedu strukturu vlastností produktů, která poslouží webu i&nbsp;podporovaným polím Catalogu. Jak se data promítnou do vyhledávání, nejdřív ověřím.</p><a href="/shopify-poptavka/?typ=liquid&amp;zdroj=agentic-data" data-track="agentic_help_2">Popsat katalog <span aria-hidden="true">↗︎</span></a>
           </article>
           <article>
           <h3>Šablona a&nbsp;pokladna</h3>
@@ -623,7 +632,7 @@
       <section id="faq" class="solution-paths section-pad" aria-labelledby="faq-title">
 <header class="solution-paths-head reveal">
           <div><span class="work-index">Časté otázky</span>
-          <h2 id="faq-title">Na co se<br /><em>ptáte.</em>
+          <h2 id="faq-title">Nejčastější<br /><em>otázky.</em>
           </h2>
           </div>
           </header>
@@ -642,7 +651,7 @@
           </details>
           <details>
           <summary>Jaký je rozdíl mezi MCP, UCP a WebMCP?</summary>
-          <p>MCP propojuje AI s nástroji a daty. UCP definuje obchodní capabilities a více transportů, včetně MCP. WebMCP nabízí nástroje přímo v prohlížeči a Chrome ho stále označuje jako origin trial. Ask MCP je navíc UCP draft, nikoliv univerzální stabilní funkce.</p>
+          <p>MCP propojuje AI s nástroji a daty. UCP definuje obchodní funkce (capabilities) a více transportů, včetně MCP. WebMCP nabízí nástroje přímo v prohlížeči a Chrome ho stále označuje jako origin trial. Ask MCP je navíc UCP draft, nikoliv univerzální stabilní funkce.</p>
           </details>
           <details>
           <summary>Je Shop totéž co Shop MCP?</summary>
@@ -663,81 +672,81 @@
           <p>Dokumentace ověřená 8. 11. 2026. Datum v názvu oznámení označuje zveřejnění; datum ověření je uvedené samostatně. Rollouty a návrhové specifikace se mohou měnit.</p>
           </header>
           <ul class="ac-sources reveal">
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt" rel="noopener">Shopify · ChatGPT</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt" rel="noopener">Shopify · ChatGPT</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft" rel="noopener">Shopify · Microsoft Copilot</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/microsoft" rel="noopener">Shopify · Microsoft Copilot</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noopener">Shopify · Google AI Mode / Gemini</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google" rel="noopener">Shopify · Google AI Mode / Gemini</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta" rel="noopener">Shopify · Meta</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta" rel="noopener">Shopify · Meta</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/agentic-home" rel="noopener">Shopify · Agentic settings, Shop, Search Preview & analytics</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/agentic-home" rel="noopener">Shopify · Agentic settings, Shop, Search Preview & analytics</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/products" rel="noopener">Shopify · Product discovery & discovery files</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/products" rel="noopener">Shopify · Product discovery & discovery files</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/shopify-catalog/requirements" rel="noopener">Shopify · Catalog requirements</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/shopify-catalog/requirements" rel="noopener">Shopify · Catalog requirements</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/shopify-catalog/mapping" rel="noopener">Shopify · Catalog mapping & list price</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/shopify-catalog/mapping" rel="noopener">Shopify · Catalog mapping & list price</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/knowledge-base" rel="noopener">Shopify · Knowledge Base</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/knowledge-base" rel="noopener">Shopify · Knowledge Base</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/promoting-marketing/knowledge-base" rel="noopener">Shopify · Legacy Knowledge Base migration</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/promoting-marketing/knowledge-base" rel="noopener">Shopify · Legacy Knowledge Base migration</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/catalog/global-catalog" rel="noopener">Shopify · Global Catalog MCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/catalog/global-catalog" rel="noopener">Shopify · Global Catalog MCP</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/catalog/storefront-catalog" rel="noopener">Shopify · Storefront Catalog MCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/catalog/storefront-catalog" rel="noopener">Shopify · Storefront Catalog MCP</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/ask" rel="noopener">Shopify · Ask MCP (draft)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/ask" rel="noopener">Shopify · Ask MCP (draft)</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/cart-mcp" rel="noopener">Shopify · Cart MCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/cart-mcp" rel="noopener">Shopify · Cart MCP</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-mcp" rel="noopener">Shopify · Checkout MCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-mcp" rel="noopener">Shopify · Checkout MCP</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting" rel="noopener">Shopify · Auth and rate limiting</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting" rel="noopener">Shopify · Auth and rate limiting</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/orders/order-mcp" rel="noopener">Shopify · Order MCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/orders/order-mcp" rel="noopener">Shopify · Order MCP</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/orders/order-webhooks" rel="noopener">Shopify · Order webhooks</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/orders/order-webhooks" rel="noopener">Shopify · Order webhooks</a>
           </li>
-          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp" rel="noopener">Shopify · Checkout WebMCP</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp" rel="noopener">Shopify · Checkout WebMCP</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Shopify · Products and selling methods in Shop</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Shopify · Products and selling methods in Shop</a>
           </li>
-          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/eligibility" rel="noopener">Shopify · Shop merchant guidelines</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/eligibility" rel="noopener">Shopify · Shop merchant guidelines</a>
           </li>
-          <li><a href="https://help.shop.app/en/shop/getting-started" rel="noopener">Shop · Getting started</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.shop.app/en/shop/getting-started" rel="noopener">Shop · Getting started</a>
           </li>
-          <li><a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify · Shop MCP (13 Oct 2026)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shopify · Shop MCP (13 Oct 2026)</a>
           </li>
-          <li><a href="https://developer.chrome.com/docs/ai/webmcp" rel="noopener">Chrome Developers · WebMCP (origin trial)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://developer.chrome.com/docs/ai/webmcp" rel="noopener">Chrome Developers · WebMCP (origin trial)</a>
           </li>
-          <li><a href="https://ucp.dev/latest/specification/overview/" rel="noopener">UCP · Protocol specification</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://ucp.dev/latest/specification/overview/" rel="noopener">UCP · Protocol specification</a>
           </li>
-          <li><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="noopener">MCP · Protocol specification</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="noopener">MCP · Protocol specification</a>
           </li>
-          <li><a href="https://support.google.com/websearch/answer/16011537?hl=en" rel="noopener">Google · AI Mode countries and languages</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://support.google.com/websearch/answer/16011537?hl=en" rel="noopener">Google · AI Mode countries and languages</a>
           </li>
-          <li><a href="https://support.google.com/gemini/answer/13575153?hl=en" rel="noopener">Google · Gemini countries and languages</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://support.google.com/gemini/answer/13575153?hl=en" rel="noopener">Google · Gemini countries and languages</a>
           </li>
-          <li><a href="https://help.openai.com/en/articles/7947663-chatgpt-supported-countries" rel="noopener">OpenAI · ChatGPT supported countries</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://help.openai.com/en/articles/7947663-chatgpt-supported-countries" rel="noopener">OpenAI · ChatGPT supported countries</a>
           </li>
-          <li><a href="https://support.microsoft.com/en-au/microsoft-copilot/supported-regions-and-languages-in-microsoft-copilot" rel="noopener">Microsoft · Copilot regions and languages</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://support.microsoft.com/en-au/microsoft-copilot/supported-regions-and-languages-in-microsoft-copilot" rel="noopener">Microsoft · Copilot regions and languages</a>
           </li>
-          <li><a href="https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/" rel="noopener">Meta · European rollout (20 Mar 2025)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/" rel="noopener">Meta · European rollout (20 Mar 2025)</a>
           </li>
-          <li><a href="https://apps.apple.com/cz/app/shop-track-pay-discover/id1223471316" rel="noopener">Shopify on App Store · Shop in Czechia</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://apps.apple.com/cz/app/shop-track-pay-discover/id1223471316" rel="noopener">Shopify on App Store · Shop in Czechia</a>
           </li>
-          <li><a href="https://coi.gov.cz/slevy/" rel="noopener">ČOI · Discounts and § 12a</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://coi.gov.cz/slevy/" rel="noopener">ČOI · Discounts and § 12a</a>
           </li>
-          <li><a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A01998L0006-20220528" rel="noopener">EUR-Lex · Directive 98/6/EC, Article 6a</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A01998L0006-20220528" rel="noopener">EUR-Lex · Directive 98/6/EC, Article 6a</a>
           </li>
-          <li><a href="https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin" rel="noopener">Shopify · Meta in admin (8 Sep 2026)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin" rel="noopener">Shopify · Meta in admin (8 Sep 2026)</a>
           </li>
-          <li><a href="https://shopify.dev/changelog/posts/webmcp-support-for-checkout" rel="noopener">Shopify · Checkout WebMCP (28 Sep 2026)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://shopify.dev/changelog/posts/webmcp-support-for-checkout" rel="noopener">Shopify · Checkout WebMCP (28 Sep 2026)</a>
           </li>
-          <li><a href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noopener">Shopify · Compare-at prices (9 Oct 2026)</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels" rel="noopener">Shopify · Compare-at prices (9 Oct 2026)</a>
           </li>
-          <li><a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify · Editions Fall ’26</a><span>ověřeno 8. 11. 2026</span>
+          <li><a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify · Editions Fall ’26</a>
           </li>
           </ul>
       </section>

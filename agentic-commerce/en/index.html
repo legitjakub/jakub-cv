@@ -61,10 +61,10 @@
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
     <link rel="stylesheet" href="/shopify-plus.css?v=b4db974c66" />
-    <link rel="stylesheet" href="/agentic.css?v=6196d7fde1" />
+    <link rel="stylesheet" href="/agentic.css?v=152e488810" />
     <link rel="stylesheet" href="/refine.css?v=c9a176bc8d" />
     <link rel="stylesheet" href="/mega-menu.css?v=1df51ac58c" />
-    <script src="/mega-menu.js?v=79c855037d" defer></script>
+    <script src="/mega-menu.js?v=90444268c5" defer></script>
     <script src="/core.js?v=edaf51bff4" defer></script>
     <script src="/shopify-vyvoj.js?v=260bfa063b" defer></script>
     <script type="application/ld+json">
@@ -264,7 +264,7 @@
         <a href="/en/#shopify-development">Services</a>
         <a href="/shopify-plus/en/">Shopify Plus</a>
         <a href="/agentic-commerce/en/" aria-current="page">Agentic commerce</a>
-        <a href="/shopify-guide/">Guide</a>
+        <a href="/shopify-guide/">Blog</a>
         <a class="mobile-nav-only" href="/agentic-commerce/" lang="cs">Česká verze</a>
       </nav>
       <div class="nav-actions">
@@ -343,7 +343,7 @@
           <h3>Agentic Storefronts</h3><span class="ac-status ac-status-partial">Available, subject to channel requirements</span>
           </header>
             <p>The part of the Shopify admin (Sales channels > Agentic) where you decide which AI channels get your data and direct checkout.</p>
-            <p class="ac-role-you">Default activation applies to available options for eligible stores. The separate Agentic plan starts with direct checkout disabled. Neither eligibility nor activation guarantees a recommendation.</p>
+            <p class="ac-role-you">For eligible stores, everything available is switched on by default. The separate Agentic plan starts with direct checkout disabled. Neither eligibility nor activation guarantees a recommendation.</p>
             <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a>
           </p>
           </article>
@@ -394,7 +394,7 @@
           <header><span class="ac-layer">Interface</span>
           <h3>Shop / Shop MCP</h3><span class="ac-status ac-status-partial">Two distinct products</span>
           </header>
-          <p>Shop is a consumer app and website, with Catalog products and its own selling settings. Shop MCP is a hosted interface for personal agents at mcp.shop.com. Search needs no API key; Shop sign-in enables personal features and authorised Shop Pay purchases. search_orders supports a signed-in shopper’s orders and tracking; get_checkout checks a particular checkout. The launch announcement says Shop MCP has no webhooks yet. That limitation must not be applied to Order MCP.</p>
+          <p>Shop is a consumer app and website, with Catalog products and its own selling settings. Shop MCP is a hosted interface for personal agents at mcp.shop.com. Search needs no API key; Shop sign-in enables personal features and authorised Shop Pay purchases. search_orders supports a signed-in shopper’s orders and tracking; get_checkout checks a particular checkout. Shop MCP has no webhooks yet. For Order MCP, by contrast, they are the main source of changes.</p>
           <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/agentic-home" rel="noopener">Shop in Agentic</a> · <a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Selling on Shop</a> · <a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shop MCP · 13 Oct 2026</a>
           </p>
           </article>
@@ -455,7 +455,7 @@
           <td data-label="Discovery / data">Shopify Catalog; shoppable ads also require the synced Facebook &amp; Instagram channel.</td>
           <td data-label="Merchant participation">Direct checkout requires selling to at least one of the 11 supported countries, Catalog eligibility and policies.</td>
           <td data-label="Direct checkout">Australia, Brazil, Canada, India, Japan, Mexico, New Zealand, Singapore, South Korea, UK and US.</td>
-          <td data-label="Practical impact for Czechia / EU">Czechia is outside direct checkout. The cited sources do not confirm this particular discovery experience in Czechia.</td>
+          <td data-label="Practical impact for Czechia / EU">Czechia is outside direct checkout. I&nbsp;have not yet been able to confirm whether product discovery works in Czechia.</td>
           </tr>
           <tr>
           <th scope="row"><a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Shop</a>
@@ -473,7 +473,7 @@
           <td data-label="Discovery / data">Catalog search over MCP; personal features after Shop sign-in.</td>
           <td data-label="Merchant participation">A compatible agent and supported merchant / checkout.</td>
           <td data-label="Direct checkout">Shop Pay after sign-in and buyer approval; availability is transaction-specific.</td>
-          <td data-label="Practical impact for Czechia / EU">The documentation does not establish a universal promise of payment by every agent throughout the EU.</td>
+          <td data-label="Practical impact for Czechia / EU">Nobody guarantees payment through any agent across the whole EU yet.</td>
           </tr>
           <tr>
           <th scope="row"><a href="https://shopify.dev/docs/agents/carts-and-checkout/checkout-webmcp" rel="noopener">Browser agent</a>

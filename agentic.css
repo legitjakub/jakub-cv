@@ -104,3 +104,12 @@
 .ac-guide-link { padding:10px 0; border-bottom:1px solid var(--commerce); color:var(--commerce); font:600 15px "Manrope",sans-serif; white-space:nowrap; }
 .ac-guide-link:hover { color:#fff; border-color:#fff; }
 @media (max-width:760px) { .ac-guide-foot { grid-template-columns:1fr; gap:22px; } .ac-guide-link { white-space:normal; } }
+
+/* Role cards: the merchant reading first, the API detail folded away. */
+.ac-role-tech { padding-top:10px; border-top:1px solid var(--line); }
+.ac-role-tech summary { display:flex; align-items:center; gap:8px; color:#c9c9c2; font:600 12px/1.4 "Manrope",sans-serif; cursor:pointer; list-style:none; }
+.ac-role-tech summary::-webkit-details-marker { display:none; }
+.ac-role-tech summary::before { content:"+"; width:12px; color:var(--cyber); font-size:15px; line-height:1; }
+.ac-role-tech[open] summary::before { content:"−"; }
+.ac-role-tech summary:focus-visible { outline:2px solid var(--cyber); outline-offset:3px; }
+.ac-role .ac-role-tech p { margin-top:8px; font-size:13px; }
