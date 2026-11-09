@@ -197,6 +197,40 @@ body.case-page footer { background:#0a0a0a; }
 .shot-zoom img { display:block; width:100%; height:auto; }
 .shot-zoom:focus-visible { outline:2px solid var(--case-accent); outline-offset:3px; }
 
+/* Recorded clips in the tour and the visualiser section (case-tour.js). */
+.tour-browser:has(.tour-video) { position:relative; }
+.tour-video { display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:top; background:var(--case-canvas); }
+.tour-play {
+  position:absolute; right:12px; bottom:12px; z-index:2; display:grid; place-items:center; width:36px; height:36px; padding:0;
+  border:1px solid rgba(255,255,255,.18); border-radius:2px; background:rgba(8,10,9,.62); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  color:#efeee8; cursor:pointer; opacity:.78; transition:opacity .2s ease,border-color .2s ease;
+}
+.tour-play::before { content:""; width:0; height:0; margin-left:2px; border-top:5px solid transparent; border-bottom:5px solid transparent; border-left:8px solid currentColor; }
+.tour-play[data-playing="true"]::before { width:8px; height:11px; margin:0; border:0; border-left:2.5px solid currentColor; border-right:2.5px solid currentColor; }
+.tour-browser:hover .tour-play,.tour-play:focus-visible { opacity:1; }
+.tour-play:hover { border-color:var(--case-accent); }
+.tour-play:focus-visible { outline:2px solid var(--case-accent); outline-offset:2px; }
+/* without the script only the first clip has a poster, so list just that one */
+.tour-clips:not(.is-ready) .tour-panel + .tour-panel { display:none; }
+
+/* Visualiser: the clip with its numbers, then what it shows, how it is built
+   and what took the work. */
+.case-viz { padding-top:clamp(56px,6vw,92px); padding-bottom:clamp(56px,6vw,92px); border-top:1px solid var(--case-line); }
+.viz-main { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,300px); gap:clamp(24px,3.6vw,52px); align-items:end; margin-top:clamp(30px,4vw,48px); }
+.viz-stats { display:grid; margin:0; border-top:1px solid var(--case-line); }
+.viz-stats div { padding:16px 0; border-bottom:1px solid var(--case-line); }
+.viz-stats dt { color:var(--case-strong); font-size:clamp(28px,2.6vw,38px); font-weight:600; line-height:1; letter-spacing:-.05em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.viz-stats dd { margin:8px 0 0; color:var(--case-body); font-size:13.5px; line-height:1.5; }
+.viz-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(26px,3.4vw,52px); margin-top:clamp(44px,5vw,72px); }
+.viz-col h3 { margin:0 0 16px; color:var(--case-strong); font-size:clamp(20px,1.7vw,24px); line-height:1.15; letter-spacing:-.035em; }
+.viz-col h3 span { display:block; margin-bottom:10px; color:var(--case-accent); font:600 13px/1.4 "Manrope",sans-serif; letter-spacing:0; }
+.viz-col ul { margin:0; padding:0; list-style:none; border-top:1px solid var(--case-line); }
+.viz-col li { padding:14px 0; border-bottom:1px solid var(--case-line); color:var(--case-body); font-size:14.5px; line-height:1.65; }
+.viz-col li b { display:block; margin-bottom:3px; color:var(--case-strong); font-weight:600; }
+.viz-col p { margin:0 0 14px; padding-top:14px; color:var(--case-body); font-size:15px; line-height:1.75; }
+.viz-col p:first-of-type { border-top:1px solid var(--case-line); }
+.viz-col p:last-child { margin-bottom:0; }
+
 .tour-panel figcaption { padding-bottom:58px; }
 .tour:not(.is-ready) .tour-panel figcaption { padding-bottom:0; }
 .tour-count { color:var(--case-accent); font:600 13px "Manrope",sans-serif; }
@@ -215,6 +249,10 @@ body.case-page footer { background:#0a0a0a; }
 .phone-row .shot-zoom { overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 24px 60px rgba(0,0,0,.24); }
 .case-molecules-new .phone-row .shot-zoom { box-shadow:0 20px 50px rgba(0,0,0,.1); }
 .phone-row figcaption { margin-top:12px; color:var(--case-body); font-size:13px; line-height:1.5; }
+.phone-clip { position:relative; overflow:hidden; border:1px solid rgba(var(--case-rgb),.24); background:var(--case-canvas); box-shadow:0 24px 60px rgba(0,0,0,.24); }
+.case-molecules-new .phone-clip { box-shadow:0 20px 50px rgba(0,0,0,.1); }
+.phone-clip .tour-video { aspect-ratio:360/780; }
+.phone-clip .tour-play { right:10px; bottom:10px; width:32px; height:32px; }
 
 .brand-kit { display:grid; grid-template-columns:minmax(190px,.4fr) minmax(0,1fr); gap:20px clamp(30px,6vw,96px); margin-top:clamp(48px,6vw,80px); padding-top:clamp(32px,4vw,48px); border-top:1px solid var(--case-line); }
 .brand-kit h3 { grid-row:span 3; margin:0; color:var(--case-strong); font-size:clamp(20px,1.8vw,24px); line-height:1.15; letter-spacing:-.035em; }
@@ -247,6 +285,9 @@ body.case-page footer { background:#0a0a0a; }
   .tour-head p { grid-column:1; grid-row:auto; margin-top:10px; }
   .brand-kit h3 { grid-row:auto; }
   .tour-panel { grid-template-columns:1fr; gap:20px; }
+  .viz-main { grid-template-columns:1fr; gap:22px; }
+  .viz-stats { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:24px; }
+  .viz-grid { grid-template-columns:1fr; gap:40px; }
   .tour-panel figcaption { padding-bottom:0; padding-right:112px; min-height:46px; }
   .tour-steps { top:auto; width:auto; }
 }
@@ -263,5 +304,5 @@ body.case-page footer { background:#0a0a0a; }
 }
 @media (prefers-reduced-motion:reduce) {
   .tour.is-ready .tour-panel { animation:none; }
-  .tour-tabs button,.tour-steps button { transition:none; }
+  .tour-tabs button,.tour-steps button,.tour-play { transition:none; }
 }

@@ -1,7 +1,55 @@
 /* Case pages: a tabbed walk through the client's store and an enlarge view
-   for every screenshot. Without this script every screen is simply listed. */
+   for every screenshot. Without this script every screen is simply listed.
+   Recorded clips (.tour-video) load on first view and play only while their
+   tab is on and they are on screen; each switch to a tab starts its clip
+   from the beginning. Reduced motion or Save-Data keeps the poster until the
+   visitor presses play. */
 (() => {
   const en = document.documentElement.lang === 'en';
+
+  const clips = [...document.querySelectorAll('video.tour-video')];
+  const reduce = window.matchMedia('(prefers-reduced-motion:reduce)');
+  const auto = () => !reduce.matches && !(navigator.connection && navigator.connection.saveData);
+  const held = new Set(), seen = new Set();
+  const prime = (v) => { if (v.dataset.poster) { v.poster = v.dataset.poster; v.removeAttribute('data-poster'); } };
+  const fetchClip = (v) => { prime(v); if (v.dataset.src) { v.src = v.dataset.src; v.removeAttribute('data-src'); } };
+  const shown = (v) => !v.closest('[hidden]');
+  const update = (v) => {
+    if (shown(v)) prime(v);
+    if (shown(v) && seen.has(v) && !held.has(v) && !document.hidden && auto()) { fetchClip(v); v.play().catch(() => {}); }
+    else if (!v.paused) v.pause();
+  };
+  clips.forEach((v) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'tour-play';
+    const sync = () => {
+      const label = v.paused ? (en ? 'Play' : 'Přehrát') : (en ? 'Pause' : 'Pozastavit');
+      btn.dataset.playing = String(!v.paused);
+      btn.setAttribute('aria-label', `${label}: ${v.getAttribute('aria-label') || ''}`);
+    };
+    btn.addEventListener('click', () => {
+      if (v.paused) { held.delete(v); fetchClip(v); v.play().catch(() => {}); }
+      else { held.add(v); v.pause(); }
+    });
+    ['play', 'pause'].forEach((t) => v.addEventListener(t, sync));
+    v.after(btn);
+    sync();
+  });
+  if (clips.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target);
+      update(e.target);
+    }), { threshold: 0.3 });
+    clips.forEach((v) => io.observe(v));
+    document.addEventListener('visibilitychange', () => clips.forEach(update));
+    reduce.addEventListener('change', () => clips.forEach(update));
+  } else clips.forEach(prime);
+  // a tab switch restarts the clip it reveals
+  const onShow = (panel) => clips.forEach((v) => {
+    if (panel.contains(v)) { held.delete(v); if (v.src) v.currentTime = 0; }
+    update(v);
+  });
 
   document.querySelectorAll('[data-tour]').forEach((tour) => {
     const tabs = [...tour.querySelectorAll('[role="tab"]')];
@@ -15,6 +63,7 @@
         t.tabIndex = on ? 0 : -1;
         panels[k].hidden = !on;
       });
+      if (i !== current || !tour.classList.contains('is-ready')) onShow(panels[i]);
       current = i;
       if (focus) tabs[i].focus();
       tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest' });
