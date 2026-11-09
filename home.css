@@ -146,7 +146,7 @@
 .hero-grid > .hero-stats { grid-area:stats; align-self:start; }
 .portfolio-home .hero-proof-of-work h1 { max-width:12ch; margin:22px 0 24px; font-size:clamp(44px,4.5vw,76px); line-height:.98; letter-spacing:-.06em; }
 html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
-.portfolio-home .hero-proof-of-work h1 em { display:block; }
+.portfolio-home .hero-proof-of-work h1 em { display:block; text-wrap:balance; }
 .portfolio-home .hero-proof-of-work .work-hero-copy>p { max-width:520px; color:#a7a8a0; font-size:clamp(16px,1.2vw,18px); line-height:1.65; }
 .portfolio-home .hero-proof-of-work .work-hero-actions { margin-top:34px; }
 
