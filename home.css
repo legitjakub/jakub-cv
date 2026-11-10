@@ -221,40 +221,76 @@ html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
   .hero-screens>*,.hero-phone-screens>*,.hero-caption-link span,.hero-clients button { transition:none; }
 }
 
-/* Case slideshow on desktop (case-deck.js): one screen under the header,
-   projects stacked as slides; the next slides up over the current one, which
-   dims and steps back. The gallery gives up some height (--deck-f) when a
-   project would not fit. */
-html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100vh - 68px)); overflow:hidden; scroll-margin-top:68px; }
-html.has-case-deck .case-deck > .project-showcase {
-  position:absolute; inset:0; z-index:1; overflow:hidden;
-  display:flex; flex-direction:column; justify-content:center;
-  padding-top:28px; padding-bottom:28px; padding-right:calc(var(--pad,48px) + 34px);
-  background-color:var(--case-canvas,#0a0e0c);
-  transform:translateY(100%); transition:transform .62s cubic-bezier(.22,.8,.24,1);
+/* A project is one frame. Only this section captures vertical gestures. */
+html.has-case-deck { scroll-behavior:auto; }
+html.is-case-deck-active .nav-wrap.scrolled { background:#090b0a; }
+html.is-case-deck-active .to-top { opacity:0; pointer-events:none; }
+html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100svh - 68px)); overflow:hidden; scroll-margin-top:68px; touch-action:pan-x pinch-zoom; }
+html.has-case-deck .case-deck>.project-showcase {
+  position:absolute; inset:0; z-index:1; overflow:hidden; display:flex; flex-direction:column; justify-content:center;
+  padding:24px calc(var(--pad,48px) + 48px) 90px var(--pad,48px);
+  background-color:var(--case-canvas,#0a0e0c); pointer-events:none;
+  transform:translateY(100%); transition:transform .42s cubic-bezier(.22,.75,.25,1);
 }
-html.has-case-deck .case-deck > .project-showcase.is-current { z-index:2; transform:none; box-shadow:0 -30px 60px rgba(0,0,0,.45); }
-html.has-case-deck .case-deck > .project-showcase.is-past { transform:scale(.95); transform-origin:50% 0; }
-html.has-case-deck .case-deck > .project-showcase::after {
-  content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .62s ease;
-}
-html.has-case-deck .case-deck > .project-showcase.is-past::after { opacity:.6; }
-/* The clips arrive a beat after their slide, one after another. */
-html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame { transition:transform .95s cubic-bezier(.2,.75,.2,1),opacity .7s ease; }
-html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame:nth-of-type(2) { transition-delay:.06s; }
-html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame:nth-of-type(3) { transition-delay:.12s; }
-html.has-case-deck .case-deck > .project-showcase.is-next .project-gallery > .media-frame { transform:translateY(56px); opacity:.35; transition-delay:0s; }
-.case-deck.is-light .deck-dots button { color:rgba(16,17,14,.42); }
-.case-deck.is-light .deck-dots button:hover,.case-deck.is-light .deck-dots button[aria-current] { color:#10110e; }
-.case-deck.is-light .deck-dots button[aria-current] span { border-color:#385d05; }
-html.has-case-deck .case-deck .project-gallery > .media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:cover; }
+html.has-case-deck .case-deck>.project-showcase.is-current { z-index:2; transform:none; pointer-events:auto; }
+html.has-case-deck .case-deck>.project-showcase.is-past { transform:scale(.97); transform-origin:50% 0; }
+html.has-case-deck .case-deck>.project-showcase::after { content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .42s ease; }
+html.has-case-deck .case-deck>.project-showcase.is-past::after { opacity:.45; }
+html.has-case-deck .case-deck .project-gallery>.media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:contain; }
 html.has-case-deck .case-deck .conversion-case-head { margin-bottom:20px; }
+html.has-case-deck .case-deck :is(.conversion-case-head,.case-head) { order:0; }
+html.has-case-deck .case-deck .project-gallery { order:1; }
+html.has-case-deck .case-deck .conversion-case-copy { order:2; }
 html.has-case-deck .case-deck .conversion-case-copy { margin-top:18px; }
 html.has-case-deck .case-deck .conversion-case-copy dl>div { padding-block:12px; }
-html.has-case-deck .case-deck .conversion-case-copy blockquote { margin-block:14px; font-size:16px; }
-.deck-dots { position:absolute; top:50%; right:calc(var(--pad,48px) - 8px); z-index:10; display:grid; gap:6px; transform:translateY(-50%); }
-.deck-dots button { display:grid; place-items:center; width:34px; height:30px; padding:0; border:0; background:none; color:rgba(255,255,255,.42); font:600 11px/1 "Manrope",sans-serif; cursor:pointer; transition:color .2s ease; }
-.deck-dots button span { padding-bottom:3px; border-bottom:1.5px solid transparent; }
-.deck-dots button:hover,.deck-dots button[aria-current] { color:#fff; }
-.deck-dots button[aria-current] span { border-color:var(--commerce,#b7ff3c); }
-.deck-dots button:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:2px; }
+html.has-case-deck .case-deck :is(.conversion-case-copy blockquote,.case-quote) { display:none; }
+html.has-case-deck .case-deck .case-more { margin-top:12px; }
+html.has-case-deck .case-deck .case-head { display:contents; }
+html.has-case-deck .case-deck :is(.case-number,.case-tags) { display:none; }
+html.has-case-deck .case-deck .case-brand { order:0; min-height:0; margin:0 0 20px; }
+html.has-case-deck .case-deck .case-brand img { width:auto; max-width:280px; max-height:58px; }
+html.has-case-deck .case-deck .case-head>p { order:2; max-width:800px; margin:18px 0 0; font-size:16px; line-height:1.6; }
+html.has-case-deck .case-deck .case-head>.case-more { order:3; align-self:flex-start; }
+.deck-dots { position:absolute; top:50%; right:calc(var(--pad,48px) - 4px); z-index:10; display:grid; transform:translateY(-50%); }
+.deck-dots button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; background:none; color:rgba(255,255,255,.5); font:600 12px/1 "Manrope",sans-serif; cursor:pointer; }
+.deck-dots button[aria-current] { color:var(--case-accent,#b7ff3c); text-decoration:underline; text-underline-offset:7px; }
+.deck-controls { position:absolute; z-index:10; inset:auto var(--pad,48px) 16px; display:flex; align-items:center; gap:10px; padding-top:12px; border-top:1px solid rgba(255,255,255,.18); color:#e8e9e3; }
+.deck-status { margin-right:12px; min-width:46px; font:600 13px/1.4 "Manrope",sans-serif; font-variant-numeric:tabular-nums; }
+.deck-hint { flex:1; color:rgba(255,255,255,.6); font:400 12px/1.5 "Manrope",sans-serif; }
+.deck-controls button { width:44px; height:44px; padding:0; border:1px solid rgba(255,255,255,.28); border-radius:0; background:transparent; color:inherit; font:400 21px/1 "Manrope",sans-serif; cursor:pointer; }
+.deck-controls button:hover { border-color:currentColor; }
+.deck-controls button:focus-visible,.deck-dots button:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:3px; }
+.case-deck.is-light .deck-controls { color:#171914; border-color:rgba(0,0,0,.2); }
+.case-deck.is-light :is(.deck-dots button,.deck-hint) { color:#59604f; }
+.case-deck.is-light .deck-dots button[aria-current] { color:#385d05; }
+.case-deck.is-light .deck-controls button { border-color:rgba(0,0,0,.28); }
+@media (min-width:901px) {
+  html.has-case-deck .case-deck .project-gallery { width:calc(100% * var(--deck-f,1)); align-self:flex-start; }
+  html.has-case-deck .case-deck .project-gallery>.media-frame video { aspect-ratio:16/9; }
+}
+@media (max-width:900px) {
+  html.has-case-deck .case-deck>.project-showcase { justify-content:center; padding:16px var(--pad,24px) 86px; gap:0; }
+  html.has-case-deck .case-deck .conversion-case-head { flex-direction:row; align-items:center; gap:14px; margin-bottom:18px; }
+  html.has-case-deck .case-deck .case-logo-title { order:-1; }
+  html.has-case-deck .case-deck .case-logo-title img { width:auto; max-width:180px; max-height:46px; }
+  html.has-case-deck .case-deck .case-order { max-width:125px; text-align:right; font-size:12px; line-height:1.4; }
+  html.has-case-deck .case-deck .project-gallery { gap:12px; }
+  html.has-case-deck .case-deck .project-gallery-heading { display:none; }
+  html.has-case-deck .case-deck .project-gallery-tab { padding:0 4px; min-height:44px; border:0; border-bottom:2px solid transparent; border-radius:0; box-shadow:none; }
+  html.has-case-deck .case-deck .project-gallery-tab img { display:none; }
+  html.has-case-deck .case-deck .project-gallery-tab-label { padding:9px 0; }
+  html.has-case-deck .case-deck .project-gallery-tab[aria-selected="true"] { border-bottom-color:var(--case-accent); background:transparent; }
+  html.has-case-deck .case-deck .conversion-case-copy { margin-top:16px; }
+  html.has-case-deck .case-deck .conversion-case-copy dl { display:block; }
+  html.has-case-deck .case-deck .conversion-case-copy dl>div:first-child { display:none; }
+  html.has-case-deck .case-deck .conversion-case-copy dl>div+div { border-top:0; padding:0; }
+  html.has-case-deck .case-deck .conversion-case-copy dd { font-size:16px; line-height:1.6; }
+  html.has-case-deck .case-deck .conversion-case-copy dt { margin-bottom:7px; }
+  html.has-case-deck .case-deck .case-more { margin-top:16px; }
+  html.has-case-deck .case-deck .case-brand { order:0; min-height:0; margin:0 0 18px; }
+  html.has-case-deck .case-deck .case-brand img { width:auto; max-width:210px; max-height:48px; }
+  html.has-case-deck .case-deck .case-head>p { order:2; margin:18px 0 0; font-size:16px; line-height:1.6; }
+  .deck-dots { display:none; }
+  .deck-controls { bottom:12px; }
+  .deck-hint { font-size:12px; }
+}
