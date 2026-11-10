@@ -221,16 +221,32 @@ html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
   .hero-screens>*,.hero-phone-screens>*,.hero-caption-link span,.hero-clients button { transition:none; }
 }
 
-/* Case studies on desktop (case-deck.js): one project per screen under the
-   header; the gallery gives up some height (--deck-f) when a project would
-   not fit. */
+/* Case slideshow on desktop (case-deck.js): one screen under the header,
+   projects stacked as slides; the next slides up over the current one, which
+   dims and steps back. The gallery gives up some height (--deck-f) when a
+   project would not fit. */
+html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100vh - 68px)); overflow:hidden; scroll-margin-top:68px; }
 html.has-case-deck .case-deck > .project-showcase {
+  position:absolute; inset:0; z-index:1; overflow:hidden;
   display:flex; flex-direction:column; justify-content:center;
-  height:var(--stage-h,calc(100vh - 68px)); overflow:hidden;
-  padding-top:28px; padding-bottom:28px;
+  padding-top:28px; padding-bottom:28px; padding-right:calc(var(--pad,48px) + 34px);
+  background-color:var(--case-canvas,#0a0e0c);
+  transform:translateY(100%); transition:transform .62s cubic-bezier(.22,.8,.24,1);
 }
+html.has-case-deck .case-deck > .project-showcase.is-current { z-index:2; transform:none; box-shadow:0 -30px 60px rgba(0,0,0,.45); }
+html.has-case-deck .case-deck > .project-showcase.is-past { transform:scale(.95); transform-origin:50% 0; }
+html.has-case-deck .case-deck > .project-showcase::after {
+  content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .62s ease;
+}
+html.has-case-deck .case-deck > .project-showcase.is-past::after { opacity:.6; }
 html.has-case-deck .case-deck .project-gallery > .media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:cover; }
 html.has-case-deck .case-deck .conversion-case-head { margin-bottom:20px; }
 html.has-case-deck .case-deck .conversion-case-copy { margin-top:18px; }
 html.has-case-deck .case-deck .conversion-case-copy dl>div { padding-block:12px; }
 html.has-case-deck .case-deck .conversion-case-copy blockquote { margin-block:14px; font-size:16px; }
+.deck-dots { position:absolute; top:50%; right:calc(var(--pad,48px) - 8px); z-index:10; display:grid; gap:6px; transform:translateY(-50%); }
+.deck-dots button { display:grid; place-items:center; width:34px; height:30px; padding:0; border:0; background:none; color:rgba(255,255,255,.42); font:600 11px/1 "Manrope",sans-serif; cursor:pointer; transition:color .2s ease; }
+.deck-dots button span { padding-bottom:3px; border-bottom:1.5px solid transparent; }
+.deck-dots button:hover,.deck-dots button[aria-current] { color:#fff; }
+.deck-dots button[aria-current] span { border-color:var(--commerce,#b7ff3c); }
+.deck-dots button:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:2px; }
