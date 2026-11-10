@@ -22,12 +22,21 @@
   const motion = !reduced && !saveData;
 
   const isVideo = (el) => el && el.tagName === 'VIDEO';
+  // Sharper encodes where the browser can use them, as listed in data-v:
+  // h = an HEVC copy (.hevc.mp4); w = that copy is the large cut, for wide
+  // screens only (narrow screens keep the lighter H.264 file).
+  const HEVC = (() => { try { return !!document.createElement('video').canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"'); } catch (e) { return false; } })();
+  const clipSrc = (v) => {
+    const f = (v.dataset.v || '').split(','); let s = v.dataset.src;
+    if (HEVC && f.includes('h') && !(f.includes('w') && innerWidth < 900)) s = s.replace(/\.mp4$/, '.hevc.mp4');
+    return s;
+  };
   const load = (i) => [screens[i], phones[i]].forEach((el) => {
     if (!el) return;
     if (isVideo(el)) {
       if (el.dataset.poster) { el.poster = el.dataset.poster; el.removeAttribute('data-poster'); }
       // the clip itself waits for the page load so it never competes with it
-      if (motion && pageLoaded && el.dataset.src) { el.src = el.dataset.src; el.removeAttribute('data-src'); }
+      if (motion && pageLoaded && el.dataset.src) { el.src = clipSrc(el); el.removeAttribute('data-src'); }
     } else if (el.dataset.src) { el.src = el.dataset.src; el.removeAttribute('data-src'); }
   });
   // play the current slide's clips only while the carousel is running

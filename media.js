@@ -55,9 +55,11 @@
     button.addEventListener('click', async () => {
       if (video.paused) {
         manuallyPaused.delete(video);
+        if (video.dataset) delete video.dataset.userPaused;
         try { await video.play(); } catch { sync(); }
       } else {
         manuallyPaused.add(video);
+        if (video.dataset) video.dataset.userPaused = '1'; // read by case-deck.js
         video.pause();
       }
     });
