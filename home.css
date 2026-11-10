@@ -220,3 +220,26 @@ html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
 @media (prefers-reduced-motion:reduce) {
   .hero-screens>*,.hero-phone-screens>*,.hero-caption-link span,.hero-clients button { transition:none; }
 }
+
+/* Case deck on desktop (case-deck.js): sticky project cards that slide over
+   each other. Card height is at least one screen under the header; the
+   gallery gives up a little height (--deck-f) when a card would not fit. */
+html.has-case-deck .case-deck > .project-showcase {
+  position:sticky; top:var(--deck-stick,68px);
+  display:flex; flex-direction:column; justify-content:center;
+  min-height:calc(100vh - 68px); padding-top:30px; padding-bottom:30px;
+  background-color:var(--case-canvas,#0a0e0c);
+  transform:scale(calc(1 - var(--deck-cover,0) * .035)); transform-origin:50% 0;
+}
+html.has-case-deck .case-deck > .project-showcase + .project-showcase { box-shadow:0 -30px 60px rgba(0,0,0,.45); }
+html.has-case-deck .case-deck > .project-showcase::after {
+  content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:calc(var(--deck-cover,0) * .55); pointer-events:none;
+}
+html.has-case-deck .case-deck .project-gallery > .media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:cover; }
+html.has-case-deck .case-deck .conversion-case-head { margin-bottom:20px; }
+html.has-case-deck .case-deck .conversion-case-copy { margin-top:18px; }
+html.has-case-deck .case-deck .conversion-case-copy dl>div { padding-block:12px; }
+html.has-case-deck .case-deck .conversion-case-copy blockquote { margin-block:14px; font-size:16px; }
+@media (prefers-reduced-motion:reduce) {
+  html.has-case-deck .case-deck > .project-showcase { transform:none; }
+}
