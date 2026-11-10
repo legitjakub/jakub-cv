@@ -57,7 +57,8 @@
       s.setAttribute('aria-hidden', String(i !== index));
       videos(s).forEach((v) => { if (i !== index && !v.paused) v.pause(); });
     });
-    if (pinned()) videos(slides[index]).forEach((v) => { if (v.paused) v.play().catch(() => {}); });
+    // a clip the visitor paused with its caption button stays paused
+    if (pinned()) videos(slides[index]).forEach((v) => { if (v.paused && !v.dataset.userPaused) v.play().catch(() => {}); });
     [...dots.children].forEach((b, i) => b.toggleAttribute('aria-current', i === index));
     deck.classList.toggle('is-light', slides[index].classList.contains('case-molecules-new'));
   };
@@ -110,6 +111,8 @@
   const onKey = (e) => {
     if (!on || !(e.key in KEYS) || e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.target.closest && e.target.closest('input,textarea,select,[contenteditable]')) return;
+    // Space and Enter on a focused button or link keep their own action (e.g. a project dot)
+    if (e.key === ' ' && e.target.closest && e.target.closest('button,a,summary,[role="button"]')) return;
     const dir = e.key === ' ' && e.shiftKey ? -1 : KEYS[e.key];
     const t = top() - HDR;
     if (!pinned()) {
