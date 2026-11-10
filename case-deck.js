@@ -59,6 +59,7 @@
     });
     if (pinned()) videos(slides[index]).forEach((v) => { if (v.paused) v.play().catch(() => {}); });
     [...dots.children].forEach((b, i) => b.toggleAttribute('aria-current', i === index));
+    deck.classList.toggle('is-light', slides[index].classList.contains('case-molecules-new'));
   };
   const go = (i) => {
     i = Math.max(0, Math.min(last, i));
@@ -75,16 +76,18 @@
   const onWheel = (e) => {
     if (!on || e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
     const dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY, ad = Math.abs(dy);
-    const now = performance.now(), gap = now - lastWheel; lastWheel = now;
+    const now = performance.now(), ts = e.timeStamp || now, gap = ts - lastWheel; lastWheel = ts;
     const prev = Math.max(0, ...hist);
+    // a hitch in a dying trackpad momentum is not a new swipe
+    const tail = used && gap < 450 && ad <= prev && ad < 60;
     hist.push(ad); if (hist.length > 3) hist.shift();
-    if (gap > GAP) hist.length = 0;
+    if (gap > GAP && !tail) hist.length = 0;
     if (used && ad < prev * 0.9) fading = true; // momentum has started to die down
-    if (gap > GAP || (used && fading && ad > 8 && ad > prev * 1.5)) { used = false; acc = 0; }
+    if ((gap > GAP && !tail) || (used && fading && ad > 8 && ad > prev * 1.5)) { used = false; acc = 0; }
     const locked = now < lockUntil;
     const t = top() - HDR, isPinned = pinned();
     // the page scrolled onto the deck in this same gesture: it does not count
-    if (isPinned && !wasPinned && gap <= GAP && !locked) { used = true; fading = false; }
+    if (isPinned && !wasPinned && (gap <= GAP || tail) && !locked) { used = true; fading = false; }
     wasPinned = isPinned;
     if (!isPinned) {
       if (locked) { e.preventDefault(); return; }
@@ -139,7 +142,7 @@
   const disable = () => {
     if (!on) return;
     on = false; root.classList.remove('has-case-deck');
-    dots.remove();
+    dots.remove(); deck.classList.remove('is-light');
     deck.style.removeProperty('--stage-h');
     slides.forEach((s) => { s.classList.remove('is-past', 'is-current', 'is-next'); s.inert = false; s.removeAttribute('aria-hidden'); s.style.removeProperty('--deck-f'); });
     removeEventListener('wheel', onWheel); removeEventListener('keydown', onKey);

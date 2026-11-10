@@ -239,6 +239,14 @@ html.has-case-deck .case-deck > .project-showcase::after {
   content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .62s ease;
 }
 html.has-case-deck .case-deck > .project-showcase.is-past::after { opacity:.6; }
+/* The clips arrive a beat after their slide, one after another. */
+html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame { transition:transform .95s cubic-bezier(.2,.75,.2,1),opacity .7s ease; }
+html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame:nth-of-type(2) { transition-delay:.06s; }
+html.has-case-deck .case-deck > .project-showcase .project-gallery > .media-frame:nth-of-type(3) { transition-delay:.12s; }
+html.has-case-deck .case-deck > .project-showcase.is-next .project-gallery > .media-frame { transform:translateY(56px); opacity:.35; transition-delay:0s; }
+.case-deck.is-light .deck-dots button { color:rgba(16,17,14,.42); }
+.case-deck.is-light .deck-dots button:hover,.case-deck.is-light .deck-dots button[aria-current] { color:#10110e; }
+.case-deck.is-light .deck-dots button[aria-current] span { border-color:#385d05; }
 html.has-case-deck .case-deck .project-gallery > .media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:cover; }
 html.has-case-deck .case-deck .conversion-case-head { margin-bottom:20px; }
 html.has-case-deck .case-deck .conversion-case-copy { margin-top:18px; }

@@ -71,3 +71,51 @@ body.work-page :is(.work-hero,.plus-hero,.case-hero) .work-index { display:block
 /* One accent for headings across the site: lime. Cyan stays for the agent's
    voice inside the walkthrough only. */
 body.agentic-page .ac-hero h1 em { color:var(--commerce); }
+
+/* ── Video tiles: screens, not boxes ───────────────────────────
+   Soft corners instead of a hard 1px box (media only; buttons and panels
+   keep square corners). The hairline is drawn above the clip so it holds on
+   any canvas; depth comes from one long, soft shadow. The label and the
+   play/pause control are glass pills; on devices with a pointer the control
+   shows on hover, or while the clip is paused. */
+:is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame {
+  border:0; border-radius:14px; isolation:isolate;
+  box-shadow:0 1px 2px rgba(0,0,0,.22),0 28px 56px -28px rgba(0,0,0,.75);
+}
+:is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame::after {
+  content:""; position:absolute; inset:0; z-index:3; border-radius:inherit; pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);
+}
+.case-molecules-new :is(.project-gallery,.video-duo) > .media-frame { box-shadow:0 1px 2px rgba(30,20,50,.12),0 28px 56px -30px rgba(40,25,70,.45); }
+.case-molecules-new :is(.project-gallery,.video-duo) > .media-frame::after { box-shadow:inset 0 0 0 1px rgba(0,0,0,.08); }
+:is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame video { transform:scale(1.001); transition:transform .9s cubic-bezier(.2,.7,.2,1); }
+:is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame:hover video { transform:scale(1.025); filter:none; }
+:is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame figcaption { inset:auto 14px 14px; }
+:is(.project-showcase,.case-media) .media-frame figcaption .media-caption-text,
+:is(.project-showcase,.case-media) .media-frame .media-toggle {
+  border:0; background:rgba(12,13,12,.5);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 6px 18px rgba(0,0,0,.18);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4); backdrop-filter:blur(14px) saturate(1.4);
+}
+:is(.project-showcase,.case-media) .media-frame figcaption .media-caption-text { padding:7px 14px 7px 12px; border-radius:999px; color:#fff; font:500 12px/1.4 "Manrope",sans-serif; }
+:is(.project-showcase,.case-media) .media-frame figcaption .media-caption-text > span { margin-right:8px; color:var(--case-accent); font-variant-numeric:tabular-nums; }
+.case-molecules-new .media-frame figcaption .media-caption-text > span { color:#c9e89a; }
+:is(.project-showcase,.case-media) .media-frame .media-toggle { width:34px; height:34px; min-height:34px; border-radius:50%; color:#fff; }
+:is(.project-showcase,.case-media) .media-frame .media-toggle:hover { box-shadow:inset 0 0 0 1px var(--case-accent),0 6px 18px rgba(0,0,0,.18); }
+@media (hover:hover) {
+  :is(.project-showcase,.case-media) .media-frame .media-toggle { opacity:0; transform:scale(.9); transition:opacity .25s ease,transform .25s ease,box-shadow .2s ease; }
+  :is(.project-showcase,.case-media) .media-frame:hover .media-toggle,
+  :is(.project-showcase,.case-media) .media-frame .media-toggle:focus-visible,
+  :is(.project-showcase,.case-media) .media-frame .media-toggle[data-playing="false"] { opacity:1; transform:none; }
+}
+.project-showcase .project-gallery-tab { border-radius:10px; }
+.project-showcase .project-gallery-tab img { border-radius:6px; }
+@media (prefers-reduced-motion:reduce) {
+  :is(.project-showcase .project-gallery,.case-media .video-duo) > .media-frame video,
+  :is(.project-showcase,.case-media) .media-frame .media-toggle { transition:none; transform:none; }
+}
+/* The same screen treatment on the case pages' store tour and phone clips. */
+.case-page :is(.tour-browser,.phone-row .shot-zoom,.phone-clip) { border-radius:14px; border-color:rgba(255,255,255,.09); box-shadow:0 1px 2px rgba(0,0,0,.22),0 28px 56px -28px rgba(0,0,0,.75); }
+.case-molecules-new.case-page :is(.tour-browser,.phone-row .shot-zoom,.phone-clip) { border-color:rgba(0,0,0,.08); box-shadow:0 1px 2px rgba(30,20,50,.12),0 28px 56px -30px rgba(40,25,70,.45); }
+.case-page .tour-bar span { border-radius:999px; }
+.case-page .tour-play { border:0; border-radius:50%; box-shadow:inset 0 0 0 1px rgba(255,255,255,.16); }
