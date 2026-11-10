@@ -9,12 +9,12 @@
 
   const clips = [...document.querySelectorAll('video.tour-video')];
   // Sharper encodes where the browser can use them, as listed in data-v:
-  // h = an HEVC copy (.hevc.mp4), s = a smaller cut for narrow screens (-s.mp4).
+  // h = an HEVC copy (.hevc.mp4); w = that copy is the large cut, for wide
+  // screens only (narrow screens keep the lighter H.264 file).
   const HEVC = (() => { try { return !!document.createElement('video').canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"'); } catch (e) { return false; } })();
   const clipSrc = (v) => {
     const f = (v.dataset.v || '').split(','); let s = v.dataset.src;
-    if (f.includes('s') && innerWidth < 900) s = s.replace(/\.mp4$/, '-s.mp4');
-    if (HEVC && f.includes('h')) s = s.replace(/\.mp4$/, '.hevc.mp4');
+    if (HEVC && f.includes('h') && !(f.includes('w') && innerWidth < 900)) s = s.replace(/\.mp4$/, '.hevc.mp4');
     return s;
   };
   const reduce = window.matchMedia('(prefers-reduced-motion:reduce)');
