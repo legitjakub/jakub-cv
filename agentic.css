@@ -113,3 +113,51 @@
 .ac-role-tech[open] summary::before { content:"−"; }
 .ac-role-tech summary:focus-visible { outline:2px solid var(--cyber); outline-offset:3px; }
 .ac-role .ac-role-tech p { margin-top:8px; font-size:13px; }
+
+/* Product illustrations and the shop owner's weekly checks */
+.ac-journey { padding-block:var(--section-y); border-top:1px solid var(--line); }
+.ac-journey h2 { max-width:24ch; margin:0 0 1.2rem; font-size:clamp(32px,4vw,64px); line-height:1.08; letter-spacing:-.045em; }
+.ac-journey blockquote { margin:1.6rem 0; padding-left:1rem; border-left:3px solid var(--commerce); font-size:clamp(20px,2.3vw,32px); line-height:1.4; max-width:41ch; }
+.ac-journey p,.ac-notes p,.ac-notes dd { color:#bcbdb6; line-height:1.65; font-size:16px; max-width:74ch; }
+.ac-pictures { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(18px,3vw,48px); margin:32px 0; }
+.ac-pictures figure { margin:0; }
+.ac-pictures img { display:block; width:100%; height:auto; }
+.ac-pictures figcaption { margin-top:12px; line-height:1.5; color:#cccfc6; }
+.ac-pictures strong { display:block; margin-bottom:5px; color:#fafbf5; }
+.ac-journey a,.ac-notes a { color:var(--commerce); text-underline-offset:3px; }
+.ac-notes { max-width:900px; margin:32px 0; }
+.ac-notes details { border-top:1px solid var(--line); padding-block:14px; }
+.ac-notes summary { cursor:pointer; padding:6px 0; font-weight:650; }
+.ac-notes details p,.ac-notes dl { margin:12px 0 4px; }
+.ac-notes dt { font-weight:700; margin-top:12px; }
+.ac-notes dd { margin:2px 0 0; }
+.ac-guide .ac-guide-link,.ac-hero .ac-guide-link { white-space:normal; }
+@media(max-width:700px) { .ac-pictures { grid-template-columns:1fr; } }
+
+#role .ac-role-heading { max-width:76ch; margin:0 0 28px; }
+#role-title { margin:0; font-size:clamp(34px,5vw,72px); line-height:1.05; letter-spacing:-.045em; text-align:start; text-wrap:balance; }
+.ac-role-heading p { margin:14px 0 0; max-width:65ch; color:#bbbfba; line-height:1.65; }
+#role .ac-notes { margin-top:18px; }
+.ac-roles.ac-explorer { display:grid; grid-template-columns:minmax(190px,.8fr) minmax(0,2fr); align-items:start; gap:clamp(20px,4vw,60px); margin:0; padding-top:20px; border:0; border-top:1px solid var(--line); background:none; }
+.ac-picker { min-width:0; margin:0; padding:0; border:0; display:grid; }
+.ac-picker legend,.ac-picker input { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); }
+.ac-picker label { position:relative; cursor:pointer; }
+.ac-picker label span { display:flex; align-items:center; min-height:46px; padding:8px 14px; border-bottom:1px solid var(--line); color:#b6bab4; font-weight:600; }
+.ac-picker input:checked + span { color:var(--commerce); background:#161c14; box-shadow:inset 3px 0 var(--commerce); }
+.ac-picker label:hover span { color:#fff; }
+.ac-picker input:focus-visible + span { outline:2px solid var(--commerce); outline-offset:-2px; }
+.ac-explorer .ac-role { min-width:0; padding:clamp(20px,3.5vw,48px); border-top:2px solid var(--cyber); background:#101615; }
+.ac-explorer .ac-role[hidden] { display:none; }
+.ac-explorer .ac-role h3 { font-size:clamp(26px,3vw,42px); line-height:1.1; }
+.ac-explorer .ac-role p { max-width:65ch; font-size:16px; }
+.ac-explorer .ac-role .ac-role-src { margin:0; font-size:13px; }
+@media (prefers-reduced-motion:no-preference) {
+  .ac-explorer .ac-role:not([hidden]) { animation:ac-topic-appear .26s ease-out both; }
+  .ac-picker span { transition:color .18s,background-color .18s; }
+  @keyframes ac-topic-appear { from { opacity:.35; transform:translateY(6px); } to { opacity:1; transform:none; } }
+}
+@media(max-width:680px) {
+  .ac-roles.ac-explorer { grid-template-columns:1fr; gap:16px; }
+  .ac-picker { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ac-picker label span { height:100%; padding-inline:10px; font-size:14px; }
+}
