@@ -113,3 +113,23 @@
 .ac-role-tech[open] summary::before { content:"−"; }
 .ac-role-tech summary:focus-visible { outline:2px solid var(--cyber); outline-offset:3px; }
 .ac-role .ac-role-tech p { margin-top:8px; font-size:13px; }
+
+/* Product illustrations and the shop owner's weekly checks */
+.ac-journey { padding-block:var(--section-y); border-top:1px solid var(--line); }
+.ac-journey h2 { max-width:24ch; margin:0 0 1.2rem; font-size:clamp(32px,4vw,64px); line-height:1.08; letter-spacing:-.045em; }
+.ac-journey blockquote { margin:1.6rem 0; padding-left:1rem; border-left:3px solid var(--commerce); font-size:clamp(20px,2.3vw,32px); line-height:1.4; max-width:41ch; }
+.ac-journey p,.ac-notes p,.ac-notes dd { color:#bcbdb6; line-height:1.65; font-size:16px; max-width:74ch; }
+.ac-pictures { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(18px,3vw,48px); margin:32px 0; }
+.ac-pictures figure { margin:0; }
+.ac-pictures img { display:block; width:100%; height:auto; }
+.ac-pictures figcaption { margin-top:12px; line-height:1.5; color:#cccfc6; }
+.ac-pictures strong { display:block; margin-bottom:5px; color:#fafbf5; }
+.ac-journey a,.ac-notes a { color:var(--commerce); text-underline-offset:3px; }
+.ac-notes { max-width:900px; margin:32px 0; }
+.ac-notes details { border-top:1px solid var(--line); padding-block:14px; }
+.ac-notes summary { cursor:pointer; padding:6px 0; font-weight:650; }
+.ac-notes details p,.ac-notes dl { margin:12px 0 4px; }
+.ac-notes dt { font-weight:700; margin-top:12px; }
+.ac-notes dd { margin:2px 0 0; }
+.ac-guide .ac-guide-link,.ac-hero .ac-guide-link { white-space:normal; }
+@media(max-width:700px) { .ac-pictures { grid-template-columns:1fr; } }
