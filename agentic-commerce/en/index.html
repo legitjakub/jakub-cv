@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
     <link rel="stylesheet" href="/shopify-plus.css?v=b4db974c66" />
-    <link rel="stylesheet" href="/agentic.css?v=f72bdc6a92" />
+    <link rel="stylesheet" href="/agentic.css?v=257fe98e89" />
     <link rel="stylesheet" href="/refine.css?v=19d9b77f36" />
     <link rel="stylesheet" href="/mega-menu.css?v=1df51ac58c" />
     <script src="/mega-menu.js?v=90444268c5" defer></script>
@@ -253,7 +253,8 @@
         ]
       }
     </script>
-  <noscript><link rel="stylesheet" href="/no-js.css?v=ba751ccb07" /></noscript></head>
+  <noscript><link rel="stylesheet" href="/no-js.css?v=ba751ccb07" /></noscript><script defer src="/agentic-roles.js?v=b584a4e678"></script>
+  </head>
   <body class="work-page shopify-conversion-page plus-page agentic-page">
     <div class="scroll-progress" aria-hidden="true"><span></span>
           </div>
@@ -328,20 +329,13 @@
       </section>
 
       <section id="role" class="solution-paths section-pad" aria-labelledby="role-title">
-        <header class="solution-paths-head reveal">
-          <div><span class="work-index">Who does what</span>
-          <h2 id="role-title">Different layers,<br /><em>different roles.</em>
-          </h2>
-          </div>
-          <p>Articles mix these names up. Each one actually covers a different layer, and only some of them concern the merchant directly.</p>
-        </header>
-<div class="ac-notes"><details><summary>A glossary for merchants and developers</summary><p>Merchants manage listings, policies and channels. Developers use MCP and UCP when building a custom assistant.</p><dl><dt>Agentic plan</dt><dd>A plan for selling through AI while running your shop on another platform.</dd><dt>Knowledge Base</dt><dd>Store answers to questions about topics such as delivery and returns.</dd><dt>Storefront Catalog / Global Catalog</dt><dd>Storefront searches one shop. Global searches across merchants.</dd><dt>MCP</dt><dd>A protocol that lets an assistant use a tool, such as product search.</dd><dt>UCP</dt><dd>A standard for exchanging shopping information between an agent and a store.</dd><dt>WebMCP</dt><dd>An experimental way for a website to offer tools to an agent in the browser.</dd><dt>Shop MCP</dt><dd>Connects a personal assistant to Shop and supports buyer-authorised purchases with Shop Pay.</dd><dt>Ask MCP</dt><dd>Lets an agent ask the store a question, such as who pays for return shipping.</dd></dl></details></div>
-        <div class="ac-roles reveal">
+        <header class="ac-role-heading"><h2 id="role-title">How AI shopping works</h2><p>Catalog helps the assistant find a product. The sales channel determines where the shopper can pay. Explore each part to see what you can configure in Shopify and what a developer can build.</p></header>
+        <div class="ac-roles" data-picker-label="Choose a topic">
           <article class="ac-role">
             <header><span class="ac-layer">Data</span>
           <h3>Shopify Catalog</h3><span class="ac-status ac-status-ok">Available</span>
           </header>
-            <p>Global Catalog searches across merchants; Storefront Catalog searches one store. Both implement UCP Catalog capabilities. search_catalog searches, lookup_catalog resolves known identifiers and get_product explores products and variants. Google uses Merchant Center for its own product discovery.</p>
+            <p>A shopper looking for coffee can search several merchants through Global Catalog, or just one roaster through Storefront Catalog. A result can include the available pack sizes and their prices. Google uses Merchant Center for product discovery.</p>
             <p class="ac-role-you">Concerns you directly. Your store’s data goes into Catalog; Fall ’26 added an eligibility check that shows what to fix.</p>
             <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a> · <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a>
           </p>
@@ -409,6 +403,7 @@
           </p>
           </article>
           </div>
+      <div class="ac-notes"><details><summary>A glossary for merchants and developers</summary><p>Merchants manage listings, policies and channels. Developers use MCP and UCP when building a custom assistant.</p><dl><dt>Agentic plan</dt><dd>A plan for selling through AI while running your shop on another platform.</dd><dt>Knowledge Base</dt><dd>Store answers to questions about topics such as delivery and returns.</dd><dt>Storefront Catalog / Global Catalog</dt><dd>Storefront searches one shop. Global searches across merchants.</dd><dt>MCP</dt><dd>A protocol that lets an assistant use a tool, such as product search.</dd><dt>UCP</dt><dd>A standard for exchanging shopping information between an agent and a store.</dd><dt>WebMCP</dt><dd>An experimental way for a website to offer tools to an agent in the browser.</dd><dt>Shop MCP</dt><dd>Connects a personal assistant to Shop and supports buyer-authorised purchases with Shop Pay.</dd><dt>Ask MCP</dt><dd>Lets an agent ask the store a question, such as who pays for return shipping.</dd></dl></details></div>
       </section>
       <section id="dostupnost" class="solution-paths section-pad" aria-labelledby="avail-title">
 <header class="solution-paths-head reveal">

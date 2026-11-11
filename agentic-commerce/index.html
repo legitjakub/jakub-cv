@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="/work.css?v=b406191840" />
     <link rel="stylesheet" href="/shopify-vyvoj.css?v=520b2f9049" />
     <link rel="stylesheet" href="/shopify-plus.css?v=b4db974c66" />
-    <link rel="stylesheet" href="/agentic.css?v=f72bdc6a92" />
+    <link rel="stylesheet" href="/agentic.css?v=257fe98e89" />
     <link rel="stylesheet" href="/refine.css?v=19d9b77f36" />
     <link rel="stylesheet" href="/mega-menu.css?v=1df51ac58c" />
     <script src="/mega-menu.js?v=90444268c5" defer></script>
@@ -253,7 +253,8 @@
         ]
       }
     </script>
-  <noscript><link rel="stylesheet" href="/no-js.css?v=ba751ccb07" /></noscript></head>
+  <noscript><link rel="stylesheet" href="/no-js.css?v=ba751ccb07" /></noscript><script defer src="/agentic-roles.js?v=b584a4e678"></script>
+  </head>
   <body class="work-page shopify-conversion-page plus-page agentic-page">
     <div class="scroll-progress" aria-hidden="true"><span></span>
           </div>
@@ -328,20 +329,13 @@
       </section>
 
       <section id="role" class="solution-paths section-pad" aria-labelledby="role-title">
-        <header class="solution-paths-head reveal">
-          <div><span class="work-index">Kdo je kdo</span>
-          <h2 id="role-title">Jednotlivé vrstvy,<br /><em>odlišné role.</em>
-          </h2>
-          </div>
-          <p>Názvy se v&nbsp;článcích míchají. Každý řeší jinou vrstvu a&nbsp;jen některé se týkají přímo obchodníka. Žádná z&nbsp;nich sama nezaručí, že AI váš produkt doporučí.</p>
-        </header>
-<div class="ac-notes"><details><summary>Slovníček pro obchodníka a vývojáře</summary><p>Obchodník spravuje produkty, podmínky a kanály. Rozhraní MCP a UCP řeší vývojář při stavbě vlastního asistenta.</p><dl><dt>Agentic plan</dt><dd>Tarif pro prodej přes AI pro obchod, který používá jinou e-commerce platformu.</dd><dt>Knowledge Base</dt><dd>Odpovědi obchodu na otázky například o dopravě a vrácení.</dd><dt>Storefront Catalog / Global Catalog</dt><dd>První hledá produkty jednoho obchodu, druhý umožňuje výběr napříč obchody.</dd><dt>MCP</dt><dd>Protokol, přes který může asistent zavolat nástroj, třeba vyhledání produktu.</dd><dt>UCP</dt><dd>Společná pravidla, podle kterých si agent a obchod předávají údaje při nákupu.</dd><dt>WebMCP</dt><dd>Experimentální způsob, jak může web nabídnout agentovi nástroj přímo v prohlížeči.</dd><dt>Shop MCP</dt><dd>Připojuje osobního asistenta k nákupní službě Shop a umožňuje autorizovaný nákup přes Shop Pay.</dd><dt>Ask MCP</dt><dd>Umožní agentovi položit obchodu otázku, například kdo hradí zpáteční dopravu.</dd></dl></details></div>
-        <div class="ac-roles reveal">
+        <header class="ac-role-heading"><h2 id="role-title">Jak funguje nákup přes AI</h2><p>Katalog pomáhá asistentovi najít produkt. Prodejní kanál určuje, kde může zákazník zaplatit. U každé části najdete, co můžete nastavit v Shopify a co může zapojit vývojář.</p></header>
+        <div class="ac-roles" data-picker-label="Vyberte téma">
           <article class="ac-role">
           <header><span class="ac-layer">Data</span>
           <h3>Shopify Catalog</h3><span class="ac-status ac-status-ok">Dostupné</span>
           </header>
-          <p>Katalog produktů, ze kterého AI agenti vybírají. Hledá buď napříč všemi Shopify obchody, nebo jen v&nbsp;jednom. Google pro své vyhledávání používá vlastní Merchant Center.</p>
+          <p>Když zákazník hledá kávu, může asistent porovnat nabídky více pražíren přes Global Catalog nebo hledat jen u jedné přes Storefront Catalog. U vybrané kávy může dohledat varianty balení a jejich ceny. Google pro vyhledání produktů používá Merchant Center.</p>
           <p class="ac-role-you">Týká se vás přímo. Do Catalogu jdou data z&nbsp;vašeho obchodu a&nbsp;od Fall ’26 vám Shopify ukáže, co upravit, aby byl obchod způsobilý.</p>
           <details class="ac-role-tech"><summary>Technické detaily</summary><p>Global Catalog hledá napříč obchody, Storefront Catalog v&nbsp;jednom obchodě. Oba používají UCP Catalog capability: <code>search_catalog</code> hledá, <code>lookup_catalog</code> dohledá známé identifikátory a&nbsp;<code>get_product</code> rozpracuje produkt a&nbsp;varianty.</p></details>
           <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts" rel="noopener">Shopify Help Center: Agentic storefronts</a> · <a href="https://www.shopify.com/editions/fall2026" rel="noopener">Shopify Editions Fall ’26</a>
@@ -412,12 +406,13 @@
           <h3>Shop / Shop MCP</h3><span class="ac-status ac-status-partial">Dva různé produkty</span>
           </header>
           <p>Shop je zákaznická aplikace a&nbsp;web s&nbsp;produkty z&nbsp;Catalogu. Shop MCP je rozhraní, přes které se k&nbsp;Shopu připojují osobní agenti.</p>
-          <p class="ac-role-you">Týká se vás přes aplikaci Shop: produkty z&nbsp;vašeho obchodu v&nbsp;ní agent může najít a&nbsp;po přihlášení zákazníka zaplatit přes Shop Pay.</p>
+          <p class="ac-role-you">Zákazník může s pomocí asistenta najít kávu a sestavit košík. Pro platbu uloženou metodou Shop Pay se přihlásí a potvrdí celkovou cenu i platební metodu.</p>
           <details class="ac-role-tech"><summary>Technické detaily</summary><p>Shop MCP běží na <code>mcp.shop.com</code>. Hledání nepotřebuje klíč, přihlášení zpřístupní osobní funkce a&nbsp;autorizovanou platbu Shop Pay. <code>search_orders</code> vrací objednávky a&nbsp;tracking přihlášeného zákazníka, <code>get_checkout</code> sleduje rozpracovaný checkout. Shop MCP zatím webhooky nemá, u&nbsp;Order MCP jsou naopak hlavním zdrojem změn.</p></details>
           <p class="ac-role-src"><a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/agentic-home" rel="noopener">Shop in Agentic</a> · <a href="https://help.shopify.com/en/manual/online-sales-channels/shop/products-and-collections" rel="noopener">Selling on Shop</a> · <a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" rel="noopener">Shop MCP · 13 Oct 2026</a>
           </p>
           </article>
           </div>
+      <div class="ac-notes"><details><summary>Slovníček pro obchodníka a vývojáře</summary><p>Obchodník spravuje produkty, podmínky a kanály. Rozhraní MCP a UCP řeší vývojář při stavbě vlastního asistenta.</p><dl><dt>Agentic plan</dt><dd>Tarif pro prodej přes AI pro obchod, který používá jinou e-commerce platformu.</dd><dt>Knowledge Base</dt><dd>Odpovědi obchodu na otázky například o dopravě a vrácení.</dd><dt>Storefront Catalog / Global Catalog</dt><dd>První hledá produkty jednoho obchodu, druhý umožňuje výběr napříč obchody.</dd><dt>MCP</dt><dd>Protokol, přes který může asistent zavolat nástroj, třeba vyhledání produktu.</dd><dt>UCP</dt><dd>Společná pravidla, podle kterých si agent a obchod předávají údaje při nákupu.</dd><dt>WebMCP</dt><dd>Experimentální způsob, jak může web nabídnout agentovi nástroj přímo v prohlížeči.</dd><dt>Shop MCP</dt><dd>Připojuje osobního asistenta k nákupní službě Shop a umožňuje autorizovaný nákup přes Shop Pay.</dd><dt>Ask MCP</dt><dd>Umožní agentovi položit obchodu otázku, například kdo hradí zpáteční dopravu.</dd></dl></details></div>
       </section>
       <section id="dostupnost" class="solution-paths section-pad" aria-labelledby="avail-title">
 <header class="solution-paths-head reveal">
