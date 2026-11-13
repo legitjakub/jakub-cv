@@ -74,10 +74,11 @@ function page({ width = 1440, height = 900, reduced = false } = {}) {
   const event = (target,fields) => ({target,defaultPrevented:false,cancelable:true,preventDefault() { this.defaultPrevented = true; },...fields});
   return {
     slides, deck, root, state,
+    scrollEvent() { window.emit('scroll',{}); },
     get current() { return slides.findIndex(s => s.classList.contains('is-current')); },
     wheel(y, gap = 200, fields = {}) { state.time += gap; const e = event(deck,{deltaY:y,deltaX:0,deltaMode:0,timeStamp:state.time,...fields}); window.emit('wheel',e); if (!e.defaultPrevented) state.y += y; return e; },
     key(key,fields = {}) { const e = event(body,{key,...fields}); window.emit('keydown',e); return e; },
-    touch(dy,dx = 0) { deck.emit('touchstart',event(deck,{touches:[{clientX:150,clientY:300}]})); const e = event(deck,{touches:[{clientX:150+dx,clientY:300-dy}]}); deck.emit('touchmove',e); deck.emit('touchend',event(deck,{touches:[]})); return e; },
+    touch(dy,dx = 0) { const start=event(deck,{touches:[{clientX:150,clientY:300}]});deck.emit('touchstart',start);window.emit('touchstart',start); const e = event(deck,{touches:[{clientX:150+dx,clientY:300-dy}]}); deck.emit('touchmove',e);window.emit('touchmove',e);const end=event(deck,{touches:[]});deck.emit('touchend',end);window.emit('touchend',end); return e; },
     resize(w,h,reduced = state.reduced) { state.width=w;state.height=h;state.reduced=reduced; media.forEach(m => m.handlers.forEach(f => f())); window.emit('resize',{}); },
     buttonTarget:() => new Element('button'),
     goHash(id) { state.hash = '#'+id; window.emit('hashchange',{}); }
@@ -151,4 +152,24 @@ test('focus scrolling inside a gallery does not swallow the next gesture', () =>
 test('reduced motion and short windows keep an accessible plain list', () => {
   const p=page({reduced:true});assert.equal(p.current,-1);assert.ok(p.slides.every(s=>!s.inert));
   const q=page();q.resize(390,500);assert.equal(q.current,-1);assert.ok(q.slides.every(s=>!s.inert));
+});
+
+test('touch approaching Posedla keeps normal page scrolling until the header boundary', () => {
+  const p=page({width:390,height:844});p.state.y=900;p.goHash('top');
+  const event=p.touch(64);assert.equal(event.defaultPrevented,false);assert.equal(p.state.y,900);
+});
+test('the entry swipe holds Posedla and a separate swipe advances the slideshow', () => {
+  const p=page({width:390,height:844});p.state.y=1100;p.goHash('top');
+  assert.equal(p.touch(64).defaultPrevented,true);assert.equal(p.current,0);assert.equal(p.state.y,1132);
+  p.touch(64);assert.equal(p.current,1);
+});
+
+test('native inertia after the entry swipe cannot scroll the first project out of view', () => {
+  const p=page({width:390,height:844});p.state.y=1100;p.goHash('top');p.touch(64);
+  p.state.y+=150;p.scrollEvent();assert.equal(p.state.y,1132);assert.equal(p.current,0);
+});
+test('wheel entry shows Posedla and consumes the remaining momentum', () => {
+  const p=page();p.state.y=1100;p.goHash('top');
+  p.wheel(80);[60,35,10,2].forEach(y=>p.wheel(y,12));assert.equal(p.current,0);assert.equal(p.state.y,1132);
+  p.wheel(80,220);assert.equal(p.current,1);
 });
