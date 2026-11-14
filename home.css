@@ -225,7 +225,7 @@ html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
 html.has-case-deck { scroll-behavior:auto; }
 html.is-case-deck-active .nav-wrap.scrolled { background:#090b0a; }
 html.is-case-deck-active .to-top { opacity:0; pointer-events:none; }
-html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100svh - 68px)); overflow:hidden; scroll-margin-top:68px; touch-action:pan-x pinch-zoom; }
+html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100svh - 68px)); overflow:hidden; scroll-margin-top:68px; touch-action:pan-y pinch-zoom; }
 html.has-case-deck .case-deck>.project-showcase {
   position:absolute; inset:0; z-index:1; overflow:hidden; display:flex; flex-direction:column; justify-content:center;
   padding:24px calc(var(--pad,48px) + 48px) 90px var(--pad,48px);
@@ -294,3 +294,5 @@ html.has-case-deck .case-deck .case-head>.case-more { order:3; align-self:flex-s
   .deck-controls { bottom:12px; }
   .deck-hint { font-size:12px; }
 }
+
+html.is-case-deck-active .case-deck { touch-action:pan-x pinch-zoom; }

@@ -11,23 +11,24 @@
   const HEADER = 68;
   const last = slides.length - 1;
   let on = false, index = 0, phase = 'before', touch = null;
+  let touchEntryUntil = 0;
 
   // A quiet gap starts a new gesture. Within a continuous trackpad stream,
   // a deliberate reversal or a rising impulse after decay does the same.
   // There is no animation lock: the next gesture can interrupt a transition.
   const wheel = (() => {
     let at = -Infinity, previous = 0, peak = 0, direction = 0;
-    let consumed = false, falling = false, total = 0;
+    let consumed = false, falling = false, total = 0, entering = false;
     return {
-      reset() { at = -Infinity; consumed = false; previous = peak = total = direction = 0; falling = false; },
-      hold() { consumed = true; },
+      reset() { at = -Infinity; consumed = false; entering = false; previous = peak = total = direction = 0; falling = false; },
+      hold(entry = false) { consumed = true; entering = entry; },
       take(dy, now) {
         const amount = Math.abs(dy), sign = Math.sign(dy), gap = now - at;
         const reversed = consumed && sign !== direction && amount >= 8;
-        const rising = consumed && falling && amount >= Math.max(12, Math.min(20, peak * 0.25)) && amount > previous * 1.8;
-        const notch = consumed && !falling && gap >= 80 && amount >= 40 && Math.abs(amount - previous) < 1;
+        const rising = consumed && !entering && falling && amount >= Math.max(12, Math.min(20, peak * 0.25)) && amount > previous * 1.8;
+        const notch = consumed && !entering && !falling && gap >= 80 && amount >= 40 && Math.abs(amount - previous) < 1;
         if (gap > 140 || reversed || rising || notch) {
-          consumed = false; falling = false; total = 0; peak = 0;
+          consumed = false; entering = false; falling = false; total = 0; peak = 0;
         } else if (previous && amount < previous * 0.8) falling = true;
         at = now; previous = amount; peak = Math.max(peak, amount); direction = sign;
         if (consumed) return 0;
@@ -137,20 +138,25 @@
     const direction = wheel.take(dy, performance.now());
     if (!pinned()) {
       const t = top() - HEADER;
-      if (t > 0) phase = 'before';
+      if (t > 0 && phase !== 'active') phase = 'before';
       if (phase === 'after' && dy > 0) { wheel.reset(); return; }
-      const crossing = (dy > 0 && t >= 0 && t <= Math.max(32, dy)) || (dy < 0 && t < 0 && t - dy >= 0);
+      const crossing = (dy > 0 && t >= 0 && t <= dy) || (dy < 0 && t < 0 && t - dy >= 0);
       if (crossing || (phase === 'active' && visible())) {
         e.preventDefault();
         const resume = phase === 'active';
         if (!resume) index = dy > 0 ? 0 : last;
         align(); paint();
         if (resume && direction) step(direction);
-        wheel.hold();
+        wheel.hold(!resume);
       } else wheel.reset();
       return;
     }
-    e.preventDefault(); phase = 'active';
+    e.preventDefault();
+    if (phase !== 'active') {
+      index = dy > 0 ? 0 : last;
+      align(); paint(); wheel.hold(true);
+      return;
+    }
     if (direction) step(direction);
   };
   const keys = { ArrowDown:1, PageDown:1, ' ':1, ArrowUp:-1, PageUp:-1 };
@@ -172,16 +178,35 @@
       return;
     }
     e.preventDefault();
+    if (phase !== 'active') {
+      index = direction > 0 ? 0 : last;
+      align(); paint(); wheel.hold(true);
+      return;
+    }
     if (!e.repeat) { step(direction); wheel.hold(); }
   };
-  deck.addEventListener('touchstart', e => {
+  addEventListener('touchstart', e => {
     if (!on || e.touches.length !== 1 || blocked(e.target)) { touch = null; return; }
-    touch = { x:e.touches[0].clientX, y:e.touches[0].clientY, used:false };
+    touch = { x:e.touches[0].clientX, y:e.touches[0].clientY, previousY:e.touches[0].clientY, used:false };
   }, { passive:true });
-  deck.addEventListener('touchmove', e => {
-    if (!on || !touch || touch.used || e.touches.length !== 1) return;
+  addEventListener('touchmove', e => {
+    if (!on || !touch || e.touches.length !== 1) return;
+    if (touch.used) {
+      touchEntryUntil = performance.now() + 600;
+      if (e.cancelable) e.preventDefault();
+      return;
+    }
     const dy = touch.y - e.touches[0].clientY, dx = touch.x - e.touches[0].clientX;
     if (Math.abs(dy) < 36 || Math.abs(dy) <= Math.abs(dx) * 1.2) return;
+    const deltaY = touch.previousY - e.touches[0].clientY;
+    touch.previousY = e.touches[0].clientY;
+    touchEntryUntil = performance.now() + 600;
+    if (!pinned()) {
+      const offset = top() - HEADER;
+      const crossing = (deltaY > 0 && offset >= 0 && offset <= deltaY) ||
+        (deltaY < 0 && offset < 0 && offset - deltaY >= 0);
+      if (!crossing && !(phase === 'active' && visible())) return;
+    }
     if (e.cancelable) e.preventDefault();
     touch.used = true;
     if (!pinned()) {
@@ -189,9 +214,12 @@
       if (!resume) index = dy > 0 ? 0 : last;
       align(); paint();
       if (resume) step(Math.sign(dy));
+    } else if (phase !== 'active') {
+      index = dy > 0 ? 0 : last;
+      align(); paint();
     } else step(Math.sign(dy));
   }, { passive:false });
-  ['touchend','touchcancel'].forEach(type => deck.addEventListener(type, () => { touch = null; }));
+  ['touchend','touchcancel'].forEach(type => addEventListener(type, () => { touch = null; }));
 
   const hashIndex = () => ['#projekty', '#case-studies'].includes(location.hash) ? 0 : slides.findIndex(s => '#' + s.id === location.hash);
   const onHash = () => {
@@ -226,7 +254,23 @@
   addEventListener('hashchange', onHash);
   const onResize = () => requestAnimationFrame(sync);
   addEventListener('resize', onResize);
-  addEventListener('scroll', () => root.classList.toggle('is-case-deck-active', on && pinned()), { passive:true });
+  addEventListener('scroll', () => {
+    // A swipe starting above the deck can carry native momentum across its edge.
+    if (on && phase === 'before' && performance.now() < touchEntryUntil &&
+        top() < HEADER && visible()) {
+      index = 0;
+      align();
+      paint();
+      wheel.hold();
+      if (touch) touch.used = true;
+    }
+    // Native touch inertia may continue after the entry swipe was captured.
+    if (on && phase === 'active' && performance.now() < touchEntryUntil && !pinned()) {
+      align();
+      paint();
+    }
+    root.classList.toggle('is-case-deck-active', on && pinned());
+  }, { passive:true });
   addEventListener('load', () => {
     sync();
     // Reload may restore the old list's scroll position after deferred scripts.
