@@ -221,21 +221,23 @@ html[lang="en"] .portfolio-home .hero-proof-of-work h1 { max-width:12.5ch; }
   .hero-screens>*,.hero-phone-screens>*,.hero-caption-link span,.hero-clients button { transition:none; }
 }
 
-/* A project is one frame. Only this section captures vertical gestures. */
+/* The browser scrolls through a sticky project stage. */
 html.has-case-deck { scroll-behavior:auto; }
+html.has-case-deck body.work-page { overflow-x:clip; overflow-y:visible; }
+html.has-case-deck .work-main { overflow:clip; }
 html.is-case-deck-active .nav-wrap.scrolled { background:#090b0a; }
 html.is-case-deck-active .to-top { opacity:0; pointer-events:none; }
-html.has-case-deck .case-deck { position:relative; height:var(--stage-h,calc(100svh - 68px)); overflow:hidden; scroll-margin-top:68px; touch-action:pan-y pinch-zoom; }
-html.has-case-deck .case-deck>.project-showcase {
+html.has-case-deck .case-deck { position:relative; height:var(--track-h); scroll-margin-top:68px; }
+html.has-case-deck .case-deck-stage>.project-showcase {
   position:absolute; inset:0; z-index:1; overflow:hidden; display:flex; flex-direction:column; justify-content:center;
   padding:24px calc(var(--pad,48px) + 48px) 90px var(--pad,48px);
   background-color:var(--case-canvas,#0a0e0c); pointer-events:none;
   transform:translateY(100%); transition:transform .42s cubic-bezier(.22,.75,.25,1);
 }
-html.has-case-deck .case-deck>.project-showcase.is-current { z-index:2; transform:none; pointer-events:auto; }
-html.has-case-deck .case-deck>.project-showcase.is-past { transform:scale(.97); transform-origin:50% 0; }
-html.has-case-deck .case-deck>.project-showcase::after { content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .42s ease; }
-html.has-case-deck .case-deck>.project-showcase.is-past::after { opacity:.45; }
+html.has-case-deck .case-deck-stage>.project-showcase.is-current { z-index:2; transform:none; pointer-events:auto; }
+html.has-case-deck .case-deck-stage>.project-showcase.is-past { transform:scale(.97); transform-origin:50% 0; }
+html.has-case-deck .case-deck-stage>.project-showcase::after { content:""; position:absolute; inset:0; z-index:6; background:#000; opacity:0; pointer-events:none; transition:opacity .42s ease; }
+html.has-case-deck .case-deck-stage>.project-showcase.is-past::after { opacity:.45; }
 html.has-case-deck .case-deck .project-gallery>.media-frame video { aspect-ratio:16 / calc(9 * var(--deck-f,1)); object-fit:contain; }
 html.has-case-deck .case-deck .conversion-case-head { margin-bottom:20px; }
 html.has-case-deck .case-deck :is(.conversion-case-head,.case-head) { order:0; }
@@ -260,16 +262,16 @@ html.has-case-deck .case-deck .case-head>.case-more { order:3; align-self:flex-s
 .deck-controls button { width:44px; height:44px; padding:0; border:1px solid rgba(255,255,255,.28); border-radius:0; background:transparent; color:inherit; font:400 21px/1 "Manrope",sans-serif; cursor:pointer; }
 .deck-controls button:hover { border-color:currentColor; }
 .deck-controls button:focus-visible,.deck-dots button:focus-visible { outline:2px solid var(--commerce,#b7ff3c); outline-offset:3px; }
-.case-deck.is-light .deck-controls { color:#171914; border-color:rgba(0,0,0,.2); }
-.case-deck.is-light :is(.deck-dots button,.deck-hint) { color:#59604f; }
-.case-deck.is-light .deck-dots button[aria-current] { color:#385d05; }
-.case-deck.is-light .deck-controls button { border-color:rgba(0,0,0,.28); }
+.case-deck-stage.is-light .deck-controls { color:#171914; border-color:rgba(0,0,0,.2); }
+.case-deck-stage.is-light :is(.deck-dots button,.deck-hint) { color:#59604f; }
+.case-deck-stage.is-light .deck-dots button[aria-current] { color:#385d05; }
+.case-deck-stage.is-light .deck-controls button { border-color:rgba(0,0,0,.28); }
 @media (min-width:901px) {
   html.has-case-deck .case-deck .project-gallery { width:calc(100% * var(--deck-f,1)); align-self:flex-start; }
   html.has-case-deck .case-deck .project-gallery>.media-frame video { aspect-ratio:16/9; }
 }
 @media (max-width:900px) {
-  html.has-case-deck .case-deck>.project-showcase { justify-content:center; padding:16px var(--pad,24px) 86px; gap:0; }
+  html.has-case-deck .case-deck-stage>.project-showcase { justify-content:center; padding:16px var(--pad,24px) 86px; gap:0; }
   html.has-case-deck .case-deck .conversion-case-head { flex-direction:row; align-items:center; gap:14px; margin-bottom:18px; }
   html.has-case-deck .case-deck .case-logo-title { order:-1; }
   html.has-case-deck .case-deck .case-logo-title img { width:auto; max-width:180px; max-height:46px; }
@@ -295,4 +297,4 @@ html.has-case-deck .case-deck .case-head>.case-more { order:3; align-self:flex-s
   .deck-hint { font-size:12px; }
 }
 
-html.is-case-deck-active .case-deck { touch-action:pan-x pinch-zoom; }
+html.has-case-deck .case-deck-stage { position:sticky; top:68px; height:var(--stage-h,calc(100svh - 68px)); overflow:hidden; }
