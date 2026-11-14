@@ -22,7 +22,7 @@ function page({ width = 1440, height = 900, reduced = false } = {}) {
     addEventListener(t,f) { (this.handlers[t] ||= new Set()).add(f); }
     removeEventListener(t,f) { this.handlers[t]?.delete(f); }
     emit(t,e) { this.handlers[t]?.forEach(f => f(e)); }
-    append(...children) { children.forEach(c => { c.parentElement = this; this.children.push(c); }); }
+    append(...children) { children.forEach(c => { c.remove(); c.parentElement = this; this.children.push(c); }); }
     remove() { if (this.parentElement) this.parentElement.children = this.parentElement.children.filter(c => c !== this); this.parentElement = null; }
     setAttribute(k,v) { this.attrs[k] = String(v); if (k.startsWith('data-')) this.dataset[k.slice(5).replace(/-([a-z])/g, (_,c) => c.toUpperCase())] = String(v); }
     getAttribute(k) { return this.attrs[k] ?? null; }
@@ -76,7 +76,7 @@ function page({ width = 1440, height = 900, reduced = false } = {}) {
     slides, deck, root, state,
     scrollEvent() { window.emit('scroll',{}); },
     get current() { return slides.findIndex(s => s.classList.contains('is-current')); },
-    wheel(y, gap = 200, fields = {}) { state.time += gap; const e = event(deck,{deltaY:y,deltaX:0,deltaMode:0,timeStamp:state.time,...fields}); window.emit('wheel',e); if (!e.defaultPrevented) state.y += y; return e; },
+    wheel(y, gap = 200, fields = {}) { state.time += gap; const e = event(deck,{deltaY:y,deltaX:0,deltaMode:0,timeStamp:state.time,...fields}); window.emit('wheel',e); if (!e.defaultPrevented) state.y += y; window.emit('scroll',{}); return e; },
     key(key,fields = {}) { const e = event(body,{key,...fields}); window.emit('keydown',e); return e; },
     touch(dy,dx = 0) { const start=event(deck,{touches:[{clientX:150,clientY:300}]});deck.emit('touchstart',start);window.emit('touchstart',start); const e = event(deck,{touches:[{clientX:150+dx,clientY:300-dy}]}); deck.emit('touchmove',e);window.emit('touchmove',e);const end=event(deck,{touches:[]});deck.emit('touchend',end);window.emit('touchend',end); return e; },
     resize(w,h,reduced = state.reduced) { state.width=w;state.height=h;state.reduced=reduced; media.forEach(m => m.handlers.forEach(f => f())); window.emit('resize',{}); },
@@ -85,107 +85,35 @@ function page({ width = 1440, height = 900, reduced = false } = {}) {
   };
 }
 
-test('separate equal wheel gestures advance without a long pause', () => {
-  const p = page();
-  for (let i=1;i<=5;i++) { p.wheel(40,220); assert.equal(p.current,i); }
+
+test('native wheel scrolling advances projects and continues past the last one', () => {
+  const p=page();let lastY=p.state.y;
+  for(let i=0;i<15;i++){const e=p.wheel(200,16);assert.equal(e.defaultPrevented,false);assert.ok(p.state.y>lastY);lastY=p.state.y}
+  assert.equal(p.current,5);assert.ok(p.state.y>1132+5*360);
 });
-test('one long decaying trackpad gesture advances only once', () => {
-  const p = page();
-  [90,82,70,51,37,22,13,7,3,1].forEach(y => p.wheel(y,12));
-  assert.equal(p.current,1);
+test('scrolling up returns to the first project and leaves above the section', () => {
+  const p=page();p.state.y=1132+5*360;p.scrollEvent();assert.equal(p.current,5);
+  for(let i=0;i<15;i++)assert.equal(p.wheel(-200,16).defaultPrevented,false);
+  assert.equal(p.current,0);assert.ok(p.state.y<1132);
 });
-test('a new rising gesture after momentum is accepted immediately', () => {
-  const p = page();
-  [80,60,30,10,2].forEach(y => p.wheel(y,12));
-  [4,16,38].forEach(y => p.wheel(y,20));
-  assert.equal(p.current,2);
+test('a short native movement does not skip the first project', () => {
+  const p=page();p.wheel(80);assert.equal(p.current,0);
+  p.wheel(200);assert.equal(p.current,1);
 });
-test('a reverse gesture immediately returns to the previous project', () => {
-  const p = page();p.wheel(50);p.wheel(-50,100);assert.equal(p.current,0);
+test('touch gestures and native keyboard scrolling are never cancelled', () => {
+  const p=page({width:390,height:844});
+  assert.equal(p.touch(150).defaultPrevented,false);
+  assert.equal(p.key('PageDown').defaultPrevented,false);
 });
-test('a large wheel delta does not skip projects', () => {
-  const p = page();p.wheel(1800);assert.equal(p.current,1);
+test('deep links scroll to the corresponding project and make it accessible', () => {
+  const p=page();p.goHash('peaceofalm');assert.equal(p.current,4);
+  assert.equal(p.slides[4].inert,false);assert.ok(p.slides.filter((_,i)=>i!==4).every(s=>s.inert));
 });
-test('zoom and horizontal gestures do not navigate', () => {
-  const p = page();p.wheel(100,200,{ctrlKey:true});p.wheel(10,200,{deltaX:120});assert.equal(p.current,0);
+test('a manually paused video stays paused after scrolling away and back', () => {
+  const p=page();const v=p.slides[0].querySelector('video');v.dataset.userPaused='1';v.pause();
+  p.wheel(360);p.wheel(-360);assert.equal(v.paused,true);
 });
-test('touch works on a phone and horizontal swipes do not change project', () => {
-  const p = page({width:390,height:844});assert.equal(p.current,0);
-  p.touch(64);assert.equal(p.current,1);p.touch(12,100);assert.equal(p.current,1);p.touch(-64);assert.equal(p.current,0);
-});
-test('keys already handled by a gallery do not navigate the case deck', () => {
-  const p = page();p.key('ArrowDown',{defaultPrevented:true});assert.equal(p.current,0);
-});
-test('Space on a playback or navigation button keeps its native action', () => {
-  const p = page();const e=p.key(' ',{target:p.buttonTarget()});assert.equal(e.defaultPrevented,false);assert.equal(p.current,0);
-});
-test('deep links select the matching case and inactive cases cannot receive focus', () => {
-  const p=page();p.goHash('peaceofalm');assert.equal(p.current,4);assert.equal(p.slides[4].inert,false);assert.ok(p.slides.filter((_,i)=>i!==4).every(s=>s.inert));
-});
-test('the main navigation opens the first project in either language', () => {
-  for (const id of ['projekty','case-studies']) {
-    const p=page();p.goHash('molecules');p.goHash(id);assert.equal(p.current,0);assert.equal(p.state.y,1132);
-  }
-});
-test('a manually paused clip stays paused when its project returns', () => {
-  const p=page();const clip=p.slides[0].querySelector('video');clip.pause();clip.dataset.userPaused='1';
-  p.wheel(60);p.wheel(-60);assert.equal(clip.paused,true);
-});
-test('leaving the last case lets the page continue; the deck never wraps', () => {
-  const p=page();p.goHash('surprisedrinks');p.wheel(80,600);assert.equal(p.current,5);assert.ok(p.state.y>1132);
-});
-test('resizing after leaving does not pull the reader back into an old deep link', () => {
-  const p=page();p.goHash('surprisedrinks');p.wheel(80,600);const outside=p.state.y;
-  p.resize(1440,1000);assert.equal(p.state.y,outside);
-});
-test('changing viewport while in the deck keeps the current project', () => {
-  const p=page();p.wheel(60);p.resize(390,844);assert.equal(p.current,1);assert.equal(p.state.y,1132);
-});
-test('responsive changes above the deck do not shift the active frame out of view', () => {
-  const p=page();p.wheel(60);p.state.deckTop=2100;p.resize(390,844);assert.equal(p.current,1);assert.equal(p.state.y,2032);
-});
-test('focus scrolling inside a gallery does not swallow the next gesture', () => {
-  const p=page();p.state.y+=24;p.wheel(60);assert.equal(p.current,1);assert.equal(p.state.y,1132);
-  const q=page({width:390,height:844});q.state.y+=24;q.touch(60);assert.equal(q.current,1);assert.equal(q.state.y,1132);
-  const r=page();r.state.y+=24;r.key('PageDown');assert.equal(r.current,1);assert.equal(r.state.y,1132);
-});
-test('reduced motion and short windows keep an accessible plain list', () => {
-  const p=page({reduced:true});assert.equal(p.current,-1);assert.ok(p.slides.every(s=>!s.inert));
+test('reduced motion and short viewports retain the ordinary list', () => {
+  const p=page({reduced:true});assert.equal(p.current,-1);
   const q=page();q.resize(390,500);assert.equal(q.current,-1);assert.ok(q.slides.every(s=>!s.inert));
-});
-
-test('touch approaching Posedla keeps normal page scrolling until the header boundary', () => {
-  const p=page({width:390,height:844});p.state.y=900;p.goHash('top');
-  const event=p.touch(64);assert.equal(event.defaultPrevented,false);assert.equal(p.state.y,900);
-});
-test('the entry swipe holds Posedla and a separate swipe advances the slideshow', () => {
-  const p=page({width:390,height:844});p.state.y=1100;p.goHash('top');
-  assert.equal(p.touch(64).defaultPrevented,true);assert.equal(p.current,0);assert.equal(p.state.y,1132);
-  p.touch(64);assert.equal(p.current,1);
-});
-
-test('native inertia after the entry swipe cannot scroll the first project out of view', () => {
-  const p=page({width:390,height:844});p.state.y=1100;p.goHash('top');p.touch(64);
-  p.state.y+=150;p.scrollEvent();assert.equal(p.state.y,1132);assert.equal(p.current,0);
-});
-test('wheel entry shows Posedla and consumes the remaining momentum', () => {
-  const p=page();p.state.y=1100;p.goHash('top');
-  p.wheel(80);[60,35,10,2].forEach(y=>p.wheel(y,12));assert.equal(p.current,0);assert.equal(p.state.y,1132);
-  p.wheel(80,220);assert.equal(p.current,1);
-});
-test('landing at the pin line still enters Posedla before advancing', () => {
-  for (const input of ['wheel','key','touch']) {
-    const p=page();p.state.y=1130;p.goHash('top');
-    if(input==='wheel')p.wheel(80);
-    if(input==='key')p.key('PageDown');
-    if(input==='touch')p.touch(80);
-    assert.equal(p.current,0,input+' skipped the entry');
-    assert.equal(p.state.y,1132);
-  }
-});
-test('acceleration in the entry gesture does not skip Posedla', () => {
-  const p=page();p.state.y=1100;p.goHash('top');
-  [80,30,4,40,70].forEach(y=>p.wheel(y,16));
-  assert.equal(p.current,0);
-  p.wheel(80,220);assert.equal(p.current,1);
 });

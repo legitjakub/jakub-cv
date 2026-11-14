@@ -1,123 +1,106 @@
-/* One deliberate vertical gesture changes one project. The rest of the page
-   keeps its normal scroll. Small windows and reduced motion keep the list. */
+/* Native page scrolling drives the project stack. No gesture is cancelled. */
 (() => {
   const deck = document.querySelector('.case-deck');
   if (!deck) return;
-  const slides = [...deck.querySelectorAll(':scope > .project-showcase')];
+  const slides = Array.from(deck.querySelectorAll(':scope > .project-showcase'));
   if (slides.length < 2) return;
   const root = document.documentElement;
-  const en = root.lang === 'en';
-  const fit = window.matchMedia('(min-width:320px) and (min-height:600px) and (prefers-reduced-motion:no-preference)');
+  const english = root.lang === 'en';
   const HEADER = 68;
   const last = slides.length - 1;
-  let on = false, index = 0, phase = 'before', touch = null;
-  let touchEntryUntil = 0;
+  const fit = window.matchMedia('(min-width:320px) and (min-height:600px) and (prefers-reduced-motion:no-preference)');
+  let enabled = false;
+  let index = 0;
+  let stepSize = 360;
+  let framePending = false;
 
-  // A quiet gap starts a new gesture. Within a continuous trackpad stream,
-  // a deliberate reversal or a rising impulse after decay does the same.
-  // There is no animation lock: the next gesture can interrupt a transition.
-  const wheel = (() => {
-    let at = -Infinity, previous = 0, peak = 0, direction = 0;
-    let consumed = false, falling = false, total = 0, entering = false;
-    return {
-      reset() { at = -Infinity; consumed = false; entering = false; previous = peak = total = direction = 0; falling = false; },
-      hold(entry = false) { consumed = true; entering = entry; },
-      take(dy, now) {
-        const amount = Math.abs(dy), sign = Math.sign(dy), gap = now - at;
-        const reversed = consumed && sign !== direction && amount >= 8;
-        const rising = consumed && !entering && falling && amount >= Math.max(12, Math.min(20, peak * 0.25)) && amount > previous * 1.8;
-        const notch = consumed && !entering && !falling && gap >= 80 && amount >= 40 && Math.abs(amount - previous) < 1;
-        if (gap > 140 || reversed || rising || notch) {
-          consumed = false; entering = false; falling = false; total = 0; peak = 0;
-        } else if (previous && amount < previous * 0.8) falling = true;
-        at = now; previous = amount; peak = Math.max(peak, amount); direction = sign;
-        if (consumed) return 0;
-        total += dy;
-        if (Math.abs(total) < 14) return 0;
-        consumed = true;
-        return Math.sign(total);
-      }
-    };
-  })();
-
-  const names = slides.map(s => {
-    const name = s.querySelector('h2 span, h2 img[alt]:not([alt=""])');
-    return ((name && (name.textContent || name.alt)) || s.id).trim();
-  });
+  const stage = document.createElement('div');
+  stage.className = 'case-deck-stage';
   const dots = document.createElement('nav');
   dots.className = 'deck-dots';
-  dots.setAttribute('aria-label', en ? 'Choose a case study' : 'Vybrat případovou studii');
-  slides.forEach((s, i) => {
+  dots.setAttribute('aria-label', english ? 'Choose a case study' : 'Vybrat případovou studii');
+  const names = slides.map(slide => {
+    const name = slide.querySelector('h2 span, h2 img[alt]:not([alt=""])');
+    return ((name && (name.textContent || name.alt)) || slide.id).trim();
+  });
+  const start = () => deck.getBoundingClientRect().top + scrollY - HEADER;
+  function navigate(project) {
+    const target = project < 0 ? start() - (innerHeight - HEADER) :
+      project > last ? start() + last * stepSize + (innerHeight - HEADER) :
+      start() + project * stepSize;
+    scrollTo({ top:Math.max(0, target), behavior:'smooth' });
+  }
+  slides.forEach((slide, position) => {
     const button = document.createElement('button');
-    button.type = 'button'; button.dataset.i = String(i);
-    button.setAttribute('aria-label', names[i]);
-    button.textContent = String(i + 1).padStart(2, '0');
-    button.addEventListener('click', () => { align(); go(i); wheel.reset(); });
+    button.type = 'button';
+    button.textContent = String(position + 1).padStart(2, '0');
+    button.setAttribute('aria-label', names[position]);
+    button.addEventListener('click', () => navigate(position));
     dots.append(button);
   });
   const controls = document.createElement('nav');
   controls.className = 'deck-controls';
-  controls.setAttribute('aria-label', en ? 'Browse projects' : 'Procházení projektů');
+  controls.setAttribute('aria-label', english ? 'Browse projects' : 'Procházení projektů');
   const status = document.createElement('output');
-  status.className = 'deck-status'; status.setAttribute('aria-live', 'polite');
+  status.className = 'deck-status';
+  status.setAttribute('aria-live', 'polite');
   const hint = document.createElement('span');
-  hint.className = 'deck-hint'; hint.textContent = en ? 'Scroll to the next project' : 'Posunutím na další projekt';
+  hint.className = 'deck-hint';
+  hint.textContent = english ? 'Scroll to explore' : 'Pokračujte posunutím';
   const previous = document.createElement('button');
-  previous.type = 'button'; previous.textContent = '↑';
+  previous.type = 'button';
+  previous.textContent = '↑';
+  previous.addEventListener('click', () => navigate(index - 1));
   const next = document.createElement('button');
-  next.type = 'button'; next.textContent = '↓';
-  previous.addEventListener('click', () => { align(); step(-1); wheel.reset(); });
-  next.addEventListener('click', () => { align(); step(1); wheel.reset(); });
+  next.type = 'button';
+  next.textContent = '↓';
+  next.addEventListener('click', () => navigate(index + 1));
   controls.append(status, hint, previous, next);
 
-  const top = () => deck.getBoundingClientRect().top;
-  const pageTop = () => top() + scrollY - HEADER;
-  const height = () => innerHeight - HEADER;
-  const pinned = () => Math.abs(top() - HEADER) < 4;
-  const visible = () => top() <= HEADER + 16 && deck.getBoundingClientRect().bottom > HEADER + height() * 0.4;
-  function align() { scrollTo({ top:pageTop(), behavior:'auto' }); phase = 'active'; }
-  const videos = s => [...s.querySelectorAll('video')];
-  const paint = () => {
-    root.classList.toggle('is-case-deck-active', on && pinned());
-    slides.forEach((s, i) => {
-      s.classList.toggle('is-past', i < index);
-      s.classList.toggle('is-current', i === index);
-      s.classList.toggle('is-next', i > index);
-      s.inert = i !== index;
-      s.setAttribute('aria-hidden', String(i !== index));
-      videos(s).forEach(v => { if (i !== index && !v.paused) v.pause(); });
+  function paint(selected) {
+    const focusMoved = selected !== index && slides[index].contains(document.activeElement);
+    index = selected;
+    slides.forEach((slide, position) => {
+      slide.classList.toggle('is-past', position < index);
+      slide.classList.toggle('is-current', position === index);
+      slide.classList.toggle('is-next', position > index);
+      slide.inert = position !== index;
+      slide.setAttribute('aria-hidden', String(position !== index));
+      if (position !== index) slide.querySelectorAll('video').forEach(video => video.pause());
     });
-    if (pinned() && !document.hidden) videos(slides[index]).forEach(v => {
-      if (v.paused && !v.closest('[hidden]') && v.dataset.userPaused !== '1') v.play().catch(() => {});
-    });
-    [...dots.children].forEach((b, i) => b.toggleAttribute('aria-current', i === index));
-    deck.classList.toggle('is-light', slides[index].classList.contains('case-molecules-new') || slides[index].classList.contains('case-molecules'));
-    status.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-    status.setAttribute('aria-label', `${index + 1} / ${slides.length}: ${names[index]}`);
-    previous.setAttribute('aria-label', index ? (en ? 'Previous project' : 'Předchozí projekt') : (en ? 'Previous section' : 'Předchozí část stránky'));
-    next.setAttribute('aria-label', index < last ? (en ? 'Next project' : 'Další projekt') : (en ? 'Continue down the page' : 'Pokračovat dál na stránce'));
-  };
-  function go(i) {
-    i = Math.max(0, Math.min(last, i));
-    const moveFocus = i !== index && slides[index].contains(document.activeElement);
-    index = i; paint();
-    if (moveFocus) {
+    const bounds = stage.getBoundingClientRect();
+    if (!document.hidden && bounds.top < innerHeight && bounds.bottom > HEADER) {
+      slides[index].querySelectorAll('video').forEach(video => {
+        if (!video.closest('[hidden]') && video.dataset.userPaused !== '1') video.play().catch(() => {});
+      });
+    }
+    Array.from(dots.children).forEach((button, position) => button.toggleAttribute('aria-current', position === index));
+    stage.classList.toggle('is-light', slides[index].classList.contains('case-molecules-new') || slides[index].classList.contains('case-molecules'));
+    status.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+    status.setAttribute('aria-label', (index + 1) + ' / ' + slides.length + ': ' + names[index]);
+    previous.setAttribute('aria-label', index ? (english ? 'Previous project' : 'Předchozí projekt') : (english ? 'Previous section' : 'Předchozí část stránky'));
+    next.setAttribute('aria-label', index < last ? (english ? 'Next project' : 'Další projekt') : (english ? 'Continue down the page' : 'Pokračovat dál na stránce'));
+    if (focusMoved) {
       const heading = slides[index].querySelector('h2');
-      heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll:true });
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll:true });
     }
   }
-  function step(direction) {
-    if (index + direction < 0 || index + direction > last) {
-      phase = direction > 0 ? 'after' : 'before';
-      root.classList.remove('is-case-deck-active');
-      scrollTo({ top:Math.max(0, pageTop() + direction * height()), behavior:'smooth' });
-    } else go(index + direction);
+  slides.forEach((slide, position) => slide.querySelectorAll('video').forEach(video => {
+    video.addEventListener('play', () => { if (enabled && position !== index) video.pause(); });
+  }));
+  function update() {
+    if (!enabled) return;
+    const progress = scrollY - start();
+    const selected = Math.max(0, Math.min(last, Math.round(progress / stepSize)));
+    if (selected !== index) paint(selected);
+    root.classList.toggle('is-case-deck-active', progress >= -8 && progress <= last * stepSize + 8);
   }
-  slides.forEach((s, i) => videos(s).forEach(v => v.addEventListener('play', () => { if (on && i !== index) v.pause(); })));
-
   const measure = () => {
-    const available = height();
+    const available = innerHeight - HEADER;
     deck.style.setProperty('--stage-h', `${available}px`);
+    stepSize = Math.min(360, available * 0.45);
+    deck.style.setProperty('--track-h', `${available + last * stepSize}px`);
     slides.forEach(s => {
       s.style.setProperty('--deck-f', '1');
       const gallery = s.querySelector('.project-gallery');
@@ -131,158 +114,59 @@
     });
     return slides.every(s => s.scrollHeight <= available + 2);
   };
-  const blocked = target => target.closest && target.closest('.nav-wrap,dialog,[role="dialog"]');
-  const onWheel = e => {
-    if (!on || e.defaultPrevented || e.ctrlKey || Math.abs(e.deltaY) <= Math.abs(e.deltaX) || blocked(e.target)) return;
-    const dy = e.deltaY * (e.deltaMode === 1 ? 24 : e.deltaMode === 2 ? innerHeight : 1);
-    const direction = wheel.take(dy, performance.now());
-    if (!pinned()) {
-      const t = top() - HEADER;
-      if (t > 0 && phase !== 'active') phase = 'before';
-      if (phase === 'after' && dy > 0) { wheel.reset(); return; }
-      const crossing = (dy > 0 && t >= 0 && t <= dy) || (dy < 0 && t < 0 && t - dy >= 0);
-      if (crossing || (phase === 'active' && visible())) {
-        e.preventDefault();
-        const resume = phase === 'active';
-        if (!resume) index = dy > 0 ? 0 : last;
-        align(); paint();
-        if (resume && direction) step(direction);
-        wheel.hold(!resume);
-      } else wheel.reset();
-      return;
-    }
-    e.preventDefault();
-    if (phase !== 'active') {
-      index = dy > 0 ? 0 : last;
-      align(); paint(); wheel.hold(true);
-      return;
-    }
-    if (direction) step(direction);
-  };
-  const keys = { ArrowDown:1, PageDown:1, ' ':1, ArrowUp:-1, PageUp:-1 };
-  const onKey = e => {
-    if (!on || e.defaultPrevented || !(e.key in keys) || e.altKey || e.ctrlKey || e.metaKey || blocked(e.target)) return;
-    if (e.target.closest && e.target.closest('input,textarea,select,[contenteditable],[role="tab"]')) return;
-    if (e.key === ' ' && e.target.closest && e.target.closest('button,a,summary,[role="button"]')) return;
-    const direction = e.key === ' ' && e.shiftKey ? -1 : keys[e.key];
-    if (!pinned()) {
-      if (phase === 'active' && visible()) {
-        e.preventDefault(); align();
-        if (!e.repeat) { step(direction); wheel.hold(); }
-        return;
-      }
-      const t = top() - HEADER;
-      if ((direction > 0 && t > 0 && t < height()) || (direction < 0 && t < 0 && t > -height())) {
-        e.preventDefault(); index = direction > 0 ? 0 : last; align(); paint(); wheel.hold();
-      }
-      return;
-    }
-    e.preventDefault();
-    if (phase !== 'active') {
-      index = direction > 0 ? 0 : last;
-      align(); paint(); wheel.hold(true);
-      return;
-    }
-    if (!e.repeat) { step(direction); wheel.hold(); }
-  };
-  addEventListener('touchstart', e => {
-    if (!on || e.touches.length !== 1 || blocked(e.target)) { touch = null; return; }
-    touch = { x:e.touches[0].clientX, y:e.touches[0].clientY, previousY:e.touches[0].clientY, used:false };
-  }, { passive:true });
-  addEventListener('touchmove', e => {
-    if (!on || !touch || e.touches.length !== 1) return;
-    if (touch.used) {
-      touchEntryUntil = performance.now() + 600;
-      if (e.cancelable) e.preventDefault();
-      return;
-    }
-    const dy = touch.y - e.touches[0].clientY, dx = touch.x - e.touches[0].clientX;
-    if (Math.abs(dy) < 36 || Math.abs(dy) <= Math.abs(dx) * 1.2) return;
-    const deltaY = touch.previousY - e.touches[0].clientY;
-    touch.previousY = e.touches[0].clientY;
-    touchEntryUntil = performance.now() + 600;
-    if (!pinned()) {
-      const offset = top() - HEADER;
-      const crossing = (deltaY > 0 && offset >= 0 && offset <= deltaY) ||
-        (deltaY < 0 && offset < 0 && offset - deltaY >= 0);
-      if (!crossing && !(phase === 'active' && visible())) return;
-    }
-    if (e.cancelable) e.preventDefault();
-    touch.used = true;
-    if (!pinned()) {
-      const resume = phase === 'active';
-      if (!resume) index = dy > 0 ? 0 : last;
-      align(); paint();
-      if (resume) step(Math.sign(dy));
-    } else if (phase !== 'active') {
-      index = dy > 0 ? 0 : last;
-      align(); paint();
-    } else step(Math.sign(dy));
-  }, { passive:false });
-  ['touchend','touchcancel'].forEach(type => addEventListener(type, () => { touch = null; }));
-
-  const hashIndex = () => ['#projekty', '#case-studies'].includes(location.hash) ? 0 : slides.findIndex(s => '#' + s.id === location.hash);
-  const onHash = () => {
-    const i = hashIndex();
-    if (i >= 0) {
-      index = i;
-      if (on) { align(); paint(); wheel.reset(); }
-    } else if (on) { phase = top() > HEADER ? 'before' : 'after'; wheel.reset(); }
-  };
-  const disable = () => {
-    if (!on) return;
-    const keepPlace = phase === 'active';
-    on = false; root.classList.remove('has-case-deck','is-case-deck-active'); dots.remove(); controls.remove();
-    deck.classList.remove('is-light'); deck.style.removeProperty('--stage-h');
-    slides.forEach(s => { s.classList.remove('is-past','is-current','is-next'); s.inert = false; s.removeAttribute('aria-hidden'); s.style.removeProperty('--deck-f'); });
-    wheel.reset(); touch = null;
-    if (keepPlace) slides[index].scrollIntoView({ block:'start', behavior:'auto' });
-  };
-  const sync = () => {
-    if (!fit.matches || (window.visualViewport && window.visualViewport.scale > 1.05)) { disable(); return; }
-    const keepPlace = on ? phase === 'active' : visible();
-    if (!on) {
-      if (keepPlace) index = slides.reduce((best, s, i) => Math.abs(s.getBoundingClientRect().top - HEADER) < Math.abs(slides[best].getBoundingClientRect().top - HEADER) ? i : best, 0);
-      on = true; root.classList.add('has-case-deck'); deck.append(dots, controls);
-    }
-    if (!measure()) { disable(); return; }
-    if (keepPlace) align();
-    paint();
-  };
-  addEventListener('wheel', onWheel, { passive:false });
-  addEventListener('keydown', onKey);
-  addEventListener('hashchange', onHash);
-  const onResize = () => requestAnimationFrame(sync);
-  addEventListener('resize', onResize);
-  addEventListener('scroll', () => {
-    // A swipe starting above the deck can carry native momentum across its edge.
-    if (on && phase === 'before' && performance.now() < touchEntryUntil &&
-        top() < HEADER && visible()) {
-      index = 0;
-      align();
-      paint();
-      wheel.hold();
-      if (touch) touch.used = true;
-    }
-    // Native touch inertia may continue after the entry swipe was captured.
-    if (on && phase === 'active' && performance.now() < touchEntryUntil && !pinned()) {
-      align();
-      paint();
-    }
-    root.classList.toggle('is-case-deck-active', on && pinned());
-  }, { passive:true });
-  addEventListener('load', () => {
-    sync();
-    // Reload may restore the old list's scroll position after deferred scripts.
-    // Resolve a case deep link once more after that browser restoration.
-    requestAnimationFrame(() => {
-      if (on && initial >= 0 && index === initial && phase === 'active' && hashIndex() === initial) { align(); paint(); }
+  function disable() {
+    if (!enabled) return;
+    enabled = false;
+    slides.forEach(slide => {
+      deck.append(slide);
+      slide.inert = false;
+      slide.removeAttribute('aria-hidden');
+      slide.classList.remove('is-current', 'is-past', 'is-next');
+      slide.style.removeProperty('--deck-f');
     });
-  }, { once:true });
-  window.visualViewport?.addEventListener('resize', onResize);
-  document.fonts?.ready.then(sync);
+    stage.remove();
+    dots.remove();
+    controls.remove();
+    root.classList.remove('has-case-deck', 'is-case-deck-active');
+    deck.style.removeProperty('--stage-h');
+    deck.style.removeProperty('--track-h');
+  }
+  function sync() {
+    if (!fit.matches || (window.visualViewport && window.visualViewport.scale > 1.05)) {
+      disable();
+      return;
+    }
+    if (!enabled) {
+      enabled = true;
+      root.classList.add('has-case-deck');
+      slides.forEach(slide => stage.append(slide));
+      stage.append(dots, controls);
+      deck.append(stage);
+    }
+    if (!measure()) {
+      disable();
+      return;
+    }
+    paint(index);
+    update();
+  }
+  function onHash() {
+    const selected = ['#projekty', '#case-studies'].includes(location.hash) ? 0 :
+      slides.findIndex(slide => '#' + slide.id === location.hash);
+    if (enabled && selected >= 0) scrollTo({ top:start() + selected * stepSize, behavior:'auto' });
+    update();
+  }
+  addEventListener('scroll', () => {
+    if (framePending) return;
+    framePending = true;
+    requestAnimationFrame(() => { framePending = false; update(); });
+  }, { passive:true });
+  addEventListener('hashchange', onHash);
+  addEventListener('resize', sync);
+  window.visualViewport?.addEventListener('resize', sync);
   fit.addEventListener('change', sync);
-  const initial = hashIndex();
+  document.fonts?.ready.then(sync);
+  addEventListener('load', sync, { once:true });
   sync();
-  if (on && initial >= 0) { index = initial; align(); paint(); }
+  onHash();
 })();
