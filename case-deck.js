@@ -18,17 +18,17 @@
   // There is no animation lock: the next gesture can interrupt a transition.
   const wheel = (() => {
     let at = -Infinity, previous = 0, peak = 0, direction = 0;
-    let consumed = false, falling = false, total = 0;
+    let consumed = false, falling = false, total = 0, entering = false;
     return {
-      reset() { at = -Infinity; consumed = false; previous = peak = total = direction = 0; falling = false; },
-      hold() { consumed = true; },
+      reset() { at = -Infinity; consumed = false; entering = false; previous = peak = total = direction = 0; falling = false; },
+      hold(entry = false) { consumed = true; entering = entry; },
       take(dy, now) {
         const amount = Math.abs(dy), sign = Math.sign(dy), gap = now - at;
         const reversed = consumed && sign !== direction && amount >= 8;
-        const rising = consumed && falling && amount >= Math.max(12, Math.min(20, peak * 0.25)) && amount > previous * 1.8;
-        const notch = consumed && !falling && gap >= 80 && amount >= 40 && Math.abs(amount - previous) < 1;
+        const rising = consumed && !entering && falling && amount >= Math.max(12, Math.min(20, peak * 0.25)) && amount > previous * 1.8;
+        const notch = consumed && !entering && !falling && gap >= 80 && amount >= 40 && Math.abs(amount - previous) < 1;
         if (gap > 140 || reversed || rising || notch) {
-          consumed = false; falling = false; total = 0; peak = 0;
+          consumed = false; entering = false; falling = false; total = 0; peak = 0;
         } else if (previous && amount < previous * 0.8) falling = true;
         at = now; previous = amount; peak = Math.max(peak, amount); direction = sign;
         if (consumed) return 0;
@@ -147,11 +147,16 @@
         if (!resume) index = dy > 0 ? 0 : last;
         align(); paint();
         if (resume && direction) step(direction);
-        wheel.hold();
+        wheel.hold(!resume);
       } else wheel.reset();
       return;
     }
-    e.preventDefault(); phase = 'active';
+    e.preventDefault();
+    if (phase !== 'active') {
+      index = dy > 0 ? 0 : last;
+      align(); paint(); wheel.hold(true);
+      return;
+    }
     if (direction) step(direction);
   };
   const keys = { ArrowDown:1, PageDown:1, ' ':1, ArrowUp:-1, PageUp:-1 };
@@ -173,6 +178,11 @@
       return;
     }
     e.preventDefault();
+    if (phase !== 'active') {
+      index = direction > 0 ? 0 : last;
+      align(); paint(); wheel.hold(true);
+      return;
+    }
     if (!e.repeat) { step(direction); wheel.hold(); }
   };
   addEventListener('touchstart', e => {
@@ -204,6 +214,9 @@
       if (!resume) index = dy > 0 ? 0 : last;
       align(); paint();
       if (resume) step(Math.sign(dy));
+    } else if (phase !== 'active') {
+      index = dy > 0 ? 0 : last;
+      align(); paint();
     } else step(Math.sign(dy));
   }, { passive:false });
   ['touchend','touchcancel'].forEach(type => addEventListener(type, () => { touch = null; }));

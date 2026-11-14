@@ -173,3 +173,19 @@ test('wheel entry shows Posedla and consumes the remaining momentum', () => {
   p.wheel(80);[60,35,10,2].forEach(y=>p.wheel(y,12));assert.equal(p.current,0);assert.equal(p.state.y,1132);
   p.wheel(80,220);assert.equal(p.current,1);
 });
+test('landing at the pin line still enters Posedla before advancing', () => {
+  for (const input of ['wheel','key','touch']) {
+    const p=page();p.state.y=1130;p.goHash('top');
+    if(input==='wheel')p.wheel(80);
+    if(input==='key')p.key('PageDown');
+    if(input==='touch')p.touch(80);
+    assert.equal(p.current,0,input+' skipped the entry');
+    assert.equal(p.state.y,1132);
+  }
+});
+test('acceleration in the entry gesture does not skip Posedla', () => {
+  const p=page();p.state.y=1100;p.goHash('top');
+  [80,30,4,40,70].forEach(y=>p.wheel(y,16));
+  assert.equal(p.current,0);
+  p.wheel(80,220);assert.equal(p.current,1);
+});
