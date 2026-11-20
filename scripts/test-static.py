@@ -11,11 +11,11 @@ class StaticChecks(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'nested').mkdir()
-            (root / 'index.html').write_text('<html lang="cs"><head><link rel="canonical" href="https://jhrncir.xyz/"></head><body><h1>Home</h1></body></html>')
-            (root / 'nested/index.html').write_text('<html lang="cs"><head><link rel="canonical" href="https://jhrncir.xyz/nested/"></head><body><h1>Nested</h1>' + body + '</body></html>')
+            (root / 'index.html').write_text('<html lang="cs"><head><link rel="canonical" href="https://jhrncir.eu/"></head><body><h1>Home</h1></body></html>')
+            (root / 'nested/index.html').write_text('<html lang="cs"><head><link rel="canonical" href="https://jhrncir.eu/nested/"></head><body><h1>Nested</h1>' + body + '</body></html>')
             if sitemap:
-                nested = '' if 'http-equiv="refresh"' in body else '<url><loc>https://jhrncir.xyz/nested/</loc></url>'
-                (root / 'sitemap.xml').write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://jhrncir.xyz/</loc></url>' + nested + '</urlset>')
+                nested = '' if 'http-equiv="refresh"' in body else '<url><loc>https://jhrncir.eu/nested/</loc></url>'
+                (root / 'sitemap.xml').write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://jhrncir.eu/</loc></url>' + nested + '</urlset>')
             return subprocess.run(['python3', str(CHECKER), str(root)], capture_output=True, text=True)
 
     def test_valid_nested_page_passes(self):
@@ -42,7 +42,7 @@ class StaticChecks(unittest.TestCase):
         self.assertIn('FAQ', result.stdout + result.stderr)
 
     def test_wrong_language_target_fails(self):
-        result = self.run_site('<link rel="alternate" hreflang="en" href="https://jhrncir.xyz/nested/">')
+        result = self.run_site('<link rel="alternate" hreflang="en" href="https://jhrncir.eu/nested/">')
         self.assertNotEqual(result.returncode, 0)
 
     def test_external_language_target_fails(self):
@@ -60,7 +60,7 @@ class StaticChecks(unittest.TestCase):
         self.assertNotEqual(self.run_site('<img alt="Portrait" srcset="/missing.webp 480w">').returncode, 0)
 
     def test_valid_redirect_passes(self):
-        self.assertEqual(self.run_site('<link rel="canonical" href="https://jhrncir.xyz/"><meta http-equiv="refresh" content="0; url=/">').returncode, 0)
+        self.assertEqual(self.run_site('<link rel="canonical" href="https://jhrncir.eu/"><meta http-equiv="refresh" content="0; url=/">').returncode, 0)
 
     def test_broken_redirect_destination_fails(self):
         self.assertNotEqual(self.run_site('<meta http-equiv="refresh" content="0; url=/missing/">').returncode, 0)

@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 
-ORIGIN = 'https://jhrncir.xyz'
+ORIGIN = 'https://jhrncir.eu'
 def normal(value):
     return ' '.join(unescape(value).split())
 
@@ -98,8 +98,8 @@ def check(root):
 
     def destination(source, value, anchor=True):
         url = urlsplit(value)
-        if url.scheme and (url.scheme not in ('http', 'https') or url.netloc != 'jhrncir.xyz'): return None
-        if url.netloc and url.netloc != 'jhrncir.xyz': return None
+        if url.scheme and (url.scheme not in ('http', 'https') or url.netloc != 'jhrncir.eu'): return None
+        if url.netloc and url.netloc != 'jhrncir.eu': return None
         path = unquote(url.path)
         target = ((root / path.lstrip('/')) if path.startswith('/') else source.parent / path).resolve() if path else source
         if target.is_dir(): target /= 'index.html'
